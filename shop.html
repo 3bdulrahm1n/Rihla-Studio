@@ -1368,7 +1368,7 @@ body { font-feature-settings: "salt" 1; }
 
     <div class="nav-links" role="navigation">
       <a href="#work" data-i18n="nav.work_recent">أحدث الأعمال</a>
-      <a href="work.html" data-i18n="nav.work_all">كل الأعمال</a>
+      <a href="work.html" data-i18n="nav.work_all">جميع الأعمال</a>
       <a href="index.html#services" data-i18n="nav.services">الخدمات</a>
       <a href="shop.html" class="active" data-i18n="nav.shop">المتجر</a>
       <a href="blog.html" data-i18n="nav.blog">المقالات</a>
@@ -1407,7 +1407,7 @@ body { font-feature-settings: "salt" 1; }
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html#work" data-i18n="nav.work_recent">أحدث الأعمال</a>
-  <a href="work.html" data-i18n="nav.work_all">كل الأعمال</a>
+  <a href="work.html" data-i18n="nav.work_all">جميع الأعمال</a>
   <a href="index.html#services" data-i18n="nav.services">الخدمات</a>
   <a href="shop.html" class="active" data-i18n="nav.shop">المتجر</a>
   <a href="blog.html" data-i18n="nav.blog">المقالات</a>
@@ -2096,7 +2096,7 @@ body { font-feature-settings: "salt" 1; }
       'nav.brand_ar': 'ستوديو رحلة',
       'nav.brand_en': 'Rihla Studio',
       'nav.work_recent': 'أحدث الأعمال',
-      'nav.work_all': 'كل الأعمال',
+      'nav.work_all': 'جميع الأعمال',
       'nav.services': 'الخدمات',
       'nav.shop': 'المتجر',
       'nav.blog': 'المقالات',
@@ -2426,22 +2426,45 @@ body { font-feature-settings: "salt" 1; }
   // ============================================
   const cursorDot = document.getElementById('cursorDot');
   const cursorRing = document.getElementById('cursorRing');
-  if (cursorDot && cursorRing && window.matchMedia('(min-width: 901px)').matches) {
+  let mouseX = 0, mouseY = 0;
+  let dotX = 0, dotY = 0;
+  let ringX = 0, ringY = 0;
+
+  if (cursorDot && cursorRing && window.matchMedia('(min-width: 900px)').matches) {
     document.addEventListener('mousemove', (e) => {
-      cursorDot.style.left = e.clientX + 'px';
-      cursorDot.style.top = e.clientY + 'px';
-      cursorRing.style.left = e.clientX + 'px';
-      cursorRing.style.top = e.clientY + 'px';
+      mouseX = e.clientX;
+      mouseY = e.clientY;
     });
-    document.querySelectorAll('a, button, .product-card, .shop-filter-tab, .value-prop, .shop-faq-q').forEach(el => {
+
+    function animateCursor() {
+      dotX += (mouseX - dotX) * 0.6;
+      dotY += (mouseY - dotY) * 0.6;
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+      cursorDot.style.left = dotX + 'px';
+      cursorDot.style.top = dotY + 'px';
+      cursorRing.style.left = ringX + 'px';
+      cursorRing.style.top = ringY + 'px';
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Hover states
+    document.querySelectorAll('a, button, .work-card, .svc-card, .works-item, .metric, .score, [data-cursor="hover"]').forEach(el => {
       el.addEventListener('mouseenter', () => {
         cursorRing.classList.add('hover');
         cursorDot.classList.add('hover');
       });
       el.addEventListener('mouseleave', () => {
         cursorRing.classList.remove('hover');
+        cursorRing.classList.remove('text-hover');
         cursorDot.classList.remove('hover');
       });
+    });
+
+    document.querySelectorAll('h1, h2, .display-h1, .display-h2').forEach(el => {
+      el.addEventListener('mouseenter', () => cursorRing.classList.add('text-hover'));
+      el.addEventListener('mouseleave', () => cursorRing.classList.remove('text-hover'));
     });
   }
 
