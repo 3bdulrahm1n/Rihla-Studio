@@ -7159,10 +7159,9 @@ if (cursorDot && cursorRing && window.matchMedia('(min-width: 900px)').matches &
     if (cards.length !== 4) return;
 
     const GAP = 24; // 1.5rem in px (must match the original gap)
-    function getStageWidth() {
-      const w = stage.getBoundingClientRect().width || stage.offsetWidth || 800;
-      return w;
-    }
+    const stageRect = stage.getBoundingClientRect();
+    const stageWidth = stageRect.width;
+    const cardWidth = (stageWidth - GAP) / 2;
 
     // Measure card height by laying out temporarily
     const measureStage = document.createElement('div');
@@ -7426,11 +7425,11 @@ if (cursorDot && cursorRing && window.matchMedia('(min-width: 900px)').matches &
 
     // === Show only the current card ===
     function layout() {
+      // Card is centered in the drum, leaving equal space on both sides for the cart icons
+      // Cart icons are ~90px wide; we leave ~120px clearance on each side
       const drumRect = drum.getBoundingClientRect();
-      // أضف fallback لو الـ width = 0
-      const drumWidth = drumRect.width || drum.offsetWidth || 600;
-      const sideGap = 60;
-      const maxCardW = Math.min(Math.max(200, drumWidth - sideGap * 2), 380);
+      const sideGap = 60; // equal gap on both sides before cart icons
+      const maxCardW = Math.min(Math.max(200, drumRect.width - sideGap * 2), 380);
 
       items.forEach((it, i) => {
         const isActive = (i === current);
