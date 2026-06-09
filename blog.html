@@ -695,6 +695,8 @@ html[lang="en"] .nav-logo .logo-text-en { display: block; }
   background: var(--orange);
   transition: width 0.3s var(--ease);
 }
+.nav-links a.active { color: var(--orange); }
+.nav-links a.active ::after { width: 100%; }
 html[lang="en"] .nav-links a::after { right: auto; left: 0; }
 .nav-links a:hover::after { width: 100%; }
 
@@ -4283,7 +4285,7 @@ html[lang="en"] .toast { right: 2rem; }
   <a href="work.html" data-i18n="nav.work_all">كل الأعمال</a>
   <a href="index.html#services" data-i18n="nav.services">الخدمات</a>
   <a href="shop.html" data-i18n="nav.shop">المتجر</a>
-  <a href="blog.html" data-i18n="nav.blog">المقالات</a>
+  <a href="blog.html" class="active" data-i18n="nav.blog">المقالات</a>
   <a href="index.html#agreement" data-i18n="nav.agreement">اتفاقية العمل</a>
   <a href="index.html#process" data-i18n="nav.process">كيف نشتغل</a>
   <a href="index.html#results" data-i18n="nav.results">النتائج</a>
