@@ -8,7 +8,7 @@
 <meta name="description" data-i18n="meta.desc" content="ستوديو رحلة — استوديو إبداعي عربي متخصص في المونتاج، التصميم، الموشن جرافيك، وأنظمة نوشن. نبني تجارب بصرية لعلامات طموحة." />
 <meta name="keywords" content="Rihla, ستوديو رحلة, مونتاج, تصميم, موشن, نوشن, استوديو إبداعي, video editing, motion graphics" />
 
-<!-- Apply saved theme before paint to avoid flash. -->
+<!-- Apply saved theme before paint to avoid flash.. -->
 <script>
   (function() {
     try {
@@ -2113,6 +2113,7 @@ html[lang="en"] .topsell-cta:hover .arrow { transform: translateX(4px); }
   position: relative;
   width: 100%;
   height: 520px;
+  min-height: 300px; /* ← أضف السطر ده */
   z-index: 1;
   display: flex;
   align-items: center;
@@ -6184,7 +6185,18 @@ html[lang="en"] .toast { right: 2rem; }
 <script>
 (function() {
   'use strict';
-
+  // Version check — امسح state قديم من environments تانية
+    const STORAGE_VERSION = 'v2';
+    try {
+      if (localStorage.getItem('rihla_version') !== STORAGE_VERSION) {
+        const savedLang = localStorage.getItem('rihla_lang');
+        const savedTheme = localStorage.getItem('rihla-theme');
+        localStorage.clear();
+        if (savedLang) localStorage.setItem('rihla_lang', savedLang);
+        if (savedTheme) localStorage.setItem('rihla-theme', savedTheme);
+        localStorage.setItem('rihla_version', STORAGE_VERSION);
+      }
+    } catch(e) {}
   // ============================================
   // 1. I18N — Translations
   // ============================================
@@ -6309,7 +6321,7 @@ html[lang="en"] .toast { right: 2rem; }
       'ag.cta_d': 'لو عندك أي سؤال أو استفسار عن أي بند من البنود، ابعتلنا رسالة وهنرد عليك في أقل من 24 ساعة.',
       'ag.cta_btn': 'تواصل معانا',
       'proc.eyebrow': 'كيف نشتغل · Process',
-      'proc.h2_1': 'من ', 'proc.h2_2': 'الفكـرة', 'proc.h2_3': ' للـ', 'proc.h2_4': 'إنشـاء', 'proc.h2_5': '.',
+      'proc.h2_1': 'من ', 'proc.h2_2': 'الفكـرة', 'proc.h2_3': ' للإنشاء', 'proc.h2_5': '.',
       'proc.desc': 'طريقة عملنا بسيطة وشفافة. بنمشي معاك خطوة خطوة — من أول برهفة للحظة تسليم الملفات.',
       'proc.s1_t': 'الاستيعاب', 'proc.s1_d': 'بنفهمك وبنفهم علامتك. أهدافك، جمهورك، المنافسين. ومنها بنبني الخارطة اللي كل حاجة بتتبنى عليها.',
       'proc.s1_b1': 'بريفينج ومقابلة', 'proc.s1_b2': 'تحليل المنافسين', 'proc.s1_b3': 'استراتيجية إبداعية', 'proc.s1_b4': 'Roadmap',
@@ -6523,7 +6535,7 @@ html[lang="en"] .toast { right: 2rem; }
       'ag.cta_d': 'If you have any question or clarification about any item, send us a message and we\'ll reply within 24 hours.',
       'ag.cta_btn': 'Contact us',
       'proc.eyebrow': 'How we work',
-      'proc.h2_1': 'From ', 'proc.h2_2': 'idea', 'proc.h2_3': ' to ', 'proc.h2_4': 'launch', 'proc.h2_5': '.',
+      'proc.h2_1': 'From ', 'proc.h2_2': 'idea', 'proc.h2_3': ' to launch', 'proc.h2_5': '.',
       'proc.desc': 'Our process is simple and transparent. We walk with you step by step — from the first brief to file delivery.',
       'proc.s1_t': 'Discovery', 'proc.s1_d': 'We get you and your brand. Your goals, audience, competitors. From there we build the map everything is built on.',
       'proc.s1_b1': 'Briefing & call', 'proc.s1_b2': 'Competitor analysis', 'proc.s1_b3': 'Creative strategy', 'proc.s1_b4': 'Roadmap',
@@ -6701,7 +6713,8 @@ html[lang="en"] .toast { right: 2rem; }
   let dotX = 0, dotY = 0;
   let ringX = 0, ringY = 0;
 
-  if (cursorDot && cursorRing && window.matchMedia('(min-width: 900px)').matches) {
+  const isTouchDevice = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+if (cursorDot && cursorRing && window.matchMedia('(min-width: 900px)').matches && !isTouchDevice) {
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
@@ -7147,9 +7160,10 @@ html[lang="en"] .toast { right: 2rem; }
     if (cards.length !== 4) return;
 
     const GAP = 24; // 1.5rem in px (must match the original gap)
-    const stageRect = stage.getBoundingClientRect();
-    const stageWidth = stageRect.width;
-    const cardWidth = (stageWidth - GAP) / 2;
+    function getStageWidth() {
+      const w = stage.getBoundingClientRect().width || stage.offsetWidth || 800;
+      return w;
+    }
 
     // Measure card height by laying out temporarily
     const measureStage = document.createElement('div');
@@ -7413,11 +7427,11 @@ html[lang="en"] .toast { right: 2rem; }
 
     // === Show only the current card ===
     function layout() {
-      // Card is centered in the drum, leaving equal space on both sides for the cart icons
-      // Cart icons are ~90px wide; we leave ~120px clearance on each side
       const drumRect = drum.getBoundingClientRect();
-      const sideGap = 60; // equal gap on both sides before cart icons
-      const maxCardW = Math.min(Math.max(200, drumRect.width - sideGap * 2), 380);
+      // أضف fallback لو الـ width = 0
+      const drumWidth = drumRect.width || drum.offsetWidth || 600;
+      const sideGap = 60;
+      const maxCardW = Math.min(Math.max(200, drumWidth - sideGap * 2), 380);
 
       items.forEach((it, i) => {
         const isActive = (i === current);
