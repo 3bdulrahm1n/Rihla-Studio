@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+<meta name="theme-color" content="#0A0510" />
+<title data-i18n="meta.title">المتجر · قريباً · ستوديو رحلة</title>
+<meta name="description" data-i18n="meta.desc" content="متجر ستوديو رحلة — قريباً. أنظمة نوشن، كورسات إبداعية، وباكدج أنميشن جاهزة." />
+
+<!-- Apply saved theme before paint -->
+<script>
+  (function() {
+    try {
+      var t = localStorage.getItem('rihla-theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+      var l = localStorage.getItem('rihla-theme-lang');
+      if (l === 'en') { document.documentElement.lang='en'; document.documentElement.dir='ltr'; }
+    } catch(e) {}
+  })();
+</script>
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23F5A623'/%3E%3Cstop offset='1' stop-color='%23E55A2B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23g)' d='M50 5 L57 35 L87 50 L57 65 L50 95 L43 65 L13 50 L43 35 Z M50 20 L54 42 L76 50 L54 58 L50 80 L46 58 L24 50 L46 42 Z' /%3E%3C/svg%3E" />
+
+<style>
+@font-face {
+  font-family: 'ThmanyahSans';
+  src: url('fonts/ThmanyahSans-Light.otf') format('opentype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSans';
+  src: url('fonts/ThmanyahSans-Regular.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSans';
+  src: url('fonts/ThmanyahSans-Medium.otf') format('opentype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSans';
+  src: url('fonts/ThmanyahSans-Bold.otf') format('opentype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSans';
+  src: url('fonts/ThmanyahSans-Black.otf') format('opentype');
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifDisplay';
+  src: url('fonts/ThmanyahSerifDisplay-Light.otf') format('opentype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifDisplay';
+  src: url('fonts/ThmanyahSerifDisplay-Regular.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifDisplay';
+  src: url('fonts/ThmanyahSerifDisplay-Medium.otf') format('opentype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifDisplay';
+  src: url('fonts/ThmanyahSerifDisplay-Bold.otf') format('opentype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifDisplay';
+  src: url('fonts/ThmanyahSerifDisplay-Black.otf') format('opentype');
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifText';
+  src: url('fonts/ThmanyahSerifText-Light.otf') format('opentype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifText';
+  src: url('fonts/ThmanyahSerifText-Regular.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifText';
+  src: url('fonts/ThmanyahSerifText-Medium.otf') format('opentype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifText';
+  src: url('fonts/ThmanyahSerifText-Bold.otf') format('opentype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifText';
+  src: url('fonts/ThmanyahSerifText-Black.otf') format('opentype');
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body {
+  font-feature-settings: "salt" 1;
+  font-family:'Thmanyah Serif Display','Thmanyah Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  cursor:none;
+}
+@media(max-width:900px){ body { cursor:auto; } }
+img,svg { display:block; max-width:100%; }
+a { color:inherit; text-decoration:none; }
+button { font-family:inherit; cursor:pointer; border:0; background:transparent; color:inherit; }
+ul { list-style:none; }
+input, textarea, select { font-family:inherit; color:inherit; }
+::selection { background:#F5A623; color:var(--selection-text,#1E0A5C); }
+html[lang="en"] body { font-family:'Thmanyah Sans','Thmanyah Serif Display',sans-serif; }
+
+/* ============================================
+   VARIABLES
+   ============================================ */
+:root {
+  --orange: #F5A623;
+  --orange-bright: #FFB547;
+  --orange-deep: #E55A2B;
+  --coral: #FF6B4A;
+  --bg: #0A0510;
+  --bg-2: #100620;
+  --bg-3: #0D0817;
+  --text: #F0EDF7;
+  --text-soft: #C5BFE0;
+  --text-dim: #8B82A8;
+  --border: rgba(245, 166, 35, 0.12);
+  --border-soft: rgba(240, 237, 247, 0.08);
+  --surface: rgba(245, 166, 35, 0.03);
+  --selection-text: #1E0A5C;
+  --grid-line: rgba(245, 166, 35, 0.025);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+:root[data-theme="light"] {
+  --bg: #FAF7F2;
+  --bg-2: #F2EBE0;
+  --bg-3: #EDE5D6;
+  --text: #1A0F2E;
+  --text-soft: #3D3055;
+  --text-dim: #5C4F7A;
+  --border: rgba(245, 166, 35, 0.30);
+  --border-soft: rgba(26, 15, 46, 0.14);
+  --surface: rgba(245, 166, 35, 0.07);
+  --selection-text: #FAF7F2;
+  --grid-line: rgba(245, 166, 35, 0.06);
+}
+:root[data-theme="light"] body { background:#FAF7F2; color:var(--text); }
+:root[data-theme="light"] .bg-grid {
+  background-image:
+    linear-gradient(var(--grid-line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
+}
+:root[data-theme="light"] .nav.scrolled { background:rgba(250,247,242,0.82); border-bottom-color:var(--border-soft); }
+:root[data-theme="light"] .social-rail { background:rgba(250,247,242,0.75); }
+:root[data-theme="light"] .lang-toggle { background:rgba(245,166,35,0.07); }
+:root[data-theme="light"] .footer { background:#FAF7F2; }
+:root[data-theme="light"] .footer-col a { color:#3D3055; }
+:root[data-theme="light"] .footer-col a:hover { color:#B8651B; }
+:root[data-theme="light"] .mobile-menu { background:rgba(250,247,242,0.98); }
+
+/* ============================================
+   CURSOR
+   ============================================ */
+.cursor-dot {
+  position: fixed; width: 6px; height: 6px;
+  background: var(--orange); border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s var(--ease), height 0.2s var(--ease), opacity 0.2s var(--ease);
+  mix-blend-mode: difference;
+}
+.cursor-ring {
+  position: fixed; width: 36px; height: 36px;
+  border: 1.5px solid var(--orange); border-radius: 50%;
+  pointer-events: none; z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease), height 0.3s var(--ease), background 0.3s var(--ease), opacity 0.2s var(--ease);
+  mix-blend-mode: difference;
+}
+.cursor-ring.hover {
+  width: 60px; height: 60px;
+  background: rgba(245, 166, 35, 0.15);
+}
+.cursor-dot.hover {
+  width: 4px; height: 4px;
+}
+@media (max-width: 900px) {
+  .cursor-dot, .cursor-ring { display: none; }
+}
+
+/* ============================================
+   BG GRID + GLOW
+   ============================================ */
+.bg-grid {
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    linear-gradient(var(--grid-line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.soon-glow {
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+}
+.soon-glow::before {
+  content:''; position:absolute;
+  width:700px; height:700px; border-radius:50%;
+  background:radial-gradient(circle,rgba(245,166,35,0.18) 0%,transparent 70%);
+  filter:blur(140px);
+  top:-15%; right:-10%;
+  animation:glowDrift 22s ease-in-out infinite;
+}
+.soon-glow::after {
+  content:''; position:absolute;
+  width:600px; height:600px; border-radius:50%;
+  background:radial-gradient(circle,rgba(229,90,43,0.15) 0%,transparent 70%);
+  filter:blur(120px);
+  bottom:-10%; left:-10%;
+  animation:glowDrift 28s ease-in-out infinite reverse;
+  animation-delay:-10s;
+}
+@keyframes glowDrift {
+  0%,100% { transform:translate(0,0) scale(1); }
+  33%      { transform:translate(40px,-20px) scale(1.08); }
+  66%      { transform:translate(-20px,30px) scale(0.95); }
+}
+
+/* ============================================
+   NAVIGATION (matches work.html exactly)
+   ============================================ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.25rem 0;
+  transition: all 0.4s var(--ease);
+  background: transparent;
+}
+.nav.scrolled {
+  background: rgba(10, 5, 16, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--border-soft);
+  padding: 0.85rem 0;
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 0.7rem; font-weight: 600;
+}
+.nav-logo .logo-mark {
+  width: 38px; height: 38px; flex-shrink: 0;
+  transition: transform 0.6s var(--ease);
+}
+.nav-logo:hover .logo-mark { transform: rotate(45deg); }
+.nav-logo .logo-text-ar {
+  font-family: 'Thmanyah Serif Display';
+  font-size: 1.4rem; font-weight: 700; line-height: 1;
+}
+html[lang="en"] .nav-logo .logo-text-ar { display: none; }
+.nav-logo .logo-text-en {
+  font-family: 'Thmanyah Sans'; font-style: italic; font-size: 1.2rem;
+  color: var(--orange); font-weight: 500; line-height: 1; display: none;
+}
+html[lang="en"] .nav-logo .logo-text-en { display: block; }
+
+.nav-links {
+  display: flex; align-items: center; gap: 2.5rem; font-size: 1.05rem; font-weight: 500;
+}
+.nav-links a {
+  color: var(--text-soft);
+  position: relative;
+  transition: color 0.3s var(--ease);
+  padding: 0.5rem 0;
+}
+.nav-links a:hover { color: var(--orange); }
+.nav-links a::after {
+  content: ''; position: absolute; bottom: 0; right: 0;
+  width: 0; height: 1px; background: var(--orange);
+  transition: width 0.3s var(--ease);
+}
+html[lang="en"] .nav-links a::after { right: auto; left: 0; }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--orange); }
+.nav-links a.active::after { width: 100%; }
+
+.nav-actions {
+  display: flex; align-items: center; gap: 0.8rem;
+}
+
+/* Theme + Lang toggles (matches work.html) */
+.theme-toggle, .lang-toggle {
+  position: relative; width: 38px; height: 38px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border-soft); border-radius: 50%;
+  background: rgba(245, 166, 35, 0.04);
+  color: var(--text-soft);
+  transition: all 0.3s var(--ease); flex-shrink: 0;
+}
+.theme-toggle:hover {
+  border-color: var(--orange); color: var(--orange);
+  background: rgba(245, 166, 35, 0.08); transform: rotate(15deg);
+}
+.theme-icon-sun, .theme-icon-moon {
+  position: absolute; width: 16px; height: 16px;
+  transition: opacity 0.3s var(--ease), transform 0.4s var(--ease);
+}
+:root:not([data-theme="light"]) .theme-icon-sun { opacity: 1; transform: rotate(0); }
+:root:not([data-theme="light"]) .theme-icon-moon { opacity: 0; transform: rotate(-90deg); }
+:root[data-theme="light"] .theme-icon-sun { opacity: 0; transform: rotate(90deg); }
+:root[data-theme="light"] .theme-icon-moon { opacity: 1; transform: rotate(0); }
+@media (max-width: 900px) { .theme-toggle { display: none; } }
+
+.lang-toggle {
+  width: auto; padding: 0.5rem 0.8rem; border-radius: 100px;
+  font-family: 'Thmanyah Sans'; font-size: 0.82rem; font-weight: 500;
+  letter-spacing: 0.05em; text-transform: uppercase; gap: 0.4rem;
+}
+.lang-toggle:hover { border-color: var(--orange); color: var(--orange); background: rgba(245, 166, 35, 0.08); }
+.lang-toggle .lang-dot {
+  width: 6px; height: 6px; background: var(--orange); border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+.lang-toggle .lang-arrow { transition: transform 0.3s var(--ease); }
+.lang-toggle:hover .lang-arrow { transform: translateX(2px); }
+html[lang="en"] .lang-toggle:hover .lang-arrow { transform: translateX(-2px); }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.75rem 1.4rem; background: var(--orange); color: var(--bg);
+  font-weight: 600; font-size: 0.92rem; border-radius: 100px;
+  transition: all 0.3s var(--ease); position: relative; overflow: hidden;
+}
+.nav-cta::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.45), transparent);
+  transform: translateX(-100%); transition: transform 0.6s var(--ease);
+}
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 30px -8px rgba(245, 166, 35, 0.5); }
+.nav-cta:hover::before { transform: translateX(100%); }
+.nav-cta .arrow { transition: transform 0.3s var(--ease); }
+html[lang="ar"] .nav-cta:hover .arrow { transform: translateX(-4px); }
+html[lang="en"] .nav-cta:hover .arrow { transform: translateX(4px); }
+
+.nav-hamburger {
+  display: none; width: 40px; height: 40px;
+  flex-direction: column; justify-content: center; align-items: center; gap: 5px;
+  border: 1px solid var(--border-soft); border-radius: 8px;
+  background: rgba(245, 166, 35, 0.04);
+}
+.nav-hamburger span {
+  width: 18px; height: 1.5px; background: var(--text);
+  transition: all 0.3s var(--ease);
+}
+.nav-hamburger.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.active span:nth-child(2) { opacity: 0; }
+.nav-hamburger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-cta { display: none; }
+}
+
+/* Mobile menu */
+.mobile-menu {
+  position: fixed; inset: 0; z-index: 99;
+  background: rgba(10, 5, 16, 0.98);
+  backdrop-filter: blur(20px);
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  gap: 2rem; padding: 5rem 2rem 2rem;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s var(--ease);
+}
+.mobile-menu.active { opacity: 1; pointer-events: all; }
+.mobile-menu a {
+  font-family: 'Thmanyah Serif Display'; font-size: 1.8rem; font-weight: 600;
+  color: var(--text); transition: color 0.3s var(--ease);
+}
+html[lang="en"] .mobile-menu a { font-family: 'Thmanyah Sans'; }
+.mobile-menu a:hover { color: var(--orange); }
+.lang-toggle-mobile { margin-top: 0.5rem; }
+.theme-toggle-mobile {
+  margin-top: 0.5rem;
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.5rem 1rem; border: 1px solid var(--border-soft);
+  border-radius: 100px; color: var(--text-soft);
+  font-family: 'Thmanyah Sans'; font-size: 0.85rem;
+}
+.theme-toggle-mobile:hover { border-color: var(--orange); color: var(--orange); }
+.theme-toggle-mobile .theme-arrow { color: var(--orange); font-size: 1rem; }
+
+/* ============================================
+   RIGHT SIDE SOCIAL RAIL
+   ============================================ */
+.social-rail {
+  position: fixed; top: 50%; transform: translateY(-50%);
+  z-index: 50;
+  display: flex; flex-direction: column; gap: 0.4rem;
+  padding: 0.85rem 0.45rem;
+  background: rgba(10, 5, 16, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-soft);
+  border-radius: 100px;
+  transition: all 0.4s var(--ease);
+  opacity: 1; visibility: visible;
+}
+html[dir="rtl"] .social-rail { left: 0.75rem; }
+html[lang="en"] .social-rail { right: 0.75rem; left: auto; }
+.social-rail.hidden { transform: translateY(-50%) translateX(-150%); opacity: 0; pointer-events: none; }
+html[lang="en"] .social-rail.hidden { transform: translateY(-50%) translateX(150%); }
+.social-rail a {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-soft);
+  transition: all 0.3s var(--ease);
+  position: relative;
+}
+.social-rail a:hover {
+  color: var(--orange);
+  background: rgba(245, 166, 35, 0.1);
+  transform: scale(1.1);
+}
+.social-rail a::before {
+  content: attr(data-label);
+  position: absolute;
+  background: var(--orange);
+  color: var(--bg);
+  font-family: 'Thmanyah Sans';
+  font-size: 0.72rem; font-weight: 600;
+  padding: 0.3rem 0.7rem; border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s var(--ease);
+  letter-spacing: 0.05em; text-transform: uppercase;
+}
+html[dir="rtl"] .social-rail a::before { left: calc(100% + 0.85rem); right: auto; top: 50%; transform: translateY(-50%); }
+html[lang="en"] .social-rail a::before { right: calc(100% + 0.85rem); left: auto; top: 50%; transform: translateY(-50%); }
+.social-rail a::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 5px 5px 5px 0;
+  border-color: transparent var(--orange) transparent transparent;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s var(--ease);
+  top: 50%; transform: translateY(-50%);
+}
+html[dir="rtl"] .social-rail a::after { left: calc(100% + 0.1rem); right: auto; border-width: 5px 0 5px 5px; border-color: transparent transparent transparent var(--orange); }
+html[lang="en"] .social-rail a::after { right: calc(100% + 0.1rem); left: auto; }
+.social-rail a:hover::after { opacity: 1; }
+.social-rail a:hover::before { opacity: 1; }
+@media (max-width: 900px) { .social-rail { display: none; } }
+
+/* ============================================
+   SOON PAGE — Main content
+   ============================================ */
+.soon-wrap {
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  z-index:1;
+  padding:8rem 2rem 5rem;
+  text-align:center;
+  width:100%;
+  max-width:100vw;
+  box-sizing:border-box;
+}
+
+.soon-eyebrow {
+  display:inline-flex; align-items:center; gap:0.6rem;
+  padding:0.45rem 1rem;
+  border:1px solid var(--border);
+  border-radius:100px;
+  font-family:'Thmanyah Sans';
+  font-size:0.78rem; font-weight:500;
+  color:var(--text-dim);
+  letter-spacing:0.08em; text-transform:uppercase;
+  margin-bottom:2rem;
+  opacity:0; animation:fadeUp 0.8s 0.2s var(--ease) forwards;
+}
+.soon-eyebrow .dot {
+  width:6px; height:6px; border-radius:50%;
+  background:var(--orange);
+  animation:pulse 2s ease infinite;
+}
+
+.soon-heading {
+  font-family:'Thmanyah Serif Display';
+  font-weight:900;
+  font-size:clamp(2.8rem,10vw,6rem);
+  line-height:1.15;
+  letter-spacing:-0.02em;
+  overflow:visible;
+  margin-bottom:1.5rem;
+  padding:0.1em 0.15em;
+  max-width:100%;
+  opacity:0; animation:fadeUp 0.9s 0.4s var(--ease) forwards;
+}
+.soon-heading .grad {
+  background:linear-gradient(125deg,var(--orange) 0%,var(--coral) 55%,var(--orange-bright) 100%);
+  background-size:200% 100%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:accentGrad 6s ease infinite;
+  font-feature-settings:"salt" 1;
+  display:inline-block;
+  /* key fix: padding ensures the background paint area covers all ascenders/descenders */
+  padding:0.1em 0.2em 0.15em;
+  /* negative margin compensates so layout stays the same */
+  margin:-0.1em -0.2em -0.15em;
+}
+.soon-heading-en {
+  display:none;
+  font-family:'Thmanyah Sans';
+  font-style:italic;
+  font-weight:900;
+  letter-spacing:-0.03em;
+}
+html[lang="en"] .soon-heading-ar { display:none; }
+html[lang="en"] .soon-heading-en { display:block; }
+@keyframes accentGrad { 0%,100%{background-position:0% 50%;} 50%{background-position:100% 50%;} }
+
+.soon-sub {
+  font-family:'Thmanyah Sans';
+  font-size:1.05rem;
+  color:var(--text-soft);
+  line-height:1.75;
+  max-width:520px;
+  margin:0 auto 2.5rem;
+  opacity:0; animation:fadeUp 0.8s 0.6s var(--ease) forwards;
+}
+
+.soon-divider {
+  width:60px; height:1px;
+  background:linear-gradient(90deg,transparent,var(--orange),transparent);
+  margin:0 auto 2.5rem;
+  opacity:0; animation:fadeUp 0.8s 0.7s var(--ease) forwards;
+}
+
+.soon-cta {
+  display:inline-flex; align-items:center; gap:0.6rem;
+  padding:1rem 1.75rem;
+  background:var(--orange);
+  color:var(--bg);
+  font-family:'Thmanyah Sans';
+  font-weight:600; font-size:0.95rem;
+  border-radius:100px;
+  position:relative; overflow:hidden;
+  transition:all 0.3s var(--ease);
+  cursor:none;
+  opacity:0; animation:fadeUp 0.8s 0.8s var(--ease) forwards;
+}
+.soon-cta::before {
+  content:'';
+  position:absolute; inset:0;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
+  transform:translateX(-100%);
+  transition:transform 0.6s var(--ease);
+}
+.soon-cta:hover { transform:translateY(-2px); box-shadow:0 14px 32px -8px rgba(245,166,35,0.55); }
+.soon-cta:hover::before { transform:translateX(100%); }
+.soon-cta .arr { transition:transform 0.3s var(--ease); display:inline-block; }
+html[dir="rtl"] .soon-cta:hover .arr { transform:translateX(-4px); }
+html[lang="en"] .soon-cta:hover .arr { transform:translateX(4px); }
+
+.soon-notify {
+  display:flex; align-items:center; gap:0.75rem;
+  margin-top:1.5rem;
+  opacity:0; animation:fadeUp 0.8s 1s var(--ease) forwards;
+  flex-wrap:wrap; justify-content:center;
+}
+.soon-notify-input {
+  padding:0.8rem 1.2rem;
+  border:1px solid var(--border-soft);
+  border-radius:100px;
+  background:rgba(245,166,35,0.04);
+  color:var(--text);
+  font-family:'Thmanyah Sans';
+  font-size:0.88rem;
+  width:240px;
+  outline:none;
+  transition:border-color 0.3s var(--ease);
+  cursor:text;
+}
+.soon-notify-input:focus { border-color:rgba(245,166,35,0.5); }
+.soon-notify-input::placeholder { color:var(--text-dim); }
+.soon-notify-btn {
+  display:inline-flex; align-items:center; gap:0.5rem;
+  padding:0.8rem 1.4rem;
+  border:1px solid var(--border);
+  border-radius:100px;
+  background:transparent;
+  color:var(--orange);
+  font-family:'Thmanyah Sans';
+  font-size:0.88rem; font-weight:500;
+  cursor:none;
+  transition:all 0.3s var(--ease);
+  position:relative; overflow:hidden;
+}
+.soon-notify-btn::before {
+  content:'';
+  position:absolute; inset:0;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.15),transparent);
+  transform:translateX(-110%);
+  transition:transform 0.5s var(--ease);
+}
+.soon-notify-btn:hover { background:rgba(245,166,35,0.1); border-color:var(--orange); }
+.soon-notify-btn:hover::before { transform:translateX(110%); }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(18px);} to{opacity:1;transform:translateY(0);} }
+
+/* ============================================
+   FOOTER (matches work.html)
+   ============================================ */
+.footer {
+  background: var(--bg);
+  border-top: 1px solid var(--border-soft);
+  padding: 5rem 0 2rem; position: relative;
+  z-index: 1;
+}
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem; margin-bottom: 3rem;
+}
+@media (max-width: 800px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 500px) { .footer-grid { grid-template-columns: 1fr; } }
+.footer-brand .nav-logo { margin-bottom: 1rem; }
+.footer-brand .tagline {
+  color: var(--text-soft); font-size: 0.95rem; line-height: 1.6; max-width: 360px;
+}
+.footer-col h4 {
+  font-family: 'Thmanyah Sans';
+  font-size: 0.78rem; font-weight: 500; color: var(--orange);
+  margin-bottom: 1.25rem; letter-spacing: 0.2em; text-transform: uppercase;
+}
+.footer-col ul { display: flex; flex-direction: column; gap: 0.75rem; }
+.footer-col a {
+  color: var(--text-soft); font-size: 0.9rem; transition: color 0.3s var(--ease);
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  cursor: none;
+}
+.footer-col a:hover { color: var(--orange); }
+.footer-col a .ext { font-size: 0.75em; opacity: 0.6; }
+.footer-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 2rem; border-top: 1px solid var(--border-soft);
+  color: var(--text-dim); font-size: 0.85rem;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-bottom .made { color: var(--orange); font-style: italic; font-family: 'Thmanyah Sans'; }
+
+/* Smooth theme transition */
+body, .nav, .footer, .footer-col a, .lang-toggle, .mobile-menu, .social-rail {
+  transition: background-color 0.4s var(--ease), border-color 0.4s var(--ease), color 0.4s var(--ease);
+}
+
+/* Responsive */
+@media(max-width:600px) {
+  .soon-wrap { padding:7rem 1rem 4rem; }
+  .soon-heading { font-size:clamp(2rem,12vw,4rem); padding:0.15em 0.5rem; }
+  .soon-notify { flex-direction:column; align-items:stretch; }
+  .soon-notify-input { width:100%; }
+}
+
+/* ============================================
+   MOBILE RESPONSIVENESS
+   ============================================ */
+@media (max-width: 768px) {
+  .soon-wrap { padding: 7rem 1.25rem 4rem; }
+  .soon-heading { font-size: clamp(2rem, 11vw, 4rem); padding:0.15em 0.5rem; }
+  .soon-sub { font-size: 0.95rem; padding: 0 0.5rem; }
+  .soon-notify { flex-direction: column; align-items: stretch; }
+  .soon-notify-input { width: 100%; }
+  .container { padding: 0 1rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .soon-wrap { padding: 6rem 1rem 3rem; }
+  .soon-heading { font-size: clamp(2rem, 16vw, 4rem); }
+  .soon-eyebrow { font-size: 0.7rem; }
+  .container { padding: 0 0.75rem; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .nav-inner { padding: 0 0.75rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="soon-glow" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- Right side social rail -->
+<div class="social-rail" id="socialRail" aria-label="حسابات التواصل الاجتماعي">
+  <a href="https://instagram.com/rihlastudio" target="_blank" rel="noopener" data-label="Instagram" aria-label="Instagram">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+  </a>
+  <a href="https://behance.net/rihlastudio" target="_blank" rel="noopener" data-label="Behance" aria-label="Behance">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.63 5.466-5.63 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/></svg>
+  </a>
+  <a href="https://youtube.com/@rihlastudio" target="_blank" rel="noopener" data-label="YouTube" aria-label="YouTube">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+  </a>
+  <a href="https://x.com/rihlastudio" target="_blank" rel="noopener" data-label="X / Twitter" aria-label="X / Twitter">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+  </a>
+  <a href="https://linkedin.com/company/rihlastudio" target="_blank" rel="noopener" data-label="LinkedIn" aria-label="LinkedIn">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.063 2.063 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+  </a>
+  <a href="https://wa.me/201000000000" target="_blank" rel="noopener" data-label="WhatsApp" aria-label="WhatsApp">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
+  </a>
+</div>
+
+<nav class="nav" id="nav" aria-label="التنقل الرئيسي">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="الصفحة الرئيسية - ستوديو رحلة">
+      <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg-mark" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#F5A623" />
+            <stop offset="1" stop-color="#E55A2B" />
+          </linearGradient>
+        </defs>
+        <path fill="url(#lg-mark)" d="M50 4 L57 32 L84 16 L68 43 L96 50 L68 57 L84 84 L57 68 L50 96 L43 68 L16 84 L32 57 L4 50 L32 43 L16 16 L43 32 Z" opacity="0.95"/>
+        <path fill="#0A0510" d="M50 18 L54 38 L74 38 L58 50 L62 70 L50 58 L38 70 L42 50 L26 38 L46 38 Z" opacity="0.7"/>
+        <circle cx="50" cy="50" r="4" fill="#F5A623"/>
+      </svg>
+      <div style="display:flex; flex-direction:column; line-height:1;">
+        <span class="logo-text-ar" data-i18n="nav.brand_ar">ستوديو رحلة</span>
+        <span class="logo-text-en" data-i18n="nav.brand_en">Rihla Studio</span>
+      </div>
+    </a>
+
+    <div class="nav-links" role="navigation">
+      <a href="index.html#work" data-i18n="nav.work_recent">أحدث الأعمال</a>
+      <a href="work.html" data-i18n="nav.work_all">كل الأعمال</a>
+      <a href="index.html#services" data-i18n="nav.services">الخدمات</a>
+      <a href="shop.html" class="active" data-i18n="nav.shop">المتجر</a>
+      <a href="blog.html" data-i18n="nav.blog">المقالات</a>
+      <a href="index.html#agreement" data-i18n="nav.agreement">اتفاقية العمل</a>
+      <a href="index.html#process" data-i18n="nav.process">كيف نشتغل</a>
+      <a href="index.html#results" data-i18n="nav.results">النتائج</a>
+      <a href="index.html#founder" data-i18n="nav.about">من نحن</a>
+      <a href="index.html#faq" data-i18n="nav.faq">الأسئلة</a>
+    </div>
+
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle" aria-label="تبديل اللغة">
+        <span class="lang-dot"></span>
+        <span id="langLabel">EN</span>
+        <span class="lang-arrow">⇄</span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع">
+        <svg class="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <a href="index.html#contact" class="nav-cta">
+        <span data-i18n="nav.cta">ابدأ مشروعك</span>
+        <span class="arrow">→</span>
+      </a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="القائمة" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#work" data-i18n="nav.work_recent">أحدث الأعمال</a>
+  <a href="work.html" data-i18n="nav.work_all">كل الأعمال</a>
+  <a href="index.html#services" data-i18n="nav.services">الخدمات</a>
+  <a href="shop.html" class="active" data-i18n="nav.shop">المتجر</a>
+  <a href="blog.html" data-i18n="nav.blog">المقالات</a>
+  <a href="index.html#agreement" data-i18n="nav.agreement">اتفاقية العمل</a>
+  <a href="index.html#process" data-i18n="nav.process">كيف نشتغل</a>
+  <a href="index.html#results" data-i18n="nav.results">النتائج</a>
+  <a href="index.html#founder" data-i18n="nav.about">من نحن</a>
+  <a href="index.html#faq" data-i18n="nav.faq">الأسئلة</a>
+  <a href="index.html#contact" style="color: var(--orange);" data-i18n="nav.cta">ابدأ مشروعك</a>
+  <button class="lang-toggle lang-toggle-mobile" id="langToggleMobile" aria-label="تبديل اللغة">
+    <span class="lang-dot"></span>
+    <span id="langLabelMobile">EN</span>
+    <span class="lang-arrow">⇄</span>
+  </button>
+  <button class="theme-toggle-mobile" id="themeToggleMobile" aria-label="تبديل الوضع">
+    <span>الوضع</span>
+    <span class="theme-arrow">◑</span>
+  </button>
+</div>
+
+<!-- ══════════════════════════════════════
+     SOON — Main content
+     ══════════════════════════════════════ -->
+<main class="soon-wrap">
+
+  <div class="soon-eyebrow">
+    <span class="dot"></span>
+    <span data-i18n="soon.eyebrow">المتجر · Shop</span>
+  </div>
+
+  <h1 class="soon-heading">
+    <span class="soon-heading-ar"><span class="grad">قريبـاً</span></span>
+    <span class="soon-heading-en"><span class="grad">Soon</span></span>
+  </h1>
+
+  <p class="soon-sub" data-i18n="soon.sub">
+    المتجر في الطريق — أنظمة نوشن، كورسات إبداعية، وأدوات موشن جاهزة.
+  </p>
+
+  <div class="soon-divider" aria-hidden="true"></div>
+
+  <a href="index.html" class="soon-cta">
+    <span data-i18n="soon.back">العودة للرئيسية</span>
+    <span class="arr">←</span>
+  </a>
+
+  <div class="soon-notify">
+    <input type="email" class="soon-notify-input" id="notifyEmail"
+           data-i18n-placeholder="soon.email_ph"
+           placeholder="بريدك الإلكتروني" />
+    <button class="soon-notify-btn" id="notifyBtn">
+      <span data-i18n="soon.notify">أبلغني عند الإطلاق</span>
+      <span>→</span>
+    </button>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
+            <defs>
+              <linearGradient id="lg-footer" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#F5A623" />
+                <stop offset="1" stop-color="#E55A2B" />
+              </linearGradient>
+            </defs>
+            <path fill="url(#lg-footer)" d="M50 4 L57 32 L84 16 L68 43 L96 50 L68 57 L84 84 L57 68 L50 96 L43 68 L16 84 L32 57 L4 50 L32 43 L16 16 L43 32 Z"/>
+            <path fill="#0A0510" d="M50 18 L54 38 L74 38 L58 50 L62 70 L50 58 L38 70 L42 50 L26 38 L46 38 Z"/>
+            <circle cx="50" cy="50" r="4" fill="#F5A623"/>
+          </svg>
+          <div style="display:flex; flex-direction:column; line-height:1;">
+            <span class="logo-text-ar" data-i18n="nav.brand_ar">ستوديو رحلة</span>
+            <span class="logo-text-en" data-i18n="nav.brand_en">Rihla Studio</span>
+          </div>
+        </a>
+        <p class="tagline" data-i18n="shop.ft_tag">ستوديو رحلة — نصنع الجمال البصري ومنتجات رقمية لعلامات طموحة.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="shop.ft_col1_t">المتجر</h4>
+        <ul>
+          <li><a href="shop.html" data-i18n="shop.ft_l1">كل المنتجات</a></li>
+          <li><a href="shop.html#products" data-i18n="shop.ft_l2">أنظمة نوشن</a></li>
+          <li><a href="shop.html#products" data-i18n="shop.ft_l3">كورسات</a></li>
+          <li><a href="shop.html#products" data-i18n="shop.ft_l4">باكدج أنميشن</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="shop.ft_col2_t">الاستوديو</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="shop.ft_l5">الرئيسية</a></li>
+          <li><a href="index.html#work" data-i18n="shop.ft_l6">أعمالنا</a></li>
+          <li><a href="index.html#services" data-i18n="shop.ft_l7">الخدمات</a></li>
+          <li><a href="index.html#contact" data-i18n="shop.ft_l8">تواصل</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="shop.ft_col3_t">سوشيال · Follow</h4>
+        <ul>
+          <li><a href="https://instagram.com/rihlastudio" target="_blank" rel="noopener">إنستجرام <span class="ext">↗</span></a></li>
+          <li><a href="https://behance.net/rihlastudio" target="_blank" rel="noopener">بيهانس <span class="ext">↗</span></a></li>
+          <li><a href="https://youtube.com/@rihlastudio" target="_blank" rel="noopener">يوتيوب <span class="ext">↗</span></a></li>
+          <li><a href="https://linkedin.com/company/rihlastudio" target="_blank" rel="noopener">لينكدإن <span class="ext">↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div data-i18n="shop.ft_copy">© ٢٠٢٥ ستوديو رحلة · جميع الحقوق محفوظة</div>
+      <div class="made" data-i18n="shop.ft_made">Crafted with passion in Cairo ✦</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  // ── I18N strings (covers everything in this page) ───────────
+  const I18N = {
+    ar: {
+      'meta.title': 'المتجر · قريباً · ستوديو رحلة',
+      'meta.desc': 'متجر ستوديو رحلة — قريباً. أنظمة نوشن، كورسات إبداعية، وباكدج أنميشن جاهزة.',
+      'nav.brand_ar': 'ستوديو رحلة',
+      'nav.brand_en': 'Rihla Studio',
+      'nav.work_recent': 'أحدث الأعمال',
+      'nav.work_all': 'كل الأعمال',
+      'nav.services': 'الخدمات',
+      'nav.shop': 'المتجر',
+      'nav.blog': 'المقالات',
+      'nav.agreement': 'اتفاقية العمل',
+      'nav.process': 'كيف نشتغل',
+      'nav.results': 'النتائج',
+      'nav.about': 'من نحن',
+      'nav.faq': 'الأسئلة',
+      'nav.cta': 'ابدأ مشروعك',
+      'soon.eyebrow': 'المتجر · Shop',
+      'soon.sub': 'المتجر في الطريق — أنظمة نوشن، كورسات إبداعية، وأدوات موشن جاهزة.',
+      'soon.back': 'العودة للرئيسية',
+      'soon.email_ph': 'بريدك الإلكتروني',
+      'soon.notify': 'أبلغني عند الإطلاق',
+      'shop.ft_tag': 'ستوديو رحلة — نصنع الجمال البصري ومنتجات رقمية لعلامات طموحة.',
+      'shop.ft_col1_t': 'المتجر',
+      'shop.ft_l1': 'كل المنتجات',
+      'shop.ft_l2': 'أنظمة نوشن',
+      'shop.ft_l3': 'كورسات',
+      'shop.ft_l4': 'باكدج أنميشن',
+      'shop.ft_col2_t': 'الاستوديو',
+      'shop.ft_l5': 'الرئيسية',
+      'shop.ft_l6': 'أعمالنا',
+      'shop.ft_l7': 'الخدمات',
+      'shop.ft_l8': 'تواصل',
+      'shop.ft_col3_t': 'سوشيال · Follow',
+      'shop.ft_copy': '© ٢٠٢٥ ستوديو رحلة · جميع الحقوق محفوظة',
+      'shop.ft_made': 'Crafted with passion in Cairo ✦',
+    },
+    en: {
+      'meta.title': 'Shop · Coming Soon · Rihla Studio',
+      'meta.desc': 'Rihla Studio shop — coming soon. Notion systems, creative courses, and animation packs.',
+      'nav.brand_ar': 'Rihla Studio',
+      'nav.brand_en': 'Rihla Studio',
+      'nav.work_recent': 'Recent work',
+      'nav.work_all': 'All work',
+      'nav.services': 'Services',
+      'nav.shop': 'Shop',
+      'nav.blog': 'Blog',
+      'nav.agreement': 'Agreement',
+      'nav.process': 'Process',
+      'nav.results': 'Results',
+      'nav.about': 'About',
+      'nav.faq': 'FAQ',
+      'nav.cta': 'Start a project',
+      'soon.eyebrow': 'Shop · المتجر',
+      'soon.sub': 'The shop is on its way — Notion systems, creative courses, and ready-to-use motion packs.',
+      'soon.back': 'Back to home',
+      'soon.email_ph': 'Your email address',
+      'soon.notify': 'Notify me at launch',
+      'shop.ft_tag': 'Rihla Studio — crafting visual beauty and digital products for ambitious brands.',
+      'shop.ft_col1_t': 'Shop',
+      'shop.ft_l1': 'All products',
+      'shop.ft_l2': 'Notion systems',
+      'shop.ft_l3': 'Courses',
+      'shop.ft_l4': 'Animation packs',
+      'shop.ft_col2_t': 'Studio',
+      'shop.ft_l5': 'Home',
+      'shop.ft_l6': 'Our work',
+      'shop.ft_l7': 'Services',
+      'shop.ft_l8': 'Contact',
+      'shop.ft_col3_t': 'Social · Follow',
+      'shop.ft_copy': '© 2025 Rihla Studio · All rights reserved',
+      'shop.ft_made': 'Crafted with passion in Cairo ✦',
+    }
+  };
+
+  const root = document.documentElement;
+
+  // ── Theme (dark/light) ────────────────────────
+  function applyTheme(t) {
+    if (t === 'light') root.setAttribute('data-theme','light');
+    else root.removeAttribute('data-theme');
+    try { localStorage.setItem('rihla-theme', t); } catch(e){}
+  }
+  const themeBtn = document.getElementById('themeToggle');
+  if (themeBtn) themeBtn.addEventListener('click', () => {
+    applyTheme(root.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+  });
+  const themeBtnM = document.getElementById('themeToggleMobile');
+  if (themeBtnM) themeBtnM.addEventListener('click', () => {
+    applyTheme(root.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+  });
+
+  // ── Language (AR / EN) — applied AFTER strings exist ──────
+  function applyLang(l) {
+    root.lang = l;
+    root.dir  = l === 'ar' ? 'rtl' : 'ltr';
+    const t   = I18N[l] || I18N.ar;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.textContent = t[key];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (t[key] !== undefined) el.placeholder = t[key];
+    });
+    document.title = t['meta.title'] || document.title;
+
+    // Update lang label on the toggle
+    const langLabel      = document.getElementById('langLabel');
+    const langLabelMob   = document.getElementById('langLabelMobile');
+    if (langLabel)    langLabel.textContent    = l === 'ar' ? 'EN' : 'AR';
+    if (langLabelMob) langLabelMob.textContent = l === 'ar' ? 'EN' : 'AR';
+
+    // Back arrow direction
+    document.querySelectorAll('.soon-cta .arr').forEach(a => {
+      a.textContent = l === 'ar' ? '←' : '→';
+    });
+    // Nav CTA arrow direction
+    document.querySelectorAll('.nav-cta .arrow').forEach(a => {
+      a.textContent = l === 'ar' ? '→' : '←';
+    });
+
+    try { localStorage.setItem('rihla-theme-lang', l); } catch(e){}
+  }
+
+  // Fixed: was looking for #langBtn (didn't exist). Now binds to #langToggle / #langToggleMobile
+  const langBtn   = document.getElementById('langToggle');
+  const langBtnM  = document.getElementById('langToggleMobile');
+  if (langBtn)  langBtn.addEventListener('click',  () => applyLang(root.lang === 'ar' ? 'en' : 'ar'));
+  if (langBtnM) langBtnM.addEventListener('click', () => applyLang(root.lang === 'ar' ? 'en' : 'ar'));
+
+  let initLang = 'ar';
+  try { initLang = localStorage.getItem('rihla-theme-lang') || 'ar'; } catch(e){}
+  applyLang(initLang);
+
+  // ── Cursor ───────────────────────────────────
+  const dot  = document.getElementById('cursorDot');
+  const ring = document.getElementById('cursorRing');
+  if (dot && ring && window.matchMedia('(min-width:901px)').matches) {
+    document.addEventListener('mousemove', e => {
+      dot.style.left  = e.clientX + 'px';
+      dot.style.top   = e.clientY + 'px';
+      ring.style.left = e.clientX + 'px';
+      ring.style.top  = e.clientY + 'px';
+    });
+    document.querySelectorAll('a,button,.work-card-full,.soon-cta').forEach(el => {
+      el.addEventListener('mouseenter',()=>{ ring.classList.add('hover'); dot.classList.add('hover'); });
+      el.addEventListener('mouseleave',()=>{ ring.classList.remove('hover'); dot.classList.remove('hover'); });
+    });
+    document.addEventListener('mouseleave', () => {
+      dot.style.opacity  = '0';
+      ring.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+      dot.style.opacity  = '1';
+      ring.style.opacity = '1';
+    });
+  }
+
+  // ── Nav scroll ───────────────────────────────
+  const nav = document.getElementById('nav');
+  if (nav) {
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+    onScroll();
+    window.addEventListener('scroll', onScroll, {passive:true});
+  }
+
+  // ── Mobile menu ──────────────────────────────
+  const hamburger = document.getElementById('navHamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // ── Notify button ────────────────────────────
+  const notifyBtn   = document.getElementById('notifyBtn');
+  const notifyEmail = document.getElementById('notifyEmail');
+  if (notifyBtn && notifyEmail) {
+    notifyBtn.addEventListener('click', () => {
+      const email = notifyEmail.value.trim();
+      if (!email || !email.includes('@')) {
+        notifyEmail.style.borderColor = 'rgba(229,90,43,0.6)';
+        setTimeout(()=>{ notifyEmail.style.borderColor=''; }, 1500);
+        return;
+      }
+      const doneTxt   = root.lang === 'ar' ? '✓ تم التسجيل!' : '✓ Registered!';
+      const resetTxt  = root.lang === 'ar' ? 'أبلغني عند الإطلاق' : 'Notify me at launch';
+      notifyBtn.innerHTML = doneTxt;
+      notifyBtn.style.color = 'var(--orange)';
+      notifyEmail.value = '';
+      setTimeout(()=>{
+        notifyBtn.innerHTML = resetTxt + ' <span>→</span>';
+        notifyBtn.style.color = '';
+      }, 3000);
+    });
+  }
+
+})();
+</script>
+</body>
+</html>

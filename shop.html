@@ -1,0 +1,2594 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+<meta name="theme-color" content="#0A0510" />
+<title data-i18n="shop.meta.title">المتجر · Rihla Studio Shop</title>
+<meta name="description" data-i18n="shop.meta.desc" content="متجر ستوديو رحلة — أنظمة نوشن، كورسات إبداعية، وباكدج أنميشن جاهزة. اشترِ وابدأ فوراً." />
+
+<!-- Apply saved theme before paint -->
+<script>
+  (function() {
+    try {
+      var t = localStorage.getItem('rihla-theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23F5A623'/%3E%3Cstop offset='1' stop-color='%23E55A2B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23g)' d='M50 5 L57 35 L87 50 L57 65 L50 95 L43 65 L13 50 L43 35 Z M50 20 L54 42 L76 50 L54 58 L50 80 L46 58 L24 50 L46 42 Z' /%3E%3C/svg%3E" />
+
+<style>
+@font-face {
+  font-family: 'ThmanyahSans';
+  src: url('fonts/ThmanyahSans-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSans';
+  src: url('fonts/ThmanyahSans-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSans';
+  src: url('fonts/ThmanyahSans-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSans';
+  src: url('fonts/ThmanyahSans-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSans';
+  src: url('fonts/ThmanyahSans-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifDisplay';
+  src: url('fonts/ThmanyahSerifDisplay-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifDisplay';
+  src: url('fonts/ThmanyahSerifDisplay-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifDisplay';
+  src: url('fonts/ThmanyahSerifDisplay-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifDisplay';
+  src: url('fonts/ThmanyahSerifDisplay-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifDisplay';
+  src: url('fonts/ThmanyahSerifDisplay-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifText';
+  src: url('fonts/ThmanyahSerifText-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifText';
+  src: url('fonts/ThmanyahSerifText-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifText';
+  src: url('fonts/ThmanyahSerifText-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifText';
+  src: url('fonts/ThmanyahSerifText-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ThmanyahSerifText';
+  src: url('fonts/ThmanyahSerifText-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Thmanyah Serif Display';
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: none;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: 0; background: transparent; color: inherit; }
+ul { list-style: none; }
+input, textarea, select { font-family: inherit; color: inherit; }
+::selection { background: #F5A623; color: var(--selection-text, #1E0A5C); }
+
+/* ============================================
+   VARIABLES
+   ============================================ */
+:root {
+  --orange: #F5A623;
+  --orange-bright: #FFB547;
+  --orange-deep: #E55A2B;
+  --coral: #FF6B4A;
+  --bg: #0A0510;
+  --bg-2: #100620;
+  --bg-3: #0D0817;
+  --text: #F0EDF7;
+  --text-soft: #C5BFE0;
+  --text-dim: #8B82A8;
+  --border: rgba(245, 166, 35, 0.12);
+  --border-soft: rgba(240, 237, 247, 0.08);
+  --surface: rgba(245, 166, 35, 0.03);
+  --selection-text: #1E0A5C;
+  --grid-line: rgba(245, 166, 35, 0.025);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+:root[data-theme="light"] {
+  --bg: #FAF7F2;
+  --bg-2: #F2EBE0;
+  --bg-3: #EDE5D6;
+  --text: #1A0F2E;
+  --text-soft: #3D3055;     /* darker for better contrast on light bg */
+  --text-dim: #5C4F7A;       /* darker for better contrast on light bg */
+  --border: rgba(245, 166, 35, 0.30);
+  --border-soft: rgba(26, 15, 46, 0.14);
+  --surface: rgba(245, 166, 35, 0.07);
+  --selection-text: #FAF7F2;
+  --grid-line: rgba(245, 166, 35, 0.06);
+}
+html[lang="en"] body { font-family: 'Thmanyah Sans', 'Thmanyah Serif Display', sans-serif; }
+
+/* ============================================
+   LIGHT MODE COMPONENT OVERRIDES
+   (consistent with index.html but tuned for shop)
+   ============================================ */
+:root[data-theme="light"] body { background: #FAF7F2; color: var(--text); }
+:root[data-theme="light"] .bg-grid { background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px); }
+:root[data-theme="light"] .nav.scrolled { background: rgba(250, 247, 242, 0.85); border-bottom-color: var(--border-soft); }
+:root[data-theme="light"] .social-rail { background: rgba(250, 247, 242, 0.75); }
+:root[data-theme="light"] .shop-hero-bg { background: radial-gradient(ellipse at 50% 0%, rgba(245, 166, 35, 0.15) 0%, transparent 50%), radial-gradient(ellipse at 100% 50%, rgba(229, 90, 43, 0.10) 0%, transparent 50%); }
+:root[data-theme="light"] .mobile-menu { background: rgba(250, 247, 242, 0.98); }
+:root[data-theme="light"] .shop-filter-bar { background: rgba(250, 247, 242, 0.88); }
+:root[data-theme="light"] .lang-toggle { background: rgba(245, 166, 35, 0.07); }
+
+/* Light mode for cards (the main contrast issue) */
+:root[data-theme="light"] .product-card {
+  background: #FFFFFF;
+  border-color: rgba(26, 15, 46, 0.12);
+  box-shadow: 0 1px 3px rgba(26, 15, 46, 0.04);
+}
+:root[data-theme="light"] .product-card:hover {
+  background: #FFFFFF;
+  border-color: rgba(245, 166, 35, 0.4);
+  box-shadow: 0 30px 60px -20px rgba(245, 166, 35, 0.18);
+}
+:root[data-theme="light"] .product-title { color: #1A0F2E; }
+:root[data-theme="light"] .product-desc { color: #3D3055; }
+:root[data-theme="light"] .product-meta { color: #5C4F7A; }
+:root[data-theme="light"] .product-sales,
+:root[data-theme="light"] .product-rating { color: #5C4F7A; }
+:root[data-theme="light"] .product-price .was { color: #756890; }
+:root[data-theme="light"] .product-feature {
+  background: rgba(245, 166, 35, 0.10);
+  color: #B8651B;
+  border-color: rgba(245, 166, 35, 0.25);
+}
+:root[data-theme="light"] .product-cat {
+  background: rgba(255, 255, 255, 0.92);
+  color: #B8651B;
+  border-color: rgba(245, 166, 35, 0.3);
+}
+:root[data-theme="light"] .product-badge.new {
+  background: #FFFFFF;
+  color: #B8651B;
+  border-color: rgba(245, 166, 35, 0.4);
+}
+:root[data-theme="light"] .product-badge.bestseller {
+  background: linear-gradient(135deg, #F5A623 0%, #E55A2B 100%);
+  color: #FFFFFF;
+}
+:root[data-theme="light"] .product-badge.hot {
+  background: #E55A2B;
+  color: #FFFFFF;
+}
+
+/* Light mode for value props */
+:root[data-theme="light"] .value-prop {
+  background: #FFFFFF;
+  border-color: rgba(26, 15, 46, 0.12);
+  box-shadow: 0 1px 3px rgba(26, 15, 46, 0.04);
+}
+:root[data-theme="light"] .value-prop:hover {
+  background: #FFFFFF;
+  border-color: rgba(245, 166, 35, 0.4);
+  box-shadow: 0 20px 40px -16px rgba(245, 166, 35, 0.15);
+}
+:root[data-theme="light"] .value-prop h4 { color: #1A0F2E; }
+:root[data-theme="light"] .value-prop p { color: #5C4F7A; }
+
+/* Light mode for featured banner */
+:root[data-theme="light"] .featured-banner {
+  background: linear-gradient(135deg, #FFF8EC 0%, #FFE9CC 50%, #FFF8EC 100%);
+  border-color: rgba(245, 166, 35, 0.35);
+  box-shadow: 0 20px 60px -20px rgba(245, 166, 35, 0.2);
+}
+:root[data-theme="light"] .featured-content p { color: #3D3055; }
+:root[data-theme="light"] .featured-price .was { color: #756890; }
+:root[data-theme="light"] .featured-corner-deco { border-color: rgba(245, 166, 35, 0.5); }
+
+/* Light mode for shop CTA */
+:root[data-theme="light"] .shop-cta {
+  background: linear-gradient(135deg, #FFF8EC 0%, #FFE9CC 100%);
+  border-color: rgba(245, 166, 35, 0.35);
+  box-shadow: 0 20px 60px -20px rgba(245, 166, 35, 0.2);
+}
+:root[data-theme="light"] .shop-cta p { color: #3D3055; }
+:root[data-theme="light"] .btn-cta-ghost {
+  border-color: rgba(26, 15, 46, 0.2);
+  color: #1A0F2E;
+}
+
+/* Light mode for FAQ */
+:root[data-theme="light"] .shop-faq-q { color: #1A0F2E; }
+:root[data-theme="light"] .shop-faq-a { color: #3D3055; }
+:root[data-theme="light"] .shop-faq-q .plus {
+  background: rgba(245, 166, 35, 0.15);
+  border-color: rgba(245, 166, 35, 0.4);
+}
+
+/* Light mode for product visual cards (the dark gradient thumbs) */
+:root[data-theme="light"] .product-visual {
+  box-shadow: inset 0 0 0 1px rgba(245, 166, 35, 0.15);
+}
+
+/* Light mode footer */
+:root[data-theme="light"] .footer { background: #FAF7F2; }
+:root[data-theme="light"] .footer-col a { color: #3D3055; }
+:root[data-theme="light"] .footer-col a:hover { color: #B8651B; }
+
+/* Light mode for select */
+:root[data-theme="light"] .shop-sort select {
+  background: #FFFFFF;
+  border-color: rgba(26, 15, 46, 0.15);
+  color: #1A0F2E;
+}
+:root[data-theme="light"] .shop-sort select option { background: #FFFFFF; color: #1A0F2E; }
+
+/* Smooth theme transition for all new components */
+.product-card, .product-title, .product-desc, .product-meta, .product-feature,
+.product-cat, .product-badge, .value-prop, .shop-faq-q, .shop-faq-a, .shop-cta,
+.featured-content p, .footer, .footer-col a, .shop-sort select {
+  transition: background-color 0.4s var(--ease), border-color 0.4s var(--ease), color 0.4s var(--ease);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--orange);
+  font-family: 'Thmanyah Sans';
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.eyebrow::before {
+  content: '';
+  width: 1.5rem;
+  height: 1px;
+  background: var(--orange);
+}
+.eyebrow .num { color: var(--orange); font-weight: 600; }
+.display-h1 {
+  font-family: 'Thmanyah Serif Display';
+  font-weight: 600;
+  font-size: clamp(2.75rem, 8vw, 6.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+html[lang="en"] .display-h1 { font-family: 'Thmanyah Sans'; font-weight: 500; }
+.display-h2 {
+  font-family: 'Thmanyah Serif Display';
+  font-weight: 600;
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+}
+html[lang="en"] .display-h2 { font-family: 'Thmanyah Sans'; font-weight: 500; }
+.italic-accent {
+  font-family: 'Thmanyah Serif Text';
+  font-style: normal;
+  font-weight: 700;
+  color: var(--orange);
+}
+html[lang="en"] .italic-accent {
+  font-family: 'Thmanyah Sans', serif;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--orange);
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  position: relative;
+}
+section {
+  padding: 8rem 0;
+  position: relative;
+}
+@media (max-width: 768px) {
+  section { padding: 5rem 0; }
+  .container { padding: 0 0.75rem; }
+}
+
+/* ============================================
+   ANIMATED BACKGROUNDS
+   ============================================ */
+.bg-mesh {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+}
+.bg-mesh::before, .bg-mesh::after {
+  content: ''; position: absolute; border-radius: 50%;
+  filter: blur(140px); opacity: 0.45;
+  animation: meshFloat 18s ease-in-out infinite;
+}
+.bg-mesh::before {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, #F5A623 0%, transparent 70%);
+  top: -10%; right: -10%;
+}
+.bg-mesh::after {
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, #E55A2B 0%, transparent 70%);
+  bottom: -15%; left: -10%;
+  animation-delay: -6s; animation-direction: reverse;
+}
+@keyframes meshFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(60px, -40px) scale(1.1); }
+  66% { transform: translate(-40px, 40px) scale(0.95); }
+}
+.bg-grid {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(245, 166, 35, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 166, 35, 0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse at center, black 0%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 80%);
+}
+:root[data-theme="light"] .bg-grid {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+}
+
+/* ============================================
+   CURSOR
+   ============================================ */
+.cursor-dot {
+  position: fixed; width: 6px; height: 6px;
+  background: var(--orange); border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s var(--ease), height 0.2s var(--ease);
+  mix-blend-mode: difference;
+}
+.cursor-ring {
+  position: fixed; width: 36px; height: 36px;
+  border: 1.5px solid var(--orange); border-radius: 50%;
+  pointer-events: none; z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease), height 0.3s var(--ease);
+  mix-blend-mode: difference;
+}
+.cursor-ring.hover {
+  width: 60px; height: 60px;
+  background: rgba(245, 166, 35, 0.15);
+}
+@media (max-width: 900px) {
+  body { cursor: auto; }
+  .cursor-dot, .cursor-ring { display: none; }
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1.25rem 0; transition: all 0.4s var(--ease);
+}
+.nav.scrolled {
+  background: rgba(10, 5, 16, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--border-soft);
+  padding: 0.85rem 0;
+}
+:root[data-theme="light"] .nav.scrolled {
+  background: rgba(250, 247, 242, 0.82);
+}
+
+/* ============================================
+   RIGHT SIDE SOCIAL RAIL (consistent with index)
+   ============================================ */
+.social-rail {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.85rem 0.45rem;
+  background: rgba(10, 5, 16, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-soft);
+  border-radius: 100px;
+  transition: all 0.4s var(--ease);
+  opacity: 1;
+  visibility: visible;
+}
+:root[data-theme="light"] .social-rail {
+  background: rgba(250, 247, 242, 0.7);
+}
+html[dir="rtl"] .social-rail { left: 0.75rem; }
+html[lang="en"] .social-rail { right: 0.75rem; left: auto; }
+.social-rail.hidden { transform: translateY(-50%) translateX(-150%); opacity: 0; pointer-events: none; }
+html[lang="en"] .social-rail.hidden { transform: translateY(-50%) translateX(150%); }
+.social-rail a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-soft);
+  transition: all 0.3s var(--ease);
+  position: relative;
+}
+.social-rail a:hover {
+  color: var(--orange);
+  background: rgba(245, 166, 35, 0.1);
+  transform: scale(1.1);
+}
+.social-rail a::before {
+  content: attr(data-label);
+  position: absolute;
+  background: var(--orange);
+  color: var(--bg);
+  font-family: 'Thmanyah Sans';
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+html[dir="rtl"] .social-rail a::before { left: calc(100% + 0.85rem); right: auto; top: 50%; transform: translateY(-50%); }
+html[lang="en"] .social-rail a::before { right: calc(100% + 0.85rem); left: auto; top: 50%; transform: translateY(-50%); }
+.social-rail a::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 5px 5px 5px 0;
+  border-color: transparent var(--orange) transparent transparent;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease);
+  top: 50%;
+  transform: translateY(-50%);
+}
+html[dir="rtl"] .social-rail a::after { left: calc(100% + 0.1rem); right: auto; border-width: 5px 0 5px 5px; border-color: transparent transparent transparent var(--orange); }
+html[lang="en"] .social-rail a::after { right: calc(100% + 0.1rem); left: auto; }
+.social-rail a:hover::after { opacity: 1; }
+.social-rail a:hover::before { opacity: 1; }
+@media (max-width: 900px) { .social-rail { display: none; } }
+
+/* ============================================
+   BG STARS (consistent with index for atmosphere)
+   ============================================ */
+.bg-stars {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.bg-stars .star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: twinkle 5s infinite ease-in-out;
+}
+:root[data-theme="light"] .bg-stars .star {
+  background: var(--orange);
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 0.9; transform: scale(1); }
+}
+:root[data-theme="light"] .bg-stars .star {
+  animation-name: twinkleSoft;
+}
+@keyframes twinkleSoft {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 0.5; transform: scale(1); }
+}
+
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+}
+.nav-logo { display: flex; align-items: center; gap: 0.7rem; font-weight: 600; }
+.nav-logo .logo-mark { width: 38px; height: 38px; flex-shrink: 0; transition: transform 0.6s var(--ease); }
+.nav-logo:hover .logo-mark { transform: rotate(45deg); }
+.nav-logo .logo-text-ar {
+  font-family: 'Thmanyah Serif Display'; font-size: 1.4rem; font-weight: 700; line-height: 1;
+}
+html[lang="en"] .nav-logo .logo-text-ar { display: none; }
+.nav-logo .logo-text-en {
+  font-family: 'Thmanyah Sans'; font-style: italic; font-size: 1.2rem;
+  color: var(--orange); font-weight: 500; line-height: 1; display: none;
+}
+html[lang="en"] .nav-logo .logo-text-en { display: block; }
+
+.nav-links { display: flex; align-items: center; gap: 2.5rem; font-size: 1.05rem; font-weight: 500; }
+.nav-links a { color: var(--text-soft); position: relative; transition: color 0.3s var(--ease); padding: 0.5rem 0; }
+.nav-links a:hover { color: var(--orange); }
+.nav-links a::after {
+  content: ''; position: absolute; bottom: 0; right: 0;
+  width: 0; height: 1px; background: var(--orange);
+  transition: width 0.3s var(--ease);
+}
+html[lang="en"] .nav-links a::after { right: auto; left: 0; }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--orange); }
+.nav-links a.active::after { width: 100%; }
+
+.nav-actions { display: flex; align-items: center; gap: 0.8rem; }
+.theme-toggle, .lang-toggle {
+  position: relative; width: 38px; height: 38px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border-soft); border-radius: 50%;
+  background: rgba(245, 166, 35, 0.04);
+  color: var(--text-soft);
+  transition: all 0.3s var(--ease); flex-shrink: 0;
+}
+.theme-toggle:hover {
+  border-color: var(--orange); color: var(--orange);
+  background: rgba(245, 166, 35, 0.08); transform: rotate(15deg);
+}
+.theme-icon-sun, .theme-icon-moon {
+  position: absolute; width: 16px; height: 16px;
+  transition: opacity 0.3s var(--ease), transform 0.4s var(--ease);
+}
+:root:not([data-theme="light"]) .theme-icon-sun { opacity: 1; transform: rotate(0); }
+:root:not([data-theme="light"]) .theme-icon-moon { opacity: 0; transform: rotate(-90deg); }
+:root[data-theme="light"] .theme-icon-sun { opacity: 0; transform: rotate(90deg); }
+:root[data-theme="light"] .theme-icon-moon { opacity: 1; transform: rotate(0); }
+@media (max-width: 900px) { .theme-toggle { display: none; } }
+
+.lang-toggle {
+  width: auto; padding: 0.5rem 0.8rem; border-radius: 100px;
+  font-family: 'Thmanyah Sans'; font-size: 0.82rem; font-weight: 500;
+  letter-spacing: 0.05em; text-transform: uppercase; gap: 0.4rem;
+}
+.lang-toggle:hover { border-color: var(--orange); color: var(--orange); background: rgba(245, 166, 35, 0.08); }
+.lang-toggle .lang-dot {
+  width: 6px; height: 6px; background: var(--orange); border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.75rem 1.4rem; background: var(--orange); color: var(--bg);
+  font-weight: 600; font-size: 0.92rem; border-radius: 100px;
+  transition: all 0.3s var(--ease); position: relative; overflow: hidden;
+}
+.nav-cta::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.45), transparent);
+  transform: translateX(-100%); transition: transform 0.6s var(--ease);
+}
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 30px -8px rgba(245, 166, 35, 0.5); }
+.nav-cta:hover::before { transform: translateX(100%); }
+.nav-cta .arrow { transition: transform 0.3s var(--ease); }
+html[lang="ar"] .nav-cta:hover .arrow { transform: translateX(-4px); }
+html[lang="en"] .nav-cta:hover .arrow { transform: translateX(4px); }
+
+/* Lang arrow hover effect (consistent with index) */
+.lang-toggle .lang-arrow { transition: transform 0.3s var(--ease); }
+.lang-toggle:hover .lang-arrow { transform: translateX(2px); }
+html[lang="en"] .lang-toggle:hover .lang-arrow { transform: translateX(-2px); }
+
+/* Mobile menu theme/language toggles */
+.lang-toggle-mobile { margin-top: 0.5rem; }
+.theme-toggle-mobile .theme-arrow {
+  font-size: 1.2rem;
+  color: var(--orange);
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+}
+.theme-toggle-mobile .theme-arrow::before {
+  font-size: 1.2rem;
+}
+.theme-toggle-mobile-label {
+  font-family: 'Thmanyah Serif Display';
+  font-size: 0.85rem;
+}
+
+.nav-hamburger {
+  display: none; width: 40px; height: 40px;
+  flex-direction: column; justify-content: center; align-items: center; gap: 5px;
+  border: 1px solid var(--border-soft); border-radius: 8px;
+  background: rgba(245, 166, 35, 0.04);
+}
+.nav-hamburger span { width: 18px; height: 1.5px; background: var(--text); transition: all 0.3s var(--ease); }
+.nav-hamburger.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.active span:nth-child(2) { opacity: 0; }
+.nav-hamburger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.mobile-menu {
+  position: fixed; inset: 0; z-index: 99;
+  background: rgba(10, 5, 16, 0.98);
+  backdrop-filter: blur(20px);
+  display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2rem;
+  padding: 5rem 2rem 2rem; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s var(--ease);
+}
+:root[data-theme="light"] .mobile-menu { background: rgba(250, 247, 242, 0.98); }
+.mobile-menu.active { opacity: 1; pointer-events: all; }
+.mobile-menu a {
+  font-family: 'Thmanyah Serif Display'; font-size: 1.8rem; font-weight: 600;
+  color: var(--text); transition: color 0.3s var(--ease);
+}
+html[lang="en"] .mobile-menu a { font-family: 'Thmanyah Sans'; }
+.mobile-menu a:hover, .mobile-menu a.active { color: var(--orange); }
+.mobile-menu .theme-toggle, .mobile-menu .lang-toggle { margin-top: 0.5rem; }
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-cta { display: none; }
+}
+
+/* ============================================
+   SHOP HERO
+   ============================================ */
+.shop-hero {
+  min-height: 75vh;
+  padding: 10rem 0 5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.shop-hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(245, 166, 35, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 100% 50%, rgba(229, 90, 43, 0.12) 0%, transparent 50%);
+}
+:root[data-theme="light"] .shop-hero-bg {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(245, 166, 35, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 100% 50%, rgba(229, 90, 43, 0.10) 0%, transparent 50%);
+}
+.shop-hero-content {
+  position: relative; z-index: 2; text-align: center; max-width: 900px; margin: 0 auto;
+}
+.shop-hero-content .eyebrow { justify-content: center; margin-bottom: 1.5rem; }
+.shop-hero-content h1 { margin-bottom: 1.5rem; }
+.shop-hero-content .shop-sub {
+  color: var(--text-soft); font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.7; max-width: 680px; margin: 0 auto 2.5rem;
+}
+.shop-hero-stats {
+  display: flex; align-items: center; justify-content: center; gap: 2.5rem;
+  flex-wrap: wrap; margin-top: 3rem; padding-top: 2.5rem;
+  border-top: 1px solid var(--border-soft);
+}
+.shop-hero-stat { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; }
+.shop-hero-stat .num {
+  font-family: 'Thmanyah Sans'; font-size: 2.2rem; font-weight: 600;
+  color: var(--orange); line-height: 1; letter-spacing: -0.02em;
+}
+.shop-hero-stat .label {
+  font-size: 0.78rem; color: var(--text-dim);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  font-family: 'Thmanyah Sans';
+}
+.shop-hero-stat-divider { width: 1px; height: 36px; background: var(--border-soft); }
+
+/* ============================================
+   SHOP FILTER (sticker bar)
+   ============================================ */
+.shop-filter-bar {
+  position: sticky; top: 70px; z-index: 50;
+  background: rgba(10, 5, 16, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--border-soft);
+  padding: 1rem 0; margin-bottom: 4rem;
+}
+:root[data-theme="light"] .shop-filter-bar { background: rgba(250, 247, 242, 0.85); }
+.shop-filter-inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap;
+}
+.shop-filter-tabs { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.shop-filter-tab {
+  padding: 0.65rem 1.3rem; border: 1px solid var(--border-soft); border-radius: 100px;
+  font-family: 'Thmanyah Sans'; font-size: 0.85rem; font-weight: 500;
+  color: var(--text-soft); background: transparent; transition: all 0.3s var(--ease);
+  letter-spacing: 0.05em; text-transform: uppercase; cursor: none;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.shop-filter-tab .count {
+  font-size: 0.7rem; background: rgba(245, 166, 35, 0.1);
+  padding: 0.1rem 0.45rem; border-radius: 100px; color: var(--orange);
+}
+.shop-filter-tab:hover { border-color: var(--orange); color: var(--orange); }
+.shop-filter-tab.active {
+  background: var(--orange); color: var(--bg); border-color: var(--orange);
+}
+.shop-filter-tab.active .count { background: rgba(0,0,0,0.18); color: var(--bg); }
+.shop-sort {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.85rem; color: var(--text-dim); font-family: 'Thmanyah Sans';
+}
+.shop-sort select {
+  background: transparent; border: 1px solid var(--border-soft);
+  color: var(--text); padding: 0.5rem 0.8rem; border-radius: 8px;
+  font-family: inherit; font-size: 0.85rem; cursor: none;
+}
+:root[data-theme="light"] .shop-sort select option { background: #FFFCF6; color: var(--text); }
+@media (max-width: 700px) { .shop-filter-bar { position: relative; top: 0; } }
+
+/* ============================================
+   PRODUCT GRID
+   ============================================ */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+@media (max-width: 1000px) { .shop-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .shop-grid { grid-template-columns: 1fr; } }
+
+.product-card {
+  position: relative;
+  display: flex; flex-direction: column;
+  background: linear-gradient(180deg, rgba(245, 166, 35, 0.03) 0%, rgba(245, 166, 35, 0.01) 100%);
+  border: 1px solid var(--border-soft); border-radius: 24px;
+  overflow: hidden; transition: all 0.5s var(--ease); cursor: none;
+}
+:root[data-theme="light"] .product-card { background: #FFFCF6; }
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(245, 166, 35, 0.4);
+  box-shadow: 0 30px 60px -20px rgba(245, 166, 35, 0.25);
+}
+.product-card.hidden { display: none; }
+
+.product-visual {
+  position: relative;
+  aspect-ratio: 16/10;
+  background: linear-gradient(135deg, #3B1FA3 0%, #1E0A5C 100%);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.product-visual::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(245, 166, 35, 0.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 70%, rgba(229, 90, 43, 0.18) 0%, transparent 60%);
+}
+.product-visual::after {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(245, 166, 35, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 166, 35, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px; opacity: 0.5;
+}
+.product-thumb {
+  position: relative; z-index: 2;
+  font-size: 4rem; font-family: 'Thmanyah Serif Text';
+  font-weight: 500; color: var(--orange); font-style: italic;
+  letter-spacing: -0.04em; transition: transform 0.6s var(--ease);
+}
+.product-card:hover .product-thumb { transform: scale(1.08) rotate(-3deg); }
+.product-badge {
+  position: absolute; top: 1rem; z-index: 3;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.4rem 0.85rem; border-radius: 100px;
+  font-family: 'Thmanyah Sans'; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+html[dir="rtl"] .product-badge { right: 1rem; }
+html[lang="en"] .product-badge { left: 1rem; }
+.product-badge.bestseller {
+  background: linear-gradient(135deg, #F5A623 0%, #E55A2B 100%);
+  color: var(--bg);
+  box-shadow: 0 6px 20px -4px rgba(245, 166, 35, 0.5);
+}
+.product-badge.new {
+  background: rgba(10, 5, 16, 0.85);
+  color: var(--orange);
+  border: 1px solid rgba(245, 166, 35, 0.4);
+}
+.product-badge.hot {
+  background: rgba(229, 90, 43, 0.9);
+  color: white;
+  box-shadow: 0 6px 20px -4px rgba(229, 90, 43, 0.5);
+}
+:root[data-theme="light"] .product-badge.new { background: rgba(255, 252, 246, 0.92); }
+
+.product-cat {
+  position: absolute; bottom: 1rem; z-index: 3;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: 'Thmanyah Sans'; font-size: 0.72rem;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange);
+  background: rgba(10, 5, 16, 0.6); padding: 0.3rem 0.7rem; border-radius: 100px;
+  border: 1px solid rgba(245, 166, 35, 0.2);
+}
+html[dir="rtl"] .product-cat { left: 1rem; }
+html[lang="en"] .product-cat { right: 1rem; }
+:root[data-theme="light"] .product-cat { background: rgba(255, 252, 246, 0.92); }
+.product-cat::before {
+  content: ''; width: 5px; height: 5px; background: var(--orange); border-radius: 50%;
+}
+
+.product-body {
+  padding: 1.5rem 1.6rem 1.7rem;
+  display: flex; flex-direction: column; gap: 0.75rem; flex-grow: 1;
+}
+.product-title {
+  font-family: 'Thmanyah Serif Display'; font-weight: 700;
+  font-size: 1.3rem; line-height: 1.2; color: var(--text);
+}
+html[lang="en"] .product-title { font-family: 'Thmanyah Sans'; }
+.product-desc {
+  color: var(--text-soft); font-size: 0.92rem; line-height: 1.6; flex-grow: 1;
+}
+.product-meta {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding-top: 0.75rem; border-top: 1px solid var(--border-soft);
+  font-family: 'Thmanyah Sans'; font-size: 0.78rem; color: var(--text-dim);
+}
+.product-rating { display: inline-flex; align-items: center; gap: 0.4rem; }
+.product-rating .stars { color: var(--orange); letter-spacing: 0.05em; }
+.product-sales::before {
+  content: ''; display: inline-block; width: 4px; height: 4px;
+  background: var(--text-dim); border-radius: 50%; margin: 0 0.5rem;
+  vertical-align: middle; opacity: 0.6;
+}
+
+.product-footer {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 1rem 1.6rem 1.4rem;
+  border-top: 1px solid var(--border-soft);
+}
+.product-price { display: flex; flex-direction: column; gap: 0.1rem; }
+.product-price .now {
+  font-family: 'Thmanyah Sans'; font-size: 1.6rem; font-weight: 600;
+  color: var(--orange); line-height: 1;
+}
+html[lang="ar"] .product-price .now { font-family: 'Thmanyah Serif Display'; }
+.product-price .was {
+  font-family: 'Thmanyah Sans'; font-size: 0.85rem; color: var(--text-dim);
+  text-decoration: line-through; text-decoration-color: rgba(229, 90, 43, 0.5);
+}
+.product-buy {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.7rem 1.2rem; background: var(--orange); color: var(--bg);
+  font-weight: 600; font-size: 0.88rem; border-radius: 100px;
+  transition: all 0.3s var(--ease);
+}
+.product-buy:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -6px rgba(245, 166, 35, 0.5); }
+html[lang="ar"] .product-buy:hover .arrow { transform: translateX(-3px); }
+html[lang="en"] .product-buy:hover .arrow { transform: translateX(3px); }
+.product-buy .arrow { transition: transform 0.3s var(--ease); display: inline-block; }
+
+.product-features {
+  display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0 1.6rem 1.2rem;
+}
+.product-feature {
+  font-family: 'Thmanyah Sans'; font-size: 0.72rem;
+  padding: 0.3rem 0.65rem; border-radius: 100px;
+  background: rgba(245, 166, 35, 0.06); color: var(--orange);
+  border: 1px solid rgba(245, 166, 35, 0.15);
+  letter-spacing: 0.03em;
+}
+
+/* ============================================
+   FEATURED PRODUCT BANNER
+   ============================================ */
+.featured-banner {
+  position: relative;
+  background: linear-gradient(135deg, #1E0A5C 0%, #3B1FA3 50%, #1E0A5C 100%);
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  padding: 3.5rem;
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem;
+  align-items: center; overflow: hidden;
+  margin-bottom: 6rem;
+  isolation: isolate;
+  box-shadow: 0 30px 80px -30px rgba(30, 10, 92, 0.6);
+}
+.featured-banner::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 0% 50%, rgba(245, 166, 35, 0.28) 0%, transparent 60%),
+    radial-gradient(ellipse at 100% 50%, rgba(229, 90, 43, 0.20) 0%, transparent 60%);
+  pointer-events: none; z-index: 0;
+}
+.featured-banner::after {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(245, 166, 35, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 166, 35, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px; opacity: 0.6;
+  pointer-events: none; z-index: 0;
+  mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
+}
+.featured-content { position: relative; z-index: 2; }
+.featured-content .eyebrow { margin-bottom: 1.5rem; }
+.featured-content h2 { margin-bottom: 1rem; }
+.featured-content p { color: var(--text-soft); font-size: 1.05rem; line-height: 1.7; margin-bottom: 2rem; max-width: 480px; }
+.featured-price {
+  display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.featured-price .now {
+  font-family: 'Thmanyah Sans'; font-size: 3.5rem; font-weight: 700;
+  color: var(--orange); line-height: 1; letter-spacing: -0.02em;
+}
+html[lang="ar"] .featured-price .now { font-family: 'Thmanyah Serif Display'; }
+.featured-price .was {
+  font-family: 'Thmanyah Sans'; font-size: 1.4rem; color: var(--text-dim);
+  text-decoration: line-through; text-decoration-color: rgba(229, 90, 43, 0.5);
+}
+.featured-price .save {
+  background: linear-gradient(135deg, var(--orange) 0%, var(--orange-deep) 100%);
+  color: var(--bg);
+  padding: 0.4rem 0.8rem; border-radius: 6px;
+  font-family: 'Thmanyah Sans'; font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  box-shadow: 0 4px 14px -4px rgba(245, 166, 35, 0.5);
+}
+.featured-cta {
+  display: inline-flex; align-items: center; gap: 0.7rem;
+  padding: 1.1rem 2rem; background: var(--orange); color: var(--bg);
+  font-weight: 600; font-size: 1rem; border-radius: 100px;
+  transition: all 0.3s var(--ease);
+  position: relative; overflow: hidden;
+}
+.featured-cta::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: translateX(-100%); transition: transform 0.7s var(--ease);
+}
+.featured-cta:hover { transform: translateY(-3px); box-shadow: 0 16px 40px -10px rgba(245, 166, 35, 0.6); }
+.featured-cta:hover::before { transform: translateX(100%); }
+html[lang="ar"] .featured-cta:hover .arrow { transform: translateX(-4px); }
+html[lang="en"] .featured-cta:hover .arrow { transform: translateX(4px); }
+.featured-cta .arrow { transition: transform 0.3s var(--ease); display: inline-block; }
+
+.featured-visual {
+  position: relative; z-index: 2;
+  aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+}
+.featured-orb {
+  width: 320px; height: 320px; border-radius: 50%;
+  background: radial-gradient(circle, var(--orange) 0%, var(--orange-deep) 100%);
+  filter: blur(60px); opacity: 0.7;
+  position: absolute; animation: floatOrb 6s ease-in-out infinite;
+}
+.featured-orb-2 {
+  width: 180px; height: 180px; border-radius: 50%;
+  background: radial-gradient(circle, var(--coral) 0%, transparent 70%);
+  filter: blur(40px); opacity: 0.5;
+  position: absolute;
+  top: 10%; left: 10%;
+  animation: floatOrb 8s ease-in-out infinite reverse;
+}
+@keyframes floatOrb { 0%,100% { transform: translate(0,0); } 50% { transform: translate(0,-20px); } }
+.featured-emblem {
+  position: relative; z-index: 2;
+  width: 100%; max-width: 280px; height: auto;
+  font-family: 'Thmanyah Serif Text'; font-style: italic;
+  font-weight: 500; font-size: 8rem;
+  background: linear-gradient(135deg, var(--orange) 0%, var(--orange-bright) 50%, var(--coral) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center; line-height: 1;
+  filter: drop-shadow(0 0 30px rgba(245, 166, 35, 0.4));
+}
+.featured-corner-deco {
+  position: absolute; z-index: 1;
+  width: 50px; height: 50px;
+  border: 1px solid rgba(245, 166, 35, 0.4);
+  pointer-events: none;
+}
+.featured-corner-deco.tl { top: 1.5rem; right: 1.5rem; border-bottom: 0; border-left: 0; }
+.featured-corner-deco.br { bottom: 1.5rem; left: 1.5rem; border-top: 0; border-right: 0; }
+@media (max-width: 800px) {
+  .featured-banner { grid-template-columns: 1fr; padding: 2.5rem 2rem; }
+  .featured-visual { order: -1; }
+  .featured-orb { width: 200px; height: 200px; }
+  .featured-orb-2 { width: 120px; height: 120px; }
+  .featured-emblem { font-size: 5rem; }
+  .featured-corner-deco { width: 32px; height: 32px; }
+}
+
+/* ============================================
+   VALUE PROPS (Trust strip)
+   ============================================ */
+.value-props {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+  margin: 5rem 0 3rem;
+}
+.value-prop {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 0.85rem;
+  padding: 1.75rem 1.5rem;
+  background: var(--surface); border: 1px solid var(--border-soft);
+  border-radius: 20px; transition: all 0.4s var(--ease);
+}
+.value-prop:hover {
+  border-color: rgba(245, 166, 35, 0.3);
+  transform: translateY(-4px);
+}
+.value-prop-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: linear-gradient(135deg, rgba(245, 166, 35, 0.2) 0%, rgba(229, 90, 43, 0.1) 100%);
+  border: 1px solid rgba(245, 166, 35, 0.25);
+  display: flex; align-items: center; justify-content: center; color: var(--orange);
+}
+.value-prop h4 {
+  font-family: 'Thmanyah Serif Display'; font-weight: 600;
+  font-size: 1.05rem; line-height: 1.2;
+}
+html[lang="en"] .value-prop h4 { font-family: 'Thmanyah Sans'; }
+.value-prop p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.5; }
+@media (max-width: 900px) { .value-props { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .value-props { grid-template-columns: 1fr; } }
+
+/* ============================================
+   SECTION HEADER
+   ============================================ */
+.sec-head {
+  margin-bottom: 3.5rem;
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap;
+}
+.sec-head-l { flex: 1 1 480px; }
+.sec-head h2 { margin-top: 1rem; }
+.sec-head .desc { color: var(--text-soft); font-size: 1.05rem; line-height: 1.7; max-width: 560px; margin-top: 1rem; }
+.sec-head .see-all {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  color: var(--orange); font-family: 'Thmanyah Sans'; font-size: 0.9rem;
+  font-weight: 500; transition: gap 0.3s var(--ease);
+}
+.sec-head .see-all:hover { gap: 0.8rem; }
+
+/* ============================================
+   FAQ (mini)
+   ============================================ */
+.shop-faq { max-width: 880px; margin: 0 auto; }
+.shop-faq-item {
+  border-bottom: 1px solid var(--border-soft);
+  padding: 1.5rem 0;
+}
+.shop-faq-q {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  cursor: none; font-family: 'Thmanyah Serif Display'; font-weight: 600;
+  font-size: 1.15rem; color: var(--text);
+}
+html[lang="en"] .shop-faq-q { font-family: 'Thmanyah Sans'; }
+.shop-faq-q .plus {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(245, 166, 35, 0.1); border: 1px solid rgba(245, 166, 35, 0.3);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--orange); font-size: 1.2rem; font-weight: 300;
+  transition: transform 0.3s var(--ease);
+  flex-shrink: 0;
+}
+.shop-faq-item.open .plus { transform: rotate(45deg); }
+.shop-faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s var(--ease), margin-top 0.4s var(--ease);
+  color: var(--text-soft); font-size: 1rem; line-height: 1.7;
+}
+.shop-faq-item.open .shop-faq-a { max-height: 300px; margin-top: 1rem; }
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+.shop-cta {
+  position: relative;
+  text-align: center;
+  padding: 6rem 3rem;
+  background: linear-gradient(135deg, #1E0A5C 0%, #3B1FA3 100%);
+  border: 1px solid var(--border); border-radius: 32px;
+  overflow: hidden;
+}
+.shop-cta::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(245, 166, 35, 0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+.shop-cta::after {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(245, 166, 35, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 166, 35, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+  pointer-events: none;
+}
+.shop-cta .eyebrow { justify-content: center; margin-bottom: 1.5rem; position: relative; z-index: 2; }
+.shop-cta h2 { position: relative; z-index: 2; max-width: 700px; margin: 0 auto 1.5rem; }
+.shop-cta p { position: relative; z-index: 2; color: var(--text-soft); font-size: 1.1rem; max-width: 540px; margin: 0 auto 2.5rem; }
+.shop-cta-btns { position: relative; z-index: 2; display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+.btn-cta-primary {
+  display: inline-flex; align-items: center; gap: 0.7rem;
+  padding: 1.1rem 2rem; background: var(--orange); color: var(--bg);
+  font-weight: 600; font-size: 1rem; border-radius: 100px;
+  transition: all 0.3s var(--ease);
+}
+.btn-cta-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 40px -10px rgba(245, 166, 35, 0.6); }
+.btn-cta-ghost {
+  display: inline-flex; align-items: center; gap: 0.7rem;
+  padding: 1.1rem 2rem; background: transparent; color: var(--text);
+  border: 1px solid rgba(255,255,255,0.2); border-radius: 100px;
+  font-weight: 500; font-size: 1rem; transition: all 0.3s var(--ease);
+}
+.btn-cta-ghost:hover { border-color: var(--orange); color: var(--orange); }
+html[lang="ar"] .btn-cta-primary:hover .arrow,
+html[lang="ar"] .btn-cta-ghost:hover .arrow { transform: translateX(-4px); }
+html[lang="en"] .btn-cta-primary:hover .arrow,
+html[lang="en"] .btn-cta-ghost:hover .arrow { transform: translateX(4px); }
+.btn-cta-primary .arrow, .btn-cta-ghost .arrow { transition: transform 0.3s var(--ease); display: inline-block; }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--bg);
+  border-top: 1px solid var(--border-soft);
+  padding: 5rem 0 2rem; position: relative;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem; margin-bottom: 3rem;
+}
+@media (max-width: 800px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 500px) { .footer-grid { grid-template-columns: 1fr; } }
+.footer-brand .nav-logo { margin-bottom: 1rem; }
+.footer-brand .tagline {
+  color: var(--text-soft); font-size: 0.95rem; line-height: 1.6; max-width: 360px;
+}
+.footer-col h4 {
+  font-family: 'Thmanyah Serif Display'; font-weight: 600;
+  font-size: 0.92rem; color: var(--orange); margin-bottom: 1.25rem;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  font-family: 'Thmanyah Sans';
+}
+.footer-col ul { display: flex; flex-direction: column; gap: 0.75rem; }
+.footer-col a {
+  color: var(--text-soft); font-size: 0.9rem; transition: color 0.3s var(--ease);
+  display: inline-flex; align-items: center; gap: 0.4rem;
+}
+.footer-col a:hover { color: var(--orange); }
+.footer-col a .ext { font-size: 0.75em; opacity: 0.6; }
+.footer-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 2rem; border-top: 1px solid var(--border-soft);
+  color: var(--text-dim); font-size: 0.85rem;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-bottom .made { color: var(--orange); }
+
+/* ============================================
+   REVEAL ANIMATIONS
+   ============================================ */
+.reveal { opacity: 1; transform: none; }
+.js-anim .reveal {
+  opacity: 0; transform: translateY(40px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+.js-anim .reveal.visible { opacity: 1; transform: translateY(0); }
+.js-anim .reveal-stagger > * {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.js-anim .reveal-stagger.visible > * { opacity: 1; transform: translateY(0); }
+.js-anim .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
+.js-anim .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.1s; }
+.js-anim .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.15s; }
+.js-anim .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.2s; }
+.js-anim .reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.25s; }
+.js-anim .reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.3s; }
+.js-anim .reveal-stagger.visible > *:nth-child(7) { transition-delay: 0.35s; }
+.js-anim .reveal-stagger.visible > *:nth-child(8) { transition-delay: 0.4s; }
+.js-anim .reveal-stagger.visible > *:nth-child(9) { transition-delay: 0.45s; }
+@keyframes forceShow { to { opacity: 1 !important; transform: none !important; } }
+.js-anim .reveal, .js-anim .reveal-stagger > * {
+  animation: forceShow 0.01s 3s forwards;
+}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.shop-hero .eyebrow { animation: fadeUp 0.7s 0.1s var(--ease) both; }
+.shop-hero h1 { animation: fadeUp 0.9s 0.2s var(--ease) both; }
+.shop-hero .shop-sub { animation: fadeUp 0.9s 0.35s var(--ease) both; }
+.shop-hero-stats { animation: fadeUp 0.9s 0.5s var(--ease) both; }
+
+/* Smooth theme transition */
+body, .nav, .product-card, .value-prop, .footer, .shop-filter-bar,
+.shop-faq-q .plus, .featured-banner, .shop-cta {
+  transition: background-color 0.4s var(--ease), border-color 0.4s var(--ease), color 0.4s var(--ease);
+}
+
+/* ============================================
+   MOBILE RESPONSIVENESS
+   ============================================ */
+@media (max-width: 768px) {
+  section { padding: 4rem 0; }
+  .container, .container-wide { padding: 0 0.75rem; }
+  .display-h1 { font-size: clamp(2rem, 8vw, 3rem); }
+  .display-h2 { font-size: clamp(1.75rem, 6vw, 2.5rem); }
+}
+@media (max-width: 480px) {
+  .container, .container-wide { padding: 0 0.6rem; }
+  section { padding: 3rem 0; }
+}
+/* Global curved kashida for Thmanyah font */
+body { font-feature-settings: "salt" 1; }
+</style>
+</head>
+<body>
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-stars" id="bgStars" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<div class="social-rail" id="socialRail" aria-label="حسابات التواصل الاجتماعي">
+  <a href="https://instagram.com/rihlastudio" target="_blank" rel="noopener" data-label="Instagram">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+  </a>
+  <a href="https://behance.net/rihlastudio" target="_blank" rel="noopener" data-label="Behance">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.5 11c1.5 0 2.5-.8 2.5-2 0-1.3-1-2-2.5-2H3v4h4.5zm.3 2H3v4h5c1.6 0 2.7-.9 2.7-2.2 0-1.3-1.1-1.8-2.9-1.8zM21 7h-6v1.5h6V7zm-3 4.5c-2.2 0-3.7 1.5-3.7 3.7 0 2.3 1.6 3.8 3.8 3.8 1.7 0 3-.8 3.4-2.2h-1.9c-.3.5-.8.8-1.5.8-.9 0-1.6-.6-1.7-1.5h5.2c.4-2.2-1.1-4.6-3.6-4.6zm-1.4 1.5c.9 0 1.5.5 1.7 1.3h-3.2c.1-.8.7-1.3 1.5-1.3zM3 5h5.5c1.7 0 3 .9 3 2.5 0 1-.5 1.7-1.3 2.1 1.1.4 1.8 1.3 1.8 2.5 0 2-1.7 3-3.7 3H3V5z"/></svg>
+  </a>
+  <a href="https://youtube.com/@rihlastudio" target="_blank" rel="noopener" data-label="YouTube">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+  </a>
+  <a href="https://x.com/rihlastudio" target="_blank" rel="noopener" data-label="X / Twitter">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+  </a>
+  <a href="https://linkedin.com/company/rihlastudio" target="_blank" rel="noopener" data-label="LinkedIn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+  </a>
+  <a href="https://wa.me/201000000000" target="_blank" rel="noopener" data-label="WhatsApp">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
+  </a>
+</div>
+
+<nav class="nav" id="nav" aria-label="التنقل الرئيسي">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="الصفحة الرئيسية - ستوديو رحلة">
+      <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg-mark" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#F5A623" />
+            <stop offset="1" stop-color="#E55A2B" />
+          </linearGradient>
+        </defs>
+        <path fill="url(#lg-mark)" d="M50 4 L57 32 L84 16 L68 43 L96 50 L68 57 L84 84 L57 68 L50 96 L43 68 L16 84 L32 57 L4 50 L32 43 L16 16 L43 32 Z" opacity="0.95"/>
+        <path fill="#0A0510" d="M50 18 L54 38 L74 38 L58 50 L62 70 L50 58 L38 70 L42 50 L26 38 L46 38 Z" opacity="0.7"/>
+        <circle cx="50" cy="50" r="4" fill="#F5A623"/>
+      </svg>
+      <div style="display:flex; flex-direction:column; line-height:1;">
+        <span class="logo-text-ar" data-i18n="nav.brand_ar">ستوديو رحلة</span>
+        <span class="logo-text-en" data-i18n="nav.brand_en">Rihla Studio</span>
+      </div>
+    </a>
+
+    <div class="nav-links" role="navigation">
+      <a href="#work" data-i18n="nav.work_recent">أحدث الأعمال</a>
+      <a href="work.html" data-i18n="nav.work_all">كل الأعمال</a>
+      <a href="index.html#services" data-i18n="nav.services">الخدمات</a>
+      <a href="shop.html" class="active" data-i18n="nav.shop">المتجر</a>
+      <a href="blog.html" data-i18n="nav.blog">المقالات</a>
+      <a href="index.html#agreement" data-i18n="nav.agreement">اتفاقية العمل</a>
+      <a href="index.html#process" data-i18n="nav.process">كيف نشتغل</a>
+      <a href="index.html#results" data-i18n="nav.results">النتائج</a>
+      <a href="index.html#founder" data-i18n="nav.about">من نحن</a>
+      <a href="index.html#faq" data-i18n="nav.faq">الأسئلة</a>
+    </div>
+
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle" aria-label="تبديل اللغة">
+        <span class="lang-dot"></span>
+        <span id="langLabel">EN</span>
+        <span class="lang-arrow">⇄</span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع">
+        <svg class="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <a href="index.html#contact" class="nav-cta">
+        <span data-i18n="nav.cta">ابدأ مشروعك</span>
+        <span class="arrow">→</span>
+      </a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="القائمة" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#work" data-i18n="nav.work_recent">أحدث الأعمال</a>
+  <a href="work.html" data-i18n="nav.work_all">كل الأعمال</a>
+  <a href="index.html#services" data-i18n="nav.services">الخدمات</a>
+  <a href="shop.html" class="active" data-i18n="nav.shop">المتجر</a>
+  <a href="blog.html" data-i18n="nav.blog">المقالات</a>
+  <a href="index.html#agreement" data-i18n="nav.agreement">اتفاقية العمل</a>
+  <a href="index.html#process" data-i18n="nav.process">كيف نشتغل</a>
+  <a href="index.html#results" data-i18n="nav.results">النتائج</a>
+  <a href="index.html#founder" data-i18n="nav.about">من نحن</a>
+  <a href="index.html#faq" data-i18n="nav.faq">الأسئلة</a>
+  <a href="index.html#contact" style="color: var(--orange);" data-i18n="nav.cta">ابدأ مشروعك</a>
+  <button class="lang-toggle lang-toggle-mobile" id="langToggleMobile" aria-label="تبديل اللغة">
+    <span class="lang-dot"></span>
+    <span id="langLabelMobile">EN</span>
+    <span class="lang-arrow">⇄</span>
+  </button>
+  <button class="lang-toggle lang-toggle-mobile" id="themeToggleMobile" aria-label="تبديل الوضع">
+    <span class="theme-toggle-mobile-label">الوضع</span>
+    <span class="theme-arrow">◑</span>
+  </button>
+</div>
+
+<!-- ============================
+     SHOP HERO
+     ============================ -->
+<section class="shop-hero">
+  <div class="shop-hero-bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="shop-hero-content">
+      <div class="eyebrow">
+        <span class="num">[SHOP]</span>
+        <span data-i18n="shop.eyebrow">المتجر الرقمي · Digital Shop</span>
+      </div>
+      <h1 class="display-h1">
+        <span data-i18n="shop.h1_1">منتجات </span><span class="italic-accent" data-i18n="shop.h1_2">رقمية</span>
+        <span data-i18n="shop.h1_3"> لعلامات</span>
+        <span class="italic-accent" data-i18n="shop.h1_4">طموحة</span><span>.</span>
+      </h1>
+      <p class="shop-sub" data-i18n="shop.sub">أنظمة نوشن جاهزة، كورسات إبداعية، وباكدج أنميشن احترافية. حمّل فوراً وابدأ تشتغل على علامتك النهاردة.</p>
+
+      <div class="shop-hero-stats">
+        <div class="shop-hero-stat">
+          <span class="num" data-count="9" data-suffix="+">0+</span>
+          <span class="label" data-i18n="shop.stat1">منتج رقمي</span>
+        </div>
+        <div class="shop-hero-stat-divider"></div>
+        <div class="shop-hero-stat">
+          <span class="num" data-count="1200" data-suffix="+">0+</span>
+          <span class="label" data-i18n="shop.stat2">عميل سعيد</span>
+        </div>
+        <div class="shop-hero-stat-divider"></div>
+        <div class="shop-hero-stat">
+          <span class="num">5.0 <span style="font-size: 0.6em;">★</span></span>
+          <span class="label" data-i18n="shop.stat3">تقييم المنتجات</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     STICKY FILTER BAR
+     ============================ -->
+<div class="shop-filter-bar">
+  <div class="container shop-filter-inner">
+    <div class="shop-filter-tabs">
+      <button class="shop-filter-tab active" data-filter="all">
+        <span data-i18n="shop.f_all">الكل</span>
+        <span class="count">9</span>
+      </button>
+      <button class="shop-filter-tab" data-filter="notion">
+        <span data-i18n="shop.f_notion">أنظمة نوشن</span>
+        <span class="count" data-count-cat="notion">3</span>
+      </button>
+      <button class="shop-filter-tab" data-filter="course">
+        <span data-i18n="shop.f_course">كورسات</span>
+        <span class="count" data-count-cat="course">3</span>
+      </button>
+      <button class="shop-filter-tab" data-filter="animation">
+        <span data-i18n="shop.f_animation">باكدج أنميشن</span>
+        <span class="count" data-count-cat="animation">3</span>
+      </button>
+    </div>
+
+    <div class="shop-sort">
+      <span data-i18n="shop.sort_label">ترتيب:</span>
+      <select id="sortSelect">
+        <option value="popular" data-i18n="shop.sort_popular">الأكثر مبيعاً</option>
+        <option value="newest" data-i18n="shop.sort_newest">الأحدث</option>
+        <option value="price-low" data-i18n="shop.sort_price_low">السعر: من الأقل</option>
+        <option value="price-high" data-i18n="shop.sort_price_high">السعر: من الأعلى</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- ============================
+     FEATURED PRODUCT
+     ============================ -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="featured-banner reveal">
+      <div class="featured-corner-deco tl"></div>
+      <div class="featured-corner-deco br"></div>
+      <div class="featured-content">
+        <div class="eyebrow">
+          <span class="num">★</span>
+          <span data-i18n="shop.featured_eyebrow">الأكثر مبيعاً · Best Seller</span>
+        </div>
+        <h2 class="display-h2" data-i18n="shop.featured_t">نظام Second Brain المتكامل</h2>
+        <p data-i18n="shop.featured_d">النظام اللي غير طريقة شغل المئات من الفريلانسرز والقادة. كل حاجة محتاجها عشان تدير حياتك، مشاريعك، ومعرفتك — في مكان واحد.</p>
+        <div class="featured-price">
+          <span class="now">$29</span>
+          <span class="was">$59</span>
+          <span class="save" data-i18n="shop.save">خصم ٥٠٪</span>
+        </div>
+        <a href="#products" class="featured-cta">
+          <span data-i18n="shop.featured_cta">اشترِ الآن</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+      <div class="featured-visual">
+        <div class="featured-orb"></div>
+        <div class="featured-orb-2"></div>
+        <div class="featured-emblem" data-i18n="shop.featured_emblem">Atlas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     PRODUCT GRID
+     ============================ -->
+<section id="products" style="padding-top: 2rem;">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-head-l">
+        <div class="eyebrow">
+          <span class="num">[01]</span>
+          <span data-i18n="shop.grid_eyebrow">جميع المنتجات · All Products</span>
+        </div>
+        <h2 class="display-h2">
+          <span data-i18n="shop.grid_h2_1">كل اللي </span><span class="italic-accent" data-i18n="shop.grid_h2_2">محتاجه</span>
+          <span data-i18n="shop.grid_h2_3">.</span>
+        </h2>
+        <p class="desc" data-i18n="shop.grid_desc">٩ منتجات رقمية، مصنفة تحت ٣ فئات — اختار اللي يناسب مشروعك وابدأ فوراً.</p>
+      </div>
+      <a href="#featured-all" class="see-all" data-i18n="shop.grid_see_all">شوف الكل <span>→</span></a>
+    </div>
+
+    <div class="shop-grid reveal-stagger" id="productGrid">
+
+      <!-- NOTION 1 -->
+      <article class="product-card" data-cat="notion" data-popularity="98" data-price="29" data-date="2024-09-15">
+        <div class="product-visual">
+          <div class="product-thumb" style="font-family: 'Thmanyah Serif Text';">Atlas</div>
+          <div class="product-badge bestseller" data-i18n="shop.badge_bestseller">★ الأكثر مبيعاً</div>
+          <div class="product-cat" data-i18n="shop.cat_notion">نوشن</div>
+        </div>
+        <div class="product-body">
+          <h3 class="product-title" data-i18n="shop.p1_t">نظام Second Brain</h3>
+          <p class="product-desc" data-i18n="shop.p1_d">نظام نوشن متكامل لإدارة المعرفة، المشاريع، والأفكار. كل حاجة محتاجها في مكان واحد.</p>
+          <div class="product-meta">
+            <span class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span>4.9</span>
+            </span>
+            <span class="product-sales" data-i18n="shop.sales_format">347 مبيعات</span>
+          </div>
+        </div>
+        <div class="product-features">
+          <span class="product-feature" data-i18n="shop.feat1">+40 قالب</span>
+          <span class="product-feature" data-i18n="shop.feat2">دعم مدى الحياة</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">
+            <span class="now">$29</span>
+            <span class="was">$59</span>
+          </div>
+          <button class="product-buy" type="button" data-i18n="shop.buy">
+            <span>اشترِ</span>
+            <span class="arrow">←</span>
+          </button>
+        </div>
+      </article>
+
+      <!-- COURSE 1 -->
+      <article class="product-card" data-cat="course" data-popularity="95" data-price="89" data-date="2025-01-10">
+        <div class="product-visual" style="background: linear-gradient(135deg, #E55A2B 0%, #1E0A5C 100%);">
+          <div class="product-thumb" style="font-family: 'Thmanyah Sans'; font-style: normal; font-weight: 600;">Edit</div>
+          <div class="product-badge hot" data-i18n="shop.badge_hot">🔥 رائج</div>
+          <div class="product-cat" data-i18n="shop.cat_course">كورس</div>
+        </div>
+        <div class="product-body">
+          <h3 class="product-title" data-i18n="shop.p2_t">كورس المونتاج الاحترافي</h3>
+          <p class="product-desc" data-i18n="shop.p2_d">من الصفر للاحتراف في المونتاج — Premiere، After Effects، color grading، وsound design.</p>
+          <div class="product-meta">
+            <span class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span>5.0</span>
+            </span>
+            <span class="product-sales" data-i18n="shop.sales_format_2">218 مبيعات</span>
+          </div>
+        </div>
+        <div class="product-features">
+          <span class="product-feature" data-i18n="shop.feat3">+25 ساعة</span>
+          <span class="product-feature" data-i18n="shop.feat4">شهادة</span>
+          <span class="product-feature" data-i18n="shop.feat5">مشاريع تطبيقية</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">
+            <span class="now">$89</span>
+            <span class="was">$149</span>
+          </div>
+          <button class="product-buy" type="button" data-i18n="shop.buy">
+            <span>اشترِ</span>
+            <span class="arrow">←</span>
+          </button>
+        </div>
+      </article>
+
+      <!-- ANIMATION 1 -->
+      <article class="product-card" data-cat="animation" data-popularity="92" data-price="59" data-date="2024-11-20">
+        <div class="product-visual" style="background: linear-gradient(135deg, #F5A623 0%, #1E0A5C 100%);">
+          <div class="product-thumb" style="font-family: 'Thmanyah Serif Text';">Motion</div>
+          <div class="product-badge new" data-i18n="shop.badge_new">جديد</div>
+          <div class="product-cat" data-i18n="shop.cat_animation">أنميشن</div>
+        </div>
+        <div class="product-body">
+          <h3 class="product-title" data-i18n="shop.p3_t">باكدج إنترو وأوترو</h3>
+          <p class="product-desc" data-i18n="shop.p3_d">١٠ قوالب إنترو وأوترو قابلة للتعديل بالكامل — After Effects وPremiere Pro.</p>
+          <div class="product-meta">
+            <span class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span>4.8</span>
+            </span>
+            <span class="product-sales" data-i18n="shop.sales_format_3">185 مبيعات</span>
+          </div>
+        </div>
+        <div class="product-features">
+          <span class="product-feature" data-i18n="shop.feat6">10 قوالب</span>
+          <span class="product-feature" data-i18n="shop.feat7">AE + PR</span>
+          <span class="product-feature" data-i18n="shop.feat8">4K</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">
+            <span class="now">$59</span>
+            <span class="was">$99</span>
+          </div>
+          <button class="product-buy" type="button" data-i18n="shop.buy">
+            <span>اشترِ</span>
+            <span class="arrow">←</span>
+          </button>
+        </div>
+      </article>
+
+      <!-- NOTION 2 -->
+      <article class="product-card" data-cat="notion" data-popularity="89" data-price="39" data-date="2024-08-05">
+        <div class="product-visual" style="background: linear-gradient(135deg, #1E0A5C 0%, #3B1FA3 100%);">
+          <div class="product-thumb" style="font-family: 'Thmanyah Serif Text';">OS</div>
+          <div class="product-cat" data-i18n="shop.cat_notion">نوشن</div>
+        </div>
+        <div class="product-body">
+          <h3 class="product-title" data-i18n="shop.p4_t">نظام إدارة المشاريع</h3>
+          <p class="product-desc" data-i18n="shop.p4_d">نظام كامل لإدارة المشاريع، الفرق، والمهام. CRM + Project Management في نظام واحد.</p>
+          <div class="product-meta">
+            <span class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span>4.9</span>
+            </span>
+            <span class="product-sales" data-i18n="shop.sales_format_4">156 مبيعات</span>
+          </div>
+        </div>
+        <div class="product-features">
+          <span class="product-feature" data-i18n="shop.feat9">+30 قالب</span>
+          <span class="product-feature" data-i18n="shop.feat10">للفرق</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">
+            <span class="now">$39</span>
+            <span class="was">$79</span>
+          </div>
+          <button class="product-buy" type="button" data-i18n="shop.buy">
+            <span>اشترِ</span>
+            <span class="arrow">←</span>
+          </button>
+        </div>
+      </article>
+
+      <!-- COURSE 2 -->
+      <article class="product-card" data-cat="course" data-popularity="88" data-price="99" data-date="2025-02-15">
+        <div class="product-visual" style="background: linear-gradient(135deg, #FF6B4A 0%, #E55A2B 100%);">
+          <div class="product-thumb" style="font-family: 'Thmanyah Sans'; font-style: normal; font-weight: 600;">Motion</div>
+          <div class="product-badge new" data-i18n="shop.badge_new">جديد</div>
+          <div class="product-cat" data-i18n="shop.cat_course">كورس</div>
+        </div>
+        <div class="product-body">
+          <h3 class="product-title" data-i18n="shop.p5_t">كورس الموشن جرافيك</h3>
+          <p class="product-desc" data-i18n="shop.p5_d">اتقن الموشن جرافيك من الصفر — After Effects، تحريك الشخصيات، والـ3D basics.</p>
+          <div class="product-meta">
+            <span class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span>4.9</span>
+            </span>
+            <span class="product-sales" data-i18n="shop.sales_format_5">142 مبيعات</span>
+          </div>
+        </div>
+        <div class="product-features">
+          <span class="product-feature" data-i18n="shop.feat3">+30 ساعة</span>
+          <span class="product-feature" data-i18n="shop.feat4">شهادة</span>
+          <span class="product-feature" data-i18n="shop.feat11">دعم مباشر</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">
+            <span class="now">$99</span>
+            <span class="was">$179</span>
+          </div>
+          <button class="product-buy" type="button" data-i18n="shop.buy">
+            <span>اشترِ</span>
+            <span class="arrow">←</span>
+          </button>
+        </div>
+      </article>
+
+      <!-- ANIMATION 2 -->
+      <article class="product-card" data-cat="animation" data-popularity="84" data-price="45" data-date="2024-10-08">
+        <div class="product-visual" style="background: linear-gradient(135deg, #1E0A5C 0%, #F5A623 100%);">
+          <div class="product-thumb" style="font-family: 'Thmanyah Serif Text';">Logo</div>
+          <div class="product-cat" data-i18n="shop.cat_animation">أنميشن</div>
+        </div>
+        <div class="product-body">
+          <h3 class="product-title" data-i18n="shop.p6_t">باكدج لوقو أنيميشن</h3>
+          <p class="product-desc" data-i18n="shop.p6_d">١٥ أنيميشن لوغو مختلفة الأسلوب — من الأنيق للحيوي. جاهزة للعلامة بتاعتك.</p>
+          <div class="product-meta">
+            <span class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span>4.7</span>
+            </span>
+            <span class="product-sales" data-i18n="shop.sales_format_6">128 مبيعات</span>
+          </div>
+        </div>
+        <div class="product-features">
+          <span class="product-feature" data-i18n="shop.feat12">15 ستايل</span>
+          <span class="product-feature" data-i18n="shop.feat7">AE + PR</span>
+          <span class="product-feature" data-i18n="shop.feat13">قابل للتعديل</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">
+            <span class="now">$45</span>
+            <span class="was">$89</span>
+          </div>
+          <button class="product-buy" type="button" data-i18n="shop.buy">
+            <span>اشترِ</span>
+            <span class="arrow">←</span>
+          </button>
+        </div>
+      </article>
+
+      <!-- NOTION 3 -->
+      <article class="product-card" data-cat="notion" data-popularity="79" data-price="25" data-date="2024-07-12">
+        <div class="product-visual" style="background: linear-gradient(135deg, #3B1FA3 0%, #FF6B4A 100%);">
+          <div class="product-thumb" style="font-family: 'Thmanyah Serif Text';">CRM</div>
+          <div class="product-cat" data-i18n="shop.cat_notion">نوشن</div>
+        </div>
+        <div class="product-body">
+          <h3 class="product-title" data-i18n="shop.p7_t">CRM على نوشن</h3>
+          <p class="product-desc" data-i18n="shop.p7_d">نظام CRM متكامل على نوشن — لإدارة العملاء، المبيعات، والمتابعات. بسيط وقوي.</p>
+          <div class="product-meta">
+            <span class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span>4.8</span>
+            </span>
+            <span class="product-sales" data-i18n="shop.sales_format_7">98 مبيعات</span>
+          </div>
+        </div>
+        <div class="product-features">
+          <span class="product-feature" data-i18n="shop.feat14">+20 قالب</span>
+          <span class="product-feature" data-i18n="shop.feat15">للبيزنس</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">
+            <span class="now">$25</span>
+            <span class="was">$49</span>
+          </div>
+          <button class="product-buy" type="button" data-i18n="shop.buy">
+            <span>اشترِ</span>
+            <span class="arrow">←</span>
+          </button>
+        </div>
+      </article>
+
+      <!-- COURSE 3 -->
+      <article class="product-card" data-cat="course" data-popularity="76" data-price="49" data-date="2024-12-01">
+        <div class="product-visual" style="background: linear-gradient(135deg, #E55A2B 0%, #F5A623 100%);">
+          <div class="product-thumb" style="font-family: 'Thmanyah Sans'; font-style: normal; font-weight: 600;">Social</div>
+          <div class="product-cat" data-i18n="shop.cat_course">كورس</div>
+        </div>
+        <div class="product-body">
+          <h3 class="product-title" data-i18n="shop.p8_t">كورس تصميم السوشيال ميديا</h3>
+          <p class="product-desc" data-i18n="shop.p8_d">صمم محتوى سوشيال ميديا يشد العين — Canva، Figma، Photoshop، وذكاء اصطناعي.</p>
+          <div class="product-meta">
+            <span class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span>4.8</span>
+            </span>
+            <span class="product-sales" data-i18n="shop.sales_format_8">112 مبيعات</span>
+          </div>
+        </div>
+        <div class="product-features">
+          <span class="product-feature" data-i18n="shop.feat16">+18 ساعة</span>
+          <span class="product-feature" data-i18n="shop.feat17">قوالب جاهزة</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">
+            <span class="now">$49</span>
+            <span class="was">$89</span>
+          </div>
+          <button class="product-buy" type="button" data-i18n="shop.buy">
+            <span>اشترِ</span>
+            <span class="arrow">←</span>
+          </button>
+        </div>
+      </article>
+
+      <!-- ANIMATION 3 -->
+      <article class="product-card" data-cat="animation" data-popularity="72" data-price="35" data-date="2024-09-25">
+        <div class="product-visual" style="background: linear-gradient(135deg, #3B1FA3 0%, #E55A2B 100%);">
+          <div class="product-thumb" style="font-family: 'Thmanyah Serif Text';">Reel</div>
+          <div class="product-cat" data-i18n="shop.cat_animation">أنميشن</div>
+        </div>
+        <div class="product-body">
+          <h3 class="product-title" data-i18n="shop.p9_t">باكدج موشن للسوشيال</h3>
+          <p class="product-desc" data-i18n="shop.p9_d">٢٠ موشن جرافيك قصير للسوشيال ميديا — تكات، انتقالات، وشعارات متحركة.</p>
+          <div class="product-meta">
+            <span class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span>4.7</span>
+            </span>
+            <span class="product-sales" data-i18n="shop.sales_format_9">87 مبيعات</span>
+          </div>
+        </div>
+        <div class="product-features">
+          <span class="product-feature" data-i18n="shop.feat18">20 موشن</span>
+          <span class="product-feature" data-i18n="shop.feat19">1080p</span>
+          <span class="product-feature" data-i18n="shop.feat20">جاهز للنشر</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">
+            <span class="now">$35</span>
+            <span class="was">$69</span>
+          </div>
+          <button class="product-buy" type="button" data-i18n="shop.buy">
+            <span>اشترِ</span>
+            <span class="arrow">←</span>
+          </button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     VALUE PROPS / TRUST
+     ============================ -->
+<section style="padding-top: 4rem;">
+  <div class="container">
+    <div class="value-props">
+      <div class="value-prop reveal">
+        <div class="value-prop-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+          </svg>
+        </div>
+        <h4 data-i18n="shop.vp1_t">تحميل فوري</h4>
+        <p data-i18n="shop.vp1_d">استلم ملفاتك فوراً بعد الدفع. رابط مباشر، بدون انتظار.</p>
+      </div>
+
+      <div class="value-prop reveal">
+        <div class="value-prop-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h4 data-i18n="shop.vp2_t">ضمان الجودة</h4>
+        <p data-i18n="shop.vp2_d">كل منتج تم اختباره على أرض الواقع. استرداد خلال 14 يوم.</p>
+      </div>
+
+      <div class="value-prop reveal">
+        <div class="value-prop-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <h4 data-i18n="shop.vp3_t">دعم مخصص</h4>
+        <p data-i18n="shop.vp3_d">فريق متاح للإجابة على كل سؤالك — سواء تقني أو إبداعي.</p>
+      </div>
+
+      <div class="value-prop reveal">
+        <div class="value-prop-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+          </svg>
+        </div>
+        <h4 data-i18n="shop.vp4_t">تحديثات مجانية</h4>
+        <p data-i18n="shop.vp4_d">كل المنتجات بتتشال بتحديثات دورية. مرة واحدة، ملكك للأبد.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     SHOP FAQ
+     ============================ -->
+<section>
+  <div class="container">
+    <div class="sec-head center reveal" style="text-align: center; display: block;">
+      <div class="eyebrow" style="justify-content: center;">
+        <span class="num">[FAQ]</span>
+        <span data-i18n="shop.faq_eyebrow">أسئلة شائعة</span>
+      </div>
+      <h2 class="display-h2" style="margin: 1rem auto 0; max-width: 700px;">
+        <span data-i18n="shop.faq_h2_1">قبل ما </span><span class="italic-accent" data-i18n="shop.faq_h2_2">تشتري</span>
+        <span data-i18n="shop.faq_h2_3">.</span>
+      </h2>
+    </div>
+
+    <div class="shop-faq">
+      <div class="shop-faq-item reveal">
+        <div class="shop-faq-q">
+          <span data-i18n="shop.faq_q1">إزاي بستلم المنتج بعد الدفع؟</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="shop-faq-a" data-i18n="shop.faq_a1">فوراً بعد تأكيد الدفع، بيوصلك إيميل فيه رابط التحميل المباشر. كمان هتلاقي المنتجات في حسابك على المتجر في أي وقت.</div>
+      </div>
+
+      <div class="shop-faq-item reveal">
+        <div class="shop-faq-q">
+          <span data-i18n="shop.faq_q2">في ضمان استرداد؟</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="shop-faq-a" data-i18n="shop.faq_a2">آه، ١٤ يوم ضمان استرداد كامل بدون أي أسئلة. لو المنتج مش مناسب، كلمنا وهنرجعلك فلوسك.</div>
+      </div>
+
+      <div class="shop-faq-item reveal">
+        <div class="shop-faq-q">
+          <span data-i18n="shop.faq_q3">هل في تحديثات مجانية؟</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="shop-faq-a" data-i18n="shop.faq_a3">كل المنتجات بتاخد تحديثات مجانية مدى الحياة. لو ضفنا قالب جديد أو حسّنا حاجة، هتوصلك إشعارات.</div>
+      </div>
+
+      <div class="shop-faq-item reveal">
+        <div class="shop-faq-q">
+          <span data-i18n="shop.faq_q4">إيه طرق الدفع المتاحة؟</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="shop-faq-a" data-i18n="shop.faq_a4">فيزا، ماستركارد، PayPal، Apple Pay، Google Pay، وفودافون كاش / إنستاباي للعملاء في مصر.</div>
+      </div>
+
+      <div class="shop-faq-item reveal">
+        <div class="shop-faq-q">
+          <span data-i18n="shop.faq_q5">هل المنتجات مناسبة للمبتدئين؟</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="shop-faq-a" data-i18n="shop.faq_a5">أكيد. كل منتج فيه شرح كامل — فيديوهات تعليمية، توثيق مكتوب، ودعم فني. حتى لو أول مرة، هتقدر تستخدمها بسهولة.</div>
+      </div>
+
+      <div class="shop-faq-item reveal">
+        <div class="shop-faq-q">
+          <span data-i18n="shop.faq_q6">هل ممكن أستخدم المنتجات في مشاريع تجارية؟</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="shop-faq-a" data-i18n="shop.faq_a6">آه. كل المنتجات بترخيص تجاري كامل. استخدمها في مشاريع عملائك أو علامتك الشخصية بدون أي قيود.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     CTA
+     ============================ -->
+<section style="padding-bottom: 6rem;">
+  <div class="container">
+    <div class="shop-cta reveal">
+      <div class="eyebrow">
+        <span class="num">[START]</span>
+        <span data-i18n="shop.cta_eyebrow">ابدأ اليوم</span>
+      </div>
+      <h2 class="display-h2">
+        <span data-i18n="shop.cta_h2_1">جاهز </span><span class="italic-accent" data-i18n="shop.cta_h2_2">تاخد الخطوة</span><span data-i18n="shop.cta_h2_3">؟</span>
+      </h2>
+      <p data-i18n="shop.cta_p">أكثر من ١٢٠٠ عميل اختاروا منتجاتنا. دور على المنتج اللي يخدم علامتك وابدأ النهاردة.</p>
+      <div class="shop-cta-btns">
+        <a href="#products" class="btn-cta-primary">
+          <span data-i18n="shop.cta_btn1">شوف كل المنتجات</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="index.html#contact" class="btn-cta-ghost">
+          <span data-i18n="shop.cta_btn2">عندك سؤال؟ تواصل معانا</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     FOOTER
+     ============================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
+            <defs>
+              <linearGradient id="lg-footer" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#F5A623" />
+                <stop offset="1" stop-color="#E55A2B" />
+              </linearGradient>
+            </defs>
+            <path fill="url(#lg-footer)" d="M50 4 L57 32 L84 16 L68 43 L96 50 L68 57 L84 84 L57 68 L50 96 L43 68 L16 84 L32 57 L4 50 L32 43 L16 16 L43 32 Z"/>
+            <path fill="#0A0510" d="M50 18 L54 38 L74 38 L58 50 L62 70 L50 58 L38 70 L42 50 L26 38 L46 38 Z"/>
+            <circle cx="50" cy="50" r="4" fill="#F5A623"/>
+          </svg>
+          <div style="display:flex; flex-direction:column; line-height:1;">
+            <span class="logo-text-ar" data-i18n="nav.brand_ar">ستوديو رحلة</span>
+            <span class="logo-text-en" data-i18n="nav.brand_en">Rihla Studio</span>
+          </div>
+        </a>
+        <p class="tagline" data-i18n="shop.ft_tag">ستوديو رحلة — نصنع الجمال البصري ومنتجات رقمية لعلامات طموحة.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="shop.ft_col1_t">المتجر</h4>
+        <ul>
+          <li><a href="shop.html" data-i18n="shop.ft_l1">كل المنتجات</a></li>
+          <li><a href="shop.html#products" data-i18n="shop.ft_l2">أنظمة نوشن</a></li>
+          <li><a href="shop.html#products" data-i18n="shop.ft_l3">كورسات</a></li>
+          <li><a href="shop.html#products" data-i18n="shop.ft_l4">باكدج أنميشن</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="shop.ft_col2_t">الاستوديو</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="shop.ft_l5">الرئيسية</a></li>
+          <li><a href="index.html#work" data-i18n="shop.ft_l6">أعمالنا</a></li>
+          <li><a href="index.html#services" data-i18n="shop.ft_l7">الخدمات</a></li>
+          <li><a href="index.html#contact" data-i18n="shop.ft_l8">تواصل</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="shop.ft_col3_t">سوشيال · Follow</h4>
+        <ul>
+          <li><a href="https://instagram.com/rihlastudio" target="_blank" rel="noopener">إنستجرام <span class="ext">↗</span></a></li>
+          <li><a href="https://behance.net/rihlastudio" target="_blank" rel="noopener">بيهانس <span class="ext">↗</span></a></li>
+          <li><a href="https://youtube.com/@rihlastudio" target="_blank" rel="noopener">يوتيوب <span class="ext">↗</span></a></li>
+          <li><a href="https://linkedin.com/company/rihlastudio" target="_blank" rel="noopener">لينكدإن <span class="ext">↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div data-i18n="shop.ft_copy">© ٢٠٢٥ ستوديو رحلة · جميع الحقوق محفوظة</div>
+      <div class="made" data-i18n="shop.ft_made">Crafted with passion in Cairo ✦</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================
+     JAVASCRIPT
+     ============================================ -->
+<script>
+(function() {
+  'use strict';
+
+  // ============================================
+  // I18N
+  // ============================================
+  const I18N = {
+    ar: {
+      'shop.meta.title': 'المتجر · Rihla Studio Shop',
+      'shop.meta.desc': 'متجر ستوديو رحلة — أنظمة نوشن، كورسات إبداعية، وباكدج أنميشن جاهزة. اشترِ وابدأ فوراً.',
+      'nav.brand_ar': 'ستوديو رحلة',
+      'nav.brand_en': 'Rihla Studio',
+      'nav.work_recent': 'أحدث الأعمال',
+      'nav.work_all': 'كل الأعمال',
+      'nav.services': 'الخدمات',
+      'nav.shop': 'المتجر',
+      'nav.blog': 'المقالات',
+      'nav.agreement': 'اتفاقية العمل',
+      'nav.process': 'كيف نشتغل',
+      'nav.results': 'النتائج',
+      'nav.about': 'من نحن',
+      'nav.faq': 'الأسئلة',
+      'nav.cta': 'ابدأ مشروعك',
+      'shop.eyebrow': 'المتجر الرقمي · Digital Shop',
+      'shop.h1_1': 'منتجات ',
+      'shop.h1_2': 'رقمية',
+      'shop.h1_3': ' لعلامات',
+      'shop.h1_4': 'طموحة',
+      'shop.sub': 'أنظمة نوشن جاهزة، كورسات إبداعية، وباكدج أنميشن احترافية. حمّل فوراً وابدأ تشتغل على علامتك النهاردة.',
+      'shop.stat1': 'منتج رقمي',
+      'shop.stat2': 'عميل سعيد',
+      'shop.stat3': 'تقييم المنتجات',
+      'shop.f_all': 'الكل',
+      'shop.f_notion': 'أنظمة نوشن',
+      'shop.f_course': 'كورسات',
+      'shop.f_animation': 'باكدج أنميشن',
+      'shop.sort_label': 'ترتيب:',
+      'shop.sort_popular': 'الأكثر مبيعاً',
+      'shop.sort_newest': 'الأحدث',
+      'shop.sort_price_low': 'السعر: من الأقل',
+      'shop.sort_price_high': 'السعر: من الأعلى',
+      'shop.featured_eyebrow': 'الأكثر مبيعاً · Best Seller',
+      'shop.featured_t': 'نظام Second Brain المتكامل',
+      'shop.featured_d': 'النظام اللي غير طريقة شغل المئات من الفريلانسرز والقادة. كل حاجة محتاجها عشان تدير حياتك، مشاريعك، ومعرفتك — في مكان واحد.',
+      'shop.save': 'خصم ٥٠٪',
+      'shop.featured_cta': 'اشترِ الآن',
+      'shop.featured_emblem': 'Atlas',
+      'shop.grid_eyebrow': 'جميع المنتجات · All Products',
+      'shop.grid_h2_1': 'كل اللي ',
+      'shop.grid_h2_2': 'محتاجه',
+      'shop.grid_h2_3': '.',
+      'shop.grid_desc': '٩ منتجات رقمية، مصنفة تحت ٣ فئات — اختار اللي يناسب مشروعك وابدأ فوراً.',
+      'shop.grid_see_all': 'شوف الكل',
+      'shop.badge_bestseller': '★ الأكثر مبيعاً',
+      'shop.badge_hot': '🔥 رائج',
+      'shop.badge_new': 'جديد',
+      'shop.cat_notion': 'نوشن',
+      'shop.cat_course': 'كورس',
+      'shop.cat_animation': 'أنميشن',
+      'shop.buy': 'اشترِ',
+      'shop.sales_format': '347 مبيعات',
+      'shop.sales_format_2': '218 مبيعات',
+      'shop.sales_format_3': '185 مبيعات',
+      'shop.sales_format_4': '156 مبيعات',
+      'shop.sales_format_5': '142 مبيعات',
+      'shop.sales_format_6': '128 مبيعات',
+      'shop.sales_format_7': '98 مبيعات',
+      'shop.sales_format_8': '112 مبيعات',
+      'shop.sales_format_9': '87 مبيعات',
+      'shop.feat1': '+40 قالب', 'shop.feat2': 'دعم مدى الحياة',
+      'shop.feat3': '+25 ساعة', 'shop.feat4': 'شهادة', 'shop.feat5': 'مشاريع تطبيقية',
+      'shop.feat6': '10 قوالب', 'shop.feat7': 'AE + PR', 'shop.feat8': '4K',
+      'shop.feat9': '+30 قالب', 'shop.feat10': 'للفرق',
+      'shop.feat11': 'دعم مباشر', 'shop.feat12': '15 ستايل', 'shop.feat13': 'قابل للتعديل',
+      'shop.feat14': '+20 قالب', 'shop.feat15': 'للبيزنس', 'shop.feat16': '+18 ساعة',
+      'shop.feat17': 'قوالب جاهزة', 'shop.feat18': '20 موشن', 'shop.feat19': '1080p', 'shop.feat20': 'جاهز للنشر',
+      'shop.p1_t': 'نظام Second Brain', 'shop.p1_d': 'نظام نوشن متكامل لإدارة المعرفة، المشاريع، والأفكار. كل حاجة محتاجها في مكان واحد.',
+      'shop.p2_t': 'كورس المونتاج الاحترافي', 'shop.p2_d': 'من الصفر للاحتراف في المونتاج — Premiere، After Effects، color grading، وsound design.',
+      'shop.p3_t': 'باكدج إنترو وأوترو', 'shop.p3_d': '١٠ قوالب إنترو وأوترو قابلة للتعديل بالكامل — After Effects وPremiere Pro.',
+      'shop.p4_t': 'نظام إدارة المشاريع', 'shop.p4_d': 'نظام كامل لإدارة المشاريع، الفرق، والمهام. CRM + Project Management في نظام واحد.',
+      'shop.p5_t': 'كورس الموشن جرافيك', 'shop.p5_d': 'اتقن الموشن جرافيك من الصفر — After Effects، تحريك الشخصيات، والـ3D basics.',
+      'shop.p6_t': 'باكدج لوقو أنيميشن', 'shop.p6_d': '١٥ أنيميشن لوغو مختلفة الأسلوب — من الأنيق للحيوي. جاهزة للعلامة بتاعتك.',
+      'shop.p7_t': 'CRM على نوشن', 'shop.p7_d': 'نظام CRM متكامل على نوشن — لإدارة العملاء، المبيعات، والمتابعات. بسيط وقوي.',
+      'shop.p8_t': 'كورس تصميم السوشيال ميديا', 'shop.p8_d': 'صمم محتوى سوشيال ميديا يشد العين — Canva، Figma، Photoshop، وذكاء اصطناعي.',
+      'shop.p9_t': 'باكدج موشن للسوشيال', 'shop.p9_d': '٢٠ موشن جرافيك قصير للسوشيال ميديا — تكات، انتقالات، وشعارات متحركة.',
+      'shop.vp1_t': 'تحميل فوري', 'shop.vp1_d': 'استلم ملفاتك فوراً بعد الدفع. رابط مباشر، بدون انتظار.',
+      'shop.vp2_t': 'ضمان الجودة', 'shop.vp2_d': 'كل منتج تم اختباره على أرض الواقع. استرداد خلال 14 يوم.',
+      'shop.vp3_t': 'دعم مخصص', 'shop.vp3_d': 'فريق متاح للإجابة على كل سؤالك — سواء تقني أو إبداعي.',
+      'shop.vp4_t': 'تحديثات مجانية', 'shop.vp4_d': 'كل المنتجات بتتشال بتحديثات دورية. مرة واحدة، ملكك للأبد.',
+      'shop.faq_eyebrow': 'أسئلة شائعة',
+      'shop.faq_h2_1': 'قبل ما ', 'shop.faq_h2_2': 'تشتري', 'shop.faq_h2_3': '.',
+      'shop.faq_q1': 'إزاي بستلم المنتج بعد الدفع؟',
+      'shop.faq_a1': 'فوراً بعد تأكيد الدفع، بيوصلك إيميل فيه رابط التحميل المباشر. كمان هتلاقي المنتجات في حسابك على المتجر في أي وقت.',
+      'shop.faq_q2': 'هل في ضمان استرداد؟',
+      'shop.faq_a2': 'آه، ١٤ يوم ضمان استرداد كامل بدون أي أسئلة. لو المنتج مش مناسب، كلمنا وهنرجعلك فلوسك.',
+      'shop.faq_q3': 'هل في تحديثات مجانية؟',
+      'shop.faq_a3': 'كل المنتجات بتاخد تحديثات مجانية مدى الحياة. لو ضفنا قالب جديد أو حسّنا حاجة، هتوصلك إشعارات.',
+      'shop.faq_q4': 'إيه طرق الدفع المتاحة؟',
+      'shop.faq_a4': 'فيزا، ماستركارد، PayPal، Apple Pay، Google Pay، وفودافون كاش / إنستاباي للعملاء في مصر.',
+      'shop.faq_q5': 'هل المنتجات مناسبة للمبتدئين؟',
+      'shop.faq_a5': 'أكيد. كل منتج فيه شرح كامل — فيديوهات تعليمية، توثيق مكتوب، ودعم فني. حتى لو أول مرة، هتقدر تستخدمها بسهولة.',
+      'shop.faq_q6': 'هل ممكن أستخدم المنتجات في مشاريع تجارية؟',
+      'shop.faq_a6': 'آه. كل المنتجات بترخيص تجاري كامل. استخدمها في مشاريع عملائك أو علامتك الشخصية بدون أي قيود.',
+      'shop.cta_eyebrow': 'ابدأ اليوم',
+      'shop.cta_h2_1': 'جاهز ', 'shop.cta_h2_2': 'تاخد الخطوة', 'shop.cta_h2_3': '؟',
+      'shop.cta_p': 'أكثر من ١٢٠٠ عميل اختاروا منتجاتنا. دور على المنتج اللي يخدم علامتك وابدأ النهاردة.',
+      'shop.cta_btn1': 'شوف كل المنتجات',
+      'shop.cta_btn2': 'عندك سؤال؟ تواصل معانا',
+      'shop.ft_tag': 'ستوديو رحلة — نصنع الجمال البصري ومنتجات رقمية لعلامات طموحة.',
+      'shop.ft_col1_t': 'المتجر',
+      'shop.ft_l1': 'كل المنتجات', 'shop.ft_l2': 'أنظمة نوشن', 'shop.ft_l3': 'كورسات', 'shop.ft_l4': 'باكدج أنميشن',
+      'shop.ft_col2_t': 'الاستوديو',
+      'shop.ft_l5': 'الرئيسية', 'shop.ft_l6': 'أعمالنا', 'shop.ft_l7': 'الخدمات', 'shop.ft_l8': 'تواصل',
+      'shop.ft_col3_t': 'سوشيال · Follow',
+      'shop.ft_copy': '© ٢٠٢٥ ستوديو رحلة · جميع الحقوق محفوظة',
+      'shop.ft_made': 'Crafted with passion in Cairo ✦',
+    },
+    en: {
+      'shop.meta.title': 'Shop · Rihla Studio Shop',
+      'shop.meta.desc': 'Rihla Studio Shop — ready Notion systems, creative courses, and animation packages. Buy and start now.',
+      'nav.brand_ar': 'Studio Rihla',
+      'nav.brand_en': 'Rihla Studio',
+      'nav.work_recent': 'Recent Work',
+      'nav.work_all': 'All Work',
+      'nav.services': 'Services',
+      'nav.shop': 'Shop',
+      'nav.blog': 'Blog',
+      'nav.agreement': 'Agreement',
+      'nav.process': 'Process',
+      'nav.results': 'Results',
+      'nav.about': 'About',
+      'nav.faq': 'FAQ',
+      'nav.cta': 'Start a project',
+      'shop.eyebrow': 'Digital Shop',
+      'shop.h1_1': 'Digital ',
+      'shop.h1_2': 'products',
+      'shop.h1_3': ' for',
+      'shop.h1_4': 'ambitious',
+      'shop.sub': 'Ready Notion systems, creative courses, and pro animation packages. Download instantly and start working on your brand today.',
+      'shop.stat1': 'Digital products',
+      'shop.stat2': 'Happy customers',
+      'shop.stat3': 'Product rating',
+      'shop.f_all': 'All',
+      'shop.f_notion': 'Notion Systems',
+      'shop.f_course': 'Courses',
+      'shop.f_animation': 'Animation Packs',
+      'shop.sort_label': 'Sort:',
+      'shop.sort_popular': 'Most popular',
+      'shop.sort_newest': 'Newest',
+      'shop.sort_price_low': 'Price: low to high',
+      'shop.sort_price_high': 'Price: high to low',
+      'shop.featured_eyebrow': 'Best Seller',
+      'shop.featured_t': 'The Complete Second Brain System',
+      'shop.featured_d': 'The system that changed how hundreds of freelancers and leaders work. Everything you need to manage your life, projects, and knowledge — in one place.',
+      'shop.save': 'Save 50%',
+      'shop.featured_cta': 'Buy now',
+      'shop.featured_emblem': 'Atlas',
+      'shop.grid_eyebrow': 'All Products',
+      'shop.grid_h2_1': 'Everything you ',
+      'shop.grid_h2_2': 'need',
+      'shop.grid_h2_3': '.',
+      'shop.grid_desc': '9 digital products across 3 categories — pick what fits your project and start now.',
+      'shop.grid_see_all': 'See all',
+      'shop.badge_bestseller': '★ Best Seller',
+      'shop.badge_hot': '🔥 Trending',
+      'shop.badge_new': 'New',
+      'shop.cat_notion': 'Notion',
+      'shop.cat_course': 'Course',
+      'shop.cat_animation': 'Animation',
+      'shop.buy': 'Buy',
+      'shop.sales_format': '347 sales',
+      'shop.sales_format_2': '218 sales',
+      'shop.sales_format_3': '185 sales',
+      'shop.sales_format_4': '156 sales',
+      'shop.sales_format_5': '142 sales',
+      'shop.sales_format_6': '128 sales',
+      'shop.sales_format_7': '98 sales',
+      'shop.sales_format_8': '112 sales',
+      'shop.sales_format_9': '87 sales',
+      'shop.feat1': '+40 templates', 'shop.feat2': 'Lifetime support',
+      'shop.feat3': '+25 hours', 'shop.feat4': 'Certificate', 'shop.feat5': 'Real projects',
+      'shop.feat6': '10 templates', 'shop.feat7': 'AE + PR', 'shop.feat8': '4K',
+      'shop.feat9': '+30 templates', 'shop.feat10': 'For teams',
+      'shop.feat11': 'Live support', 'shop.feat12': '15 styles', 'shop.feat13': 'Editable',
+      'shop.feat14': '+20 templates', 'shop.feat15': 'For business', 'shop.feat16': '+18 hours',
+      'shop.feat17': 'Ready templates', 'shop.feat18': '20 motions', 'shop.feat19': '1080p', 'shop.feat20': 'Ready to post',
+      'shop.p1_t': 'Second Brain System', 'shop.p1_d': 'Complete Notion system for knowledge, project, and idea management. Everything you need in one place.',
+      'shop.p2_t': 'Pro Video Editing Course', 'shop.p2_d': 'From zero to pro in editing — Premiere, After Effects, color grading, and sound design.',
+      'shop.p3_t': 'Intro & Outro Pack', 'shop.p3_d': '10 fully editable intro and outro templates — After Effects and Premiere Pro.',
+      'shop.p4_t': 'Project Management System', 'shop.p4_d': 'Complete system for managing projects, teams, and tasks. CRM + Project Management in one OS.',
+      'shop.p5_t': 'Motion Graphics Course', 'shop.p5_d': 'Master motion graphics from zero — After Effects, character animation, and 3D basics.',
+      'shop.p6_t': 'Logo Animation Pack', 'shop.p6_d': '15 logo animations in different styles — from elegant to lively. Ready for your brand.',
+      'shop.p7_t': 'Notion CRM', 'shop.p7_d': 'Complete Notion CRM — for managing customers, sales, and follow-ups. Simple and powerful.',
+      'shop.p8_t': 'Social Media Design Course', 'shop.p8_d': 'Design social media content that catches eyes — Canva, Figma, Photoshop, and AI tools.',
+      'shop.p9_t': 'Social Motion Pack', 'shop.p9_d': '20 short motion graphics for social media — ticks, transitions, and animated logos.',
+      'shop.vp1_t': 'Instant download', 'shop.vp1_d': 'Get your files instantly after payment. Direct link, no waiting.',
+      'shop.vp2_t': 'Quality guarantee', 'shop.vp2_d': 'Every product is tested in the real world. 14-day refund.',
+      'shop.vp3_t': 'Dedicated support', 'shop.vp3_d': 'Team available to answer any question — technical or creative.',
+      'shop.vp4_t': 'Free updates', 'shop.vp4_d': 'All products get periodic updates. Pay once, own forever.',
+      'shop.faq_eyebrow': 'FAQ',
+      'shop.faq_h2_1': 'Before you ', 'shop.faq_h2_2': 'buy', 'shop.faq_h2_3': '.',
+      'shop.faq_q1': 'How do I get the product after payment?',
+      'shop.faq_a1': 'Immediately after payment confirmation, you\'ll receive an email with the direct download link. You\'ll also find the products in your shop account anytime.',
+      'shop.faq_q2': 'Is there a refund policy?',
+      'shop.faq_a2': 'Yes, 14-day full refund guarantee with no questions. If the product doesn\'t fit, contact us and we\'ll refund.',
+      'shop.faq_q3': 'Are there free updates?',
+      'shop.faq_a3': 'All products get free lifetime updates. If we add a new template or improve something, you\'ll get notifications.',
+      'shop.faq_q4': 'What payment methods are available?',
+      'shop.faq_a4': 'Visa, Mastercard, PayPal, Apple Pay, Google Pay, and Vodafone Cash / InstaPay for customers in Egypt.',
+      'shop.faq_q5': 'Are the products beginner-friendly?',
+      'shop.faq_a5': 'Absolutely. Every product includes full instructions — video tutorials, written docs, and tech support. Even if it\'s your first time, you\'ll be able to use them easily.',
+      'shop.faq_q6': 'Can I use the products in commercial projects?',
+      'shop.faq_a6': 'Yes. All products come with full commercial license. Use them in your client projects or personal brand without restrictions.',
+      'shop.cta_eyebrow': 'Start today',
+      'shop.cta_h2_1': 'Ready to ', 'shop.cta_h2_2': 'take the step', 'shop.cta_h2_3': '?',
+      'shop.cta_p': 'Over 1,200 customers chose our products. Find the one that serves your brand and start today.',
+      'shop.cta_btn1': 'See all products',
+      'shop.cta_btn2': 'Got a question? Contact us',
+      'shop.ft_tag': 'Rihla Studio — crafting visual beauty and digital products for ambitious brands.',
+      'shop.ft_col1_t': 'Shop',
+      'shop.ft_l1': 'All products', 'shop.ft_l2': 'Notion systems', 'shop.ft_l3': 'Courses', 'shop.ft_l4': 'Animation packs',
+      'shop.ft_col2_t': 'Studio',
+      'shop.ft_l5': 'Home', 'shop.ft_l6': 'Work', 'shop.ft_l7': 'Services', 'shop.ft_l8': 'Contact',
+      'shop.ft_col3_t': 'Social · Follow',
+      'shop.ft_copy': '© 2025 Rihla Studio · All rights reserved',
+      'shop.ft_made': 'Crafted with passion in Cairo ✦',
+    }
+  };
+
+  // ============================================
+  // LANGUAGE
+  // ============================================
+  let currentLang = (function() {
+    try { return localStorage.getItem('rihla-lang') || 'ar'; } catch (e) { return 'ar'; }
+  })();
+
+  function applyLang(lang) {
+    currentLang = lang;
+    try { localStorage.setItem('rihla-lang', lang); } catch (e) {}
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+    const dict = I18N[lang] || I18N.ar;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] != null) {
+        if (el.tagName === 'TITLE' || el.tagName === 'META') {
+          el.textContent = dict[key];
+        } else {
+          el.textContent = dict[key];
+        }
+      }
+    });
+    document.querySelectorAll('meta[name="description"]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] != null) el.setAttribute('content', dict[key]);
+    });
+    document.querySelectorAll('[id^="langLabel"]').forEach(el => {
+      el.textContent = lang === 'ar' ? 'EN' : 'AR';
+    });
+  }
+
+  const langToggle = document.getElementById('langToggle');
+  const langToggleMobile = document.getElementById('langToggleMobile');
+  if (langToggle) langToggle.addEventListener('click', () => applyLang(currentLang === 'ar' ? 'en' : 'ar'));
+  if (langToggleMobile) langToggleMobile.addEventListener('click', () => applyLang(currentLang === 'ar' ? 'en' : 'ar'));
+
+  // ============================================
+  // THEME
+  // ============================================
+  const themeToggle = document.getElementById('themeToggle');
+  const themeToggleMobile = document.getElementById('themeToggleMobile');
+  function toggleTheme() {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    if (isLight) {
+      document.documentElement.removeAttribute('data-theme');
+      try { localStorage.setItem('rihla-theme', 'dark'); } catch (e) {}
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      try { localStorage.setItem('rihla-theme', 'light'); } catch (e) {}
+    }
+  }
+  if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+  if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
+
+  // ============================================
+  // NAV SCROLL
+  // ============================================
+  const nav = document.getElementById('nav');
+  function onScroll() {
+    if (window.scrollY > 50) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ============================================
+  // BG STARS — generate twinkling stars
+  // ============================================
+  const bgStars = document.getElementById('bgStars');
+  if (bgStars) {
+    const starCount = 50;
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < starCount; i++) {
+      const s = document.createElement('span');
+      s.className = 'star';
+      s.style.top = (Math.random() * 100) + '%';
+      s.style.left = (Math.random() * 100) + '%';
+      s.style.animationDelay = (Math.random() * 5) + 's';
+      s.style.animationDuration = (3 + Math.random() * 4) + 's';
+      const size = (Math.random() < 0.85) ? 2 : 3;
+      s.style.width = size + 'px';
+      s.style.height = size + 'px';
+      frag.appendChild(s);
+    }
+    bgStars.appendChild(frag);
+  }
+
+  // ============================================
+  // MOBILE MENU
+  // ============================================
+  const navHamburger = document.getElementById('navHamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (navHamburger && mobileMenu) {
+    navHamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('active');
+      navHamburger.classList.toggle('active');
+      navHamburger.setAttribute('aria-expanded', isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        navHamburger.classList.remove('active');
+        navHamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // ============================================
+  // CUSTOM CURSOR
+  // ============================================
+  const cursorDot = document.getElementById('cursorDot');
+  const cursorRing = document.getElementById('cursorRing');
+  if (cursorDot && cursorRing && window.matchMedia('(min-width: 901px)').matches) {
+    document.addEventListener('mousemove', (e) => {
+      cursorDot.style.left = e.clientX + 'px';
+      cursorDot.style.top = e.clientY + 'px';
+      cursorRing.style.left = e.clientX + 'px';
+      cursorRing.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button, .product-card, .shop-filter-tab, .value-prop, .shop-faq-q').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursorRing.classList.add('hover');
+        cursorDot.classList.add('hover');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursorRing.classList.remove('hover');
+        cursorDot.classList.remove('hover');
+      });
+    });
+  }
+
+  // ============================================
+  // SHOP FILTER
+  // ============================================
+  const filterTabs = document.querySelectorAll('.shop-filter-tab');
+  const productGrid = document.getElementById('productGrid');
+  const products = productGrid ? Array.from(productGrid.querySelectorAll('.product-card')) : [];
+
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      filterTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const filter = tab.getAttribute('data-filter');
+      products.forEach(p => {
+        if (filter === 'all' || p.getAttribute('data-cat') === filter) {
+          p.classList.remove('hidden');
+        } else {
+          p.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Update category counts dynamically
+  document.querySelectorAll('[data-count-cat]').forEach(badge => {
+    const cat = badge.getAttribute('data-count-cat');
+    const count = products.filter(p => p.getAttribute('data-cat') === cat).length;
+    badge.textContent = count;
+  });
+
+  // ============================================
+  // SHOP SORT
+  // ============================================
+  const sortSelect = document.getElementById('sortSelect');
+  if (sortSelect && productGrid) {
+    sortSelect.addEventListener('change', () => {
+      const sortBy = sortSelect.value;
+      const sorted = Array.from(products);
+      if (sortBy === 'popular') {
+        sorted.sort((a, b) => parseInt(b.getAttribute('data-popularity')) - parseInt(a.getAttribute('data-popularity')));
+      } else if (sortBy === 'newest') {
+        sorted.sort((a, b) => new Date(b.getAttribute('data-date')) - new Date(a.getAttribute('data-date')));
+      } else if (sortBy === 'price-low') {
+        sorted.sort((a, b) => parseInt(a.getAttribute('data-price')) - parseInt(b.getAttribute('data-price')));
+      } else if (sortBy === 'price-high') {
+        sorted.sort((a, b) => parseInt(b.getAttribute('data-price')) - parseInt(a.getAttribute('data-price')));
+      }
+      sorted.forEach(p => productGrid.appendChild(p));
+    });
+  }
+
+  // ============================================
+  // FAQ ACCORDION
+  // ============================================
+  document.querySelectorAll('.shop-faq-item').forEach(item => {
+    const q = item.querySelector('.shop-faq-q');
+    q.addEventListener('click', () => {
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.shop-faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // ============================================
+  // COUNT-UP STATS
+  // ============================================
+  function animateCount(el) {
+    const target = parseInt(el.getAttribute('data-count'));
+    const suffix = el.getAttribute('data-suffix') || '';
+    if (isNaN(target)) return;
+    const duration = 1500;
+    const start = performance.now();
+    function step(now) {
+      const p = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.floor(target * eased) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = target + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+  const countEls = document.querySelectorAll('[data-count]');
+  if (countEls.length && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateCount(e.target);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    countEls.forEach(el => io.observe(el));
+  }
+
+  // ============================================
+  // REVEAL ON SCROLL
+  // ============================================
+  document.documentElement.classList.add('js-anim');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+  }
+
+  // ============================================
+  // BUY BUTTON — show toast (placeholder)
+  // ============================================
+  document.querySelectorAll('.product-buy').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const card = btn.closest('.product-card');
+      const title = card ? card.querySelector('.product-title').textContent.trim() : '';
+      showToast(title);
+    });
+  });
+
+  function showToast(productTitle) {
+    const existing = document.querySelector('.toast');
+    if (existing) existing.remove();
+    const t = document.createElement('div');
+    t.className = 'toast';
+    t.style.cssText = 'position:fixed; bottom:2rem; right:2rem; z-index:1000; padding:1.25rem 1.5rem; background:rgba(10,5,16,0.95); border:1px solid rgba(245,166,35,0.4); border-radius:14px; backdrop-filter:blur(20px); display:flex; align-items:center; gap:0.85rem; max-width:380px; box-shadow:0 20px 40px -10px rgba(0,0,0,0.4); animation: fadeUp 0.4s var(--ease) both;';
+    if (currentLang === 'en') t.style.right = 'auto';
+    if (currentLang === 'en') t.style.left = '2rem';
+    t.innerHTML = '<div style="width:40px; height:40px; background:linear-gradient(135deg, var(--orange) 0%, var(--orange-deep) 100%); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--bg); flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div style="flex-grow:1;"><div style="font-weight:600; margin-bottom:0.2rem;">' +
+      (currentLang === 'ar' ? 'تمام! جاري التحويل للدفع' : 'Got it! Redirecting to checkout') +
+      '</div><div style="font-size:0.85rem; color:var(--text-dim);">' +
+      (currentLang === 'ar' ? ('بشتري: ' + productTitle) : ('Buying: ' + productTitle)) +
+      '</div></div>';
+    document.body.appendChild(t);
+    setTimeout(() => { t.style.opacity = '0'; t.style.transform = 'translateY(20px)'; t.style.transition = 'all 0.4s var(--ease)'; setTimeout(() => t.remove(), 400); }, 3500);
+  }
+
+  // ============================================
+  // INIT
+  // ============================================
+  applyLang(currentLang);
+
+})();
+</script>
+</body>
+</html>
