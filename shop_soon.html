@@ -1117,34 +1117,36 @@ const cursorDot = document.getElementById('cursorDot');
     window.addEventListener('scroll', onScroll, {passive:true});
   }
   
-  //ــContact Formـــــــــــــــــــــــــــــ
+// ── Notify button ────────────────────────────
   emailjs.init('p2wVYn1BGwdCT9bRX');
-  // const notifyBtn   = document.getElementById('notifyBtn');
-  // const notifyEmail = document.getElementById('notifyEmail');
-  notifyBtn.addEventListener('click', () => {
-  const email = notifyEmail.value.trim();
-  if (!email || !email.includes('@')) {
-    notifyEmail.style.borderColor = 'rgba(229,90,43,0.6)';
-    setTimeout(() => { notifyEmail.style.borderColor = ''; }, 1500);
-    return;
+  const notifyBtn   = document.getElementById('notifyBtn');
+  const notifyEmail = document.getElementById('notifyEmail');
+  if (notifyBtn && notifyEmail) {
+    notifyBtn.addEventListener('click', () => {
+      const email = notifyEmail.value.trim();
+      if (!email || !email.includes('@')) {
+        notifyEmail.style.borderColor = 'rgba(229,90,43,0.6)';
+        setTimeout(() => { notifyEmail.style.borderColor = ''; }, 1500);
+        return;
+      }
+
+      emailjs.send('service_kr8dm9p', 'template_cuvn655', {
+        user_email: email,
+        source: 'متجر رحلة — إشعار الإطلاق',
+        message: 'عميل سجّل بريده وهو مستني إطلاق المتجر.'
+      }).catch(err => console.error('EmailJS:', err));
+
+      const doneTxt  = root.lang === 'ar' ? '✓ تم التسجيل!' : '✓ Registered!';
+      const resetTxt = root.lang === 'ar' ? 'أبلغني عند الإطلاق' : 'Notify me at launch';
+      notifyBtn.innerHTML = doneTxt;
+      notifyBtn.style.color = 'var(--orange)';
+      notifyEmail.value = '';
+      setTimeout(() => {
+        notifyBtn.innerHTML = resetTxt + ' <span>→</span>';
+        notifyBtn.style.color = '';
+      }, 3000);
+    });
   }
-
-  emailjs.send('service_kr8dm9p', 'template_cuvn655', {
-    user_email: email,
-    source: 'متجر رحلة — إشعار الإطلاق',
-    message: 'عميل سجّل بريده وهو مستني إطلاق المتجر.'
-  }).catch(err => console.error('EmailJS:', err));
-
-  const doneTxt  = root.lang === 'ar' ? '✓ تم التسجيل!' : '✓ Registered!';
-  const resetTxt = root.lang === 'ar' ? 'أبلغني عند الإطلاق' : 'Notify me at launch';
-  notifyBtn.innerHTML = doneTxt;
-  notifyBtn.style.color = 'var(--orange)';
-  notifyEmail.value = '';
-  setTimeout(() => {
-    notifyBtn.innerHTML = resetTxt + ' <span>→</span>';
-    notifyBtn.style.color = '';
-  }, 3000);
-});
   // ── Mobile menu ──────────────────────────────
   const hamburger = document.getElementById('navHamburger');
   const mobileMenu = document.getElementById('mobileMenu');
