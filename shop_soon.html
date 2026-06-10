@@ -506,7 +506,7 @@ html[lang="en"] .social-rail a::after { right: calc(100% + 0.1rem); left: auto; 
 .soon-heading {
   font-family:'Thmanyah Serif Display';
   font-weight:900;
-  font-size:clamp(2.8rem,10vw,6rem);
+  font-size:clamp(2.8rem,10vw,50rem);
   line-height:1.15;
   letter-spacing:-0.02em;
   overflow:visible;
@@ -1064,26 +1064,47 @@ body, .nav, .footer, .footer-col a, .lang-toggle, .mobile-menu, .social-rail {
   applyLang(initLang);
 
   // ── Cursor ───────────────────────────────────
-  const dot  = document.getElementById('cursorDot');
-  const ring = document.getElementById('cursorRing');
-  if (dot && ring && window.matchMedia('(min-width:901px)').matches) {
-    document.addEventListener('mousemove', e => {
-      dot.style.left  = e.clientX + 'px';
-      dot.style.top   = e.clientY + 'px';
-      ring.style.left = e.clientX + 'px';
-      ring.style.top  = e.clientY + 'px';
+const cursorDot = document.getElementById('cursorDot');
+  const cursorRing = document.getElementById('cursorRing');
+  let mouseX = 0, mouseY = 0;
+  let dotX = 0, dotY = 0;
+  let ringX = 0, ringY = 0;
+
+  if (cursorDot && cursorRing && window.matchMedia('(min-width: 900px)').matches) {
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
     });
-    document.querySelectorAll('a,button,.work-card-full,.soon-cta').forEach(el => {
-      el.addEventListener('mouseenter',()=>{ ring.classList.add('hover'); dot.classList.add('hover'); });
-      el.addEventListener('mouseleave',()=>{ ring.classList.remove('hover'); dot.classList.remove('hover'); });
+
+    function animateCursor() {
+      dotX += (mouseX - dotX) * 0.6;
+      dotY += (mouseY - dotY) * 0.6;
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+      cursorDot.style.left = dotX + 'px';
+      cursorDot.style.top = dotY + 'px';
+      cursorRing.style.left = ringX + 'px';
+      cursorRing.style.top = ringY + 'px';
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Hover states
+    document.querySelectorAll('a, button, .work-card, .svc-card, .works-item, .metric, .score, [data-cursor="hover"]').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursorRing.classList.add('hover');
+        cursorDot.classList.add('hover');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursorRing.classList.remove('hover');
+        cursorRing.classList.remove('text-hover');
+        cursorDot.classList.remove('hover');
+      });
     });
-    document.addEventListener('mouseleave', () => {
-      dot.style.opacity  = '0';
-      ring.style.opacity = '0';
-    });
-    document.addEventListener('mouseenter', () => {
-      dot.style.opacity  = '1';
-      ring.style.opacity = '1';
+
+    document.querySelectorAll('h1, h2, .display-h1, .display-h2').forEach(el => {
+      el.addEventListener('mouseenter', () => cursorRing.classList.add('text-hover'));
+      el.addEventListener('mouseleave', () => cursorRing.classList.remove('text-hover'));
     });
   }
 
