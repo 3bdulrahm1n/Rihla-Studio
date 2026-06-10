@@ -6373,7 +6373,9 @@ html[lang="en"] .article-link:hover .article-arrow { transform: translateX(3px);
 
   // Newsletter button (placeholder)
   emailjs.init('p2wVYn1BGwdCT9bRX');
-  newsletterBtn.addEventListener('click', () => {
+  const newsletterBtn = document.getElementById('newsletterBtn');
+  if (newsletterBtn) {
+    newsletterBtn.addEventListener('click', () => {
     const input = document.getElementById('newsletterEmail');
     if (input && input.value.includes('@')) {
 
