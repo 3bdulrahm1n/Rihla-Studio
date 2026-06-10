@@ -1118,6 +1118,9 @@ const cursorDot = document.getElementById('cursorDot');
   }
   
   //ــContact Formـــــــــــــــــــــــــــــ
+  emailjs.init('p2wVYn1BGwdCT9bRX');
+  const notifyBtn   = document.getElementById('notifyBtn');
+  const notifyEmail = document.getElementById('notifyEmail');
   notifyBtn.addEventListener('click', () => {
   const email = notifyEmail.value.trim();
   if (!email || !email.includes('@')) {
@@ -1126,7 +1129,7 @@ const cursorDot = document.getElementById('cursorDot');
     return;
   }
 
-  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+  emailjs.send('service_kr8dm9p', 'template_cuvn655', {
     user_email: email,
     source: 'متجر رحلة — إشعار الإطلاق',
     message: 'عميل سجّل بريده وهو مستني إطلاق المتجر.'
