@@ -554,13 +554,17 @@ section {
 :root[data-theme="light"] .bg-stars .star {
   background: var(--orange);
 }
+:root {
+  --twinkle-opacity: 0.9;
+}
+
+:root[data-theme="light"] {
+  --twinkle-opacity: 0.5;
+}
+
 @keyframes twinkle {
   0%, 100% { opacity: 0; transform: scale(0.5); }
-  50% { opacity: 0.9; transform: scale(1); }
-}
-:root[data-theme="light"] @keyframes twinkle {
-  0%, 100% { opacity: 0; transform: scale(0.5); }
-  50% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: var(--twinkle-opacity); transform: scale(1); }
 }
 
 .aurora {
