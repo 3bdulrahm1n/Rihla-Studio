@@ -6373,28 +6373,31 @@ html[lang="en"] .article-link:hover .article-arrow { transform: translateX(3px);
   // Newsletter button (placeholder)
   emailjs.init('p2wVYn1BGwdCT9bRX');
   const newsletterBtn = document.getElementById('newsletterBtn');
-  newsletterBtn.addEventListener('click', () => {
-    const input = document.getElementById('newsletterEmail');
-    if (input && input.value.includes('@')) {
 
-      emailjs.send('service_kr8dm9p', 'template_cuvn655', {
-        user_email: input.value.trim(),
-        source: 'مدونة رحلة — نيوزليتر',
-        message: 'عميل اشترك في النيوزليتر.'
-      }).catch(err => console.error('EmailJS:', err));
+  if (newsletterBtn) {
+    newsletterBtn.addEventListener('click', () => {
+      const input = document.getElementById('newsletterEmail');
+      if (input && input.value.includes('@')) {
 
-      const toast = document.getElementById('toast');
-      if (toast) {
-        toast.querySelector('[data-i18n="toast_t"]').textContent =
-          document.documentElement.lang === 'en' ? 'Subscribed!' : 'تم الاشتراك!';
-        toast.querySelector('[data-i18n="toast_d"]').textContent =
-          document.documentElement.lang === 'en' ? 'Welcome to the newsletter.' : 'أهلاً بك في النيوزليتر.';
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 3500);
+        emailjs.send('service_kr8dm9p', 'template_cuvn655', {
+          user_email: input.value.trim(),
+          source: 'مدونة رحلة — نيوزليتر',
+          message: 'عميل اشترك في النيوزليتر.'
+        }).catch(err => console.error('EmailJS:', err));
+
+        const toast = document.getElementById('toast');
+        if (toast) {
+          toast.querySelector('[data-i18n="toast_t"]').textContent =
+            document.documentElement.lang === 'en' ? 'Subscribed!' : 'تم الاشتراك!';
+          toast.querySelector('[data-i18n="toast_d"]').textContent =
+            document.documentElement.lang === 'en' ? 'Welcome to the newsletter.' : 'أهلاً بك في النيوزليتر.';
+          toast.classList.add('show');
+          setTimeout(() => toast.classList.remove('show'), 3500);
+        }
+        input.value = '';
       }
-      input.value = '';
-    }
-  });
+    });
+  }
 
   // Load more placeholder
   const loadMore = document.getElementById('loadMoreBtn');
