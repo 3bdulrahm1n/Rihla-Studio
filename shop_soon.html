@@ -1131,6 +1131,7 @@ const cursorDot = document.getElementById('cursorDot');
 
       emailjs.send('service_kr8dm9p', 'template_cuvn655', {
         user_email: email,
+        email: email,
         source: 'متجر رحلة — إشعار الإطلاق',
         message: 'عميل سجّل بريده وهو مستني إطلاق المتجر.'
       }).catch(err => console.error('EmailJS:', err));
