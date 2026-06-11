@@ -1164,28 +1164,7 @@ const cursorDot = document.getElementById('cursorDot');
     });
   }
 
-  // ── Notify button ────────────────────────────
-  const notifyBtn   = document.getElementById('notifyBtn');
-  const notifyEmail = document.getElementById('notifyEmail');
-  if (notifyBtn && notifyEmail) {
-    notifyBtn.addEventListener('click', () => {
-      const email = notifyEmail.value.trim();
-      if (!email || !email.includes('@')) {
-        notifyEmail.style.borderColor = 'rgba(229,90,43,0.6)';
-        setTimeout(()=>{ notifyEmail.style.borderColor=''; }, 1500);
-        return;
-      }
-      const doneTxt   = root.lang === 'ar' ? '✓ تم التسجيل!' : '✓ Registered!';
-      const resetTxt  = root.lang === 'ar' ? 'أبلغني عند الإطلاق' : 'Notify me at launch';
-      notifyBtn.innerHTML = doneTxt;
-      notifyBtn.style.color = 'var(--orange)';
-      notifyEmail.value = '';
-      setTimeout(()=>{
-        notifyBtn.innerHTML = resetTxt + ' <span>→</span>';
-        notifyBtn.style.color = '';
-      }, 3000);
-    });
-  }
+
 
 })();
 </script>
