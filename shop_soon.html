@@ -1129,15 +1129,13 @@ const cursorDot = document.getElementById('cursorDot');
         return;
       }
 
-      emailjs.send('service_kr8dm9p', 'template_cuvn655', {
-  user_email: email,
-  email: email,
-  name: email,
-  source: 'متجر رحلة — إشعار الإطلاق',
-  message: 'عميل سجّل بريده وهو مستني إطلاق المتجر.'
-})
-.then(res => console.log('✅ Response:', JSON.stringify(res)))
-.catch(err => console.error('❌ Error:', JSON.stringify(err)));
+    emailjs.send('service_kr8dm9p', 'template_cuvn655', {
+    user_email: email,
+    email: email,
+    name: email,
+    source: 'Rehla Store - Launch Notification',
+    message: 'A customer registered their email and is waiting for the store launch.'
+    }).catch(err => console.error('EmailJS:', err));
 
       const doneTxt  = root.lang === 'ar' ? '✓ تم التسجيل!' : '✓ Registered!';
       const resetTxt = root.lang === 'ar' ? 'أبلغني عند الإطلاق' : 'Notify me at launch';
