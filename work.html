@@ -1041,6 +1041,108 @@ html[lang="en"] .featured-cta:hover .arrow { transform: translateX(4px); }
   transition: transform 0.6s var(--ease);
 }
 .work-card-full:hover .work-thumb { transform: scale(1.08) rotate(-3deg); }
+
+/* ---- Inline video player (editing / motion) ---- */
+/* When a YouTube thumbnail is loaded, treat .work-visual as a real cover image */
+.work-visual.has-thumb {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+/* Tone down the orange grid + radial overlays so the photo stays readable */
+.work-visual.has-thumb::before {
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(10, 5, 16, 0.35) 0%, transparent 70%),
+    radial-gradient(ellipse at 70% 70%, rgba(10, 5, 16, 0.45) 0%, transparent 70%) !important;
+}
+.work-visual.has-thumb::after { opacity: 0; }
+
+.work-visual[data-video] .work-play-btn {
+  position: absolute;
+  z-index: 5;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: rgba(10, 5, 16, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--orange);
+  box-shadow:
+    0 0 0 1px rgba(245, 166, 35, 0.45) inset,
+    0 10px 30px -8px rgba(0, 0, 0, 0.55),
+    0 0 40px -6px rgba(245, 166, 35, 0.45);
+  transition: transform 0.35s var(--ease), background 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+.work-visual[data-video] .work-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: rgba(229, 90, 43, 0.85);
+  color: #fff;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.6) inset,
+    0 14px 40px -8px rgba(229, 90, 43, 0.6),
+    0 0 50px -6px rgba(245, 166, 35, 0.6);
+}
+.work-visual[data-video] .work-play-btn::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(245, 166, 35, 0.25);
+  animation: work-play-pulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes work-play-pulse {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  100% { transform: scale(1.5); opacity: 0;   }
+}
+.work-visual[data-video] .work-play-btn svg {
+  width: 28px; height: 28px;
+  margin-left: 4px;
+  fill: currentColor;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+html[lang="en"] .work-visual[data-video] .work-play-btn svg { margin-left: 0; margin-right: 4px; }
+:root[data-theme="light"] .work-visual[data-video] .work-play-btn {
+  background: rgba(255, 252, 246, 0.7);
+  color: #E55A2B;
+  box-shadow:
+    0 0 0 1px rgba(229, 90, 43, 0.35) inset,
+    0 10px 30px -8px rgba(229, 90, 43, 0.35),
+    0 0 40px -6px rgba(245, 166, 35, 0.4);
+}
+
+.work-video-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease);
+}
+.work-video-frame iframe,
+.work-video-frame video {
+  width: 100%; height: 100%;
+  border: 0;
+  display: block;
+}
+.work-visual.is-playing .work-thumb,
+.work-visual.is-playing .work-play-btn,
+.work-visual.is-playing .work-badge,
+.work-visual.is-playing .work-cat,
+.work-visual.is-playing::before,
+.work-visual.is-playing::after {
+  opacity: 0;
+  pointer-events: none;
+}
+.work-visual.is-playing .work-video-frame {
+  opacity: 1;
+  pointer-events: auto;
+}
 .work-badge {
   position: absolute; top: 1rem; z-index: 3;
   display: inline-flex; align-items: center; gap: 0.4rem;
@@ -1689,7 +1791,9 @@ body { font-feature-settings: "salt" 1; }
       </div>
       <div class="works-category-grid reveal-stagger">
         <a class="work-card-full" href="#" data-cat="editing" data-popularity="98" data-year="2025" data-date="2025-03-10">
-          <div class="work-visual">
+          <div class="work-visual" data-video="https://youtube.com/shorts/nu3YLtmCLLA?si=KNMuAvZ6BeZYhKDe">
+            <button class="work-play-btn" type="button" aria-label="تشغيل الفيديو"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            <div class="work-video-frame"></div>
             <div class="work-thumb">Reels</div>
             <div class="work-badge featured" data-i18n="works.badge_featured">★ مميز</div>
             <div class="work-cat" data-i18n="works.cat_editing">مونتاج</div>
@@ -1715,7 +1819,9 @@ body { font-feature-settings: "salt" 1; }
         </a>
 
         <a class="work-card-full" href="#" data-cat="editing" data-popularity="95" data-year="2024" data-date="2024-11-22">
-          <div class="work-visual" style="background: linear-gradient(135deg, #E55A2B 0%, #1E0A5C 100%);">
+          <div class="work-visual" style="background: linear-gradient(135deg, #E55A2B 0%, #1E0A5C 100%);" data-video="">
+            <button class="work-play-btn" type="button" aria-label="تشغيل الفيديو"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            <div class="work-video-frame"></div>
             <div class="work-thumb">Doc</div>
             <div class="work-badge hot" data-i18n="works.badge_hot">🔥 رائج</div>
             <div class="work-cat" data-i18n="works.cat_editing">مونتاج</div>
@@ -1741,7 +1847,9 @@ body { font-feature-settings: "salt" 1; }
         </a>
 
         <a class="work-card-full" href="#" data-cat="editing" data-popularity="92" data-year="2024" data-date="2024-10-15">
-          <div class="work-visual" style="background: linear-gradient(135deg, #F5A623 0%, #1E0A5C 100%);">
+          <div class="work-visual" style="background: linear-gradient(135deg, #F5A623 0%, #1E0A5C 100%);" data-video="">
+            <button class="work-play-btn" type="button" aria-label="تشغيل الفيديو"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            <div class="work-video-frame"></div>
             <div class="work-thumb">Ad</div>
             <div class="work-badge new" data-i18n="works.badge_new">جديد</div>
             <div class="work-cat" data-i18n="works.cat_editing">مونتاج</div>
@@ -1767,7 +1875,9 @@ body { font-feature-settings: "salt" 1; }
         </a>
 
         <a class="work-card-full" href="#" data-cat="editing" data-popularity="88" data-year="2024" data-date="2024-08-30">
-          <div class="work-visual" style="background: linear-gradient(135deg, #3B1FA3 0%, #E55A2B 100%);">
+          <div class="work-visual" style="background: linear-gradient(135deg, #3B1FA3 0%, #E55A2B 100%);" data-video="">
+            <button class="work-play-btn" type="button" aria-label="تشغيل الفيديو"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            <div class="work-video-frame"></div>
             <div class="work-thumb">YT</div>
             <div class="work-cat" data-i18n="works.cat_editing">مونتاج</div>
           </div>
@@ -1792,7 +1902,9 @@ body { font-feature-settings: "salt" 1; }
         </a>
 
         <a class="work-card-full" href="#" data-cat="editing" data-popularity="85" data-year="2024" data-date="2024-06-12">
-          <div class="work-visual" style="background: linear-gradient(135deg, #1E0A5C 0%, #3B1FA3 100%);">
+          <div class="work-visual" style="background: linear-gradient(135deg, #1E0A5C 0%, #3B1FA3 100%);" data-video="">
+            <button class="work-play-btn" type="button" aria-label="تشغيل الفيديو"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            <div class="work-video-frame"></div>
             <div class="work-thumb">Wed</div>
             <div class="work-cat" data-i18n="works.cat_editing">مونتاج</div>
           </div>
@@ -1817,7 +1929,9 @@ body { font-feature-settings: "salt" 1; }
         </a>
 
         <a class="work-card-full" href="#" data-cat="editing" data-popularity="80" data-year="2024" data-date="2024-04-05">
-          <div class="work-visual" style="background: linear-gradient(135deg, #FF6B4A 0%, #F5A623 100%);">
+          <div class="work-visual" style="background: linear-gradient(135deg, #FF6B4A 0%, #F5A623 100%);" data-video="">
+            <button class="work-play-btn" type="button" aria-label="تشغيل الفيديو"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            <div class="work-video-frame"></div>
             <div class="work-thumb">Corp</div>
             <div class="work-cat" data-i18n="works.cat_editing">مونتاج</div>
           </div>
@@ -2024,7 +2138,9 @@ body { font-feature-settings: "salt" 1; }
       </div>
       <div class="works-category-grid reveal-stagger">
         <a class="work-card-full" href="#" data-cat="motion" data-popularity="97" data-year="2025" data-date="2025-02-04">
-          <div class="work-visual" style="background: linear-gradient(135deg, #E55A2B 0%, #1E0A5C 100%);">
+          <div class="work-visual" style="background: linear-gradient(135deg, #E55A2B 0%, #1E0A5C 100%);" data-video="">
+            <button class="work-play-btn" type="button" aria-label="تشغيل الفيديو"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            <div class="work-video-frame"></div>
             <div class="work-thumb">Stream</div>
             <div class="work-badge featured" data-i18n="works.badge_featured">★ مميز</div>
             <div class="work-cat" data-i18n="works.cat_motion">موشن</div>
@@ -2050,7 +2166,9 @@ body { font-feature-settings: "salt" 1; }
         </a>
 
         <a class="work-card-full" href="#" data-cat="motion" data-popularity="92" data-year="2024" data-date="2024-11-15">
-          <div class="work-visual" style="background: linear-gradient(135deg, #F5A623 0%, #1E0A5C 100%);">
+          <div class="work-visual" style="background: linear-gradient(135deg, #F5A623 0%, #1E0A5C 100%);" data-video="">
+            <button class="work-play-btn" type="button" aria-label="تشغيل الفيديو"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            <div class="work-video-frame"></div>
             <div class="work-thumb">Intro</div>
             <div class="work-badge hot" data-i18n="works.badge_hot">🔥 رائج</div>
             <div class="work-cat" data-i18n="works.cat_motion">موشن</div>
@@ -2076,7 +2194,9 @@ body { font-feature-settings: "salt" 1; }
         </a>
 
         <a class="work-card-full" href="#" data-cat="motion" data-popularity="88" data-year="2024" data-date="2024-09-08">
-          <div class="work-visual" style="background: linear-gradient(135deg, #1E0A5C 0%, #3B1FA3 100%);">
+          <div class="work-visual" style="background: linear-gradient(135deg, #1E0A5C 0%, #3B1FA3 100%);" data-video="">
+            <button class="work-play-btn" type="button" aria-label="تشغيل الفيديو"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            <div class="work-video-frame"></div>
             <div class="work-thumb">Logo</div>
             <div class="work-cat" data-i18n="works.cat_motion">موشن</div>
           </div>
@@ -2101,7 +2221,9 @@ body { font-feature-settings: "salt" 1; }
         </a>
 
         <a class="work-card-full" href="#" data-cat="motion" data-popularity="84" data-year="2024" data-date="2024-08-20">
-          <div class="work-visual" style="background: linear-gradient(135deg, #3B1FA3 0%, #FF6B4A 100%);">
+          <div class="work-visual" style="background: linear-gradient(135deg, #3B1FA3 0%, #FF6B4A 100%);" data-video="">
+            <button class="work-play-btn" type="button" aria-label="تشغيل الفيديو"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            <div class="work-video-frame"></div>
             <div class="work-thumb">Expl</div>
             <div class="work-cat" data-i18n="works.cat_motion">موشن</div>
           </div>
@@ -2126,7 +2248,9 @@ body { font-feature-settings: "salt" 1; }
         </a>
 
         <a class="work-card-full" href="#" data-cat="motion" data-popularity="81" data-year="2024" data-date="2024-06-18">
-          <div class="work-visual" style="background: linear-gradient(135deg, #FF6B4A 0%, #1E0A5C 100%);">
+          <div class="work-visual" style="background: linear-gradient(135deg, #FF6B4A 0%, #1E0A5C 100%);" data-video="">
+            <button class="work-play-btn" type="button" aria-label="تشغيل الفيديو"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            <div class="work-video-frame"></div>
             <div class="work-thumb">Ads</div>
             <div class="work-cat" data-i18n="works.cat_motion">موشن</div>
           </div>
@@ -2151,7 +2275,9 @@ body { font-feature-settings: "salt" 1; }
         </a>
 
         <a class="work-card-full" href="#" data-cat="motion" data-popularity="77" data-year="2024" data-date="2024-04-22">
-          <div class="work-visual" style="background: linear-gradient(135deg, #1E0A5C 0%, #F5A623 100%);">
+          <div class="work-visual" style="background: linear-gradient(135deg, #1E0A5C 0%, #F5A623 100%);" data-video="">
+            <button class="work-play-btn" type="button" aria-label="تشغيل الفيديو"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            <div class="work-video-frame"></div>
             <div class="work-thumb">Lyric</div>
             <div class="work-cat" data-i18n="works.cat_motion">موشن</div>
           </div>
@@ -3063,6 +3189,104 @@ body { font-feature-settings: "salt" 1; }
   }
   setTimeout(handleHash, 100);
   window.addEventListener('hashchange', handleHash);
+
+  // ============================================
+  // INLINE VIDEO PLAYER (editing / motion)
+  // ============================================
+  // When a play button is clicked, read data-video from the parent .work-visual,
+  // build an iframe (YouTube / Vimeo), inject it into .work-video-frame, and
+  // toggle .is-playing. The .work-visual sits inside an <a href="#">, so we
+  // stop propagation + preventDefault to keep the page from jumping to #.
+  (function initInlineVideoPlayer() {
+    // Matches: watch?v=ID  /  /shorts/ID  /  youtu.be/ID  /  /embed/ID
+    const YT_RE = /(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/|youtube\.com\/embed\/)([A-Za-z0-9_-]{6,})/;
+    const VM_RE = /vimeo\.com\/(?:video\/)?(\d+)/;
+
+    function extractYoutubeId(url) {
+      const m = url.match(YT_RE);
+      return m ? m[1] : null;
+    }
+
+    function buildEmbed(url) {
+      // YouTube (watch / shorts / youtu.be / embed)
+      const yt = url.match(YT_RE);
+      if (yt) {
+        return `https://www.youtube.com/embed/${yt[1]}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+      }
+      // Vimeo: vimeo.com/ID
+      const vimeo = url.match(VM_RE);
+      if (vimeo) {
+        return `https://player.vimeo.com/video/${vimeo[1]}?autoplay=1&title=0&byline=0&portrait=0`;
+      }
+      // Already an embed URL or raw mp4
+      return url;
+    }
+
+    // Auto-load YouTube thumbnail as the card background.
+    // Skips cards without data-video, and cards whose data-video is not a
+    // YouTube / Vimeo URL. Runs once on init, before the play-button click.
+    function applyVideoThumbnails() {
+      document.querySelectorAll('.work-visual[data-video]').forEach(visual => {
+        const url = (visual.getAttribute('data-video') || '').trim();
+        if (!url) return;
+        const ytId = extractYoutubeId(url);
+        if (!ytId) return;
+
+        const maxRes = `https://img.youtube.com/vi/${ytId}/maxresdefault.jpg`;
+        const hq     = `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
+
+        const setBg = (src) => {
+          visual.style.backgroundImage = `url('${src}')`;
+          visual.classList.add('has-thumb');
+          const textThumb = visual.querySelector('.work-thumb');
+          if (textThumb) textThumb.style.display = 'none';
+        };
+
+        // maxresdefault.jpg returns 120x90 when the original isn't available,
+        // so we probe the natural width and fall back to hqdefault when small.
+        const probe = new Image();
+        probe.onload  = () => setBg(probe.naturalWidth >= 640 ? maxRes : hq);
+        probe.onerror = () => setBg(hq);
+        probe.src = maxRes;
+      });
+    }
+    applyVideoThumbnails();
+
+    document.addEventListener('click', function (e) {
+      const btn = e.target.closest('.work-play-btn');
+      if (!btn) return;
+      e.preventDefault();
+      e.stopPropagation();
+
+      const visual = btn.closest('.work-visual');
+      if (!visual) return;
+
+      const url = (visual.getAttribute('data-video') || '').trim();
+      if (!url) {
+        // No video URL set yet — soft hint for the developer / owner.
+        // Replace with a real URL in the data-video attribute on .work-visual.
+        btn.animate(
+          [
+            { transform: 'translate(-50%, -50%) scale(1)' },
+            { transform: 'translate(-50%, -50%) scale(1.15)' },
+            { transform: 'translate(-50%, -50%) scale(1)' },
+          ],
+          { duration: 300, easing: 'ease-out' }
+        );
+        console.info('[Rihla] data-video is empty for this card. Add an embed URL to the data-video attribute on .work-visual to enable playback.');
+        return;
+      }
+
+      const frame = visual.querySelector('.work-video-frame');
+      if (!frame) return;
+
+      if (!visual.classList.contains('is-playing')) {
+        const src = buildEmbed(url);
+        frame.innerHTML = `<iframe src="${src}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+        visual.classList.add('is-playing');
+      }
+    });
+  })();
 
   // ============================================
   // INIT
