@@ -886,13 +886,14 @@ html[dir="rtl"] .works-sort select {
 }
 .featured-banner::after {
   content: ''; position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(245, 166, 35, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(245, 166, 35, 0.05) 1px, transparent 1px);
+  background-image:url(assets/carsouls/designs/Rihla/Rihla-Presentation_05.gif);
   background-size: 40px 40px; opacity: 0.6;
   pointer-events: none; z-index: 0;
   mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .featured-content { position: relative; z-index: 2; }
 .featured-content .eyebrow { margin-bottom: 1.5rem; }
@@ -972,6 +973,7 @@ html[lang="en"] .featured-cta:hover .arrow { transform: translateX(4px); }
   -webkit-text-fill-color: transparent;
   text-align: center; line-height: 1;
   filter: drop-shadow(0 0 30px rgba(245, 166, 35, 0.4));
+  padding-right: 345px;
 }
 .featured-corner-deco {
   position: absolute; z-index: 1;
@@ -986,7 +988,7 @@ html[lang="en"] .featured-cta:hover .arrow { transform: translateX(4px); }
   .featured-visual { order: -1; }
   .featured-orb { width: 200px; height: 200px; }
   .featured-orb-2 { width: 120px; height: 120px; }
-  .featured-emblem { font-size: 5rem; }
+  .featured-emblem { font-size: 7rem; }
   .featured-corner-deco { width: 32px; height: 32px; }
 }
 
@@ -1002,7 +1004,7 @@ html[lang="en"] .featured-cta:hover .arrow { transform: translateX(4px); }
   border-radius: 22px;
   overflow: hidden;
   transition: all 0.5s var(--ease);
-  cursor: none;
+  cursor: pointer; 
   text-decoration: none;
   color: inherit;
 }
@@ -1535,6 +1537,195 @@ body, .nav, .work-card-full, .value-prop, .footer, .works-filter-bar,
 }
 /* Global curved kashida for Thmanyah font */
 body { font-feature-settings: "salt" 1; }
+
+/* ============================================
+   DESIGN SECTION — MAXIMIZE + LIGHTBOX
+   ============================================ */
+.works-category-maximize {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(245, 166, 35, 0.3);
+  background: rgba(245, 166, 35, 0.08);
+  color: var(--orange);
+  font-family: 'Thmanyah Sans';
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+html[lang="en"] .works-category-maximize { font-family: 'Thmanyah Sans'; }
+.works-category-maximize:hover {
+  background: var(--orange);
+  color: var(--bg);
+  border-color: var(--orange);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -6px rgba(245, 166, 35, 0.5);
+}
+.works-category-maximize svg {
+  width: 14px; height: 14px;
+  transition: transform 0.3s var(--ease);
+}
+.works-category-maximize:hover svg { transform: scale(1.1); }
+
+.work-card-full.is-design { cursor: pointer; }
+
+/* Lightbox overlay */
+.design-lightbox {
+  position: fixed; inset: 0; z-index: 10000;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(10, 5, 16, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.35s var(--ease), visibility 0.35s var(--ease);
+  padding: 2rem;
+}
+.design-lightbox.open { opacity: 1; visibility: visible; cursor: default; }
+.design-lightbox-inner {
+  position: relative;
+  max-width: min(1100px, 90vw);
+  max-height: 88vh;
+  width: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 1rem;
+  transform: scale(0.95);
+  transition: transform 0.4s var(--ease);
+}
+.design-lightbox.open .design-lightbox-inner { transform: scale(1); }
+.design-lightbox-img {
+  max-width: 100%;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 18px;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.7),
+              0 0 0 1px rgba(245, 166, 35, 0.25);
+  background: #1E0A5C;
+}
+.design-lightbox-meta {
+  display: flex; align-items: center; gap: 1rem;
+  color: var(--orange);
+  font-family: 'Thmanyah Serif Display';
+  font-size: 1.1rem;
+  text-align: center;
+}
+html[lang="en"] .design-lightbox-meta { font-family: 'Thmanyah Sans'; }
+.design-lightbox-meta .dot {
+  width: 4px; height: 4px; background: var(--orange); border-radius: 50%;
+}
+/* Instagram-style dots indicator at the top of the lightbox.
+   Positioned at the top-center, just below the close button. */
+.design-lightbox-dots {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10002;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 6px 10px;
+  background: rgba(10, 5, 16, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(245, 166, 35, 0.2);
+  border-radius: 100px;
+}
+.design-lightbox-dot {
+  width: 24px;
+  height: 4px;
+  border-radius: 100px;
+  background: rgba(245, 166, 35, 0.3);
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: background 0.25s var(--ease), width 0.25s var(--ease);
+}
+.design-lightbox-dot:hover { background: rgba(245, 166, 35, 0.55); }
+.design-lightbox-dot.active {
+  background: var(--orange);
+  box-shadow: 0 0 8px rgba(245, 166, 35, 0.5);
+}
+.design-lightbox-dots:empty { display: none; }
+/* Lightbox nav arrows are FIXED to the viewport edges,
+   not positioned relative to the image / card. */
+.design-lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: rgba(10, 5, 16, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(245, 166, 35, 0.45);
+  color: var(--orange);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  z-index: 10002;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+}
+.design-lightbox-nav:hover {
+  background: var(--orange);
+  color: var(--bg);
+  border-color: var(--orange);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 14px 36px -10px rgba(245, 166, 35, 0.5);
+}
+.design-lightbox-nav.prev { left: 1.5rem; }
+.design-lightbox-nav.next { right: 1.5rem; }
+html[dir="rtl"] .design-lightbox-nav.prev { left: auto; right: 1.5rem; }
+html[dir="rtl"] .design-lightbox-nav.next { right: auto; left: 1.5rem; }
+.design-lightbox-nav svg { width: 22px; height: 22px; }
+/* Mirror the arrow icons in RTL so the chevron always points
+   in the direction the button navigates. In RTL the carousel
+   reads right-to-left, so the visually-left button is "next"
+   and must point left, while the right button is "prev" and
+   must point right. */
+html[dir="rtl"] .design-lightbox-nav svg {
+  transform: scaleX(-1);
+}
+.design-lightbox-nav[disabled] { opacity: 0.3; cursor: default; pointer-events: none; }
+.design-lightbox-close {
+  position: fixed; top: 1.25rem; right: 1.25rem;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  border: 0;
+  z-index: 10002;
+  z-index: 3;
+  box-shadow: 0 8px 20px -6px rgba(245, 166, 35, 0.5);
+}
+.design-lightbox-close:hover { transform: rotate(90deg) scale(1.05); }
+.design-lightbox-close svg { width: 20px; height: 20px; }
+.design-lightbox-counter {
+  font-family: 'Thmanyah Sans';
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+@media (max-width: 600px) {
+  .design-lightbox { padding: 1rem; }
+  .design-lightbox-img { max-height: 65vh; border-radius: 12px; }
+  .design-lightbox-nav { width: 44px; height: 44px; }
+  .design-lightbox-nav.prev { left: 0.5rem; }
+  .design-lightbox-nav.next { right: 0.5rem; }
+  html[dir="rtl"] .design-lightbox-nav.prev { right: 0.5rem; left: auto; }
+  html[dir="rtl"] .design-lightbox-nav.next { left: 0.5rem; right: auto; }
+  .design-lightbox-close { width: 38px; height: 38px; top: 0.75rem; right: 0.75rem; }
+}
 </style>
 </head>
 <body>
@@ -1597,9 +1788,9 @@ body { font-feature-settings: "salt" 1; }
       <a href="work.html" class="active" data-i18n="nav.work_all">جميع الأعمال</a>
       <a href="index.html#services" data-i18n="nav.services">الخدمات</a>
       <a href="shop_soon.html" data-i18n="nav.shop">المتجر</a>
-      <a href="blog.html" data-i18n="nav.blog">المقالات</a>
+      <!-- <a href="blog.html" data-i18n="nav.blog">المقالات</a> -->
       <a href="index.html#agreement" data-i18n="nav.agreement">اتفاقية العمل</a>
-      <a href="index.html#process" data-i18n="nav.process">كيف نشتغل</a>
+      <a href="index.html#process" data-i18n="nav.process">كيف نعمل</a>
       <a href="index.html#results" data-i18n="nav.results">النتائج</a>
       <a href="index.html#founder" data-i18n="nav.about">من نحن</a>
       <a href="index.html#faq" data-i18n="nav.faq">الأسئلة</a>
@@ -1636,9 +1827,9 @@ body { font-feature-settings: "salt" 1; }
   <a href="work.html" class="active" data-i18n="nav.work_all">جميع الأعمال</a>
   <a href="index.html#services" data-i18n="nav.services">الخدمات</a>
   <a href="shop_soon.html" data-i18n="nav.shop">المتجر</a>
-  <a href="blog.html" data-i18n="nav.blog">المقالات</a>
+  <!-- <a href="blog.html" data-i18n="nav.blog">المقالات</a> -->
   <a href="index.html#agreement" data-i18n="nav.agreement">اتفاقية العمل</a>
-  <a href="index.html#process" data-i18n="nav.process">كيف نشتغل</a>
+  <a href="index.html#process" data-i18n="nav.process">كيف نعمل</a>
   <a href="index.html#results" data-i18n="nav.results">النتائج</a>
   <a href="index.html#founder" data-i18n="nav.about">من نحن</a>
   <a href="index.html#faq" data-i18n="nav.faq">الأسئلة</a>
@@ -2015,10 +2206,10 @@ body { font-feature-settings: "salt" 1; }
             <div class="work-cat" data-i18n="works.cat_editing">مونتاج</div>
           </div>
           <div class="work-body">
-            <h3 class="work-title" data-i18n="works.e8_t">فيلم شركة تعريفي</h3>
-            <!-- <p class="work-desc" data-i18n="works.e8_d">فيلم تعريفي ٣ دقائق لشركة استشارات — من كتابة النص للتسليم النهائي.</p> -->
+            <h3 class="work-title" data-i18n="works.e9_t">فيلم شركة تعريفي</h3>
+            <!-- <p class="work-desc" data-i18n="works.e9_d">فيلم تعريفي ٣ دقائق لشركة استشارات — من كتابة النص للتسليم النهائي.</p> -->
             <div class="work-meta">
-              <!-- <span class="work-client" data-i18n="works.e8_client">ConsultPro</span> -->
+              <!-- <span class="work-client" data-i18n="works.e9_client">ConsultPro</span> -->
               <span class="work-rating">★★★★★ <span>5.0</span></span>
             </div>
           </div>
@@ -2049,9 +2240,9 @@ body { font-feature-settings: "salt" 1; }
         <span class="works-category-count" data-count-section="design">6</span>
       </div>
       <div class="works-category-grid reveal-stagger">
-        <a class="work-card-full" href="#" data-cat="design" data-popularity="98" data-year="2025" data-date="2025-02-18">
-          <div class="work-visual" style="background: linear-gradient(135deg, #1E0A5C 0%, #3B1FA3 100%);">
-            <div class="work-thumb">Hana</div>
+        <a class="work-card-full is-design" href="#" data-cat="design" data-popularity="98" data-year="2025" data-date="2025-02-18" data-images="assets/carsouls/designs/Rihla/Rihla-Presentation_01.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_02.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_03.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_04.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_05.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_06.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_07.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_08.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_09.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_10.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_11.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_12.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_13.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_14.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_15.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_16.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_17.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_18.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_19.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_20.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_21.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_22.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_23.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_24.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_25.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_26.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_27.gif|||assets/carsouls/designs/Rihla/Rihla-Presentation_28.gif">
+          <div class="work-visual has-thumb" style="background-image: url('assets/carsouls/designs/Rihla/Rihla-Presentation_01.gif');">
+            <div class="work-thumb">Rihla</div>
             <div class="work-badge featured" data-i18n="works.badge_featured">★ مميز</div>
             <div class="work-cat" data-i18n="works.cat_design">تصميم</div>
           </div>
@@ -2074,25 +2265,71 @@ body { font-feature-settings: "salt" 1; }
             </span>
           </div>
         </a>
-
-        <a class="work-card-full" href="#" data-cat="design" data-popularity="94" data-year="2025" data-date="2025-01-25">
-          <div class="work-visual" style="background: linear-gradient(135deg, #F5A623 0%, #1E0A5C 100%);">
-            <div class="work-thumb">Fika</div>
-            <div class="work-badge new" data-i18n="works.badge_new">جديد</div>
+        <a class="work-card-full is-design" href="#" data-cat="design" data-popularity="98" data-year="2025" data-date="2025-02-18" data-images="assets/carsouls/designs/school/school.jpg">
+          <div class="work-visual has-thumb" style="background-image: url('assets/carsouls/designs/school/school.jpg');">
+            <div class="work-thumb">school</div>
             <div class="work-cat" data-i18n="works.cat_design">تصميم</div>
           </div>
           <div class="work-body">
-            <h3 class="work-title" data-i18n="works.d2_t">هوية مقهى فاخر</h3>
-            <!-- <p class="work-desc" data-i18n="works.d2_d">هوية بصرية لمقهى سويدي — minimal، أنيق، يبرز في جميع touch point.</p> -->
+            <h3 class="work-title" data-i18n="works.d2_t">هوية بصرية لستوديو</h3>
+            <!-- <p class="work-desc" data-i18n="works.d2_d">هوية متكاملة لستوديو عربي — شعار، ألوان، تايبوجرافي، وجميع الـbrand guidelines.</p> -->
             <div class="work-meta">
-              <!-- <span class="work-client" data-i18n="works.d2_client">Fika Café</span> -->
-              <span class="work-rating">★★★★★ <span>4.9</span></span>
+              <!-- <span class="work-client" data-i18n="works.d2_client">Hana Restaurant</span> -->
+              <span class="work-rating">★★★★★ <span>5.0</span></span>
             </div>
           </div>
           <div class="work-footer">
             <div class="work-tags">
-              <span class="work-feature" data-i18n="works.tag_brand">Branding</span>
-              <span class="work-feature" data-i18n="works.tag_minimal">Minimal</span>
+              <span class="work-feature" data-i18n="works.tag_school">Branding</span>
+              <span class="work-feature" data-i18n="works.tag_teacher">Identity</span>
+            </div>
+            <span class="work-view">
+              <span data-i18n="works.view">شوف</span>
+              <span class="arrow">←</span>
+            </span>
+          </div>
+        </a>
+        <a class="work-card-full is-design" href="#" data-cat="design" data-popularity="98" data-year="2025" data-date="2025-02-18" data-images="assets/carsouls/designs/yehia/yehia.png">
+          <div class="work-visual has-thumb" style="background-image: url('assets/carsouls/designs/yehia/yehia.png');">
+            <div class="work-thumb">teacher</div>
+            <div class="work-cat" data-i18n="works.cat_design">تصميم</div>
+          </div>
+          <div class="work-body">
+            <h3 class="work-title" data-i18n="works.d3_t">هوية بصرية لستوديو</h3>
+            <!-- <p class="work-desc" data-i18n="works.d3_d">هوية متكاملة لستوديو عربي — شعار، ألوان، تايبوجرافي، وجميع الـbrand guidelines.</p> -->
+            <div class="work-meta">
+              <!-- <span class="work-client" data-i18n="works.d3_client">Hana Restaurant</span> -->
+              <span class="work-rating">★★★★★ <span>5.0</span></span>
+            </div>
+          </div>
+          <div class="work-footer">
+            <div class="work-tags">
+              <span class="work-feature" data-i18n="works.tag_teacher">Teacher</span>
+              <span class="work-feature" data-i18n="works.tag_social">Social</span>
+            </div>
+            <span class="work-view">
+              <span data-i18n="works.view">شوف</span>
+              <span class="arrow">←</span>
+            </span>
+          </div>
+        </a>
+        <a class="work-card-full is-design" href="#" data-cat="design" data-popularity="98" data-year="2025" data-date="2025-02-18" data-images="assets/carsouls/1/1-1.jpg|||assets/carsouls/1/1-2.jpg|||assets/carsouls/1/1-3.jpg|||assets/carsouls/1/1-4.jpg|||assets/carsouls/1/1-5.jpg|||assets/carsouls/1/1-6.jpg|||assets/carsouls/1/1-7.jpg|||assets/carsouls/1/1-8.jpg|||assets/carsouls/1/1-9.jpg">
+          <div class="work-visual has-thumb" style="background-image: url('assets/carsouls/1/1-1.jpg');">
+            <div class="work-thumb">carousel</div>
+            <div class="work-cat" data-i18n="works.cat_design">تصميم</div>
+          </div>
+          <div class="work-body">
+            <h3 class="work-title" data-i18n="works.d4_t">تعليم صناع المحتوي</h3>
+            <!-- <p class="work-desc" data-i18n="works.d4_d">هوية متكاملة لستوديو عربي — شعار، ألوان، تايبوجرافي، وجميع الـbrand guidelines.</p> -->
+            <div class="work-meta">
+              <!-- <span class="work-client" data-i18n="works.d4_client">Hana Restaurant</span> -->
+              <span class="work-rating">★★★★★ <span>5.0</span></span>
+            </div>
+          </div>
+          <div class="work-footer">
+            <div class="work-tags">
+              <span class="work-feature" data-i18n="works.tag_social">Branding</span>
+              <span class="work-feature" data-i18n="works.tag_cnt_crtr">Identity</span>
             </div>
             <span class="work-view">
               <span data-i18n="works.view">شوف</span>
@@ -2101,16 +2338,42 @@ body { font-feature-settings: "salt" 1; }
           </div>
         </a>
 
-        <a class="work-card-full" href="#" data-cat="design" data-popularity="90" data-year="2024" data-date="2024-12-08">
-          <div class="work-visual" style="background: linear-gradient(135deg, #E55A2B 0%, #F5A623 100%);">
-            <div class="work-thumb">Post</div>
+        <a class="work-card-full is-design" href="#" data-cat="design" data-popularity="94" data-year="2025" data-date="2025-01-25" data-images="assets/carsouls/2/2-1.jpg|||assets/carsouls/2/2-2.jpg|||assets/carsouls/2/2-3.jpg|||assets/carsouls/2/2-4.jpg|||assets/carsouls/2/2-5.jpg|||assets/carsouls/2/2-6.jpg|||assets/carsouls/2/2-7.jpg|||assets/carsouls/2/2-8.jpg|||assets/carsouls/2/2-9.jpg">
+          <div class="work-visual has-thumb" style="background-image: url('assets/carsouls/2/2-1.jpg');">
+            <div class="work-thumb">carousel</div>
+            <div class="work-badge new" data-i18n="works.badge_new">جديد</div>
             <div class="work-cat" data-i18n="works.cat_design">تصميم</div>
           </div>
           <div class="work-body">
-            <h3 class="work-title" data-i18n="works.d3_t">حزمة سوشيال ميديا</h3>
-            <!-- <p class="work-desc" data-i18n="works.d3_d">١٢٠ تصميم سوشيال ميديا لـ٤ منصات — Instagram, Twitter, Behance, Facebook.</p> -->
+            <h3 class="work-title" data-i18n="works.d5_t">هوية مقهى فاخر</h3>
+            <!-- <p class="work-desc" data-i18n="works.d5_d">هوية بصرية لمقهى سويدي — minimal، أنيق، يبرز في جميع touch point.</p> -->
             <div class="work-meta">
-              <!-- <span class="work-client" data-i18n="works.d3_client">Outbox Media</span> -->
+              <!-- <span class="work-client" data-i18n="works.d5_client">Fika Café</span> -->
+              <span class="work-rating">★★★★★ <span>4.9</span></span>
+            </div>
+          </div>
+          <div class="work-footer">
+            <div class="work-tags">
+              <span class="work-feature" data-i18n="works.tag_social">Branding</span>
+              <span class="work-feature" data-i18n="works.tag_cnt_crtr">Minimal</span>
+            </div>
+            <span class="work-view">
+              <span data-i18n="works.view">شوف</span>
+              <span class="arrow">←</span>
+            </span>
+          </div>
+        </a>
+
+        <a class="work-card-full is-design" href="#" data-cat="design" data-popularity="90" data-year="2024" data-date="2024-12-08" data-images="assets/carsouls/3/3-1.jpg|||assets/carsouls/3/3-2.jpg|||assets/carsouls/3/3-3.jpg|||assets/carsouls/3/3-4.jpg|||assets/carsouls/3/3-5.jpg|||assets/carsouls/3/3-6.jpg|||assets/carsouls/3/3-7.jpg">
+          <div class="work-visual has-thumb" style="background-image: url('assets/carsouls/3/3-1.jpg');">
+            <div class="work-thumb">carousel</div>
+            <div class="work-cat" data-i18n="works.cat_design">تصميم</div>
+          </div>
+          <div class="work-body">
+            <h3 class="work-title" data-i18n="works.d6_t">حزمة سوشيال ميديا</h3>
+            <!-- <p class="work-desc" data-i18n="works.d6_d">١٢٠ تصميم سوشيال ميديا لـ٤ منصات — Instagram, Twitter, Behance, Facebook.</p> -->
+            <div class="work-meta">
+              <!-- <span class="work-client" data-i18n="works.d6_client">Outbox Media</span> -->
               <span class="work-rating">★★★★★ <span>4.9</span></span>
             </div>
           </div>
@@ -2126,23 +2389,23 @@ body { font-feature-settings: "salt" 1; }
           </div>
         </a>
 
-        <a class="work-card-full" href="#" data-cat="design" data-popularity="87" data-year="2024" data-date="2024-09-22">
-          <div class="work-visual" style="background: linear-gradient(135deg, #3B1FA3 0%, #FF6B4A 100%);">
-            <div class="work-thumb">Print</div>
+        <a class="work-card-full is-design" href="#" data-cat="design" data-popularity="87" data-year="2024" data-date="2024-09-22" data-images="assets/carsouls/4/4-1.jpg|||assets/carsouls/4/4-2.jpg|||assets/carsouls/4/4-3.jpg|||assets/carsouls/4/4-4.jpg|||assets/carsouls/4/4-5.jpg|||assets/carsouls/4/4-6.jpg|||assets/carsouls/4/4-7.jpg|||assets/carsouls/4/4-8.jpg">
+          <div class="work-visual has-thumb" style="background-image: url('assets/carsouls/4/4-1.jpg');">
+            <div class="work-thumb">carousel</div>
             <div class="work-cat" data-i18n="works.cat_design">تصميم</div>
           </div>
           <div class="work-body">
-            <h3 class="work-title" data-i18n="works.d4_t">مطبوعات احترافية</h3>
-            <!-- <p class="work-desc" data-i18n="works.d4_d">كتيب منتجات ٤٨ صفحة + Business Cards + Letterhead — جميعه متناسق ومطبوع بأعلى جودة.</p> -->
+            <h3 class="work-title" data-i18n="works.d7_t">مطبوعات احترافية</h3>
+            <!-- <p class="work-desc" data-i18n="works.d7_d">كتيب منتجات ٤٨ صفحة + Business Cards + Letterhead — جميعه متناسق ومطبوع بأعلى جودة.</p> -->
             <div class="work-meta">
-              <!-- <span class="work-client" data-i18n="works.d4_client">Pngpro Teams</span> -->
+              <!-- <span class="work-client" data-i18n="works.d7_client">Pngpro Teams</span> -->
               <span class="work-rating">★★★★★ <span>4.9</span></span>
             </div>
           </div>
           <div class="work-footer">
             <div class="work-tags">
-              <span class="work-feature" data-i18n="works.tag_print">Print</span>
-              <span class="work-feature" data-i18n="works.tag_brand">Brand</span>
+              <span class="work-feature" data-i18n="works.tag_attract">attract</span>
+              <span class="work-feature" data-i18n="works.tag_social">Social</span>
             </div>
             <span class="work-view">
               <span data-i18n="works.view">شوف</span>
@@ -2151,23 +2414,23 @@ body { font-feature-settings: "salt" 1; }
           </div>
         </a>
 
-        <a class="work-card-full" href="#" data-cat="design" data-popularity="84" data-year="2024" data-date="2024-07-14">
-          <div class="work-visual" style="background: linear-gradient(135deg, #1E0A5C 0%, #F5A623 100%);">
-            <div class="work-thumb">Menu</div>
+        <a class="work-card-full is-design" href="#" data-cat="design" data-popularity="84" data-year="2024" data-date="2024-07-14" data-images="assets/carsouls/5/5-1.jpg|||assets/carsouls/5/5-2.jpg|||assets/carsouls/5/5-3.jpg|||assets/carsouls/5/5-4.jpg|||assets/carsouls/5/5-5.jpg|||assets/carsouls/5/5-6.jpg|||assets/carsouls/5/5-7.jpg">
+          <div class="work-visual has-thumb" style="background-image: url('assets/carsouls/5/5-1.jpg');">
+            <div class="work-thumb">carousel</div>
             <div class="work-cat" data-i18n="works.cat_design">تصميم</div>
           </div>
           <div class="work-body">
-            <h3 class="work-title" data-i18n="works.d5_t">تصميم منيو مطعم</h3>
-            <!-- <p class="work-desc" data-i18n="works.d5_d">تصميم منيو ١٢ صفحة لمطعم فاخر — bilingual، illustrations مخصصة، وطباعة فاخرة.</p> -->
+            <h3 class="work-title" data-i18n="works.d8_t">تصميم منيو مطعم</h3>
+            <!-- <p class="work-desc" data-i18n="works.d8_d">تصميم منيو ١٢ صفحة لمطعم فاخر — bilingual، illustrations مخصصة، وطباعة فاخرة.</p> -->
             <div class="work-meta">
-              <!-- <span class="work-client" data-i18n="works.d5_client">Bistro Lux</span> -->
+              <!-- <span class="work-client" data-i18n="works.d8_client">Bistro Lux</span> -->
               <span class="work-rating">★★★★★ <span>4.8</span></span>
             </div>
           </div>
           <div class="work-footer">
             <div class="work-tags">
-              <span class="work-feature" data-i18n="works.tag_print">Print</span>
-              <span class="work-feature" data-i18n="works.tag_food">Food</span>
+              <span class="work-feature" data-i18n="works.tag_ideas">Ideas</span>
+              <span class="work-feature" data-i18n="works.tag_social">Food</span>
             </div>
             <span class="work-view">
               <span data-i18n="works.view">شوف</span>
@@ -2176,23 +2439,98 @@ body { font-feature-settings: "salt" 1; }
           </div>
         </a>
 
-        <a class="work-card-full" href="#" data-cat="design" data-popularity="79" data-year="2024" data-date="2024-05-02">
-          <div class="work-visual" style="background: linear-gradient(135deg, #FF6B4A 0%, #1E0A5C 100%);">
-            <div class="work-thumb">Pack</div>
+        <a class="work-card-full is-design" href="#" data-cat="design" data-popularity="79" data-year="2024" data-date="2024-05-02" data-images="assets/carsouls/6/6-1.jpg|||assets/carsouls/6/6-2.jpg|||assets/carsouls/6/6-3.jpg|||assets/carsouls/6/6-4.jpg|||assets/carsouls/6/6-5.jpg|||assets/carsouls/6/6-6.jpg|||assets/carsouls/6/6-7.jpg">
+          <div class="work-visual has-thumb" style="background-image: url('assets/carsouls/6/6-1.jpg');">
+            <div class="work-thumb">carousel</div>
             <div class="work-cat" data-i18n="works.cat_design">تصميم</div>
           </div>
           <div class="work-body">
-            <h3 class="work-title" data-i18n="works.d6_t">تصميم عبوات منتجات</h3>
-            <!-- <p class="work-desc" data-i18n="works.d6_d">عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.</p> -->
+            <h3 class="work-title" data-i18n="works.d9_t">تصميم عبوات منتجات</h3>
+            <!-- <p class="work-desc" data-i18n="works.d9_d">عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.</p> -->
             <div class="work-meta">
-              <!-- <span class="work-client" data-i18n="works.d6_client">Pure Glow</span> -->
+              <!-- <span class="work-client" data-i18n="works.d9_client">Pure Glow</span> -->
               <span class="work-rating">★★★★★ <span>4.8</span></span>
             </div>
           </div>
           <div class="work-footer">
             <div class="work-tags">
-              <span class="work-feature" data-i18n="works.tag_packaging">Packaging</span>
-              <span class="work-feature" data-i18n="works.tag_brand">Brand</span>
+              <span class="work-feature" data-i18n="works.tag_invention">Invention</span>
+              <span class="work-feature" data-i18n="works.tag_social">Social</span>
+            </div>
+            <span class="work-view">
+              <span data-i18n="works.view">شوف</span>
+              <span class="arrow">←</span>
+            </span>
+          </div>
+        </a>
+
+        <a class="work-card-full is-design" href="#" data-cat="design" data-popularity="79" data-year="2024" data-date="2024-05-02" data-images="assets/carsouls/7/7-1.jpg|||assets/carsouls/7/7-2.jpg|||assets/carsouls/7/7-3.jpg|||assets/carsouls/7/7-4.jpg|||assets/carsouls/7/7-5.jpg|||assets/carsouls/7/7-6.jpg|||assets/carsouls/7/7-7.jpg|||assets/carsouls/7/7-8.jpg">
+          <div class="work-visual has-thumb" style="background-image: url('assets/carsouls/7/7-1.jpg');">
+            <div class="work-thumb">carousel</div>
+            <div class="work-cat" data-i18n="works.cat_design">تصميم</div>
+          </div>
+          <div class="work-body">
+            <h3 class="work-title" data-i18n="works.d10_t">تصميم عبوات منتجات</h3>
+            <!-- <p class="work-desc" data-i18n="works.d10_d">عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.</p> -->
+            <div class="work-meta">
+              <!-- <span class="work-client" data-i18n="works.d10_client">Pure Glow</span> -->
+              <span class="work-rating">★★★★★ <span>4.8</span></span>
+            </div>
+          </div>
+          <div class="work-footer">
+            <div class="work-tags">
+              <span class="work-feature" data-i18n="works.tag_tool">Tool</span>
+              <span class="work-feature" data-i18n="works.tag_social">Social</span>
+            </div>
+            <span class="work-view">
+              <span data-i18n="works.view">شوف</span>
+              <span class="arrow">←</span>
+            </span>
+          </div>
+        </a>
+
+        <a class="work-card-full is-design" href="#" data-cat="design" data-popularity="79" data-year="2024" data-date="2024-05-02" data-images="assets/carsouls/8/8-1.jpg|||assets/carsouls/8/8-2.jpg|||assets/carsouls/8/8-3.jpg|||assets/carsouls/8/8-4.jpg|||assets/carsouls/8/8-5.jpg|||assets/carsouls/8/8-6.jpg|||assets/carsouls/8/8-7.jpg">
+          <div class="work-visual has-thumb" style="background-image: url('assets/carsouls/8/8-1.jpg');">
+            <div class="work-thumb">carousel</div>
+            <div class="work-cat" data-i18n="works.cat_design">تصميم</div>
+          </div>
+          <div class="work-body">
+            <h3 class="work-title" data-i18n="works.d11_t">تصميم عبوات منتجات</h3>
+            <!-- <p class="work-desc" data-i18n="works.d11_d">عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.</p> -->
+            <div class="work-meta">
+              <!-- <span class="work-client" data-i18n="works.d11_client">Pure Glow</span> -->
+              <span class="work-rating">★★★★★ <span>4.8</span></span>
+            </div>
+          </div>
+          <div class="work-footer">
+            <div class="work-tags">
+              <span class="work-feature" data-i18n="works.tag_cnt_crtr">content creator</span>
+              <span class="work-feature" data-i18n="works.tag_social">Social</span>
+            </div>
+            <span class="work-view">
+              <span data-i18n="works.view">شوف</span>
+              <span class="arrow">←</span>
+            </span>
+          </div>
+        </a>
+
+        <a class="work-card-full is-design" href="#" data-cat="design" data-popularity="79" data-year="2024" data-date="2024-05-02" data-images="assets/carsouls/9/9-1.jpg|||assets/carsouls/9/9-2.jpg|||assets/carsouls/9/9-3.jpg|||assets/carsouls/9/9-4.jpg|||assets/carsouls/9/9-5.jpg|||assets/carsouls/9/9-6.jpg">
+          <div class="work-visual has-thumb" style="background-image: url('assets/carsouls/9/9-1.jpg');">
+            <div class="work-thumb">carousel</div>
+            <div class="work-cat" data-i18n="works.cat_design">تصميم</div>
+          </div>
+          <div class="work-body">
+            <h3 class="work-title" data-i18n="works.d12_t">تصميم عبوات منتجات</h3>
+            <!-- <p class="work-desc" data-i18n="works.d12_d">عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.</p> -->
+            <div class="work-meta">
+              <!-- <span class="work-client" data-i18n="works.d12_client">Pure Glow</span> -->
+              <span class="work-rating">★★★★★ <span>4.8</span></span>
+            </div>
+          </div>
+          <div class="work-footer">
+            <div class="work-tags">
+              <span class="work-feature" data-i18n="works.tag_invention">Invention</span>
+              <span class="work-feature" data-i18n="works.tag_social">Social</span>
             </div>
             <span class="work-view">
               <span data-i18n="works.view">شوف</span>
@@ -2378,12 +2716,12 @@ body { font-feature-settings: "salt" 1; }
               <span class="arrow">←</span>
             </span>
           </div>
-        </a> -->
+        </a>  -->
       </div>
     </div>
 
-    <!-- Section: Notion -->
-    <div class="works-category" id="section-notion" data-section="notion">
+   <!-- Section: Notion   -->
+    <!--<div class="works-category" id="section-notion" data-section="notion">
       <div class="works-category-head">
         <div class="works-category-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
@@ -2403,9 +2741,9 @@ body { font-feature-settings: "salt" 1; }
           </div>
           <div class="work-body">
             <h3 class="work-title" data-i18n="works.n1_t">نظام Second Brain</h3>
-            <!-- <p class="work-desc" data-i18n="works.n1_d">نظام نوشن متكامل لإدارة المعرفة، المشاريع، والأفكار — ٤٠+ قالب جاهز.</p> -->
+             <p class="work-desc" data-i18n="works.n1_d">نظام نوشن متكامل لإدارة المعرفة، المشاريع، والأفكار — ٤٠+ قالب جاهز.</p> 
             <div class="work-meta">
-              <!-- <span class="work-client" data-i18n="works.n1_client">Personal Project</span> -->
+               <span class="work-client" data-i18n="works.n1_client">Personal Project</span>
               <span class="work-rating">★★★★★ <span>4.9</span></span>
             </div>
           </div>
@@ -2429,9 +2767,9 @@ body { font-feature-settings: "salt" 1; }
           </div>
           <div class="work-body">
             <h3 class="work-title" data-i18n="works.n2_t">CRM على نوشن</h3>
-            <!-- <p class="work-desc" data-i18n="works.n2_d">نظام CRM متكامل — لإدارة العملاء، المبيعات، والمتابعات بطريقة سهلة وقوية.</p> -->
+             <p class="work-desc" data-i18n="works.n2_d">نظام CRM متكامل — لإدارة العملاء، المبيعات، والمتابعات بطريقة سهلة وقوية.</p> 
             <div class="work-meta">
-              <!-- <span class="work-client" data-i18n="works.n2_client">Sales Team</span> -->
+               <span class="work-client" data-i18n="works.n2_client">Sales Team</span> 
               <span class="work-rating">★★★★★ <span>4.9</span></span>
             </div>
           </div>
@@ -2454,9 +2792,9 @@ body { font-feature-settings: "salt" 1; }
           </div>
           <div class="work-body">
             <h3 class="work-title" data-i18n="works.n3_t">نظام إدارة مشاريع</h3>
-            <!-- <p class="work-desc" data-i18n="works.n3_d">نظام كامل لإدارة المشاريع، الفرق، والمهام — Project Management OS.</p> -->
+             <p class="work-desc" data-i18n="works.n3_d">نظام كامل لإدارة المشاريع، الفرق، والمهام — Project Management OS.</p> 
             <div class="work-meta">
-              <!-- <span class="work-client" data-i18n="works.n3_client">Agency Client</span> -->
+               <span class="work-client" data-i18n="works.n3_client">Agency Client</span> 
               <span class="work-rating">★★★★★ <span>4.9</span></span>
             </div>
           </div>
@@ -2479,9 +2817,9 @@ body { font-feature-settings: "salt" 1; }
           </div>
           <div class="work-body">
             <h3 class="work-title" data-i18n="works.n4_t">Team Wiki</h3>
-            <!-- <p class="work-desc" data-i18n="works.n4_d">موسوعة فريق داخلية — لتوثيق جميع حاجة عن الشركة، العمليات، والسياسات.</p> -->
+            <p class="work-desc" data-i18n="works.n4_d">موسوعة فريق داخلية — لتوثيق جميع حاجة عن الشركة، العمليات، والسياسات.</p>
             <div class="work-meta">
-              <!-- <span class="work-client" data-i18n="works.n4_client">Startup Hub</span> -->
+              <span class="work-client" data-i18n="works.n4_client">Startup Hub</span>
               <span class="work-rating">★★★★★ <span>4.8</span></span>
             </div>
           </div>
@@ -2497,10 +2835,10 @@ body { font-feature-settings: "salt" 1; }
           </div>
         </a>
       </div>
-    </div>
+    </div>-->
 
   </div>
-</section>
+</section> 
 
 <!-- ============================
      VALUE PROPS
@@ -2688,7 +3026,7 @@ body { font-feature-settings: "salt" 1; }
         <h4 data-i18n="works.ft_col2_t">المزيد</h4>
         <ul>
           <li><a href="index.html#agreement" data-i18n="works.ft_l5">اتفاقية العمل</a></li>
-          <li><a href="index.html#process" data-i18n="works.ft_l6">كيف نشتغل</a></li>
+          <li><a href="index.html#process" data-i18n="works.ft_l6">كيف نعمل</a></li>
           <li><a href="index.html#results" data-i18n="works.ft_l7">النتائج</a></li>
           <li><a href="index.html#contact" data-i18n="works.ft_l8">تواصل</a></li>
         </ul>
@@ -2734,7 +3072,7 @@ body { font-feature-settings: "salt" 1; }
       'nav.shop': 'المتجر',
       'nav.blog': 'المقالات',
       'nav.agreement': 'اتفاقية العمل',
-      'nav.process': 'كيف نشتغل',
+      'nav.process': 'كيف نعمل',
       'nav.results': 'النتائج',
       'nav.about': 'من نحن',
       'nav.faq': 'الأسئلة',
@@ -2758,7 +3096,7 @@ body { font-feature-settings: "salt" 1; }
       'works.sort_oldest': 'الأقدم',
       'works.featured_eyebrow': 'المشروع المميز · Featured Project',
       'works.featured_t': 'هوية بصرية لستوديو Rihla',
-      'works.featured_d': 'من الصفر، بنينا هوية بصرية متكاملة لستوديو رحلة — من الشعار للقائمة والمنيو وكل حاجة. المشروع اللي بيمثل روح ستوديو رحلة في كل تفصيلة.',
+      'works.featured_d': 'من الصفر، بنينا هوية بصرية متكاملة لستوديو رحلة — من الشعار للقائمة والالوان وكل حاجة. المشروع اللي بيمثل روح ستوديو رحلة في كل تفصيلة.',
       'works.featured_client_l': 'العميل · Client',
       'works.featured_client': 'Rihla Studio',
       'works.featured_year_l': 'السنة · Year',
@@ -2783,14 +3121,14 @@ body { font-feature-settings: "salt" 1; }
       'works.tag_ads': 'SocialMediaContent', 'works.tag_30s': 'VisualCommunication',
       'works.tag_yt': 'MarketingContent', 'works.tag_series': 'BrandPromotion',
       'works.tag_wed': 'RamadanCampaign', 'works.tag_cine': 'AdvertisingVideo',
-      'works.tag_corp': 'Storytelling Edit', 'works.tag_brand': 'AdvertisingVideo',
-      'works.tag_doc': 'Educational Edit', 'works.tag_brand': 'AdvertisingVideo',
-      'works.tag_sound': 'Sound Design', 'works.tag_brand': 'Sound visuals',
-      'works.tag_id': 'Identity', 'works.tag_minimal': 'Minimal',
+      'works.tag_corp': 'Storytelling Edit', 'works.tag_ads': 'AdvertisingVideo',
+      'works.tag_doc': 'Educational Edit', 'works.tag_ads': 'AdvertisingVideo',
+      'works.tag_sound': 'Sound Design', 'works.tag_brand': 'Brand','works.tag_teacher': 'Teacher',
+      'works.tag_id': 'Identity', 'works.tag_tool': 'Tool','works.tag_school': 'School',
       'works.tag_social': 'Social', 'works.tag_pack': 'Pack',
-      'works.tag_print': 'Print', 'works.tag_food': 'Food',
-      'works.tag_packaging': 'Packaging', 'works.tag_campaign': 'Campaign',
-      'works.tag_launch': 'Launch', 'works.tag_logo': 'Logo',
+      'works.tag_ideas': 'ideas', 'works.tag_cnt_crtr': 'content creator',
+      'works.tag_invention': 'Invention', 'works.tag_campaign': 'Campaign',
+      'works.tag_attract': 'Attract', 'works.tag_logo': 'Logo',
       'works.tag_explainer': 'Explainer', 'works.tag_saas': 'SaaS',
       'works.tag_music': 'Music', 'works.tag_typo': 'Typography',
       'works.tag_pkm': 'PKM', 'works.tag_os': 'OS',
@@ -2808,12 +3146,19 @@ body { font-feature-settings: "salt" 1; }
       'works.e8_t': 'مؤثرات صوتية احترافية', 'works.e8_d': 'فيلم تعريفي ٣ دقائق لشركة استشارات — من كتابة النص للتسليم النهائي.', 'works.e8_client': 'متجر ثمين',
       'works.e9_t': 'مؤثرات صوتية احترافية', 'works.e9_d': 'فيلم تعريفي ٣ دقائق لشركة استشارات — من كتابة النص للتسليم النهائي.', 'works.e9_client': 'متجر ثمين',
       // Design (d1..d6)
-      'works.d1_t': 'هوية بصرية لمطعم', 'works.d1_d': 'هوية متكاملة لمطعم ياباني فاخر — شعار، ألوان، تايبوجرافي، وجميع الـbrand guidelines.', 'works.d1_client': 'Rihla Studio',
-      'works.d2_t': 'هوية مقهى فاخر', 'works.d2_d': 'هوية بصرية لمقهى سويدي — minimal، أنيق، يبرز في كل touch point.', 'works.d2_client': 'Fika Café',
-      'works.d3_t': 'حزمة سوشيال ميديا', 'works.d3_d': '١٢٠ تصميم سوشيال ميديا لـ٤ منصات — Instagram, Twitter, Behance, Facebook.', 'works.d3_client': 'Outbox Media',
-      'works.d4_t': 'مطبوعات احترافية', 'works.d4_d': 'كتيب منتجات ٤٨ صفحة + Business Cards + Letterhead — جميعه متناسق ومطبوع بأعلى جودة.', 'works.d4_client': 'Pngpro Teams',
-      'works.d5_t': 'تصميم منيو مطعم', 'works.d5_d': 'تصميم منيو ١٢ صفحة لمطعم فاخر — bilingual، illustrations مخصصة، وطباعة فاخرة.', 'works.d5_client': 'Bistro Lux',
-      'works.d6_t': 'تصميم عبوات منتجات', 'works.d6_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d6_client': 'Pure Glow',
+      'works.d1_t': 'هوية بصرية لستوديو', 'works.d7_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d7_client': 'Pure Glow',
+      'works.d2_t': 'تصميم اعلاني لمدرسة', 'works.d8_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d8_client': 'Pure Glow',
+      'works.d3_t': 'تصميم اعلاني لمدرس', 'works.d9_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d9_client': 'Pure Glow',
+      'works.d4_t': 'تعليم صناع محتوي ', 'works.d1_d': 'هوية متكاملة لمطعم ياباني فاخر — شعار، ألوان، تايبوجرافي، وجميع الـbrand guidelines.', 'works.d1_client': 'Rihla Studio',
+      'works.d5_t': 'نصائح لصناع المحتوي', 'works.d2_d': 'هوية بصرية لمقهى سويدي — minimal، أنيق، يبرز في كل touch point.', 'works.d2_client': 'Fika Café',
+      'works.d6_t': 'حزمة سوشيال ميديا', 'works.d3_d': '١٢٠ تصميم سوشيال ميديا لـ٤ منصات — Instagram, Twitter, Behance, Facebook.', 'works.d3_client': 'Outbox Media',
+      'works.d7_t': 'كيفية جذب الجمهور', 'works.d4_d': 'كتيب منتجات ٤٨ صفحة + Business Cards + Letterhead — جميعه متناسق ومطبوع بأعلى جودة.', 'works.d4_client': 'Pngpro Teams',
+      'works.d8_t': 'أفكار لصناع المحتوي', 'works.d5_d': 'تصميم منيو ١٢ صفحة لمطعم فاخر — bilingual، illustrations مخصصة، وطباعة فاخرة.', 'works.d5_client': 'Bistro Lux',
+      'works.d9_t': 'الابتكار بدون إستراتيجية!', 'works.d6_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d6_client': 'Pure Glow',
+      'works.d10_t': 'أداة ISO56001', 'works.d6_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d6_client': 'Pure Glow',
+      'works.d11_t': 'مسرعات الأعمال', 'works.d6_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d6_client': 'Pure Glow',
+      'works.d12_t': 'العمل الجماعي', 'works.d6_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d6_client': 'Pure Glow',
+      
       // Motion (m1..m6)
       'works.m1_t': 'حملة موشن لإطلاق', 'works.m1_d': 'حملة ٥ فيديوهات موشن لإطلاق منصة بث جديدة — ١٥-٣٠ ثانية، cinematic.', 'works.m1_client': 'StreamPlus',
       'works.m2_t': 'إنترو لقناة يوتيوب', 'works.m2_d': 'إنترو ١٥ ثانية + Lower Thirds + Outro — باكدج كامل للقناة.', 'works.m2_client': 'TechTalk Arabic',
@@ -2857,7 +3202,7 @@ body { font-feature-settings: "salt" 1; }
       'works.ft_col1_t': 'الاستوديو',
       'works.ft_l1': 'الرئيسية', 'works.ft_l2': 'جميع الأعمال', 'works.ft_l3': 'الخدمات', 'works.ft_l4': 'المتجر',
       'works.ft_col2_t': 'المزيد',
-      'works.ft_l5': 'اتفاقية العمل', 'works.ft_l6': 'كيف نشتغل', 'works.ft_l7': 'النتائج', 'works.ft_l8': 'تواصل',
+      'works.ft_l5': 'اتفاقية العمل', 'works.ft_l6': 'كيف نعمل', 'works.ft_l7': 'النتائج', 'works.ft_l8': 'تواصل',
       'works.ft_col3_t': 'سوشيال · Follow',
       'works.ft_copy': '© ٢٠٢٥ ستوديو رحلة · جميع الحقوق محفوظة',
       'works.ft_made': 'صنع بكل شغف ✦',
@@ -2880,7 +3225,7 @@ body { font-feature-settings: "salt" 1; }
       'works.sort_recent': 'Newest', 'works.sort_popular': 'Top rated', 'works.sort_oldest': 'Oldest',
       'works.featured_eyebrow': 'Featured Project',
       'works.featured_t': 'Visual Identity for Rihla Studio',
-      'works.featured_d': 'From zero, we built a complete visual identity for a luxury Arabic Studio — from logo to menu and everything in between. The project that represents the soul of Rihla Studio in every detail.',
+      'works.featured_d': 'From zero, we built a complete visual identity for a luxury Arabic Studio — from logo to posters and everything in between. The project that represents the soul of Rihla Studio in every detail.',
       'works.featured_client_l': 'Client',
       'works.featured_client': 'Rihla Studio',
       'works.featured_year_l': 'Year',
@@ -2900,12 +3245,14 @@ body { font-feature-settings: "salt" 1; }
       'works.tag_ads': 'SocialMediaContent', 'works.tag_30s': 'VisualCommunication',
       'works.tag_yt': 'MarketingContent', 'works.tag_series': 'BrandPromotion',
       'works.tag_wed': 'RamadanCampaign', 'works.tag_cine': 'AdvertisingVideo',
-      'works.tag_corp': 'Storytelling Edit', 'works.tag_brand': 'AdvertisingVideo',
-      'works.tag_id': 'Identity', 'works.tag_minimal': 'Minimal',
+      'works.tag_corp': 'Storytelling Edit', 'works.tag_ads': 'AdvertisingVideo',
+      'works.tag_doc': 'Educational Edit', 'works.tag_ads': 'AdvertisingVideo',
+      'works.tag_sound': 'Sound Design', 'works.tag_brand': 'Brand','works.tag_teacher': 'Teacher',
+      'works.tag_id': 'Identity', 'works.tag_tool': 'Tool','works.tag_school': 'School',
       'works.tag_social': 'Social', 'works.tag_pack': 'Pack',
-      'works.tag_print': 'Print', 'works.tag_food': 'Food',
-      'works.tag_packaging': 'Packaging', 'works.tag_campaign': 'Campaign',
-      'works.tag_launch': 'Launch', 'works.tag_logo': 'Logo',
+      'works.tag_ideas': 'ideas', 'works.tag_cnt_crtr': 'content creator',
+      'works.tag_invention': 'Invention', 'works.tag_campaign': 'Campaign',
+      'works.tag_attract': 'Attract', 'works.tag_logo': 'Logo',
       'works.tag_explainer': 'Explainer', 'works.tag_saas': 'SaaS',
       'works.tag_music': 'Music', 'works.tag_typo': 'Typography',
       'works.tag_pkm': 'PKM', 'works.tag_os': 'OS',
@@ -2918,12 +3265,21 @@ body { font-feature-settings: "salt" 1; }
       'works.e4_t': 'Promo Reel', 'works.e4_d': 'Editing 24 episodes for a design education YouTube channel — 15 min each.', 'works.e4_client': 'anythingy',
       'works.e5_t': 'Seasonal Campaign', 'works.e5_d': '12-min cinematic wedding video — emotional editing with pro sound design.', 'works.e5_client': 'anything',
       'works.e6_t': 'Storytelling Edit', 'works.e6_d': '3-min brand film for a consulting firm — from script writing to final delivery.', 'works.e6_client': 'Thameen Store',
-      'works.d1_t': 'Visual identity for a restaurant', 'works.d1_d': 'Complete identity for a luxury Japanese restaurant — logo, colors, typography, and full brand guidelines.', 'works.d1_client': 'Rihla Studio',
-      'works.d2_t': 'Luxury café branding', 'works.d2_d': 'Visual identity for a Swedish café — minimal, elegant, stands out at every touch point.', 'works.d2_client': 'Fika Café',
-      'works.d3_t': 'Social media design pack', 'works.d3_d': '120 social designs for 4 platforms — Instagram, Twitter, Behance, Facebook.', 'works.d3_client': 'Outbox Media',
-      'works.d4_t': 'Professional print design', 'works.d4_d': '48-page product catalog + Business Cards + Letterhead — all consistent and printed at the highest quality.', 'works.d4_client': 'Pngpro Teams',
-      'works.d5_t': 'Restaurant menu design', 'works.d5_d': '12-page menu design for a luxury restaurant — bilingual, custom illustrations, and premium print.', 'works.d5_client': 'Bistro Lux',
-      'works.d6_t': 'Product packaging design', 'works.d6_d': 'Packaging for 6 personal care products — modern design with premium print and texture.', 'works.d6_client': 'Pure Glow',
+      'works.e7_t': 'Educational content', 'works.e7_d': '3-min brand film for a consulting firm — from script writing to final delivery.', 'works.e7_client': 'Thameen Store',
+      'works.e8_t': 'Professional SFX', 'works.e8_d': '3-min brand film for a consulting firm — from script writing to final delivery.', 'works.e8_client': 'Thameen Store',
+      'works.e9_t': 'Professional SFX', 'works.e9_d': '3-min brand film for a consulting firm — from script writing to final delivery.', 'works.e9_client': 'Thameen Store',
+      'works.d1_t': 'Visual identity for a studio', 'works.d1_d': 'Complete identity for a luxury Japanese restaurant — logo, colors, typography, and full brand guidelines.', 'works.d1_client': 'Rihla Studio',
+      'works.d2_t': 'School adversting design', 'works.d2_d': 'Visual identity for a Swedish café — minimal, elegant, stands out at every touch point.', 'works.d2_client': 'Fika Café',
+      'works.d3_t': 'Teacher adversting design', 'works.d3_d': '120 social designs for 4 platforms — Instagram, Twitter, Behance, Facebook.', 'works.d3_client': 'Outbox Media',
+      'works.d4_t': 'Teaching content creators', 'works.d4_d': '48-page product catalog + Business Cards + Letterhead — all consistent and printed at the highest quality.', 'works.d4_client': 'Pngpro Teams',
+      'works.d5_t': 'Advices for content creators', 'works.d5_d': '12-page menu design for a luxury restaurant — bilingual, custom illustrations, and premium print.', 'works.d5_client': 'Bistro Lux',
+      'works.d6_t': 'Social media package', 'works.d6_d': 'Packaging for 6 personal care products — modern design with premium print and texture.', 'works.d6_client': 'Pure Glow',
+      'works.d7_t': 'How to attract people', 'works.d4_d': 'كتيب منتجات ٤٨ صفحة + Business Cards + Letterhead — جميعه متناسق ومطبوع بأعلى جودة.', 'works.d4_client': 'Pngpro Teams',
+      'works.d8_t': 'ideas for content creators', 'works.d5_d': 'تصميم منيو ١٢ صفحة لمطعم فاخر — bilingual، illustrations مخصصة، وطباعة فاخرة.', 'works.d5_client': 'Bistro Lux',
+      'works.d9_t': 'Invention without strategy!', 'works.d6_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d6_client': 'Pure Glow',
+      'works.d10_t': 'Tool ISO56001', 'works.d6_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d6_client': 'Pure Glow',
+      'works.d11_t': 'Work quickers', 'works.d6_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d6_client': 'Pure Glow',
+      'works.d12_t': 'Team work', 'works.d6_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d6_client': 'Pure Glow',
       'works.m1_t': 'Motion launch campaign', 'works.m1_d': '5 motion videos for a new streaming platform launch — 15-30s each, cinematic.', 'works.m1_client': 'StreamPlus',
       'works.m2_t': 'YouTube channel intro', 'works.m2_d': '15s intro + Lower Thirds + Outro — full package for the channel.', 'works.m2_client': 'TechTalk Arabic',
       'works.m3_t': 'Logo animation', 'works.m3_d': '4 different animation styles for the logo — from minimal to playful, all on-brand.', 'works.m3_client': 'Nawaf Studio',
@@ -3378,6 +3734,211 @@ body { font-feature-settings: "salt" 1; }
   applyLang(currentLang);
 
 })();
+</script>
+
+<!-- ============================================
+     DESIGN LIGHTBOX
+     ============================================ -->
+<div class="design-lightbox" id="designLightbox" aria-hidden="true" role="dialog" aria-label="معرض التصاميم">
+  <div class="design-lightbox-inner">
+    <button class="design-lightbox-close" type="button" aria-label="إغلاق">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="design-lightbox-nav prev" type="button" aria-label="السابق">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="design-lightbox-nav next" type="button" aria-label="التالي">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <img class="design-lightbox-img" id="designLightboxImg" src="" alt="" />
+    <div class="design-lightbox-dots" id="designLightboxDots"></div>
+    <div class="design-lightbox-meta">
+      <span id="designLightboxTitle">—</span>
+      <span class="dot"></span>
+      <span class="design-lightbox-counter"><span id="designLightboxIndex">1</span> / <span id="designLightboxTotal">1</span></span>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const lightbox = document.getElementById('designLightbox');
+    if (!lightbox) return;
+
+    const img = document.getElementById('designLightboxImg');
+    const titleEl = document.getElementById('designLightboxTitle');
+    const indexEl = document.getElementById('designLightboxIndex');
+    const totalEl = document.getElementById('designLightboxTotal');
+    const dotsBar = document.getElementById('designLightboxDots');
+    const closeBtn = lightbox.querySelector('.design-lightbox-close');
+    const prevBtn = lightbox.querySelector('.design-lightbox-nav.prev');
+    const nextBtn = lightbox.querySelector('.design-lightbox-nav.next');
+
+    // Each design card is its OWN carousel (Instagram-style).
+    // We only navigate within the images of the card that was clicked.
+    let currentImages = [];   // array of URLs for the currently-open card
+    let currentIndex = 0;
+    let currentTitle = '';
+    let lastFocus = null;
+
+    function readCardImages(card) {
+      // Preferred: data-images (||| separated list of URLs).
+      // We use ||| (three pipes) because data: URLs can contain commas and spaces.
+      const dataImages = card.getAttribute('data-images');
+      if (dataImages) {
+        return dataImages.split('|||').map(s => s.trim()).filter(Boolean);
+      }
+      // Fallback: a single image from inline background or data-design-img
+      const visual = card.querySelector('.work-visual');
+      if (visual) {
+        const bg = visual.style.backgroundImage;
+        const m = bg && bg.match(/url\(['"]?([^'")]+)['"]?\)/);
+        if (m) return [m[1]];
+      }
+      const single = card.getAttribute('data-design-img');
+      return single ? [single] : [];
+    }
+
+    function readCardTitle(card) {
+      const t = card.querySelector('.work-title');
+      return t ? (t.textContent || '').trim() : '';
+    }
+
+    function buildDots() {
+      dotsBar.innerHTML = '';
+      if (currentImages.length <= 1) return;
+      currentImages.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'design-lightbox-dot' + (i === currentIndex ? ' active' : '');
+        dot.setAttribute('aria-label', 'صورة ' + (i + 1));
+        dot.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          currentIndex = i;
+          render();
+        });
+        dotsBar.appendChild(dot);
+      });
+    }
+
+    function openFromCard(card) {
+      currentImages = readCardImages(card);
+      currentTitle = readCardTitle(card);
+      if (!currentImages.length) return;
+      currentIndex = 0;
+      buildDots();
+      render();
+      lastFocus = document.activeElement;
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+
+    function openAtIndex(index) {
+      // Used by the section's "maximize" button — opens the first design card
+      const section = document.getElementById('section-design');
+      const firstCard = section && section.querySelector('.work-card-full.is-design');
+      if (firstCard) openFromCard(firstCard);
+    }
+
+    function close() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      dotsBar.innerHTML = '';
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    function render() {
+      const url = currentImages[currentIndex];
+      if (!url) return;
+      img.src = url;
+      img.alt = currentTitle;
+      titleEl.textContent = currentTitle;
+      indexEl.textContent = String(currentIndex + 1);
+      totalEl.textContent = String(currentImages.length);
+
+      // Sync dot active state
+      dotsBar.querySelectorAll('.design-lightbox-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === currentIndex);
+      });
+
+      // Sync arrows enabled state (single-image cards: no arrows)
+      const multi = currentImages.length > 1;
+      prevBtn.style.display = multi ? '' : 'none';
+      nextBtn.style.display = multi ? '' : 'none';
+    }
+
+    function next() {
+      if (currentImages.length < 2) return;
+      currentIndex = (currentIndex + 1) % currentImages.length;
+      render();
+    }
+    function prev() {
+      if (currentImages.length < 2) return;
+      currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+      render();
+    }
+
+    // Open from card click — IMPORTANT: only opens THAT card's carousel,
+    // not a global list of all design cards.
+    document.addEventListener('click', function (e) {
+      const card = e.target.closest('.work-card-full.is-design');
+      if (!card) return;
+      e.preventDefault();
+      e.stopPropagation();
+      openFromCard(card);
+    });
+
+    // Section "maximize" button → open the first design card
+    const maxBtn = document.querySelector('[data-design-maximize]');
+    if (maxBtn) {
+      maxBtn.addEventListener('click', function () { openAtIndex(0); });
+    }
+
+    // Controls
+    closeBtn.addEventListener('click', close);
+    nextBtn.addEventListener('click', next);
+    prevBtn.addEventListener('click', prev);
+
+    // Backdrop click closes (clicking on the image itself does NOT close,
+    // only clicking outside the image area)
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) close();
+    });
+
+    // Keyboard
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowRight') {
+        // LTR: right arrow goes forward. RTL: right arrow goes back.
+        if (document.documentElement.dir === 'rtl') prev(); else next();
+      }
+      else if (e.key === 'ArrowLeft') {
+        if (document.documentElement.dir === 'rtl') next(); else prev();
+      }
+    });
+
+    // Touch swipe (direction-aware for RTL)
+    let touchStartX = 0;
+    const isRTL = document.documentElement.dir === 'rtl';
+    lightbox.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+    lightbox.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 50) {
+        // LTR: swipe left = next, swipe right = prev.
+        // RTL: swipe left = prev,  swipe right = next.
+        if (isRTL) {
+          if (dx > 0) next(); else prev();
+        } else {
+          if (dx < 0) next(); else prev();
+        }
+      }
+    }, { passive: true });
+  })();
 </script>
 </div>
 </body>

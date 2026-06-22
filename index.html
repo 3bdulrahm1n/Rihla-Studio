@@ -1550,6 +1550,43 @@ html[lang="en"] .js-anim .reveal-right { transform: translateX(60px); }
   align-items: center;
   justify-content: center;
 }
+.work-card-visual1 {
+  position: relative;
+  aspect-ratio: 16/10;
+  background: black;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.work-card-visual2 {
+  position: relative;
+  aspect-ratio: 16/10;
+  background: black;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.work-card-visual3 {
+  position: relative;
+  aspect-ratio: 16/10;
+  background: black;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-card-visual4 {
+  position: relative;
+  aspect-ratio: 16/10;
+  background: black;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .work-card-visual::before {
   content: '';
   position: absolute;
@@ -1564,11 +1601,55 @@ html[lang="en"] .js-anim .reveal-right { transform: translateX(60px); }
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(245, 166, 35, 0.06) 1px, transparent 1px),
+  background-image:linear-gradient(rgba(245, 166, 35, 0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(245, 166, 35, 0.06) 1px, transparent 1px);
   background-size: 30px 30px;
   opacity: 0.5;
+
+}
+.work-card-visual1::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:url('assets/carsouls/designs/Rihla/Rihla-Presentation_01.gif');
+  background-size: 30px 30px;
+  opacity: 0.5;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.work-card-visual2::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:url('assets/carsouls/videos_thumb/motion.png');
+  background-size: 30px 30px;
+  opacity: 0.5;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.work-card-visual3::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:url('assets/carsouls/videos_thumb/war_F.png');
+  background-size: 30px 30px;
+  opacity: 0.5;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.work-card-visual4::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:url('assets/carsouls/1/1-1.jpg');
+  background-size: 30px 30px;
+  opacity: 0.5;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .work-card-thumb {
   position: relative;
@@ -4218,7 +4299,7 @@ html[lang="en"] .toast { right: 2rem; }
   [03] SERVICES      → #services    | الخدمات
   [04] TOPSELL       → (boutique)   | المنتجات الأكثر مبيعاً
   [05] AGREEMENT     → #agreement   | اتفاقية العمل
-  [06] PROCESS       → #process     | كيف نشتغل
+  [06] PROCESS       → #process     | كيف نعمل
   [07] RESULTS       → #results     | النتائج والأرقام
   [08] FOUNDER       → #founder     | من نحن
   [09] TESTIMONIALS  → #testimonials| الشهادات
@@ -4423,9 +4504,9 @@ html[lang="en"] .toast { right: 2rem; }
       <a href="work.html" data-i18n="nav.work_all">جميع الأعمال</a>
       <a href="#services" data-i18n="nav.services">الخدمات</a>
       <a href="shop_soon.html" data-i18n="nav.shop">المتجر</a>
-      <a href="blog.html" data-i18n="nav.blog">المقالات</a>
+      <!-- <a href="blog.html" data-i18n="nav.blog">المقالات</a> -->
       <a href="#agreement" data-i18n="nav.agreement">اتفاقية العمل</a>
-      <a href="#process" data-i18n="nav.process">كيف نشتغل</a>
+      <a href="#process" data-i18n="nav.process">كيف نعمل</a>
       <a href="#results" data-i18n="nav.results">النتائج</a>
       <a href="#founder" data-i18n="nav.about">من نحن</a>
       <a href="#faq" data-i18n="nav.faq">الأسئلة</a>
@@ -4464,7 +4545,7 @@ html[lang="en"] .toast { right: 2rem; }
   <a href="work.html" data-i18n="nav.work_all">جميع الأعمال</a>
   <a href="#services" data-i18n="nav.services">الخدمات</a>
   <a href="shop_soon.html" data-i18n="nav.shop">المتجر</a>
-  <a href="blog.html" data-i18n="nav.blog">المقالات</a>
+  <!-- <a href="blog.html" data-i18n="nav.blog">المقالات</a> -->
   <a href="#agreement" data-i18n="nav.agreement">اتفاقية العمل</a>
   <a href="#process" data-i18n="nav.process">كيف نعمل</a>
   <a href="#results" data-i18n="nav.results">النتائج</a>
@@ -4505,7 +4586,7 @@ html[lang="en"] .toast { right: 2rem; }
       <div class="hero-content">
         <div class="hero-eyebrow">
           <span class="dot"></span>
-          <span data-i18n="hero.eyebrow">منذ ٢٠٢٣ · مصر والعالم العربي</span>
+          <span data-i18n="hero.eyebrow">منذ ٢٠٢٢ · مصر والعالم العربي</span>
         </div>
 
         <h1 class="display-h1">
@@ -4565,10 +4646,24 @@ html[lang="en"] .toast { right: 2rem; }
               <stop offset="1" stop-color="#1E0A5C" />
             </linearGradient>
           </defs>
-          <path fill="url(#lg-emb)" d="M100 10 L114 64 L168 32 L136 86 L190 100 L136 114 L168 168 L114 136 L100 190 L86 136 L32 168 L64 114 L10 100 L64 86 L32 32 L86 64 Z" />
-          <path fill="url(#lg-emb-2)" d="M100 35 L110 72 L150 72 L118 96 L126 134 L100 110 L74 134 L82 96 L50 72 L90 72 Z" />
-          <path fill="#F5A623" d="M100 50 L108 80 L120 80 L118 95 L112 100 L88 100 L82 95 L80 80 L92 80 Z" opacity="0.9"/>
-          <circle cx="100" cy="105" r="4" fill="#F5A623"/>
+          <path fill="url(#lg-emb)" d="M99,2 L99,95 L119,76 Z" />
+          <path fill="url(#lg-emb)" d="M105,100 L198,100 L124,120 Z" />
+          <path fill="url(#lg-emb)" d="M99,106 L99,198 L80,126 Z" />
+          <path fill="url(#lg-emb)" d="M94,100 L0,100 L74,81 Z" />
+          <path fill="url(#lg-emb)" d="M154,46 L140,77 L126,74 Z" />
+          <path fill="url(#lg-emb)" d="M45,46 L76,60 L73,74 Z" />
+          <path fill="url(#lg-emb)" d="M73,127 L44,155 L59,124 Z" />
+          <path fill="url(#lg-emb)" d="M126,127 L154,156 L122,141 Z" />
+          <!-- <path class="small_star" fill="url(#lg-emb-2)" d="M99,2 L99,95 L119,76 Z" />
+          <path class="small_star" fill="url(#lg-emb-2)" d="M105,100 L198,100 L124,120 Z" />
+          <path class="small_star" fill="url(#lg-emb-2)" d="M99,106 L99,198 L80,126 Z" />
+          <path class="small_star" fill="url(#lg-emb-2)" d="M94,100 L0,100 L74,81 Z" />
+          <path class="small_star" fill="url(#lg-emb-2)" d="M154,46 L140,77 L126,74 Z" />
+          <path class="small_star" fill="url(#lg-emb-2)" d="M45,46 L76,60 L73,74 Z" />
+          <path class="small_star" fill="url(#lg-emb-2)" d="M73,127 L44,155 L59,124 Z" />
+          <path class="small_star" fill="url(#lg-emb-2)" d="M126,127 L154,156 L122,141 Z" /> -->
+          <!-- <path  fill="url(#lg-emb-2)" d="M100 30 L108 80 L120 80 L118 95 L112 100 L88 100 L82 95 L80 80 L92 80 Z" opacity="0.9"/>
+          <circle cx="100" cy="105" r="4" fill="url(#lg-emb-2)"/> -->
         </svg>
 
         <div class="hero-floating-tag hero-floating-tag-1">
@@ -4867,7 +4962,7 @@ html[lang="en"] .toast { right: 2rem; }
 
     <div class="work-grid reveal-stagger">
       <a class="work-card" href="#works" data-work-cat="design">
-        <div class="work-card-visual">
+        <div class="work-card-visual1">
           <div class="work-card-num">01</div>
           <div class="work-card-arrow">↗</div>
           <div class="work-card-thumb font-rainmoney">Rihla</div>
@@ -4884,24 +4979,24 @@ html[lang="en"] .toast { right: 2rem; }
       </a>
 
       <a class="work-card" href="#works" data-work-cat="motion">
-        <div class="work-card-visual">
+        <div class="work-card-visual2">
           <div class="work-card-num">02</div>
           <div class="work-card-arrow">↗</div>
-          <div class="work-card-thumb font-rainmoney">Stream</div>
+          <div class="work-card-thumb font-rainmoney">Motion</div>
         </div>
         <div class="work-card-info">
           <h3 class="work-card-title" data-i18n="work.c2_t">حملة موشن لإطلاق</h3>
           <div class="work-card-cat" data-i18n="work.c2_c">Motion Campaign</div>
           <div class="work-card-tags">
             <span class="work-card-tag" data-i18n="work.tag_motion">موشن جرافيك</span>
-            <span class="work-card-tag" data-i18n="work.tag_brand">براند</span>
+            <span class="work-card-tag" data-i18n="work.tag_ads">إعلاني</span>
           </div>
-          <div class="work-card-year">2024</div>
+          <div class="work-card-year">2025</div>
         </div>
       </a>
 
       <a class="work-card" href="#works" data-work-cat="editing">
-        <div class="work-card-visual">
+        <div class="work-card-visual3">
           <div class="work-card-num">03</div>
           <div class="work-card-arrow">↗</div>
           <div class="work-card-thumb font-rainmoney">Reel</div>
@@ -4918,19 +5013,19 @@ html[lang="en"] .toast { right: 2rem; }
       </a>
 
       <a class="work-card" href="#works" data-work-cat="design">
-        <div class="work-card-visual">
+        <div class="work-card-visual4">
           <div class="work-card-num">04</div>
           <div class="work-card-arrow">↗</div>
-          <div class="work-card-thumb font-rainmoney">Atlas</div>
+          <div class="work-card-thumb font-rainmoney">Carousel</div>
         </div>
         <div class="work-card-info">
           <h3 class="work-card-title" data-i18n="work.c4_t">نظام نوشن متكامل</h3>
           <div class="work-card-cat" data-i18n="work.c4_c">Notion OS</div>
           <div class="work-card-tags">
-            <span class="work-card-tag" data-i18n="work.tag_notion">نوشن</span>
+            <span class="work-card-tag" data-i18n="work.tag_instagram">إنستغرام</span>
             <span class="work-card-tag" data-i18n="work.tag_design">تصميم</span>
           </div>
-          <div class="work-card-year">2026</div>
+          <div class="work-card-year">2025</div>
         </div>
       </a>
     </div>
@@ -5074,7 +5169,7 @@ html[lang="en"] .toast { right: 2rem; }
 <!-- ============================================
      [04] TOP-SELLING — Shop teaser on main page
      ============================================ -->
-<section class="topsell" id="shop">
+<!-- <section class="topsell" id="shop">
   <div class="container">
     <div class="topsell-head reveal">
       <div class="topsell-head-l">
@@ -5093,28 +5188,28 @@ html[lang="en"] .toast { right: 2rem; }
       </div>
     </div>
 
-    <!-- ════════════════════════════════════════════════════
+     <!-- ════════════════════════════════════════════════════ 
          BOUTIQUE 3D SHOWCASE — circular display rail
          Products sit on a rotating circular track, viewed
          from a 3/4 angle. Camera-style, not a flat carousel.
-         ════════════════════════════════════════════════════ -->
+         ════════════════════════════════════════════════════ 
     <div class="boutique" id="boutique">
-      <!-- Decorative grid floor -->
+       <!-- Decorative grid floor  
       <div class="boutique-floor" aria-hidden="true">
         <div class="floor-grid"></div>
         <div class="floor-vignette"></div>
       </div>
 
-      <!-- The rotating drum that holds the products -->
+       <!-- The rotating drum that holds the products  
       <div class="boutique-drum-wrap">
         <div class="boutique-drum" id="boutiqueDrum">
 
-          <!-- 3 spotlight beams (active one brightens) -->
+           <!-- 3 spotlight beams (active one brightens)  
           <div class="boutique-spot boutique-spot-1" aria-hidden="true"></div>
           <div class="boutique-spot boutique-spot-2" aria-hidden="true"></div>
           <div class="boutique-spot boutique-spot-3" aria-hidden="true"></div>
 
-          <!-- Floating shopping cart icons on both sides -->
+           <!-- Floating shopping cart icons on both sides  
           <div class="ts-cart-floater ts-cart-floater-left" id="tsCartLeft" aria-hidden="true">
             <span class="ts-cart-tip" data-i18n="ts.cart_tip_l">سلة المشتريات</span>
             <span class="ts-cart-bubble">
@@ -5139,9 +5234,9 @@ html[lang="en"] .toast { right: 2rem; }
             </span>
           </div>
 
-          <!-- Products placed by JS at calculated angles on the drum -->
+           <!-- Products placed by JS at calculated angles on the drum  
           <div class="boutique-track" id="boutiqueTrack">
-            <!-- Product 1: Second Brain -->
+             <!-- Product 1: Second Brain  
             <a class="bq-item" href="shop_soon.html" data-index="0"
                data-title-ar="نظام Second Brain" data-title-en="Second Brain System"
                data-tag-ar="نظام نوشن متكامل لإدارة المعرفة والمشاريع." data-tag-en="Complete Notion system for knowledge & project management."
@@ -5167,7 +5262,7 @@ html[lang="en"] .toast { right: 2rem; }
               <div class="bq-shadow" aria-hidden="true"></div>
             </a>
 
-            <!-- Product 2: Editing Course -->
+             <!-- Product 2: Editing Course  
             <a class="bq-item" href="shop_soon.html" data-index="1"
                data-title-ar="كورس المونتاج الاحترافي" data-title-en="Pro Editing Course"
                data-tag-ar="من الصفر للاحتراف في المونتاج، Color Grading، وSound Design." data-tag-en="From zero to pro in editing, color grading & sound design."
@@ -5193,7 +5288,7 @@ html[lang="en"] .toast { right: 2rem; }
               <div class="bq-shadow" aria-hidden="true"></div>
             </a>
 
-            <!-- Product 3: Intro Pack -->
+             <!-- Product 3: Intro Pack  
             <a class="bq-item" href="shop_soon.html" data-index="2"
                data-title-ar="باكدج إنترو وأوترو" data-title-en="Intro & Outro Pack"
                data-tag-ar="١٠ قوالب إنترو وأوترو قابلة للتعديل بالكامل." data-tag-en="10 fully editable intro & outro templates."
@@ -5220,7 +5315,7 @@ html[lang="en"] .toast { right: 2rem; }
             </a>
           </div>
 
-          <!-- Center info plate (reads as product is rotated into view) -->
+           <!-- Center info plate (reads as product is rotated into view)  
           <div class="boutique-platter" aria-hidden="true">
             <div class="platter-rim"></div>
             <div class="platter-inner"></div>
@@ -5233,7 +5328,7 @@ html[lang="en"] .toast { right: 2rem; }
         </div>
       </div>
 
-      <!-- Active product info panel -->
+     <!--  Active product info panel
       <div class="boutique-info" id="boutiqueInfo">
         <div class="bi-tag"><span class="bi-dot"></span><span id="biBadge">★ الأكثر مبيعاً</span></div>
         <h3 class="bi-title" id="biTitle">نظام Second Brain</h3>
@@ -5257,7 +5352,7 @@ html[lang="en"] .toast { right: 2rem; }
         </div>
       </div>
 
-      <!-- Bottom controls: drag, counter, quick-pick -->
+      Bottom controls: drag, counter, quick-pick
       <div class="boutique-controls">
         <button class="bq-ctrl bq-ctrl-prev" id="bqPrev" aria-label="السابق">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -5269,9 +5364,9 @@ html[lang="en"] .toast { right: 2rem; }
       </div>
     </div>
   </div>
-</section>
+ </section>  -->
 
-<!-- ============================================
+ <!-- ============================================ 
      [05] AGREEMENT — Work agreement policies
      ============================================ -->
 <section class="agreement" id="agreement">
@@ -5832,7 +5927,7 @@ html[lang="en"] .toast { right: 2rem; }
             <div class="label" data-i18n="fo.s2">المشاريع · Projects</div>
           </div>
           <div class="founder-stat">
-            <div class="num font-rainmoney" data-count="3" data-suffix="">0</div>
+            <div class="num font-rainmoney" data-count="4" data-suffix="">0</div>
             <div class="label" data-i18n="fo.s3">التخصصات · Specialties</div>
           </div>
         </div>
@@ -6225,7 +6320,7 @@ html[lang="en"] .toast { right: 2rem; }
       'nav.shop': 'المتجر',
       'nav.blog': 'المقالات',
       'nav.cta': 'إبدأ مشروعك',
-      'hero.eyebrow': 'منذ ٢٠٢٣ · مصر والعالم العربي',
+      'hero.eyebrow': 'منذ ٢٠٢٢ · مصر والعالم العربي',
       'hero.h1_1': 'نصنع',
       'hero.h1_2': 'بصريات تدهش',
       'hero.h1_3': 'وقصصا تبقى',
@@ -6246,24 +6341,26 @@ html[lang="en"] .toast { right: 2rem; }
       'hero.tag4_title': 'موشن جرافيك',
       'work.eyebrow': 'أحدث أعمالنا',
       'rv.eyebrow': 'آراء العملاء',
-      'work.h2_1': 'ما ',
-      'work.h2_2': 'بنيناه',
+      'work.h2_1': 'أبرز ',
+      'work.h2_2': 'أعمالنا',
       'work.h2_3': '.',
-      'work.desc': 'أحدث وأهم مشاريعنا — هوية بصرية، حملات موشن، ومونتاج احترافي.',
-      'work.c1_t': 'هوية بصرية لستوديو',
+      'work.desc': 'أحدث وأهم مشاريعنا — تصميم جرافيك، حملات موشن، ومونتاج احترافي.',
+      'work.c1_t': 'هوية بصرية لإستوديو',
       'work.c1_c': 'Visual Identity',
-      'work.c2_t': 'حملة موشن لإطلاق',
+      'work.c2_t': 'فيديو موشن جرافيك إعلاني',
       'work.c2_c': 'Motion Campaign',
-      'work.c3_t': 'مونتاج ريلز 3d',
+      'work.c3_t': 'فيديو ريل إحترافي',
       'work.c3_c': 'Reels Edit',
-      'work.c4_t': 'نظام نوشن متكامل',
-      'work.c4_c': 'Notion OS',
+      'work.c4_t': 'كاروسيل لإنستغرام',
+      'work.c4_c': 'Instagram Carousel',
       'work.tag_design': 'تصميم',
       'work.tag_brand': 'براند',
+      'work.tag_ads':'إعلاني',
       'work.tag_motion': 'موشن جرافيك',
       'work.tag_edit': 'مونتاج',
       'work.tag_notion': 'نوشن',
       'work.view_all': 'تصفح جميع الأعمال',
+      'work.tag_instagram': 'إنستغرام',
       'svc.eyebrow': 'خدماتنا',
       'svc.h2_1': 'أربع ',
       'svc.h2_2': 'تخصصات',
@@ -6272,18 +6369,18 @@ html[lang="en"] .toast { right: 2rem; }
       'svc.h2_5': '.',
       'svc.desc': 'حلول إبداعية متكاملة — من أول فكرة للتسليم النهائي.',
       'svc.s1_t': 'المونتاج', 'svc.s1_d': 'مونتاج احترافي يروي قصتك بدقة وإتقان — من المحتوى القصير لأفلام الشركات.',
-      'svc.s1_b1': 'مونتاج الريلز والتيك توك', 'svc.s1_b2': 'مونتاج ريلز 3d', 'svc.s1_b3': 'Color Grading', 'svc.s1_b4': 'Sound Design',
-      'svc.s2_t': 'تصميم جرافيك', 'svc.s2_d': 'هويات بصرية، منشورات سوشيال، وتصاميم تفتح الأعين وتثبت في الذاكرة.',
-      'svc.s2_b1': 'هوية بصرية كاملة', 'svc.s2_b2': 'تصميم سوشيال ميديا', 'svc.s2_b3': 'مطبوعات', 'svc.s2_b4': 'Branding Kit',
+      'svc.s1_b1': 'مونتاج الريلز', 'svc.s1_b2': 'مونتاج الفيديوهات الطويلة', 'svc.s1_b3': 'تلوين الفيديوهات', 'svc.s1_b4': 'التأثيرات الصوتية',
+      'svc.s2_t': 'تصميم جرافيك', 'svc.s2_d': 'هويات بصرية، منشورات سوشيال، وتصاميم تجذب الأعين وتبقى في الذاكرة.',
+      'svc.s2_b1': 'هوية بصرية كاملة', 'svc.s2_b2': 'تصميم سوشيال ميديا', 'svc.s2_b3': 'تصميم كاروسيل', 'svc.s2_b4': 'حملات إعلانية',
       'svc.s3_t': 'موشن جرافيك', 'svc.s3_d': 'حركة تحكي. أنيميشن يقنع. فيديوهات موشن تجعل علامتك لا تُنسى.',
-      'svc.s3_b1': 'أنيميشن 2D', 'svc.s3_b2': 'إنترو وأوترو', 'svc.s3_b3': 'Explainer Videos', 'svc.s3_b4': 'Logo Animation',
+      'svc.s3_b1': 'أنيميشن 2D', 'svc.s3_b2': 'إنترو وأوترو', 'svc.s3_b3': 'فيديوهات إعلانية', 'svc.s3_b4': 'تحريك الشعارات',
       'svc.s4_t': 'أنظمة نوشن', 'svc.s4_d': 'أنظمة نوشن مخصصة لإدارة مشاريعك، فريقك، وحياتك — مصممة لتدوم.',
-      'svc.s4_b1': 'Second Brain', 'svc.s4_b2': 'Project Management OS', 'svc.s4_b3': 'Team Wiki', 'svc.s4_b4': 'CRM على نوشن',
+      'svc.s4_b1': 'Second Brain', 'svc.s4_b2': 'Project Management OS', 'svc.s4_b3': 'مشاريع متكاملة', 'svc.s4_b4': 'CRM على نوشن',
       'svc.link': 'اعرف أكتر',
       'ag.eyebrow': 'اتفاقية العمل · Work Agreement',
       'ag.h2_1': 'سياسات ',
       'ag.h2_2': 'واضحـة',
-      'ag.h2_3': '. تعامل ',
+      'ag.h2_3': '، تعامل ',
       'ag.h2_4': 'شفـاف',
       'ag.h2_5': '.',
       'ag.desc': 'جميع سياساتنا في مكان واحد — الدفع، الباقات، التعديلات، الاسترداد، وحقوق العرض. اضغط على أي بند لقراءة التفاصيل كاملة.',
@@ -6327,7 +6424,7 @@ html[lang="en"] .toast { right: 2rem; }
       'ag.cta_t': 'موافق على الشروط؟ يلا نبدأ.',
       'ag.cta_d': 'لو عندك أي سؤال أو استفسار عن أي بند من البنود، ابعتلنا رسالة وهنرد عليك في أقل من 24 ساعة.',
       'ag.cta_btn': 'تواصل معانا',
-      'proc.eyebrow': 'كيف نشتغل · Process',
+      'proc.eyebrow': 'كيف نعمل · Process',
       'proc.h2_1': 'من ', 'proc.h2_2': 'الفكـرة', 'proc.h2_3': ' للإنشاء', 'proc.h2_5': '.',
       'proc.desc': 'طريقة عملنا بسيطة وشفافة. بنمشي معاك خطوة خطوة — من أول برهفة للحظة تسليم الملفات.',
       'proc.s1_t': 'الاستيعاب', 'proc.s1_d': 'بنفهمك وبنفهم علامتك. أهدافك، جمهورك، المنافسين. ومنها بنبني الخارطة اللي كل حاجة بتتبنى عليها.',
@@ -6381,7 +6478,7 @@ html[lang="en"] .toast { right: 2rem; }
       'ft.col2_l1': 'من نحن', 'ft.col2_l2': 'أعمالنا', 'ft.col2_l3': 'الأسئلة', 'ft.col2_l4': 'تواصل',
       'ft.col3_t': 'سوشيال · Follow',
       'ft.col3_l1': 'إنستجرام', 'ft.col3_l2': 'بيهانس', 'ft.col3_l3': 'يوتيوب', 'ft.col3_l4': 'تيليجرام',
-      'ft.copy': '© ٢٠٢٥ ستوديو رحلة · جميع الحقوق محفوظة',
+      'ft.copy': '© ٢٠٢٦  ستوديو رحلة · جميع الحقوق محفوظة',
       'ft.made': 'صنع بكل شغف ✦',
       'fn1': 'عبدالرحمن شريف',
       'toast_t': 'تم استلام طلبك',
@@ -6465,20 +6562,22 @@ html[lang="en"] .toast { right: 2rem; }
       'work.h2_2': 'built',
       'work.h2_3': '.',
       'work.desc': 'Our latest and most important work — visual identity, motion campaigns, and pro editing.',
-      'work.c1_t': 'Restaurant brand identity',
+      'work.c1_t': 'Studio brand identity',
       'work.c1_c': 'Visual Identity',
       'work.c2_t': 'Motion launch campaign',
       'work.c2_c': 'Motion Campaign',
-      'work.c3_t': 'Long-form documentary edit',
+      'work.c3_t': 'documentary edit',
       'work.c3_c': 'Documentary Edit',
-      'work.c4_t': 'Integrated Notion OS',
-      'work.c4_c': 'Notion OS',
+      'work.c4_t': 'Instagram carousel',
+      'work.c4_c': 'Instgram design',
       'work.tag_design': 'Design',
       'work.tag_brand': 'Brand',
+      'work.tag_ads':'Ads',
       'work.tag_motion': 'Motion',
       'work.tag_edit': 'Editing',
       'work.tag_notion': 'Notion',
       'work.view_all': 'See all work',
+      'work.tag_instagram': 'Instagram',
       'svc.eyebrow': 'What we do',
       'svc.h2_1': 'Four ',
       'svc.h2_2': 'disciplines',
@@ -6491,7 +6590,7 @@ html[lang="en"] .toast { right: 2rem; }
       'svc.s2_t': 'Graphic Design', 'svc.s2_d': 'Visual identities, social posts, and designs that catch eyes and stay in memory.',
       'svc.s2_b1': 'Full brand identity', 'svc.s2_b2': 'Social media design', 'svc.s2_b3': 'Print', 'svc.s2_b4': 'Branding Kit',
       'svc.s3_t': 'Motion Graphics', 'svc.s3_d': 'Motion that tells. Animation that convinces. Motion videos that make your brand unforgettable.',
-      'svc.s3_b1': '2D Animation', 'svc.s3_b2': 'Intros & outros', 'svc.s3_b3': 'Explainer Videos', 'svc.s3_b4': 'Logo Animation',
+      'svc.s3_b1': '3D Animation', 'svc.s3_b2': 'Intros & outros', 'svc.s3_b3': 'Explainer Videos', 'svc.s3_b4': 'Logo Animation',
       'svc.s4_t': 'Notion Systems', 'svc.s4_d': 'Custom Notion systems to manage your projects, team, and life — built to last.',
       'svc.s4_b1': 'Second Brain', 'svc.s4_b2': 'Project Management OS', 'svc.s4_b3': 'Team Wiki', 'svc.s4_b4': 'Notion CRM',
       'svc.link': 'Learn more',
@@ -6558,7 +6657,7 @@ html[lang="en"] .toast { right: 2rem; }
       'res.sub': 'Projects delivered with the highest quality standards. Real results.',
       'res.m1': 'Projects delivered', 'res.m2': 'Client satisfaction', 'res.m3': '15M+ content views', 'res.m4': 'Avg. 24h response',
       'res.f1': 'Pro quality in every detail', 'res.f2': 'On-time delivery', 'res.f3': 'Open source files', 'res.f4': 'Post-delivery support',
-      'res.w1': 'بريفينج', 'res.w2': 'كونسبت', 'res.w3': 'تصميم', 'res.w4': 'تنفيذ', 'res.w5': 'تسليم',
+      'res.w1': 'Briefing', 'res.w2': 'concept', 'res.w3': 'design', 'res.w4': 'build', 'res.w5': 'deliver',
       'res.s1': 'Quality', 'res.s2': 'Speed', 'res.s3': 'Creative', 'res.s4': 'Satisfaction',
       'ct.eyebrow': 'Contact',
       'ct.h2_1': 'Let\'s ', 'ct.h2_2': 'talk', 'ct.h2_3': '.',
@@ -6596,7 +6695,7 @@ html[lang="en"] .toast { right: 2rem; }
       'ft.col2_l1': 'About', 'ft.col2_l2': 'Work', 'ft.col2_l3': 'FAQ', 'ft.col2_l4': 'Contact',
       'ft.col3_t': 'Follow',
       'ft.col3_l1': 'Instagram', 'ft.col3_l2': 'Behance', 'ft.col3_l3': 'YouTube', 'ft.col3_l4': 'Telegram',
-      'ft.copy': '© 2025 Rihla Studio · All rights reserved',
+      'ft.copy': '© 2026 Rihla Studio · All rights reserved',
       'fn1': 'Abdelrahman Sherif',
       'ft.made': 'Crafted with passion ✦',
       'toast_t': 'Request received',
