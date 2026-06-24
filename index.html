@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 <meta name="theme-color" content="#0A0510" />
-<title data-i18n="meta.title">Rihla Studio · ستوديو رحلة</title>
-<meta name="description" data-i18n="meta.desc" content="ستوديو رحلة — استوديو إبداعي عربي متخصص في المونتاج، التصميم، الموشن جرافيك، وأنظمة نوشن. نبني تجارب بصرية لعلامات طموحة." />
-<meta name="keywords" content="Rihla, ستوديو رحلة, مونتاج, تصميم, موشن, نوشن, استوديو إبداعي, video editing, motion graphics" />
+<title data-i18n="meta.title">Rihla Studio · أستوديو رحلة</title>
+<meta name="description" data-i18n="meta.desc" content="أستوديو رحلة — استوديو إبداعي عربي متخصص في المونتاج، التصميم، الموشن جرافيك، وأنظمة نوشن. نبني تجارب بصرية لعلامات طموحة." />
+<meta name="keywords" content="Rihla, أستوديو رحلة, مونتاج, تصميم, موشن, نوشن, أستوديو إبداعي, video editing, motion graphics" />
 
 <!-- Apply saved theme before paint to avoid flash.. -->
 <script>
@@ -270,7 +270,7 @@ html[lang="en"] body { font-family: 'Thmanyah Sans', 'Thmanyah Serif Display', s
 }
 
 :root[data-theme="light"] .proc-visual {
-  background: linear-gradient(135deg, #1E0A5C 0%, #3B1FA3 100%);
+  background:none;
 }
 
 :root[data-theme="light"] .founder-photo {
@@ -369,7 +369,7 @@ body, .nav, .work-card, .svc-card, .founder-photo, .contact-form,
   font-weight: 600;
   font-size: clamp(2.75rem, 8vw, 6.5rem);
   line-height: 1.08;  /* was 0.98 — prevents Arabic glyph clipping */
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   overflow: visible;
 }
 html[lang="en"] .display-h1 {
@@ -382,7 +382,7 @@ html[lang="en"] .display-h1 {
   font-weight: 600;
   font-size: clamp(2.25rem, 6vw, 4.5rem);
   line-height: 1.02;
-  letter-spacing: -0.015em;
+  letter-spacing: 0;
   inline-size: max-content;
 }
 html[lang="en"] .display-h2 {
@@ -823,7 +823,12 @@ html[lang="en"] .nav-links a::after { right: auto; left: 0; }
 }
 .lang-toggle:hover .lang-arrow { transform: translateX(2px); }
 html[lang="en"] .lang-toggle:hover .lang-arrow { transform: translateX(-2px); }
-
+.nav_logo{
+  width: 40px;
+  height: 40px;
+  transition: transform 0.6s var(--ease);
+}
+.nav-logo:hover .nav_logo{ transform: rotate(45deg); }
 .nav-cta {
   display: inline-flex;
   align-items: center;
@@ -1018,11 +1023,10 @@ html[lang="en"] .social-rail a::after { right: calc(100% + 0.1rem); left: auto; 
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  opacity: 0.04;
+  opacity: 0.07;
   pointer-events: none;
   width: 80vmin;
-  max-width: 800px;
-  animation: float 8s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
   direction: ltr !important;
   unicode-bidi: isolate !important;
 }
@@ -1446,7 +1450,7 @@ html[lang="en"] .hero-orbit-6 { animation-direction: normal; }
   line-height: 1.7;
   max-width: 560px;
 }
-.sec-head.center { display: block; text-align: center; }
+.sec-head.center { text-align: center; max-width: 800px;margin: 0 auto 4rem; }
 .sec-head.center .eyebrow { justify-content: center; }
 .sec-head.center .desc { margin: 1rem auto 0; }
 
@@ -1969,28 +1973,25 @@ html[lang="en"] .svc-link:hover .arrow { transform: translateX(4px); }
   position: relative;
   aspect-ratio: 4/3;
   border-radius: 24px;
-  background: linear-gradient(135deg, #1E0A5C 0%, #3B1FA3 100%);
+  background: var(--bg);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--border-soft);
 }
 .proc-visual::before {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 30% 30%, rgba(245, 166, 35, 0.2) 0%, transparent 60%),
-    radial-gradient(ellipse at 70% 70%, rgba(229, 90, 43, 0.18) 0%, transparent 60%);
+  background:var(--bg);
 }
 .proc-visual .num-display {
   font-family: 'Thmanyah Sans';
   font-style: italic;
-  font-weight: 300;
-  font-size: clamp(6rem, 14vw, 12rem);
+  font-weight: bold;
+  font-size: 620px;
   color: var(--orange);
-  opacity: 0.3;
+  opacity: 1;
   position: relative;
   z-index: 1;
   line-height: 1;
@@ -3142,7 +3143,7 @@ html[dir="rtl"] .contact-info-row .info .value { direction: ltr; text-align: rig
 }
 .form-group input::placeholder,
 .form-group textarea::placeholder { color: var(--text-dim); opacity: 0.6; }
-.form-group textarea { resize: vertical; min-height: 120px; }
+.form-group textarea { resize: vertical; min-height: 209px; }
 .form-group select {
   appearance: none;
   -webkit-appearance: none;
@@ -3202,7 +3203,6 @@ html[lang="en"] .form-submit:hover .arrow { transform: translateX(4px); }
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 4rem;
-  align-items: center;
 }
 @media (max-width: 900px) { .founder-wrap { grid-template-columns: 1fr; gap: 2.5rem; } }
 
@@ -3223,8 +3223,9 @@ html[lang="en"] .form-submit:hover .arrow { transform: translateX(4px); }
   content: '';
   position: absolute;
   inset: -8px;
-  border: 1px dashed rgba(245, 166, 35, 0.3);
+  border: 2px dashed rgba(245, 160, 24, 0.5);
   animation: rotateSlow 30s linear infinite;
+  z-index: 9;
 }
 .founder-photo::after {
   content: '';
@@ -3234,28 +3235,30 @@ html[lang="en"] .form-submit:hover .arrow { transform: translateX(4px); }
 }
 .founder-photo .photo-placeholder {
   position: relative;
-  z-index: 1;
+  z-index: 0;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0rem;
   color: var(--text-dim);
   font-size: 0.8rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
   font-family: 'Thmanyah Sans';
+  background-image: url(assets/carsouls/the_Lord/the\ Lord.png);
+  background-size: cover;
 }
 .founder-photo .photo-placeholder svg {
   width: 60px;
   height: 60px;
   color: var(--orange);
-  opacity: 0.5;
-  margin-bottom: 0.5rem;
+  opacity: 1;
+  margin-bottom: 0;
 }
 
 .founder-content h2 {
@@ -4279,7 +4282,7 @@ html[lang="en"] .toast { right: 2rem; }
 <!--
 ╔══════════════════════════════════════════════════════════════════════╗
 ║              RIHLA STUDIO — DEVELOPER GUIDE                         ║
-║              ستوديو رحلة — دليل المطوّر                             ║
+║              أستوديو رحلة — دليل المطوّر                             ║
 ╚══════════════════════════════════════════════════════════════════════╝
 
 ═══════════════════════════════════════════════════════════════════════
@@ -4288,7 +4291,7 @@ html[lang="en"] .toast { right: 2rem; }
   Rihla.html       — الصفحة الرئيسية (Main page)
   work.html        — صفحة الأعمال (All works page)
   shop.html        — صفحة المتجر (Shop page)
-  blog.html        — صفحة المقالات (Blog page)
+  blog.html        — صفحة المدونة (Blog page)
   Rihla_no_shop.html — نسخة بدون قسم المنتجات (Version without shop section)
 
 ═══════════════════════════════════════════════════════════════════════
@@ -4299,7 +4302,7 @@ html[lang="en"] .toast { right: 2rem; }
   [03] SERVICES      → #services    | الخدمات
   [04] TOPSELL       → (boutique)   | المنتجات الأكثر مبيعاً
   [05] AGREEMENT     → #agreement   | اتفاقية العمل
-  [06] PROCESS       → #process     | كيف نعمل
+  [06] PROCESS       → #process     | مراحل العمل
   [07] RESULTS       → #results     | النتائج والأرقام
   [08] FOUNDER       → #founder     | من نحن
   [09] TESTIMONIALS  → #testimonials| الشهادات
@@ -4481,20 +4484,10 @@ html[lang="en"] .toast { right: 2rem; }
      ============================================ -->
 <nav class="nav" id="nav" aria-label="التنقل الرئيسي">
   <div class="container nav-inner">
-    <a href="#top" class="nav-logo" aria-label="الصفحة الرئيسية - ستوديو رحلة">
-      <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
-        <defs>
-          <linearGradient id="lg-mark" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#F5A623" />
-            <stop offset="1" stop-color="#E55A2B" />
-          </linearGradient>
-        </defs>
-        <path fill="url(#lg-mark)" d="M50 4 L57 32 L84 16 L68 43 L96 50 L68 57 L84 84 L57 68 L50 96 L43 68 L16 84 L32 57 L4 50 L32 43 L16 16 L43 32 Z" opacity="0.95"/>
-        <path fill="#0A0510" d="M50 18 L54 38 L74 38 L58 50 L62 70 L50 58 L38 70 L42 50 L26 38 L46 38 Z" opacity="0.7"/>
-        <circle cx="50" cy="50" r="4" fill="#F5A623"/>
-      </svg>
+    <a href="#top" class="nav-logo" aria-label="الصفحة الرئيسية - أستوديو رحلة">
+      <img class="nav_logo" src="assets/nejma_gr.png" alt="logo">
       <div style="display:flex; flex-direction:column; line-height:1;">
-        <span class="logo-text-ar" data-i18n="nav.brand_ar">ستوديو رحلة</span>
+        <span class="logo-text-ar" data-i18n="nav.brand_ar">أستوديو رحلة</span>
         <span class="logo-text-en" data-i18n="nav.brand_en">Rihla Studio</span>
       </div>
     </a>
@@ -4504,9 +4497,9 @@ html[lang="en"] .toast { right: 2rem; }
       <a href="work.html" data-i18n="nav.work_all">جميع الأعمال</a>
       <a href="#services" data-i18n="nav.services">الخدمات</a>
       <a href="shop_soon.html" data-i18n="nav.shop">المتجر</a>
-      <!-- <a href="blog.html" data-i18n="nav.blog">المقالات</a> -->
+      <a href="blog_soon.html" data-i18n="nav.blog">المدونة</a>
       <a href="#agreement" data-i18n="nav.agreement">اتفاقية العمل</a>
-      <a href="#process" data-i18n="nav.process">كيف نعمل</a>
+      <a href="#process" data-i18n="nav.process">مراحل العمل</a>
       <a href="#results" data-i18n="nav.results">النتائج</a>
       <a href="#founder" data-i18n="nav.about">من نحن</a>
       <a href="#faq" data-i18n="nav.faq">الأسئلة</a>
@@ -4545,9 +4538,9 @@ html[lang="en"] .toast { right: 2rem; }
   <a href="work.html" data-i18n="nav.work_all">جميع الأعمال</a>
   <a href="#services" data-i18n="nav.services">الخدمات</a>
   <a href="shop_soon.html" data-i18n="nav.shop">المتجر</a>
-  <!-- <a href="blog.html" data-i18n="nav.blog">المقالات</a> -->
+  <a href="blog_soon.html" data-i18n="nav.blog">المدونة</a>
   <a href="#agreement" data-i18n="nav.agreement">اتفاقية العمل</a>
-  <a href="#process" data-i18n="nav.process">كيف نعمل</a>
+  <a href="#process" data-i18n="nav.process">مراحل العمل</a>
   <a href="#results" data-i18n="nav.results">النتائج</a>
   <a href="#founder" data-i18n="nav.about">من نحن</a>
   <a href="#faq" data-i18n="nav.faq">الأسئلة</a>
@@ -4569,24 +4562,14 @@ html[lang="en"] .toast { right: 2rem; }
 <section class="hero" id="top">
   <div class="hero-bg" aria-hidden="true"></div>
 
-  <svg class="hero-watermark" viewBox="0 0 200 200" aria-hidden="true">
-    <defs>
-      <linearGradient id="lg-water" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#F5A623" />
-        <stop offset="1" stop-color="#E55A2B" />
-      </linearGradient>
-    </defs>
-    <path fill="url(#lg-water)" d="M100 8 L114 64 L168 32 L136 86 L192 100 L136 114 L168 168 L114 136 L100 192 L86 136 L32 168 L64 114 L8 100 L64 86 L32 32 L86 64 Z"/>
-    <path fill="#0A0510" d="M100 36 L108 76 L148 76 L118 100 L124 140 L100 116 L76 140 L84 100 L52 76 L92 76 Z"/>
-    <circle cx="100" cy="100" r="8" fill="#F5A623"/>
-  </svg>
+<img class="hero-watermark" viewBox="0 0 200 200" aria-hidden="true" src="assets/rihla_gr.png" alt="">
 
   <div class="container">
     <div class="hero-grid">
       <div class="hero-content">
         <div class="hero-eyebrow">
           <span class="dot"></span>
-          <span data-i18n="hero.eyebrow">منذ ٢٠٢٢ · مصر والعالم العربي</span>
+          <span data-i18n="hero.eyebrow">منذ ٢٠٢٢ · حول العالم</span>
         </div>
 
         <h1 class="display-h1">
@@ -4611,12 +4594,12 @@ html[lang="en"] .toast { right: 2rem; }
 
         <div class="hero-stats">
           <div class="hero-stat">
-            <span class="num">4.9 <span style="font-size: 0.7em;">★</span></span>
+            <span class="num" data-i18n="hero-star-star">4.9 <span style="font-size: 0.7em;">★</span></span>
             <span class="label" data-i18n="hero.stat1">تقييمات العملاء</span>
           </div>
           <div class="hero-stat-divider"></div>
           <div class="hero-stat">
-            <span class="num" data-count="50" data-suffix="+">0+</span>
+            <span class="num" data-count="250" data-suffix="+">0+</span>
             <span class="label" data-i18n="hero.stat2">مشروع منجز</span>
           </div>
           <div class="hero-stat-divider"></div>
@@ -5006,7 +4989,7 @@ html[lang="en"] .toast { right: 2rem; }
           <div class="work-card-cat" data-i18n="work.c3_c">Reels Edit</div>
           <div class="work-card-tags">
             <span class="work-card-tag" data-i18n="work.tag_edit">مونتاج</span>
-            <span class="work-card-tag" data-i18n="work.tag_motion">3d</span>
+            <span class="work-card-tag" data-i18n="work.tag_3d">3d</span>
           </div>
           <div class="work-card-year">2025</div>
         </div>
@@ -5395,7 +5378,7 @@ html[lang="en"] .toast { right: 2rem; }
         </div>
         <h3 class="agreement-title" data-i18n="ag.s1_t">نظام الدفع</h3>
         <p class="agreement-summary" data-i18n="ag.s1_s">
-          يتم إرسال <mark>50%</mark> من إجمالي قيمة المشروع، وبعد مشاهدة عيّنة من المشروع والموافقة عليه يتم إرسال باقي المبلغ كاملاً، ثم يتم من خلالي إرسال <mark>النسخة النهائية عالية الجودة</mark>.
+          يتم إرسال <mark>50%</mark> من إجمالي قيمة المشروع، وبعد مشاهدة عيّنة من المشروع والموافقة عليه يتم إرسال باقي المبلغ كاملاً، ثم يتم من خلالي إرسال <mark>النسخة النهائية عالية الجودة</mark>وعند تحويل المبالغ تكون شاملة لضريبة التحويل.
         </p>
         <button class="agreement-toggle" type="button">
           <span data-i18n="ag.read_more">اقرأ التفاصيل</span>
@@ -5581,7 +5564,7 @@ html[lang="en"] .toast { right: 2rem; }
   <div class="container">
     <div class="sec-head reveal">
       <div>
-        <div class="eyebrow"><span class="num">[06]</span> <span data-i18n="proc.eyebrow">كيف نعمل · Process</span></div>
+        <div class="eyebrow"><span class="num">[06]</span> <span data-i18n="proc.eyebrow">مراحل العمل · Process</span></div>
         <h2 class="display-h2" style="margin-top: 1rem;">
           <span data-i18n="proc.h2_1">من </span><span class="solid-accent stylistic" data-i18n="proc.h2_2">الفكـرة</span><span data-i18n="proc.h2_3"> للإنشاء</span><span data-i18n="proc.h2_5">.</span>
         </h2>
@@ -5592,8 +5575,8 @@ html[lang="en"] .toast { right: 2rem; }
     <div class="process-list">
       <div class="proc-step">
         <div class="proc-visual reveal-left">
-          <div class="corner-deco tl"></div>
-          <div class="corner-deco br"></div>
+          <!-- <div class="corner-deco tl"></div>
+          <div class="corner-deco br"></div> -->
           <div class="num-display font-rainmoney">01</div>
           <div class="label font-thmanyah">Discovery · 01/04</div>
         </div>
@@ -5612,8 +5595,8 @@ html[lang="en"] .toast { right: 2rem; }
 
       <div class="proc-step">
         <div class="proc-visual reveal-right">
-          <div class="corner-deco tl"></div>
-          <div class="corner-deco br"></div>
+          <!-- <div class="corner-deco tl"></div>
+          <div class="corner-deco br"></div> -->
           <div class="num-display font-rainmoney">02</div>
           <div class="label font-thmanyah">Design · 02/04</div>
         </div>
@@ -5632,8 +5615,8 @@ html[lang="en"] .toast { right: 2rem; }
 
       <div class="proc-step">
         <div class="proc-visual reveal-left">
-          <div class="corner-deco tl"></div>
-          <div class="corner-deco br"></div>
+          <!-- <div class="corner-deco tl"></div>
+          <div class="corner-deco br"></div> -->
           <div class="num-display font-rainmoney">03</div>
           <div class="label font-thmanyah">Execute · 03/04</div>
         </div>
@@ -5652,8 +5635,8 @@ html[lang="en"] .toast { right: 2rem; }
 
       <div class="proc-step">
         <div class="proc-visual reveal-right">
-          <div class="corner-deco tl"></div>
-          <div class="corner-deco br"></div>
+          <!-- <div class="corner-deco tl"></div>
+          <div class="corner-deco br"></div> -->
           <div class="num-display font-rainmoney">04</div>
           <div class="label font-thmanyah">Deliver · 04/04</div>
         </div>
@@ -5688,15 +5671,15 @@ html[lang="en"] .toast { right: 2rem; }
 
     <div class="results-metrics reveal-stagger">
       <div class="metric">
-        <div class="metric-num" data-count="50" data-suffix="+">50+</div>
-        <div class="metric-label" data-i18n="res.m1">مشروع متسلم</div>
+        <div class="metric-num" data-count="250" data-suffix="+">250+</div>
+        <div class="metric-label" data-i18n="res.m1">مشروع مستلم</div>
       </div>
       <div class="metric">
         <div class="metric-num" data-count="98" data-suffix="%">98%</div>
         <div class="metric-label" data-i18n="res.m2">رضا العملاء</div>
       </div>
       <div class="metric">
-        <div class="metric-num" data-count="15" data-suffix="M+" data-suffix-ar="مليون+">15M+</div>
+        <div class="metric-num" data-count="15" data-suffix="M+" data-suffix-ar="+مليون">15M</div>
         <div class="metric-label" data-i18n="res.m3">مشاهدة للمحتوى</div>
       </div>
       <div class="metric">
@@ -5745,7 +5728,7 @@ html[lang="en"] .toast { right: 2rem; }
         <div class="score-label" data-i18n="res.s1">جودة</div>
       </div>
       <div class="score">
-        <div class="score-num" data-count="98" data-suffix="">0</div>
+        <div class="score-num" data-count="99" data-suffix="">0</div>
         <div class="score-label" data-i18n="res.s2">سرعة</div>
       </div>
       <div class="score">
@@ -5753,7 +5736,7 @@ html[lang="en"] .toast { right: 2rem; }
         <div class="score-label" data-i18n="res.s3">إبداع</div>
       </div>
       <div class="score">
-        <div class="score-num" data-count="99" data-suffix="">0</div>
+        <div class="score-num" data-count="98" data-suffix="">0</div>
         <div class="score-label" data-i18n="res.s4">رضا</div>
       </div>
     </div>
@@ -5798,7 +5781,7 @@ html[lang="en"] .toast { right: 2rem; }
 
           <a href="https://wa.me/201111218591?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%A3%D9%86%D8%A7%20%D9%85%D9%87%D8%AA%D9%85%20%D8%A8%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85" class="contact-info-row">
             <div class="icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
             </div>
             <div class="info">
               <span class="label" data-i18n="ct.phone_label">Phone · واتساب</span>
@@ -5818,11 +5801,24 @@ html[lang="en"] .toast { right: 2rem; }
 
           <a href="tg://resolve?domain=Abd_ulrahman0_0" target="_blank" rel="noopener" class="contact-info-row">
             <div class="icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.63 5.466-5.63 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.014 14.102l-1.026 3.03c-.116.342-.218.673-.321 1.002-.128.411-.363.493-.666.14l-2.45-2.883 4.463-1.29zm8.566-10.871a.916.916 0 0 0-.756-.164L1.734 9.1c-.812.29-.8.747-.134.954l4.636 1.444 10.74-6.76c.504-.307.966-.142.588.193l-8.7 7.843-.343 4.793c.123 0 .245-.054.348-.152l2.645-2.565 5.514 4.073c1.015.56 1.742.27 1.995-.944L21.3 4.397a1.472 1.472 0 0 0-.72-.166z"/></svg>
             </div>
             <div class="info">
               <span class="label">Telegram</span>
               <span class="value">tg://resolve?domain=Abd_ulrahman0_0o</span>
+            </div>
+          </a>
+          <a href="tg://resolve?domain=Abd_ulrahman0_0" target="_blank" rel="noopener" class="contact-info-row">
+            <div class="icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="6" width="20" height="12" rx="2"/>
+              <circle cx="12" cy="12" r="2.5"/>
+              <path d="M6 12h.01M18 12h.01"/>
+            </svg>
+            </div>
+            <div class="info">
+              <span class="label">Payment Methods</span>
+              <span class="value">Paypal — Nsave — Instapay — Okx — Orange Cash — Etisalat Cash — Binance — Barq — Redot Pay</span>
             </div>
           </a>
         </div>
@@ -5904,8 +5900,7 @@ html[lang="en"] .toast { right: 2rem; }
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
             <circle cx="12" cy="7" r="4"/>
           </svg>
-          <div data-i18n="fo.photo">الشعار</div>
-          <div style="font-size: 0.7em; opacity: 0.6;">logo</div>
+          <div data-i18n="fo.photo" class="solid-accent">صورة المؤسس</div>
         </div>
       </div>
 
@@ -5923,7 +5918,7 @@ html[lang="en"] .toast { right: 2rem; }
             <div class="label" data-i18n="fo.s1">السنوات · Years</div>
           </div>
           <div class="founder-stat">
-            <div class="num font-rainmoney" data-count="50" data-suffix="+">0+</div>
+            <div class="num font-rainmoney" data-count="250" data-suffix="+">0+</div>
             <div class="label" data-i18n="fo.s2">المشاريع · Projects</div>
           </div>
           <div class="founder-stat">
@@ -6026,24 +6021,14 @@ html[lang="en"] .toast { right: 2rem; }
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#top" class="nav-logo">
-          <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
-            <defs>
-              <linearGradient id="lg-footer" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#F5A623" />
-                <stop offset="1" stop-color="#E55A2B" />
-              </linearGradient>
-            </defs>
-            <path fill="url(#lg-footer)" d="M50 4 L57 32 L84 16 L68 43 L96 50 L68 57 L84 84 L57 68 L50 96 L43 68 L16 84 L32 57 L4 50 L32 43 L16 16 L43 32 Z"/>
-            <path fill="#0A0510" d="M50 18 L54 38 L74 38 L58 50 L62 70 L50 58 L38 70 L42 50 L26 38 L46 38 Z"/>
-            <circle cx="50" cy="50" r="4" fill="#F5A623"/>
-          </svg>
+          <img class="nav_logo" src="assets/nejma_gr.png" alt="logo">
           <div style="display:flex; flex-direction:column; line-height:1;">
-            <span class="logo-text-ar" data-i18n="nav.brand_ar">ستوديو رحلة</span>
+            <span class="logo-text-ar" data-i18n="nav.brand_ar">أستوديو رحلة</span>
             <span class="logo-text-en" data-i18n="nav.brand_en">Rihla Studio</span>
           </div>
         </a>
         <p class="tagline">
-          <span data-i18n="ft.tag1">استوديو رحلة — نصنع الجمال البصري</span>
+          <span data-i18n="ft.tag1">أستوديو رحلة — نصنع الجمال البصري</span>
           <span data-i18n="ft.tag2" style="display: block; margin-top: 0.5rem; font-size: 0.95rem;">Crafting visual beauty for ambitious brands. Cairo, Egypt.</span>
         </p>
       </div>
@@ -6059,7 +6044,7 @@ html[lang="en"] .toast { right: 2rem; }
       </div>
 
       <div class="footer-col">
-        <h4 data-i18n="ft.col2_t">الاستوديو · Studio</h4>
+        <h4 data-i18n="ft.col2_t">الأستوديو · Studio</h4>
         <ul>
           <li><a href="#founder" data-i18n="ft.col2_l1">من نحن</a></li>
           <li><a href="#work" data-i18n="ft.col2_l2">أعمالنا</a></li>
@@ -6080,7 +6065,7 @@ html[lang="en"] .toast { right: 2rem; }
     </div>
 
     <div class="footer-bottom">
-      <div data-i18n="ft.copy">© ٢٠٢٥ ستوديو رحلة · جميع الحقوق محفوظة</div>
+      <div data-i18n="ft.copy">© ٢٠٢٥ أستوديو رحلة · جميع الحقوق محفوظة</div>
       <div class="made" data-i18n="ft.made">Crafted with passion  ✦</div>
     </div>
   </div>
@@ -6304,23 +6289,23 @@ html[lang="en"] .toast { right: 2rem; }
   // ============================================
   const I18N = {
     ar: {
-      'meta.title': 'Rihla Studio · ستوديو رحلة',
-      'meta.desc': 'ستوديو رحلة — استوديو إبداعي عربي متخصص في المونتاج، التصميم، الموشن جرافيك، وأنظمة نوشن. نبني تجارب بصرية لعلامات طموحة.',
-      'nav.brand_ar': 'ستوديو رحلة',
+      'meta.title': 'Rihla Studio · أستوديو رحلة',
+      'meta.desc': 'أستوديو رحلة — استوديو إبداعي عربي متخصص في المونتاج، التصميم، الموشن جرافيك، وأنظمة نوشن. نبني تجارب بصرية لعلامات طموحة.',
+      'nav.brand_ar': 'أستوديو رحلة',
       'nav.brand_en': 'Rihla Studio',
       'nav.work': 'أعمالنا',
       'nav.work_recent': 'أحدث الأعمال',
       'nav.work_all': 'جميع الأعمال',
       'nav.services': 'الخدمات',
       'nav.agreement': 'إتفاقية العمل',
-      'nav.process': 'كيف نعمل',
+      'nav.process': 'مراحل العمل',
       'nav.results': 'النتائج',
       'nav.about': 'من نحن',
       'nav.faq': 'الأسئلة',
       'nav.shop': 'المتجر',
-      'nav.blog': 'المقالات',
+      'nav.blog': 'المدونة',
       'nav.cta': 'إبدأ مشروعك',
-      'hero.eyebrow': 'منذ ٢٠٢٢ · مصر والعالم العربي',
+      'hero.eyebrow': 'منذ ٢٠٢٣ · حول العالم',
       'hero.h1_1': 'نصنع',
       'hero.h1_2': 'بصريات تدهش',
       'hero.h1_3': 'وقصصا تبقى',
@@ -6331,6 +6316,7 @@ html[lang="en"] .toast { right: 2rem; }
       'hero.stat1': 'تقييمات العملاء',
       'hero.stat2': 'مشروع منجز',
       'hero.stat3': 'تخصصات إبداعية',
+      'hero-star-star': '٤.٩ ★',
       'hero.tag1_cat': 'Video',
       'hero.tag1_title': 'مونتاج احترافي',
       'hero.tag2_cat': 'Notion',
@@ -6357,6 +6343,7 @@ html[lang="en"] .toast { right: 2rem; }
       'work.tag_brand': 'براند',
       'work.tag_ads':'إعلاني',
       'work.tag_motion': 'موشن جرافيك',
+      'work.tag_3d': '3d',
       'work.tag_edit': 'مونتاج',
       'work.tag_notion': 'نوشن',
       'work.view_all': 'تصفح جميع الأعمال',
@@ -6373,7 +6360,7 @@ html[lang="en"] .toast { right: 2rem; }
       'svc.s2_t': 'تصميم جرافيك', 'svc.s2_d': 'هويات بصرية، منشورات سوشيال، وتصاميم تجذب الأعين وتبقى في الذاكرة.',
       'svc.s2_b1': 'هوية بصرية كاملة', 'svc.s2_b2': 'تصميم سوشيال ميديا', 'svc.s2_b3': 'تصميم كاروسيل', 'svc.s2_b4': 'حملات إعلانية',
       'svc.s3_t': 'موشن جرافيك', 'svc.s3_d': 'حركة تحكي. أنيميشن يقنع. فيديوهات موشن تجعل علامتك لا تُنسى.',
-      'svc.s3_b1': 'أنيميشن 2D', 'svc.s3_b2': 'إنترو وأوترو', 'svc.s3_b3': 'فيديوهات إعلانية', 'svc.s3_b4': 'تحريك الشعارات',
+      'svc.s3_b1': 'أنيميشن 3D', 'svc.s3_b2': 'إنترو وأوترو', 'svc.s3_b3': 'فيديوهات إعلانية', 'svc.s3_b4': 'تحريك الشعارات',
       'svc.s4_t': 'أنظمة نوشن', 'svc.s4_d': 'أنظمة نوشن مخصصة لإدارة مشاريعك، فريقك، وحياتك — مصممة لتدوم.',
       'svc.s4_b1': 'Second Brain', 'svc.s4_b2': 'Project Management OS', 'svc.s4_b3': 'مشاريع متكاملة', 'svc.s4_b4': 'CRM على نوشن',
       'svc.link': 'اعرف أكتر',
@@ -6386,7 +6373,7 @@ html[lang="en"] .toast { right: 2rem; }
       'ag.desc': 'جميع سياساتنا في مكان واحد — الدفع، الباقات، التعديلات، الاسترداد، وحقوق العرض. اضغط على أي بند لقراءة التفاصيل كاملة.',
       'ag.read_more': 'اقرأ التفاصيل',
       'ag.s1_t': 'نظام الدفع',
-      'ag.s1_s': 'يتم إرسال <mark>50%</mark> من إجمالي قيمة المشروع، وبعد مشاهدة عيّنة من المشروع والموافقة عليه يتم إرسال باقي المبلغ كاملاً، ثم يتم من خلالي إرسال <mark>النسخة النهائية عالية الجودة</mark>.',
+      'ag.s1_s': 'يتم إرسال <mark>50%</mark> من إجمالي قيمة المشروع قبل البدأ، وبعد مشاهدة عيّنة من المشروع والموافقة عليه يتم إرسال باقي المبلغ كاملاً، ثم يتم من خلالي إرسال <mark>النسخة النهائية عالية الجودة</mark> وعند تحويل المبالغ تكون <mark>شاملة لضريبة التحويل</mark>.',
       'ag.s1_d1': 'دفعة مقدمة <mark>50%</mark> قبل بدء العمل على المشروع',
       'ag.s1_d2': 'بعد مشاهدة العيّنة الأولى وموافقة العميل عليها يتم إرسال الـ <mark>50%</mark> المتبقية',
       'ag.s1_d3': 'النسخة النهائية <mark>عالية الجودة</mark> يتم تسليمها بعد إتمام المبلغ كاملاً',
@@ -6410,42 +6397,42 @@ html[lang="en"] .toast { right: 2rem; }
       'ag.s4_d3': 'إذا انتهى العمل ولم يوافق العميل، <mark>لا يوجد استرداد</mark>',
       'ag.s4_d4': 'السياسة تضمن حقوق الطرفين وتحفظ جودة العمل',
       'ag.s5_t': 'سياسة الصوتيات',
-      'ag.s5_s': 'في جميع الأعمال، <mark>لا أستخدم أي موسيقى</mark> — سواء كانت موسيقى خلفية أو مقاطع صوتية تجارية. الفيديو يُسلَّم <mark>نظيفاً صوتياً</mark> حسب رغبة العميل.',
+      'ag.s5_s': 'في جميع الأعمال، <mark>لا أستخدم أي موسيقى</mark> — سواء كانت موسيقى خلفية أو مقاطع صوتية تجارية. ويتم التعويض عن الموسيقى بـ <mark>مؤثرات صوتية إحترافية</mark>.',
       'ag.s5_d1': '<mark>لا أستخدم أي موسيقى</mark> خلفية في العمل',
       'ag.s5_d2': 'لا تُضاف أي مقاطع صوتية تجارية بدون موافقة',
-      'ag.s5_d3': 'الفيديو يُسلَّم <mark>نظيفاً صوتياً</mark> ما لم يطلب العميل غير ذلك',
+      'ag.s5_d3': 'يتم التعويض عن الموسيقى بـ <mark>مؤثرات صوتية إحترافية</mark>',
       'ag.s5_d4': 'العميل حر في إضافة الموسيقى أو الصوتيات الخاصة به',
       'ag.s6_t': 'حقوق العرض',
-      'ag.s6_s': 'أي مشروع يتم تنفيذه من قبلنا يتم عرضه في <mark>معرض الأعمال الخاص بنا</mark> بغرض <mark>التسويق لنا</mark>، ما لم يُطلب من العميل خلاف ذلك كتابياً قبل البدء.',
+      'ag.s6_s': 'أي مشروع يتم تنفيذه من قبلنا يتم عرضه في <mark>معرض الأعمال الخاص بنا</mark> بغرض <mark>التسويق لنا</mark>، ما لم يُطلب من قبل العميل خلاف ذلك كتابياً قبل البدء.',
       'ag.s6_d1': 'يحق لنا عرض أي مشروع منفذ في <mark>معرض أعمالنا</mark>',
       'ag.s6_d2': 'الهدف من العرض هو <mark>التسويق</mark> لجودة خدماتنا',
       'ag.s6_d3': 'يمكن للعميل طلب <mark>عدم العرض</mark> كتابياً قبل البدء',
       'ag.s6_d4': 'حقوق الملكية الفكرية للمحتوى تبقى للعميل بالكامل',
-      'ag.cta_t': 'موافق على الشروط؟ يلا نبدأ.',
-      'ag.cta_d': 'لو عندك أي سؤال أو استفسار عن أي بند من البنود، ابعتلنا رسالة وهنرد عليك في أقل من 24 ساعة.',
-      'ag.cta_btn': 'تواصل معانا',
-      'proc.eyebrow': 'كيف نعمل · Process',
+      'ag.cta_t': 'موافق على الشروط؟ هيا نبدأ.',
+      'ag.cta_d': 'إذا كان لديك أي سؤال أو استفسار عن أي بند من البنود، تواصل معنا وهنرد عليك في أقل من 24 ساعة.',
+      'ag.cta_btn': 'تواصل معنا',
+      'proc.eyebrow': 'مراحل العمل ',
       'proc.h2_1': 'من ', 'proc.h2_2': 'الفكـرة', 'proc.h2_3': ' للإنشاء', 'proc.h2_5': '.',
-      'proc.desc': 'طريقة عملنا بسيطة وشفافة. بنمشي معاك خطوة خطوة — من أول برهفة للحظة تسليم الملفات.',
+      'proc.desc': 'طريقة عملنا بسيطة وشفافة. بنمشي معاك خطوة خطوة — من أول البريف للحظة تسليم الملفات.',
       'proc.s1_t': 'الاستيعاب', 'proc.s1_d': 'بنفهمك وبنفهم علامتك. أهدافك، جمهورك، المنافسين. ومنها بنبني الخارطة اللي كل حاجة بتتبنى عليها.',
-      'proc.s1_b1': 'بريفينج ومقابلة', 'proc.s1_b2': 'تحليل المنافسين', 'proc.s1_b3': 'استراتيجية إبداعية', 'proc.s1_b4': 'Roadmap',
-      'proc.s2_t': 'التصميم', 'proc.s2_d': 'من الأيديا للبيكسل الأخير — هنا العلامة بتبقى مرئية وبتاخد شكلها.',
+      'proc.s1_b1': 'تخطيط', 'proc.s1_b2': 'تحليل المنافسين', 'proc.s1_b3': 'إستراتيجية إبداعية', 'proc.s1_b4': 'خريطة المشروع',
+      'proc.s2_t': 'التصميم', 'proc.s2_d': 'من الفكرة للبيكسل الأخير — هنا العلامة بتبقى مرئية وبتاخد شكلها.',
       'proc.s2_b1': 'مفهوم إبداعي', 'proc.s2_b2': 'Moodboard', 'proc.s2_b3': 'تصميم أولي', 'proc.s2_b4': 'مراجعة ومراجعة',
       'proc.s3_t': 'التنفيذ', 'proc.s3_d': 'إنتاج بأعلى معايير الجودة — مونتاج، تصميم، موشن، جميعها في الوقت المحدد.',
       'proc.s3_b1': 'إنتاج كامل', 'proc.s3_b2': 'مراجعات مرحلية', 'proc.s3_b3': 'QA وجودة', 'proc.s3_b4': 'تسليم الملفات',
       'proc.s4_t': 'التسليم والمتابعة', 'proc.s4_d': 'بنسلم وبنفضل موجودين — علامتك بتكبر وإحنا بنكبر معها.',
       'proc.s4_b1': 'تسليم نهائي', 'proc.s4_b2': 'ملفات مفتوحة', 'proc.s4_b3': 'دعم ما بعد التسليم', 'proc.s4_b4': 'تطوير مستمر',
-      'res.eyebrow': 'النتائج · Results',
+      'res.eyebrow': 'النتائج',
       'res.h2_1': 'أرقام ', 'res.h2_2': 'تتكلـم', 'res.h2_3': '.',
-      'res.sub': 'مشاريع متسلم بأعلى معايير الجودة. النتائج على أرض الواقع.',
-      'res.m1': 'مشروع متسلم', 'res.m2': 'رضا العملاء', 'res.m3': '+١٥ مليون مشاهدة', 'res.m4': 'متوسط الرد ٢٤ ساعة',
-      'res.f1': 'جودة احترافية في جميع تفصيلة', 'res.f2': 'تسليم في الموعد', 'res.f3': 'ملفات مفتوحة المصدر', 'res.f4': 'دعم ما بعد التسليم',
+      'res.sub': 'مشاريع منجزة بأعلى معايير الجودة. النتائج على أرض الواقع.',
+      'res.m1': 'مشروع مستلم', 'res.m2': 'رضا العملاء', 'res.m3': 'المشاهدات', 'res.m4': 'متوسط وقت الرد',
+      'res.f1': 'جودة احترافية في كل تفصيلة', 'res.f2': 'تسليم في الموعد', 'res.f3': 'ملفات مفتوحة المصدر', 'res.f4': 'دعم ما بعد التسليم',
       'res.w1': 'بريفينج', 'res.w2': 'كونسبت', 'res.w3': 'تصميم', 'res.w4': 'تنفيذ', 'res.w5': 'تسليم',
       'res.s1': 'جودة', 'res.s2': 'سرعة', 'res.s3': 'إبداع', 'res.s4': 'رضا',
-      'ct.eyebrow': 'تواصل · Contact',
+      'ct.eyebrow': 'تواصل ',
       'ct.h2_1': ' تواصل ', 'ct.h2_2': 'معنا ', 'ct.h2_3': '.',
       'ct.h3_1': 'خط مباشر مع ', 'ct.h3_2': 'الفريق', 'ct.h3_3': '.',
-      'ct.lead': 'قولنا عن مشروعك القادم وهنرد في أقل من 24 ساعة. كل رسالة بنقراها بعناية، وبنرد عليها بفكرة حقيقية.',
+      'ct.lead': 'قولنا عن مشروعك القادم وهنرد في أقل من 24 ساعة. كل رسالة نقرأها بعناية، ونرد عليها بفكرة حقيقية.',
       'ct.reply': 'رد خلال 24 ساعة · متاح للمشاريع الجديدة',
       'ct.phone_label': 'Phone · واتساب',
       'ct.f1': 'الاسم الأول', 'ct.f2': 'الاسم الأخير', 'ct.f3': 'البريد الإلكتروني', 'ct.f4': 'رقم التواصل',
@@ -6456,29 +6443,29 @@ html[lang="en"] .toast { right: 2rem; }
       'ct.s4': 'نوشن · Notion Systems', 'ct.s5': 'باقة متكاملة · Full Package',
       'ct.f7': 'رسالة',
       'ct.submit': 'أرسل الطلب',
-      'fo.eyebrow': 'من نحن · About',
+      'fo.eyebrow': 'من نحن',
       'fo.h2_1': 'الفريق ', 'fo.h2_2': 'خلف رحلـة', 'fo.h2_3': '.',
       'fo.h3_1': 'خبرة ', 'fo.h3_2': 'إبداعية', 'fo.h3_3': '، فريق ', 'fo.h3_4': 'شغوف', 'fo.h3_5': '.',
       'fo.photo': 'صورة المؤسس', 'fo.role': 'Founder · Designer · Editor',
-      'fo.bio': 'رحلة بدأت من شغف بالصورة والكلمة. اليوم، الاستوديو بيقدم خدمات إبداعية متكاملة لعلامات من مصر والعالم العربي — مونتاج، تصميم، موشن، وأنظمة نوشن. كل مشروع بنتعامل معاه كأنه بتاعنا إحنا، وبنسلّمه بنفس الجودة اللي بنحطها في شغلنا الشخصي.',
-      'fo.s1': 'السنوات · Years', 'fo.s2': 'المشاريع · Projects', 'fo.s3': 'التخصصات · Specialties',
+      'fo.bio': 'رحلة بدأت من شغف بالصورة والكلمة. اليوم، الأستوديو بيقدم خدمات إبداعية متكاملة لعلامات حول العالم — مونتاج، تصميم، موشن، وأنظمة نوشن. كل مشروع بنتعامل معاه كأنه بتاعنا إحنا، وبنسلّمه بنفس الجودة اللي بنحطها في شغلنا الشخصي.',
+      'fo.s1': ' سنوات الخبرة', 'fo.s2': 'المشاريع المنجزة', 'fo.s3': 'التخصصات',
       'faq.eyebrow': 'أسئلة شائعة · Common Questions',
       'faq.h2_1': 'إجابات ', 'faq.h2_2': 'واضحـة', 'faq.h2_3': '.',
-      'faq.q1': 'كم تكلف الخدمة؟', 'faq.a1': 'السعر بيتحدد بعد فهم المشروع. خدمات المونتاج بتبدأ من ٥٠٠ جنيه، وباقات الهوية البصرية بتتحدد حسب الاحتياج. مفيش أرقام مخفية — كل حاجة واضحة من أول يوم.',
-      'faq.q2': 'كم المدة المطلوبة؟', 'faq.a2': 'المونتاج البسيط من يوم لـ ٣ أيام. الهوية البصرية من أسبوعين لشهر. الموشن حسب المشروع. هنحدد جدول زمني واضح من أول يوم وبنلتزم بيه.',
-      'faq.q3': 'هل تشتغلوا عن بُعد؟', 'faq.a3': 'نعم. بنشتغل مع عملاء من مصر والخليج وبقية الوطن العربي والعالم — جميعها أونلاين وبكفاءة عالية. بتواصل مباشر على Whatsapp أو Telegram، وملفات بتتبادل على Drive.',
-      'faq.q4': 'هل بتسلموا ملفات مفتوحة؟', 'faq.a4': 'نعم. بعد التسليم النهائي، بتاخد جميع الملفات الأصلية (PSD, AI, AE, Notion) بدون قيود — شغلك وانت مالكه.',
-      'faq.q5': 'هل بتعملوا باقات؟', 'faq.a5': 'نعم. عندنا باقات متكاملة بتجمع مونتاج + تصميم + موشن. كمان عندنا باقات شهرية للفريلانسرز والشركات اللي محتاجة محتوى ثابت. ابعت وهنقولك.',
-      'faq.q6': 'إيه الفرق بين رحلة وغيرها؟', 'faq.a6': 'إحنا مش بنبيع خدمة — إحنا بنبني علاقة. كل مشروع بيتعامل معاه كأنه بتاعنا إحنا. التواصل مباشر، الشفافية كاملة، والهدف إن شغلك يطلع أحسن من توقعاتك.',
-      'ft.tag1': 'استوديو رحلة — نصنع الجمال البصري',
+      'faq.q1': 'كم تكلف الخدمة ؟', 'faq.a1': 'السعر بيتحدد بعد فهم المشروع. خدمات المونتاج بتتحد حسب الاستايل ومدة الفيديو ، وباقات الهوية البصرية بتتحدد حسب الاحتياج. كل حاجة بتكون واضحة من أول يوم.',
+      'faq.q2': 'كم المدة المطلوبة ؟', 'faq.a2': 'المونتاج البسيط من يوم لـ ٣ أيام. الهوية البصرية من أسبوعين لشهر. الموشن حسب المشروع. هنحدد جدول زمني واضح من أول يوم ونلتزم بيه.',
+      'faq.q3': 'هل تعملون عن بُعد ؟', 'faq.a3': 'نعم. نعمل مع عملاء من مصر والخليج وبقية الوطن العربي والعالم — جميعها أونلاين وبكفاءة عالية. بتواصل مباشر على Whatsapp أو Telegram.',
+      'faq.q4': 'هل يمكن الحصول على ملفات المشاريع مفتوحة المصدر ؟', 'faq.a4': 'نعم. يمكنك الحصول على جميع ملفات العمل بعد التسليم النهائي ويكون ذالك مقابل مبلغ يقدر على حسب حجم المشروع، تحصل على جميع الملفات الأصلية (PSD, AI, AE, Notion) بدون قيود — شغلك وانت مالكه.',
+      'faq.q5': 'هل تقومون بتوفير باقات ؟', 'faq.a5': 'نعم. نقوم بتوفير باقات متكاملة بتجمع بين مونتاج + تصميم + موشن. كمان عندنا باقات شهرية للفريلانسرز والشركات اللي محتاجة محتوى ثابت. تواصل للمزيد من التفاصيل.',
+      'faq.q6': 'ما الذي يميز رحلة عن غيرها ؟', 'faq.a6': 'نحن لا نقدم خدمة — نحن نبني علاقة. كل مشروع يتم التعامل معه على أنه مشروع مميز يجب أن يتم على أكمل وجه. التواصل مباشر، الشفافية كاملة، والهدف إن شغلك يطلع أحسن من توقعاتك.',
+      'ft.tag1': 'أستوديو رحلة — نصنع الجمال البصري',
       'ft.tag2': 'تصميم جماليات بصرية للعلامات التجارية الطموحة.',
       'ft.col1_t': 'خدماتنا · Services',
       'ft.col1_l1': 'مونتاج', 'ft.col1_l2': 'تصميم', 'ft.col1_l3': 'موشن جرافيك', 'ft.col1_l4': 'نوشن',
       'ft.col2_t': 'الاستوديو · Studio',
-      'ft.col2_l1': 'من نحن', 'ft.col2_l2': 'أعمالنا', 'ft.col2_l3': 'الأسئلة', 'ft.col2_l4': 'تواصل',
+      'ft.col2_l1': 'من نحن', 'ft.col2_l2': 'أحدث أعمالنا', 'ft.col2_l3': 'الأسئلة', 'ft.col2_l4': 'تواصل',
       'ft.col3_t': 'سوشيال · Follow',
       'ft.col3_l1': 'إنستجرام', 'ft.col3_l2': 'بيهانس', 'ft.col3_l3': 'يوتيوب', 'ft.col3_l4': 'تيليجرام',
-      'ft.copy': '© ٢٠٢٦  ستوديو رحلة · جميع الحقوق محفوظة',
+      'ft.copy': '© ٢٠٢٦  أستوديو رحلة · جميع الحقوق محفوظة',
       'ft.made': 'صنع بكل شغف ✦',
       'fn1': 'عبدالرحمن شريف',
       'toast_t': 'تم استلام طلبك',
@@ -6537,7 +6524,7 @@ html[lang="en"] .toast { right: 2rem; }
       'nav.shop': 'Shop',
       'nav.blog': 'Blog',
       'nav.cta': 'Start a project',
-      'hero.eyebrow': 'Since 2023 · Egypt & the Arab World',
+      'hero.eyebrow': 'Since 2023 · Around the World',
       'hero.h1_1': 'We craft visuals',
       'hero.h1_2': 'that amaze and tell',
       'hero.h1_3': 'stories that',
@@ -6548,6 +6535,7 @@ html[lang="en"] .toast { right: 2rem; }
       'hero.stat1': 'Client rating',
       'hero.stat2': 'Projects done',
       'hero.stat3': 'Creative specialties',
+      'hero-star-star': '4.9 ★',
       'hero.tag1_cat': 'Video',
       'hero.tag1_title': 'Pro Editing',
       'hero.tag2_cat': 'Notion',
@@ -6574,6 +6562,7 @@ html[lang="en"] .toast { right: 2rem; }
       'work.tag_brand': 'Brand',
       'work.tag_ads':'Ads',
       'work.tag_motion': 'Motion',
+      'work.tag_3d': '3d',
       'work.tag_edit': 'Editing',
       'work.tag_notion': 'Notion',
       'work.view_all': 'See all work',
@@ -6584,15 +6573,15 @@ html[lang="en"] .toast { right: 2rem; }
       'svc.h2_3': '. One ',
       'svc.h2_4': 'team',
       'svc.h2_5': '.',
-      'svc.desc': 'End-to-end creative solutions — from first idea to final delivery.',
+      'svc.desc': 'Creative solutions — from first idea to final delivery.',
       'svc.s1_t': 'Video Editing', 'svc.s1_d': 'Pro editing that tells your story with precision — from short-form to corporate films.',
       'svc.s1_b1': 'Reels & TikTok', 'svc.s1_b2': 'Documentary edits', 'svc.s1_b3': 'Color Grading', 'svc.s1_b4': 'Sound Design',
       'svc.s2_t': 'Graphic Design', 'svc.s2_d': 'Visual identities, social posts, and designs that catch eyes and stay in memory.',
-      'svc.s2_b1': 'Full brand identity', 'svc.s2_b2': 'Social media design', 'svc.s2_b3': 'Print', 'svc.s2_b4': 'Branding Kit',
+      'svc.s2_b1': 'Full brand identity', 'svc.s2_b2': 'Social media design', 'svc.s2_b3': 'Design carousels', 'svc.s2_b4': 'Branding Kit',
       'svc.s3_t': 'Motion Graphics', 'svc.s3_d': 'Motion that tells. Animation that convinces. Motion videos that make your brand unforgettable.',
-      'svc.s3_b1': '3D Animation', 'svc.s3_b2': 'Intros & outros', 'svc.s3_b3': 'Explainer Videos', 'svc.s3_b4': 'Logo Animation',
-      'svc.s4_t': 'Notion Systems', 'svc.s4_d': 'Custom Notion systems to manage your projects, team, and life — built to last.',
-      'svc.s4_b1': 'Second Brain', 'svc.s4_b2': 'Project Management OS', 'svc.s4_b3': 'Team Wiki', 'svc.s4_b4': 'Notion CRM',
+      'svc.s3_b1': '3D Animation', 'svc.s3_b2': 'Intros & outros', 'svc.s3_b3': 'Adversting Videos', 'svc.s3_b4': 'Logo Animation',
+      'svc.s4_t': 'Notion Systems', 'svc.s4_d': 'Custom Notion systems to manage your projects, team, and life — built to stay.',
+      'svc.s4_b1': 'Second Brain', 'svc.s4_b2': 'Project Management OS', 'svc.s4_b3': 'Full projects', 'svc.s4_b4': 'Notion CRM',
       'svc.link': 'Learn more',
       'ag.eyebrow': 'Work Agreement',
       'ag.h2_1': 'Clear ',
@@ -6603,7 +6592,7 @@ html[lang="en"] .toast { right: 2rem; }
       'ag.desc': 'All our policies in one place — payment, packs, revisions, refunds, and display rights. Click any item to read the full details.',
       'ag.read_more': 'Read details',
       'ag.s1_t': 'Payment System',
-      'ag.s1_s': '<mark>50%</mark> of the total project value is sent first, and after viewing a sample of the project and approving it, the remaining amount is sent in full — then I personally deliver the <mark>final high-quality version</mark>.',
+      'ag.s1_s': '<mark>50%</mark> of the total project value is sent first, and after viewing a sample of the project and approving it, the remaining amount is sent — then I personally deliver the <mark>final high-quality version</mark> and when sending money all inclusive of <mark>transfer fees</mark>..',
       'ag.s1_d1': 'An upfront <mark>50%</mark> deposit before work begins on the project',
       'ag.s1_d2': 'After viewing the first sample and the client\'s approval, the remaining <mark>50%</mark> is sent',
       'ag.s1_d3': 'The final <mark>high-quality version</mark> is delivered after the full amount is received',
@@ -6621,16 +6610,16 @@ html[lang="en"] .toast { right: 2rem; }
       'ag.s3_d3': '<mark>Voice notes are not accepted</mark> for revision requests',
       'ag.s3_d4': 'Any revision beyond the third is <mark>billed additionally</mark> and agreed in advance',
       'ag.s4_t': 'Refund Policy',
-      'ag.s4_s': '<mark>No refunds</mark> are issued if the work on the video is finished and the client does not approve it. <mark>Paid amounts are non-refundable</mark> once execution has started.',
+      'ag.s4_s': '<mark>No refunds</mark> are issued from the client if the work on the video is finished and the client does not approve it. <mark>Paid amounts are non-refundable</mark> once execution has started.',
       'ag.s4_d1': 'Paid amounts are <mark>non-refundable</mark> once execution has started',
       'ag.s4_d2': '<mark>3 revisions</mark> are available before any non-approval decision',
       'ag.s4_d3': 'If the work is finished and the client does not approve, <mark>no refund</mark> is given',
       'ag.s4_d4': 'The policy protects both parties and preserves work quality',
       'ag.s5_t': 'Audio Policy',
-      'ag.s5_s': 'In all work, <mark>I do not use any music</mark> — neither background music nor commercial audio clips. The video is delivered <mark>audio-clean</mark> unless the client requests otherwise.',
+      'ag.s5_s': 'In all work, <mark>I do not use any music</mark> — neither background music or commercial audio clips. And it get reversed by a <mark>Pro-SFX</mark>.',
       'ag.s5_d1': '<mark>I do not use any music</mark> as background in the work',
       'ag.s5_d2': 'No commercial audio clips are added without consent',
-      'ag.s5_d3': 'The video is delivered <mark>audio-clean</mark> unless the client requests otherwise',
+      'ag.s5_d3': 'The music get reversed by a <mark>Pro-SFX</mark>',
       'ag.s5_d4': 'The client is free to add their own music or audio',
       'ag.s6_t': 'Display Rights',
       'ag.s6_s': 'Any project delivered by us is showcased in <mark>our portfolio</mark> for the purpose of <mark>marketing our services</mark>, unless the client requests otherwise in writing before work begins.',
@@ -6644,7 +6633,7 @@ html[lang="en"] .toast { right: 2rem; }
       'proc.eyebrow': 'How we work',
       'proc.h2_1': 'From ', 'proc.h2_2': 'idea', 'proc.h2_3': ' to launch', 'proc.h2_5': '.',
       'proc.desc': 'Our process is simple and transparent. We walk with you step by step — from the first brief to file delivery.',
-      'proc.s1_t': 'Discovery', 'proc.s1_d': 'We get you and your brand. Your goals, audience, competitors. From there we build the map everything is built on.',
+      'proc.s1_t': 'Discovery', 'proc.s1_d': 'We get you and your brand. Your goals, audience, competitors. From that we build the map everything is built on.',
       'proc.s1_b1': 'Briefing & call', 'proc.s1_b2': 'Competitor analysis', 'proc.s1_b3': 'Creative strategy', 'proc.s1_b4': 'Roadmap',
       'proc.s2_t': 'Design', 'proc.s2_d': 'From idea to the last pixel — this is where the brand becomes visible and takes shape.',
       'proc.s2_b1': 'Creative concept', 'proc.s2_b2': 'Moodboard', 'proc.s2_b3': 'Initial design', 'proc.s2_b4': 'Revisions',
@@ -6655,14 +6644,14 @@ html[lang="en"] .toast { right: 2rem; }
       'res.eyebrow': 'Results',
       'res.h2_1': 'Numbers ', 'res.h2_2': 'speak', 'res.h2_3': '.',
       'res.sub': 'Projects delivered with the highest quality standards. Real results.',
-      'res.m1': 'Projects delivered', 'res.m2': 'Client satisfaction', 'res.m3': '15M+ content views', 'res.m4': 'Avg. 24h response',
+      'res.m1': 'Projects delivered', 'res.m2': 'Client satisfaction', 'res.m3': 'Views', 'res.m4': 'Avg response time',
       'res.f1': 'Pro quality in every detail', 'res.f2': 'On-time delivery', 'res.f3': 'Open source files', 'res.f4': 'Post-delivery support',
       'res.w1': 'Briefing', 'res.w2': 'concept', 'res.w3': 'design', 'res.w4': 'build', 'res.w5': 'deliver',
       'res.s1': 'Quality', 'res.s2': 'Speed', 'res.s3': 'Creative', 'res.s4': 'Satisfaction',
       'ct.eyebrow': 'Contact',
       'ct.h2_1': 'Let\'s ', 'ct.h2_2': 'talk', 'ct.h2_3': '.',
       'ct.h3_1': 'Direct line with the ', 'ct.h3_2': 'team', 'ct.h3_3': '.',
-      'ct.lead': 'Tell us about your next project and we\'ll respond in under 24 hours. Every brief is read carefully and answered with a real idea.',
+      'ct.lead': 'Tell us about your next project and we\'ll respond in under 24 hours. Every brief is read carefully read and answered with a real idea.',
       'ct.reply': 'Reply within 24h · Available for new projects',
       'ct.phone_label': 'Phone · WhatsApp',
       'ct.f1': 'First name', 'ct.f2': 'Last name', 'ct.f3': 'Email', 'ct.f4': 'Phone',
@@ -6677,16 +6666,16 @@ html[lang="en"] .toast { right: 2rem; }
       'fo.h2_1': 'The ', 'fo.h2_2': 'team behind Rihla', 'fo.h2_3': '.',
       'fo.h3_1': 'Creative ', 'fo.h3_2': 'depth', 'fo.h3_3': ', ', 'fo.h3_4': 'passionate', 'fo.h3_5': ' team.',
       'fo.photo': 'Founder photo', 'fo.role': 'Founder · Designer · Editor',
-      'fo.bio': 'A journey that started with a passion for image and word. Today, the studio delivers integrated creative services to brands in Egypt and the Arab world — editing, design, motion, and Notion systems. Every project is treated as if it were our own, delivered with the same quality we put in our personal work.',
+      'fo.bio': 'A journey that started with a passion for image and word. Today, the studio delivers integrated creative services to brands around the world — editing, design, motion, and Notion systems. Every project is treated as if it were our own, delivered with the same quality we put in our personal work.',
       'fo.s1': 'Years', 'fo.s2': 'Projects', 'fo.s3': 'Specialties',
       'faq.eyebrow': 'Common Questions',
       'faq.h2_1': 'Clear ', 'faq.h2_2': 'answers', 'faq.h2_3': '.',
-      'faq.q1': 'How much does it cost?', 'faq.a1': 'Pricing is determined after understanding the project. Editing services start at 500 EGP, and brand identity packages are scoped per need. No hidden numbers — everything is clear from day one.',
+      'faq.q1': 'How much does it cost?', 'faq.a1': 'Pricing is determined after understanding the project. Editing services is scoped per style and video time, and brand identity packages are scoped per need. No hidden numbers — everything is clear from day one.',
       'faq.q2': 'How long does it take?', 'faq.a2': 'Simple edits from 1-3 days. Brand identity from 2 weeks to a month. Motion depends on the project. We set a clear timeline from day one and stick to it.',
-      'faq.q3': 'Do you work remotely?', 'faq.a3': 'Yes. We work with clients from Egypt, the Gulf, the rest of the Arab world and beyond — all online with high efficiency. Direct comms via Zoom or Google Meet, files exchanged on Drive.',
-      'faq.q4': 'Do you deliver open files?', 'faq.a4': 'Yes. After final delivery, you get all original files (PSD, AI, PR, Notion) with no restrictions — your work, you own it.',
+      'faq.q3': 'Do you work remotely?', 'faq.a3': 'Yes. We work with clients from Egypt, the Gulf, the rest of the Arab world and the world — all online with high efficiency. Direct comms via Whatsapp or telegram.',
+      'faq.q4': 'Do you deliver open files?', 'faq.a4': 'Yes. You can after final delivery and that is for a mablag scoped per the size of the project, you get all original files (PSD, AI, PR, Notion) with no restrictions — your work, you own it.',
       'faq.q5': 'Do you offer packages?', 'faq.a5': 'Yes. We have integrated packages combining editing + design + motion. We also have monthly packages for freelancers and companies that need steady content. Send us a message and we\'ll get back to you.',
-      'faq.q6': 'What makes Rihla different?', 'faq.a6': 'We don\'t sell a service — we build a relationship. Every project is treated as our own. Direct communication, full transparency, and the goal that your work comes out better than your expectations.',
+      'faq.q6': 'What makes Rihla different?', 'faq.a6': 'We don\'t sell a service — we build a relationship. Every project is treated as our own and must be combleted as the perfect face. Direct communication, full transparency, and the goal that your work comes out better than your expectations.',
       'ft.tag1': 'Rihla Studio — crafting visual beauty',
       'ft.tag2': 'Crafting visual beauty for ambitious brands. Cairo, Egypt.',
       'ft.col1_t': 'Services',

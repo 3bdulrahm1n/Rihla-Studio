@@ -353,7 +353,7 @@ html[lang="en"] .display-h1 { font-family: 'Thmanyah Sans'; font-weight: 500; }
   font-weight: 600;
   font-size: clamp(2.25rem, 6vw, 4.5rem);
   line-height: 1.02;
-  letter-spacing: -0.015em;
+  letter-spacing: 0;
 }
 html[lang="en"] .display-h2 { font-family: 'Thmanyah Sans'; font-weight: 500; }
 .italic-accent {
@@ -492,7 +492,12 @@ section {
 :root[data-theme="light"] .nav.scrolled {
   background: rgba(250, 247, 242, 0.82);
 }
-
+.nav_logo{
+  width: 40px;
+  height: 40px;
+  transition: transform 0.6s var(--ease);
+}
+.nav-logo:hover .nav_logo{ transform: rotate(45deg); }
 /* ============================================
    RIGHT SIDE SOCIAL RAIL (matches index exactly)
    ============================================ */
@@ -876,6 +881,8 @@ html[dir="rtl"] .works-sort select {
   margin-bottom: 6rem;
   isolation: isolate;
   box-shadow: 0 30px 80px -30px rgba(30, 10, 92, 0.6);
+  padding-right: 4.5rem;
+  padding-left: 4.5rem;
 }
 .featured-banner::before {
   content: ''; position: absolute; inset: 0;
@@ -897,7 +904,7 @@ html[dir="rtl"] .works-sort select {
 }
 .featured-content { position: relative; z-index: 2; }
 .featured-content .eyebrow { margin-bottom: 1.5rem; }
-.featured-content h2 { margin-bottom: 1rem; }
+.featured-content h2 { margin-bottom: 1rem; inline-size: max-content; }
 .featured-content p { color: var(--text-soft); font-size: 1.05rem; line-height: 1.7; margin-bottom: 2rem; max-width: 480px; }
 .featured-meta {
   display: flex;
@@ -1765,20 +1772,10 @@ html[dir="rtl"] .design-lightbox-nav svg {
      ============================================ -->
 <nav class="nav" id="nav" aria-label="التنقل الرئيسي">
   <div class="container nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="الصفحة الرئيسية - ستوديو رحلة">
-      <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
-        <defs>
-          <linearGradient id="lg-mark" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#F5A623" />
-            <stop offset="1" stop-color="#E55A2B" />
-          </linearGradient>
-        </defs>
-        <path fill="url(#lg-mark)" d="M50 4 L57 32 L84 16 L68 43 L96 50 L68 57 L84 84 L57 68 L50 96 L43 68 L16 84 L32 57 L4 50 L32 43 L16 16 L43 32 Z" opacity="0.95"/>
-        <path fill="#0A0510" d="M50 18 L54 38 L74 38 L58 50 L62 70 L50 58 L38 70 L42 50 L26 38 L46 38 Z" opacity="0.7"/>
-        <circle cx="50" cy="50" r="4" fill="#F5A623"/>
-      </svg>
+    <a href="index.html" class="nav-logo" aria-label="الصفحة الرئيسية - أستوديو رحلة">
+      <img class="nav_logo" src="assets/nejma_gr.png" alt="logo">
       <div style="display:flex; flex-direction:column; line-height:1;">
-        <span class="logo-text-ar" data-i18n="nav.brand_ar">ستوديو رحلة</span>
+        <span class="logo-text-ar" data-i18n="nav.brand_ar">أستوديو رحلة</span>
         <span class="logo-text-en" data-i18n="nav.brand_en">Rihla Studio</span>
       </div>
     </a>
@@ -1788,9 +1785,9 @@ html[dir="rtl"] .design-lightbox-nav svg {
       <a href="work.html" class="active" data-i18n="nav.work_all">جميع الأعمال</a>
       <a href="index.html#services" data-i18n="nav.services">الخدمات</a>
       <a href="shop_soon.html" data-i18n="nav.shop">المتجر</a>
-      <!-- <a href="blog.html" data-i18n="nav.blog">المقالات</a> -->
+      <a href="blog_soon.html" data-i18n="nav.blog">المدونة</a>
       <a href="index.html#agreement" data-i18n="nav.agreement">اتفاقية العمل</a>
-      <a href="index.html#process" data-i18n="nav.process">كيف نعمل</a>
+      <a href="index.html#process" data-i18n="nav.process">مراحل العمل</a>
       <a href="index.html#results" data-i18n="nav.results">النتائج</a>
       <a href="index.html#founder" data-i18n="nav.about">من نحن</a>
       <a href="index.html#faq" data-i18n="nav.faq">الأسئلة</a>
@@ -1812,7 +1809,7 @@ html[dir="rtl"] .design-lightbox-nav svg {
         </svg>
       </button>
       <a href="index.html#contact" class="nav-cta">
-        <span data-i18n="nav.cta">ابدأ مشروعك</span>
+        <span data-i18n="nav.cta">إبدأ مشروعك</span>
         <span class="arrow">→</span>
       </a>
       <button class="nav-hamburger" id="navHamburger" aria-label="القائمة" aria-expanded="false">
@@ -1827,9 +1824,9 @@ html[dir="rtl"] .design-lightbox-nav svg {
   <a href="work.html" class="active" data-i18n="nav.work_all">جميع الأعمال</a>
   <a href="index.html#services" data-i18n="nav.services">الخدمات</a>
   <a href="shop_soon.html" data-i18n="nav.shop">المتجر</a>
-  <!-- <a href="blog.html" data-i18n="nav.blog">المقالات</a> -->
+  <a href="blog_soon.html" data-i18n="nav.blog">المدونة</a>
   <a href="index.html#agreement" data-i18n="nav.agreement">اتفاقية العمل</a>
-  <a href="index.html#process" data-i18n="nav.process">كيف نعمل</a>
+  <a href="index.html#process" data-i18n="nav.process">مراحل العمل</a>
   <a href="index.html#results" data-i18n="nav.results">النتائج</a>
   <a href="index.html#founder" data-i18n="nav.about">من نحن</a>
   <a href="index.html#faq" data-i18n="nav.faq">الأسئلة</a>
@@ -1863,7 +1860,7 @@ html[dir="rtl"] .design-lightbox-nav svg {
 
       <div class="works-hero-stats">
         <div class="works-hero-stat">
-          <span class="num" data-count="22" data-suffix="+">0+</span>
+          <span class="num" data-count="250" data-suffix="+">0+</span>
           <span class="label" data-i18n="works.stat1">مشروع منجز</span>
         </div>
         <div class="works-hero-stat-divider"></div>
@@ -1873,7 +1870,7 @@ html[dir="rtl"] .design-lightbox-nav svg {
         </div>
         <div class="works-hero-stat-divider"></div>
         <div class="works-hero-stat">
-          <span class="num">5.0 <span style="font-size: 0.6em;">★</span></span>
+          <span class="num">4.9 <span style="font-size: 0.6em;">★</span></span>
           <span class="label" data-i18n="works.stat3">تقييم العملاء</span>
         </div>
       </div>
@@ -1903,10 +1900,10 @@ html[dir="rtl"] .design-lightbox-nav svg {
         <span data-i18n="works.f_motion">موشن</span>
         <span class="count" data-count-cat="motion">6</span>
       </button>
-      <button class="works-filter-tab" data-filter="notion">
+      <!-- <button class="works-filter-tab" data-filter="notion">
         <span data-i18n="works.f_notion">نوشن</span>
         <span class="count" data-count-cat="notion">4</span>
-      </button>
+      </button> -->
     </div>
 
     <div class="works-sort">
@@ -1933,16 +1930,16 @@ html[dir="rtl"] .design-lightbox-nav svg {
           <span class="num">★</span>
           <span data-i18n="works.featured_eyebrow">المشروع المميز · Featured Project</span>
         </div>
-        <h2 class="display-h2" data-i18n="works.featured_t">هوية بصرية لستوديو Rihla</h2>
-        <p data-i18n="works.featured_d">من الصفر، بنينا هوية بصرية متكاملة لستوديو عربي — من الشعار للقائمة والخلفيات وجميع الأشياء. المشروع اللي بيمثل روح ستوديو رحلة في كل تفصيلة.</p>
+        <h2 class="display-h2" data-i18n="works.featured_t">هوية بصرية لأستوديو Rihla</h2>
+        <p data-i18n="works.featured_d">من الصفر، بنينا هوية بصرية متكاملة لستوديو عربي — من الشعار للقائمة والخلفيات وجميع الأشياء. المشروع اللي بيمثل روح أستوديو رحلة في كل تفصيلة.</p>
         <div class="featured-meta">
           <div class="featured-meta-item">
             <span class="label" data-i18n="works.featured_client_l">العميل · Client</span>
-            <span class="value" data-i18n="works.featured_client">Rihla Studio</span>
+            <span class="value" data-i18n="works.featured_client">أستوديو رحلة</span>
           </div>
           <div class="featured-meta-item">
             <span class="label" data-i18n="works.featured_year_l">السنة · Year</span>
-            <span class="value">2025</span>
+            <span class="value">2026</span>
           </div>
           <div class="featured-meta-item">
             <span class="label" data-i18n="works.featured_cat_l">الفئة · Category</span>
@@ -1954,11 +1951,11 @@ html[dir="rtl"] .design-lightbox-nav svg {
           <span class="arrow">→</span>
         </a>
       </div>
-      <div class="featured-visual">
+      <!-- <div class="featured-visual">
         <div class="featured-orb"></div>
         <div class="featured-orb-2"></div>
-        <div class="featured-emblem" data-i18n="works.featured_emblem">Rihla</div>
-      </div>
+        <div class="featured-emblem" data-i18n="works.featured_emblem">Rihla</div> 
+      </div> -->
     </div>
   </div>
 </section>
@@ -2993,27 +2990,17 @@ html[dir="rtl"] .design-lightbox-nav svg {
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="nav-logo">
-          <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
-            <defs>
-              <linearGradient id="lg-footer" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#F5A623" />
-                <stop offset="1" stop-color="#E55A2B" />
-              </linearGradient>
-            </defs>
-            <path fill="url(#lg-footer)" d="M50 4 L57 32 L84 16 L68 43 L96 50 L68 57 L84 84 L57 68 L50 96 L43 68 L16 84 L32 57 L4 50 L32 43 L16 16 L43 32 Z"/>
-            <path fill="#0A0510" d="M50 18 L54 38 L74 38 L58 50 L62 70 L50 58 L38 70 L42 50 L26 38 L46 38 Z"/>
-            <circle cx="50" cy="50" r="4" fill="#F5A623"/>
-          </svg>
+          <img class="nav_logo" src="assets/nejma_gr.png" alt="logo">
           <div style="display:flex; flex-direction:column; line-height:1;">
-            <span class="logo-text-ar" data-i18n="nav.brand_ar">ستوديو رحلة</span>
+            <span class="logo-text-ar" data-i18n="nav.brand_ar">أستوديو رحلة</span>
             <span class="logo-text-en" data-i18n="nav.brand_en">Rihla Studio</span>
           </div>
         </a>
-        <p class="tagline" data-i18n="works.ft_tag">ستوديو رحلة — نصنع الجمال البصري ومنتجات رقمية لعلامات طموحة.</p>
+        <p class="tagline" data-i18n="works.ft_tag">أستوديو رحلة — نصنع الجمال البصري ومنتجات رقمية لعلامات طموحة.</p>
       </div>
 
       <div class="footer-col">
-        <h4 data-i18n="works.ft_col1_t">الاستوديو</h4>
+        <h4 data-i18n="works.ft_col1_t">الأستوديو</h4>
         <ul>
           <li><a href="index.html" data-i18n="works.ft_l1">الرئيسية</a></li>
           <li><a href="work.html" data-i18n="works.ft_l2">جميع الأعمال</a></li>
@@ -3026,7 +3013,7 @@ html[dir="rtl"] .design-lightbox-nav svg {
         <h4 data-i18n="works.ft_col2_t">المزيد</h4>
         <ul>
           <li><a href="index.html#agreement" data-i18n="works.ft_l5">اتفاقية العمل</a></li>
-          <li><a href="index.html#process" data-i18n="works.ft_l6">كيف نعمل</a></li>
+          <li><a href="index.html#process" data-i18n="works.ft_l6">مراحل العمل</a></li>
           <li><a href="index.html#results" data-i18n="works.ft_l7">النتائج</a></li>
           <li><a href="index.html#contact" data-i18n="works.ft_l8">تواصل</a></li>
         </ul>
@@ -3035,16 +3022,16 @@ html[dir="rtl"] .design-lightbox-nav svg {
       <div class="footer-col">
         <h4 data-i18n="works.ft_col3_t">سوشيال · Follow</h4>
         <ul>
-          <li><a href="https://instagram.com/rihlastudio" target="_blank" rel="noopener">إنستجرام <span class="ext">↗</span></a></li>
-          <li><a href="https://behance.net/rihlastudio" target="_blank" rel="noopener">بيهانس <span class="ext">↗</span></a></li>
-          <li><a href="https://youtube.com/@rihlastudio" target="_blank" rel="noopener">يوتيوب <span class="ext">↗</span></a></li>
-          <li><a href="https://wa.me/201000000000" target="_blank" rel="noopener">واتساب <span class="ext">↗</span></a></li>
+          <li><a href="https://instagram.com/rihlastudio" target="_blank" rel="noopener" data-i18n="works.ft_l9">إنستجرام <span class="ext">↗</span></a></li>
+          <li><a href="https://behance.net/rihlastudio" target="_blank" rel="noopener" data-i18n="works.ft_l10">بيهانس <span class="ext">↗</span></a></li>
+          <li><a href="https://youtube.com/@rihlastudio" target="_blank" rel="noopener" data-i18n="works.ft_l11">يوتيوب <span class="ext">↗</span></a></li>
+          <li><a href="https://wa.me/201000000000" target="_blank" rel="noopener"data-i18n="works.ft_l12" >واتساب <span class="ext">↗</span></a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <div data-i18n="works.ft_copy">© ٢٠٢٥ ستوديو رحلة · جميع الحقوق محفوظة</div>
+      <div data-i18n="works.ft_copy">© ٢٠٢٥ أستوديو رحلة · جميع الحقوق محفوظة</div>
       <div class="made" data-i18n="works.ft_made">Crafted with passion ✦</div>
     </div>
   </div>
@@ -3064,15 +3051,15 @@ html[dir="rtl"] .design-lightbox-nav svg {
     ar: {
       'works.meta.title': 'جميع الأعمال · Rihla Studio',
       'works.meta.desc': 'استعرض جميع أعمالنا — مونتاج، تصميم، موشن جرافيك، وأنظمة نوشن. مشاريع منجزة لعلامات طموحة.',
-      'nav.brand_ar': 'ستوديو رحلة',
+      'nav.brand_ar': 'أستوديو رحلة',
       'nav.brand_en': 'Rihla Studio',
       'nav.work_recent': 'أحدث الأعمال',
       'nav.work_all': 'جميع الأعمال',
       'nav.services': 'الخدمات',
       'nav.shop': 'المتجر',
-      'nav.blog': 'المقالات',
+      'nav.blog': 'المدونة',
       'nav.agreement': 'اتفاقية العمل',
-      'nav.process': 'كيف نعمل',
+      'nav.process': 'مراحل العمل',
       'nav.results': 'النتائج',
       'nav.about': 'من نحن',
       'nav.faq': 'الأسئلة',
@@ -3081,7 +3068,7 @@ html[dir="rtl"] .design-lightbox-nav svg {
       'works.h1_1': 'مشاريعنا ',
       'works.h1_2': 'بالكامل',
       'works.h1_3': '.',
-      'works.sub': 'من المونتاج للتصميم والموشن وأنظمة نوشن — استعرض جميع مشاريعنا مقسمة حسب التخصص. شوف، تعلّم، واتواصل معانا لو عندك مشروع شبيه.',
+      'works.sub': 'من المونتاج للتصميم والموشن وأنظمة نوشن — جميع مشاريعنا مقسمة حسب التخصص. تصفح، تعلّم، وتواصل معانا إذا كان لديك مشروع شبيه.',
       'works.stat1': 'مشروع منجز',
       'works.stat2': 'تخصصات إبداعية',
       'works.stat3': 'تقييم العملاء',
@@ -3095,14 +3082,14 @@ html[dir="rtl"] .design-lightbox-nav svg {
       'works.sort_popular': 'الأكثر تقييماً',
       'works.sort_oldest': 'الأقدم',
       'works.featured_eyebrow': 'المشروع المميز · Featured Project',
-      'works.featured_t': 'هوية بصرية لستوديو Rihla',
-      'works.featured_d': 'من الصفر، بنينا هوية بصرية متكاملة لستوديو رحلة — من الشعار للقائمة والالوان وكل حاجة. المشروع اللي بيمثل روح ستوديو رحلة في كل تفصيلة.',
+      'works.featured_t': 'هوية بصرية لإستوديو رحلـــة',
+      'works.featured_d': 'من الصفر، بنينا هوية بصرية متكاملة لإستوديو رحلة — من الشعار للقائمة والألوان وكل حاجة. المشروع اللي بيمثل روح أستوديو رحلة في كل تفصيلة.',
       'works.featured_client_l': 'العميل · Client',
-      'works.featured_client': 'Rihla Studio',
+      'works.featured_client': 'أستوديو رحلة',
       'works.featured_year_l': 'السنة · Year',
       'works.featured_cat_l': 'الفئة · Category',
-      'works.featured_cat': 'تصميم · Branding',
-      'works.featured_cta': 'شوف المشروع',
+      'works.featured_cat': 'تصميم · Visual Identity',
+      'works.featured_cta': 'تصفح المشروع',
       'works.featured_emblem': 'Rihla',
       'works.sec_edit_ar': 'المونتاج', 'works.sec_edit_en': 'Video Editing',
       'works.sec_design_ar': 'التصميم', 'works.sec_design_en': 'Graphic Design',
@@ -3146,13 +3133,13 @@ html[dir="rtl"] .design-lightbox-nav svg {
       'works.e8_t': 'مؤثرات صوتية احترافية', 'works.e8_d': 'فيلم تعريفي ٣ دقائق لشركة استشارات — من كتابة النص للتسليم النهائي.', 'works.e8_client': 'متجر ثمين',
       'works.e9_t': 'مؤثرات صوتية احترافية', 'works.e9_d': 'فيلم تعريفي ٣ دقائق لشركة استشارات — من كتابة النص للتسليم النهائي.', 'works.e9_client': 'متجر ثمين',
       // Design (d1..d6)
-      'works.d1_t': 'هوية بصرية لستوديو', 'works.d7_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d7_client': 'Pure Glow',
-      'works.d2_t': 'تصميم اعلاني لمدرسة', 'works.d8_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d8_client': 'Pure Glow',
-      'works.d3_t': 'تصميم اعلاني لمدرس', 'works.d9_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d9_client': 'Pure Glow',
-      'works.d4_t': 'تعليم صناع محتوي ', 'works.d1_d': 'هوية متكاملة لمطعم ياباني فاخر — شعار، ألوان، تايبوجرافي، وجميع الـbrand guidelines.', 'works.d1_client': 'Rihla Studio',
+      'works.d1_t': 'هوية بصرية لإستوديو', 'works.d7_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d7_client': 'Pure Glow',
+      'works.d2_t': 'تصميم إعلاني لمدرسة', 'works.d8_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d8_client': 'Pure Glow',
+      'works.d3_t': 'تصميم إعلاني لمدرس', 'works.d9_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d9_client': 'Pure Glow',
+      'works.d4_t': 'تعليم صناعة محتوي ', 'works.d1_d': 'هوية متكاملة لمطعم ياباني فاخر — شعار، ألوان، تايبوجرافي، وجميع الـbrand guidelines.', 'works.d1_client': 'Rihla Studio',
       'works.d5_t': 'نصائح لصناع المحتوي', 'works.d2_d': 'هوية بصرية لمقهى سويدي — minimal، أنيق، يبرز في كل touch point.', 'works.d2_client': 'Fika Café',
       'works.d6_t': 'حزمة سوشيال ميديا', 'works.d3_d': '١٢٠ تصميم سوشيال ميديا لـ٤ منصات — Instagram, Twitter, Behance, Facebook.', 'works.d3_client': 'Outbox Media',
-      'works.d7_t': 'كيفية جذب الجمهور', 'works.d4_d': 'كتيب منتجات ٤٨ صفحة + Business Cards + Letterhead — جميعه متناسق ومطبوع بأعلى جودة.', 'works.d4_client': 'Pngpro Teams',
+      'works.d7_t': 'كيفية جذب الجمهور المثالي', 'works.d4_d': 'كتيب منتجات ٤٨ صفحة + Business Cards + Letterhead — جميعه متناسق ومطبوع بأعلى جودة.', 'works.d4_client': 'Pngpro Teams',
       'works.d8_t': 'أفكار لصناع المحتوي', 'works.d5_d': 'تصميم منيو ١٢ صفحة لمطعم فاخر — bilingual، illustrations مخصصة، وطباعة فاخرة.', 'works.d5_client': 'Bistro Lux',
       'works.d9_t': 'الابتكار بدون إستراتيجية!', 'works.d6_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d6_client': 'Pure Glow',
       'works.d10_t': 'أداة ISO56001', 'works.d6_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d6_client': 'Pure Glow',
@@ -3160,7 +3147,7 @@ html[dir="rtl"] .design-lightbox-nav svg {
       'works.d12_t': 'العمل الجماعي', 'works.d6_d': 'عبوات لـ ٦ منتجات عناية شخصية — تصميم عصري مع طباعة فاخرة وملمس مميز.', 'works.d6_client': 'Pure Glow',
       
       // Motion (m1..m6)
-      'works.m1_t': 'حملة موشن لإطلاق', 'works.m1_d': 'حملة ٥ فيديوهات موشن لإطلاق منصة بث جديدة — ١٥-٣٠ ثانية، cinematic.', 'works.m1_client': 'StreamPlus',
+      'works.m1_t': 'حملة موشن دعائية', 'works.m1_d': 'حملة ٥ فيديوهات موشن لإطلاق منصة بث جديدة — ١٥-٣٠ ثانية، cinematic.', 'works.m1_client': 'StreamPlus',
       'works.m2_t': 'إنترو لقناة يوتيوب', 'works.m2_d': 'إنترو ١٥ ثانية + Lower Thirds + Outro — باكدج كامل للقناة.', 'works.m2_client': 'TechTalk Arabic',
       'works.m3_t': 'أنيميشن لوغو', 'works.m3_d': '٤ ستايلات أنيميشن مختلفة للوغو — من الـminimal للـplayful، جميعهم بأسلوب العلامة.', 'works.m3_client': 'Nawaf Studio',
       'works.m4_t': 'Explainer Video', 'works.m4_d': 'فيديو explainer ٩٠ ثانية لتطبيق fintech — script + storyboard + animation + voiceover.', 'works.m4_client': 'PayWave',
@@ -3175,36 +3162,40 @@ html[dir="rtl"] .design-lightbox-nav svg {
       'works.vp1_t': 'تنوع التخصصات', 'works.vp1_d': '٤ تخصصات إبداعية من فريق واحد — مونتاج، تصميم، موشن، وأنظمة نوشن.',
       'works.vp2_t': 'جودة مثبتة', 'works.vp2_d': 'جميع المشاريع تم اختبارها مع عملاء حقيقيين — تقييم ٥ من ٥ في المتوسط.',
       'works.vp3_t': 'تسليم في الموعد', 'works.vp3_d': 'التزام كامل بالمواعيد — تسليم قبل الميعاد في ٩٥٪ من المشاريع.',
-      'works.vp4_t': 'تواصل مباشر', 'works.vp4_d': 'تواصل مباشر مع المصمم/المونتير — لا middlemen، شوف شغلك بيتعمل في نفس الوقت.',
+      'works.vp4_t': 'تواصل مباشر', 'works.vp4_d': 'تواصل مباشر مع المصمم/المونتير — لا وسيط، شوف شغلك بيتعمل في نفس الوقت.',
       // FAQ
       'works.faq_eyebrow': 'أسئلة شائعة',
       'works.faq_h2_1': 'قبل ما ', 'works.faq_h2_2': 'تطلب مشروع', 'works.faq_h2_3': '.',
-      'works.faq_q1': 'إزاي بيشتغل المشروع من البداية للتسليم؟',
-      'works.faq_a1': 'كل مشروع بيبدأ باجتماع قصير لفهم الفكرة والـ scope، ثم نرسل proposal + timeline. بعد الموافقة، نمشي على مراحل: concept → draft → review → final. جميع مرحلة ليها revision round واحد على الأقل.',
-      'works.faq_q2': 'كام مدة تسليم المشروع العادي؟',
-      'works.faq_a2': 'حسب الـscope. مونتاج ريلز: ٣-٥ أيام. مونتاج وثائقي: ٢-٣ أسابيع. هوية بصرية: ٢-٤ أسابيع. موشن جرافيك: ١-٣ أسابيع. نظام نوشن: ١-٢ أسبوع. كله بنتفق عليه في الـproposal.',
-      'works.faq_q3': 'إيه نظام الدفع؟',
+      'works.faq_q1': 'خطوات العمل على المشروع من البداية للتسليم ؟',
+      'works.faq_a1': 'كل مشروع بيبدأ بإجتماع قصير لفهم الفكرة وراء المشروع، ثم نرسل جدول زمني لعملية سير المشروع. بعد الموافقة، نبدأ في المراحل: التخطيط ← التصميم ← والتنفيذ. وفي كل مرحلة يتم إرسال تقرير بسيط لحالة المشروع إلى أن ينتهي المشروع ويتم تسليم الملفات النهائية.',
+      'works.faq_q2': 'كم مدة تسليم المشروع العادي ؟',
+      'works.faq_a2': 'حسب حجم المشروع. كله بنتفق عليه في الإجتماع الأولي.',
+      'works.faq_q3': 'إيه نظام الدفع ؟',
       'works.faq_a3': '٥٠٪ مقدّم قبل بدء العمل، و٥٠٪ بعد مشاهدة عيّنة من الشغل والموافقة عليه. عندنا اتفاقية شغل واضحة تحمي الطرفين — اقرأها في قسم "اتفاقية العمل" في الموقع الرئيسي.',
-      'works.faq_q4': 'هل بتعملوا مشاريع من برا مصر؟',
-      'works.faq_a4': 'أكيد. شغلنا مع عملاء من السعودية، الإمارات، الكويت، أوروبا، وأمريكا. كل التواصل بيكون online، والتسليمات digital. الفاتورة بالدولار أو الجنيه حسب اتفاقك.',
-      'works.faq_q5': 'إيه الفرق بين شغلكم والـfreelancer عادي؟',
-      'works.faq_a5': 'فريق متكامل بأربع تخصصات، خبرة في كل حاجة من الـconcept للتسليم، تواصل مباشر وشفاف، اتفاقيات واضحة، ونتائج مثبتة في السوق. شوف أعمالنا في الصفحة دي واحكم بنفسك.',
-      'works.faq_q6': 'هل ممكن أطلب تعديلات بعد التسليم؟',
-      'works.faq_a6': 'نعم. كل مشروع بيشمل عدد معين من الـrevision rounds (غالباً ٢-٣). لو احتجت تعديلات خارج الـscope المتفق عليه، بنحسبها بسعر مخصص ونبلغك قبل ما نبدأ.',
+      'works.faq_q4': 'ما هي طرق الدفع المتوفرة ؟',
+      'works.faq_a4': 'Paypal--Nsave--Instapay--Okx--Orange Cash--Vodafone Cash--Etisalat Cash--Binance--Barq--Redot Pay',
+      'works.faq_q5': 'إيه الفرق بين شغلكم والفريلانسر العادي؟',
+      'works.faq_a5': 'فريق متكامل بأربع تخصصات، خبرة في كل حاجة من المبدأ  للتسليم، تواصل مباشر وشفاف، اتفاقيات واضحة، ونتائج واضحة في السوق. شوف أعمالنا في الصفحة دي واحكم بنفسك.',
+      'works.faq_q6': 'هل ممكن أطلب تعديلات بعد التسليم ؟',
+      'works.faq_a6': 'نعم. كل مشروع بيشمل عدد معين من التعديلات (غالباً ٢-٣). لو احتجت تعديلات خارج النطاق المتفق عليه، بنحسبها بسعر مخصص ونبلغك قبل ما نبدأ.',
       // CTA
-      'works.cta_eyebrow': 'ابدأ مشروعك',
-      'works.cta_h2_1': 'عندك فكرة ', 'works.cta_h2_2': 'مشروع', 'works.cta_h2_3': '؟',
-      'works.cta_p': 'لو شفت حاجة عجبتك في أعمالنا، تواصل معانا وهنبدأ نحول فكرتك لحقيقة.',
-      'works.cta_btn1': 'ابدأ مشروعك',
-      'works.cta_btn2': 'شوف المنتجات الرقمية',
+      'works.cta_eyebrow': 'إبدأ مشروعك',
+      'works.cta_h2_1': 'لديك فكرة ', 'works.cta_h2_2': 'مشروع', 'works.cta_h2_3': '؟',
+      'works.cta_p': 'إذا أعجبك شيئ من أعمالنا، تواصل معانا لنحول فكرتك إلى حقيقة.',
+      'works.cta_btn1': 'إبدأ مشروعك',
+      'works.cta_btn2': 'تصفح المنتجات الرقمية',
       // Footer
-      'works.ft_tag': 'ستوديو رحلة — نصنع الجمال البصري ومنتجات رقمية لعلامات طموحة.',
-      'works.ft_col1_t': 'الاستوديو',
+      'works.ft_tag': 'أستوديو رحلة — نصنع الجمال البصري ومنتجات رقمية لعلامات طموحة.',
+      'works.ft_col1_t': 'الأستوديو',
       'works.ft_l1': 'الرئيسية', 'works.ft_l2': 'جميع الأعمال', 'works.ft_l3': 'الخدمات', 'works.ft_l4': 'المتجر',
       'works.ft_col2_t': 'المزيد',
-      'works.ft_l5': 'اتفاقية العمل', 'works.ft_l6': 'كيف نعمل', 'works.ft_l7': 'النتائج', 'works.ft_l8': 'تواصل',
+      'works.ft_l5': 'اتفاقية العمل', 'works.ft_l6': 'مراحل العمل', 'works.ft_l7': 'النتائج', 'works.ft_l8': 'تواصل',
+      'works.ft_l9':'إنستجرام',
+      'works.ft_l10':'بيهانس',
+      'works.ft_l11':'يوتيوب',
+      'works.ft_l12':'واتساب',
       'works.ft_col3_t': 'سوشيال · Follow',
-      'works.ft_copy': '© ٢٠٢٥ ستوديو رحلة · جميع الحقوق محفوظة',
+      'works.ft_copy': '© ٢٠٢٦ أستوديو رحلة · جميع الحقوق محفوظة',
       'works.ft_made': 'صنع بكل شغف ✦',
     },
     en: {
@@ -3218,19 +3209,19 @@ html[dir="rtl"] .design-lightbox-nav svg {
       'nav.cta': 'Start a project',
       'works.eyebrow': 'Complete Portfolio',
       'works.h1_1': 'Our work, ', 'works.h1_2': 'complete', 'works.h1_3': '.',
-      'works.sub': 'From editing to design, motion, and Notion systems — browse all our projects sorted by specialty. See, learn, and reach out if you have a similar project.',
+      'works.sub': 'From editing to design, motion, and Notion systems — all our projects sorted by specialty. browse, learn, and contact us if you have a similar project.',
       'works.stat1': 'Projects done', 'works.stat2': 'Creative specialties', 'works.stat3': 'Client rating',
       'works.f_all': 'All', 'works.f_edit': 'Editing', 'works.f_design': 'Design', 'works.f_motion': 'Motion', 'works.f_notion': 'Notion',
       'works.sort_label': 'Sort:',
       'works.sort_recent': 'Newest', 'works.sort_popular': 'Top rated', 'works.sort_oldest': 'Oldest',
       'works.featured_eyebrow': 'Featured Project',
       'works.featured_t': 'Visual Identity for Rihla Studio',
-      'works.featured_d': 'From zero, we built a complete visual identity for a luxury Arabic Studio — from logo to posters and everything in between. The project that represents the soul of Rihla Studio in every detail.',
+      'works.featured_d': 'From zero, we built a complete visual identity for Rihla Studio — from logo to posters and everything in between. The project that represents the soul of Rihla Studio in every detail.',
       'works.featured_client_l': 'Client',
       'works.featured_client': 'Rihla Studio',
       'works.featured_year_l': 'Year',
       'works.featured_cat_l': 'Category',
-      'works.featured_cat': 'Design · Branding',
+      'works.featured_cat': 'Design · Visual identity',
       'works.featured_cta': 'See project',
       'works.featured_emblem': 'Rihla',
       'works.sec_edit_ar': 'Editing', 'works.sec_edit_en': 'Video Editing',
@@ -3271,7 +3262,7 @@ html[dir="rtl"] .design-lightbox-nav svg {
       'works.d1_t': 'Visual identity for a studio', 'works.d1_d': 'Complete identity for a luxury Japanese restaurant — logo, colors, typography, and full brand guidelines.', 'works.d1_client': 'Rihla Studio',
       'works.d2_t': 'School adversting design', 'works.d2_d': 'Visual identity for a Swedish café — minimal, elegant, stands out at every touch point.', 'works.d2_client': 'Fika Café',
       'works.d3_t': 'Teacher adversting design', 'works.d3_d': '120 social designs for 4 platforms — Instagram, Twitter, Behance, Facebook.', 'works.d3_client': 'Outbox Media',
-      'works.d4_t': 'Teaching content creators', 'works.d4_d': '48-page product catalog + Business Cards + Letterhead — all consistent and printed at the highest quality.', 'works.d4_client': 'Pngpro Teams',
+      'works.d4_t': 'Teaching content creation', 'works.d4_d': '48-page product catalog + Business Cards + Letterhead — all consistent and printed at the highest quality.', 'works.d4_client': 'Pngpro Teams',
       'works.d5_t': 'Advices for content creators', 'works.d5_d': '12-page menu design for a luxury restaurant — bilingual, custom illustrations, and premium print.', 'works.d5_client': 'Bistro Lux',
       'works.d6_t': 'Social media package', 'works.d6_d': 'Packaging for 6 personal care products — modern design with premium print and texture.', 'works.d6_client': 'Pure Glow',
       'works.d7_t': 'How to attract people', 'works.d4_d': 'كتيب منتجات ٤٨ صفحة + Business Cards + Letterhead — جميعه متناسق ومطبوع بأعلى جودة.', 'works.d4_client': 'Pngpro Teams',
@@ -3297,20 +3288,20 @@ html[dir="rtl"] .design-lightbox-nav svg {
       'works.faq_eyebrow': 'FAQ',
       'works.faq_h2_1': 'Before you ', 'works.faq_h2_2': 'request a project', 'works.faq_h2_3': '.',
       'works.faq_q1': 'How does a project go from start to finish?',
-      'works.faq_a1': 'Every project starts with a short meeting to understand the idea and scope, then we send a proposal + timeline. After approval, we go through stages: concept → draft → review → final. Each stage has at least one revision round.',
+      'works.faq_a1': 'Every project starts with a short meeting to understand the idea behind the project, then we send a proposal + timeline. After approval, we go through stages: concept → design → build → final. In each stage a simple revesion is send about the status of the project until the project is finished and the final files get sent.',
       'works.faq_q2': 'What is the average delivery time?',
-      'works.faq_a2': 'Depends on scope. Reels editing: 3-5 days. Documentary: 2-3 weeks. Visual identity: 2-4 weeks. Motion graphics: 1-3 weeks. Notion system: 1-2 weeks. All agreed on in the proposal.',
+      'works.faq_a2': 'Depends on the size of the project. All agreed on in the first meeting.',
       'works.faq_q3': 'What is the payment system?',
       'works.faq_a3': '50% upfront before starting work, 50% after watching a sample of the work and approving it. We have a clear work agreement that protects both parties — read it in the "Work Agreement" section on the main site.',
-      'works.faq_q4': 'Do you work on projects outside Egypt?',
-      'works.faq_a4': 'Absolutely. We have worked with clients from Saudi Arabia, UAE, Kuwait, Europe, and the US. All communication is online, deliveries are digital. Invoice in USD or EGP as agreed.',
+      'works.faq_q4': 'what is the avalable payment methods?',
+      'works.faq_a4': 'Paypal--Nsave--Instapay--Okx--Orange Cash--Vodafone Cash--Etisalat Cash--Binance--Barq--Redot Pay',
       'works.faq_q5': 'How are you different from a regular freelancer?',
-      'works.faq_a5': 'A full team with four specialties, experience from concept to delivery, direct and transparent communication, clear agreements, and proven results in the market. See our work on this page and judge for yourself.',
+      'works.faq_a5': 'A full team with four specialties, experience from concept to delivery, direct and transparent communication, clear agreements, and clear results in the market. See our work on this page and judge for yourself.',
       'works.faq_q6': 'Can I request edits after delivery?',
-      'works.faq_a6': 'Yes. Every project includes a specific number of revision rounds (usually 2-3). If you need edits outside the agreed scope, we charge a custom rate and notify you before starting.',
+      'works.faq_a6': 'Yes. Every project includes a specific number of revision rounds (usually 2-3). If you need edits outside the agreed scope, we charge a custom price and notify you before starting.',
       'works.cta_eyebrow': 'Start your project',
       'works.cta_h2_1': 'Got a project ', 'works.cta_h2_2': 'idea', 'works.cta_h2_3': '?',
-      'works.cta_p': 'If you liked something in our work, reach out and we will start turning your idea into reality.',
+      'works.cta_p': 'If you liked something in our work, contact us and we will start turning your idea into reality.',
       'works.cta_btn1': 'Start a project',
       'works.cta_btn2': 'See digital products',
       'works.ft_tag': 'Rihla Studio — crafting visual beauty and digital products for ambitious brands.',
@@ -3318,6 +3309,10 @@ html[dir="rtl"] .design-lightbox-nav svg {
       'works.ft_l1': 'Home', 'works.ft_l2': 'All Work', 'works.ft_l3': 'Services', 'works.ft_l4': 'Shop',
       'works.ft_col2_t': 'More',
       'works.ft_l5': 'Work Agreement', 'works.ft_l6': 'Process', 'works.ft_l7': 'Results', 'works.ft_l8': 'Contact',
+      'works.ft_l9':'Instagram',
+      'works.ft_l10':'behance',
+      'works.ft_l11':'Youtube',
+      'works.ft_l12':'Whatsapp',
       'works.ft_col3_t': 'Social · Follow',
       'works.ft_copy': '© 2025 Rihla Studio · All rights reserved',
       'works.ft_made': 'Crafted with passion ✦',

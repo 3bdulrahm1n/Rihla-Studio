@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 <meta name="theme-color" content="#0A0510" />
-<title>المقالات · Rihla Studio</title>
-<meta name="description" data-i18n="meta.desc" content="ستوديو رحلة — استوديو إبداعي عربي متخصص في المونتاج، التصميم، الموشن جرافيك، وأنظمة نوشن. نبني تجارب بصرية لعلامات طموحة." />
-<meta name="keywords" content="Rihla, ستوديو رحلة, مونتاج, تصميم, موشن, نوشن, استوديو إبداعي, video editing, motion graphics" />
+<title>المدونة · Rihla Studio</title>
+<meta name="description" data-i18n="meta.desc" content="أستوديو رحلة — أستوديو إبداعي عربي متخصص في المونتاج، التصميم، الموشن جرافيك، وأنظمة نوشن. نبني تجارب بصرية لعلامات طموحة." />
+<meta name="keywords" content="Rihla, أستوديو رحلة, مونتاج, تصميم, موشن, نوشن, أستوديو إبداعي, video editing, motion graphics" />
 
 <!-- Apply saved theme before paint to avoid flash -->
 <script>
@@ -822,7 +822,12 @@ html[lang="en"] .nav-links a::after { right: auto; left: 0; }
 }
 .lang-toggle:hover .lang-arrow { transform: translateX(2px); }
 html[lang="en"] .lang-toggle:hover .lang-arrow { transform: translateX(-2px); }
-
+.nav_logo{
+  width: 40px;
+  height: 40px;
+  transition: transform 0.6s var(--ease);
+}
+.nav-logo:hover .nav_logo{ transform: rotate(45deg); }
 .nav-cta {
   display: inline-flex;
   align-items: center;
@@ -4226,20 +4231,10 @@ html[lang="en"] .toast { right: 2rem; }
      ============================================ -->
 <nav class="nav" id="nav" aria-label="التنقل الرئيسي">
   <div class="container nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="الصفحة الرئيسية - ستوديو رحلة">
-      <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
-        <defs>
-          <linearGradient id="lg-mark" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#F5A623" />
-            <stop offset="1" stop-color="#E55A2B" />
-          </linearGradient>
-        </defs>
-        <path fill="url(#lg-mark)" d="M50 4 L57 32 L84 16 L68 43 L96 50 L68 57 L84 84 L57 68 L50 96 L43 68 L16 84 L32 57 L4 50 L32 43 L16 16 L43 32 Z" opacity="0.95"/>
-        <path fill="#0A0510" d="M50 18 L54 38 L74 38 L58 50 L62 70 L50 58 L38 70 L42 50 L26 38 L46 38 Z" opacity="0.7"/>
-        <circle cx="50" cy="50" r="4" fill="#F5A623"/>
-      </svg>
+    <a href="index.html" class="nav-logo" aria-label="الصفحة الرئيسية - أستوديو رحلة">
+      <img class="nav_logo" src="assets/nejma_gr.png" alt="logo">
       <div style="display:flex; flex-direction:column; line-height:1;">
-        <span class="logo-text-ar" data-i18n="nav.brand_ar">ستوديو رحلة</span>
+        <span class="logo-text-ar" data-i18n="nav.brand_ar">أستوديو رحلة</span>
         <span class="logo-text-en" data-i18n="nav.brand_en">Rihla Studio</span>
       </div>
     </a>
@@ -4249,9 +4244,9 @@ html[lang="en"] .toast { right: 2rem; }
       <a href="work.html" data-i18n="nav.work_all">جميع الأعمال</a>
       <a href="index.html#services" data-i18n="nav.services">الخدمات</a>
       <a href="shop_soon.html" data-i18n="nav.shop">المتجر</a>
-      <a href="blog.html" class="active" data-i18n="nav.blog">المقالات</a>
+      <a href="blog.html" class="active" data-i18n="nav.blog">المدونة</a>
       <a href="index.html#agreement" data-i18n="nav.agreement">اتفاقية العمل</a>
-      <a href="index.html#process" data-i18n="nav.process">كيف نعمل</a>
+      <a href="index.html#process" data-i18n="nav.process">مراحل العمل</a>
       <a href="index.html#results" data-i18n="nav.results">النتائج</a>
       <a href="index.html#founder" data-i18n="nav.about">من نحن</a>
       <a href="index.html#faq" data-i18n="nav.faq">الأسئلة</a>
@@ -4290,9 +4285,9 @@ html[lang="en"] .toast { right: 2rem; }
   <a href="work.html" data-i18n="nav.work_all">جميع الأعمال</a>
   <a href="index.html#services" data-i18n="nav.services">الخدمات</a>
   <a href="shop_soon.html" data-i18n="nav.shop">المتجر</a>
-  <a href="blog.html" class="active" data-i18n="nav.blog">المقالات</a>
+  <a href="blog.html" class="active" data-i18n="nav.blog">المدونة</a>
   <a href="index.html#agreement" data-i18n="nav.agreement">اتفاقية العمل</a>
-  <a href="index.html#process" data-i18n="nav.process">كيف نعمل</a>
+  <a href="index.html#process" data-i18n="nav.process">مراحل العمل</a>
   <a href="index.html#results" data-i18n="nav.results">النتائج</a>
   <a href="index.html#founder" data-i18n="nav.about">من نحن</a>
   <a href="index.html#faq" data-i18n="nav.faq">الأسئلة</a>
@@ -4325,7 +4320,7 @@ html[lang="en"] .toast { right: 2rem; }
         <span class="en-text">Ideas, <span class="solid-accent">tools</span>, and experience.</span>
       </h1>
       <p class="blog-hero-sub">
-        <span class="ar-text">محتوى عملي عن المونتاج، التصميم، الموشن جرافيك، وأنظمة نوشن — من الاستوديو مباشرةً.</span>
+        <span class="ar-text">محتوى عملي عن المونتاج، التصميم، الموشن جرافيك، وأنظمة نوشن — من الاأستوديو مباشرةً.</span>
         <span class="en-text">Practical content about editing, design, motion graphics, and Notion systems — straight from the studio.</span>
       </p>
     </div>
@@ -4591,7 +4586,7 @@ html[lang="en"] .toast { right: 2rem; }
           <span class="en-text">A new article every week — <span class="solid-accent">free</span>.</span>
         </h2>
         <p class="blog-cta-sub">
-          <span class="ar-text">اشترك وهتوصلك أحدث المقالات مباشرة على بريدك. بدون سبام.</span>
+          <span class="ar-text">اشترك وهتوصلك أحدث المدونة مباشرة على بريدك. بدون سبام.</span>
           <span class="en-text">Subscribe and get the latest articles straight to your inbox. No spam.</span>
         </p>
       </div>
@@ -4619,24 +4614,14 @@ html[lang="en"] .toast { right: 2rem; }
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#top" class="nav-logo">
-          <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
-            <defs>
-              <linearGradient id="lg-footer" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#F5A623" />
-                <stop offset="1" stop-color="#E55A2B" />
-              </linearGradient>
-            </defs>
-            <path fill="url(#lg-footer)" d="M50 4 L57 32 L84 16 L68 43 L96 50 L68 57 L84 84 L57 68 L50 96 L43 68 L16 84 L32 57 L4 50 L32 43 L16 16 L43 32 Z"/>
-            <path fill="#0A0510" d="M50 18 L54 38 L74 38 L58 50 L62 70 L50 58 L38 70 L42 50 L26 38 L46 38 Z"/>
-            <circle cx="50" cy="50" r="4" fill="#F5A623"/>
-          </svg>
+          <img class="nav_logo" src="assets/nejma_gr.png" alt="logo">
           <div style="display:flex; flex-direction:column; line-height:1;">
-            <span class="logo-text-ar" data-i18n="nav.brand_ar">ستوديو رحلة</span>
+            <span class="logo-text-ar" data-i18n="nav.brand_ar">أستوديو رحلة</span>
             <span class="logo-text-en" data-i18n="nav.brand_en">Rihla Studio</span>
           </div>
         </a>
         <p class="tagline">
-          <span data-i18n="ft.tag1">استوديو رحلة — نصنع الجمال البصري</span>
+          <span data-i18n="ft.tag1">اأستوديو رحلة — نصنع الجمال البصري</span>
           <span data-i18n="ft.tag2" style="display: block; margin-top: 0.5rem; font-size: 0.95rem;">Crafting visual beauty for ambitious brands. Cairo, Egypt.</span>
         </p>
       </div>
@@ -4652,7 +4637,7 @@ html[lang="en"] .toast { right: 2rem; }
       </div>
 
       <div class="footer-col">
-        <h4 data-i18n="ft.col2_t">الاستوديو · Studio</h4>
+        <h4 data-i18n="ft.col2_t">الاأستوديو · Studio</h4>
         <ul>
           <li><a href="#founder" data-i18n="ft.col2_l1">من نحن</a></li>
           <li><a href="#work" data-i18n="ft.col2_l2">أعمالنا</a></li>
@@ -4673,7 +4658,7 @@ html[lang="en"] .toast { right: 2rem; }
     </div>
 
     <div class="footer-bottom">
-      <div data-i18n="ft.copy">© ٢٠٢٥ ستوديو رحلة · جميع الحقوق محفوظة</div>
+      <div data-i18n="ft.copy">© ٢٠٢٥ أستوديو رحلة · جميع الحقوق محفوظة</div>
       <div class="made" data-i18n="ft.made">Crafted with passion ✦</div>
     </div>
   </div>
@@ -4699,21 +4684,21 @@ html[lang="en"] .toast { right: 2rem; }
   // ============================================
   const I18N = {
     ar: {
-      'meta.title': 'Rihla Studio · ستوديو رحلة',
-      'meta.desc': 'ستوديو رحلة — استوديو إبداعي عربي متخصص في المونتاج، التصميم، الموشن جرافيك، وأنظمة نوشن. نبني تجارب بصرية لعلامات طموحة.',
-      'nav.brand_ar': 'ستوديو رحلة',
+      'meta.title': 'Rihla Studio · أستوديو رحلة',
+      'meta.desc': 'أستوديو رحلة — اأستوديو إبداعي عربي متخصص في المونتاج، التصميم، الموشن جرافيك، وأنظمة نوشن. نبني تجارب بصرية لعلامات طموحة.',
+      'nav.brand_ar': 'أستوديو رحلة',
       'nav.brand_en': 'Rihla Studio',
       'nav.work': 'أعمالنا',
       'nav.work_recent': 'أحدث الأعمال',
       'nav.work_all': 'جميع الأعمال',
       'nav.services': 'الخدمات',
       'nav.agreement': 'اتفاقية العمل',
-      'nav.process': 'كيف نعمل',
+      'nav.process': 'مراحل العمل',
       'nav.results': 'النتائج',
       'nav.about': 'من نحن',
       'nav.faq': 'الأسئلة',
       'nav.shop': 'المتجر',
-      'nav.blog': 'المقالات',
+      'nav.blog': 'المدونة',
       'nav.cta': 'ابدأ مشروعك',
       'hero.eyebrow': 'منذ ٢٠٢٣ · مصر والعالم العربي',
       'hero.h1_1': 'نخلق',
@@ -4817,7 +4802,7 @@ html[lang="en"] .toast { right: 2rem; }
       'ag.cta_t': 'موافق على الشروط؟ يلا نبدأ.',
       'ag.cta_d': 'لو عندك أي سؤال أو استفسار عن أي بند من البنود، ابعتلنا رسالة وهنرد عليك في أقل من 24 ساعة.',
       'ag.cta_btn': 'تواصل معانا',
-      'proc.eyebrow': 'كيف نعمل · Process',
+      'proc.eyebrow': 'مراحل العمل · Process',
       'proc.h2_1': 'من ', 'proc.h2_2': 'الفكـرة', 'proc.h2_3': ' للـ', 'proc.h2_4': 'إنشـاء', 'proc.h2_5': '.',
       'proc.desc': 'طريقة عملنا بسيطة وشفافة. بنمشي معاك خطوة خطوة — من أول برهفة للحظة تسليم الملفات.',
       'proc.s1_t': 'الاستيعاب', 'proc.s1_d': 'بنفهمك وبنفهم علامتك. أهدافك، جمهورك، المنافسين. ومنها بنبني الخارطة اللي كل حاجة بتتبنى عليها.',
@@ -4853,7 +4838,7 @@ html[lang="en"] .toast { right: 2rem; }
       'fo.h2_1': 'الفريق ', 'fo.h2_2': 'خلف رحلـة', 'fo.h2_3': '.',
       'fo.h3_1': 'خبرة ', 'fo.h3_2': 'إبداعية', 'fo.h3_3': '، فريق ', 'fo.h3_4': 'شغوف', 'fo.h3_5': '.',
       'fo.photo': 'صورة المؤسس', 'fo.role': 'Founder · Designer · Editor',
-      'fo.bio': 'رحلة بدأت من شغف بالصورة والكلمة. اليوم، الاستوديو بيقدم خدمات إبداعية متكاملة لعلامات من مصر والعالم العربي — مونتاج، تصميم، موشن، وأنظمة نوشن. كل مشروع بنتعامل معاه كأنه بتاعنا إحنا، وبنسلّمه بنفس الجودة اللي بنحطها في شغلنا الشخصي.',
+      'fo.bio': 'رحلة بدأت من شغف بالصورة والكلمة. اليوم، الاأستوديو بيقدم خدمات إبداعية متكاملة لعلامات من مصر والعالم العربي — مونتاج، تصميم، موشن، وأنظمة نوشن. كل مشروع بنتعامل معاه كأنه بتاعنا إحنا، وبنسلّمه بنفس الجودة اللي بنحطها في شغلنا الشخصي.',
       'fo.s1': 'السنوات · Years', 'fo.s2': 'المشاريع · Projects', 'fo.s3': 'التخصصات · Specialties',
       'faq.eyebrow': 'أسئلة شائعة · Common Questions',
       'faq.h2_1': 'إجابات ', 'faq.h2_2': 'واضحـة', 'faq.h2_3': '.',
@@ -4863,15 +4848,15 @@ html[lang="en"] .toast { right: 2rem; }
       'faq.q4': 'هل بتسلموا ملفات مفتوحة؟', 'faq.a4': 'آه. بعد التسليم النهائي، بتاخد كل الملفات الأصلية (PSD, AI, PR, Notion) بدون قيود — شغلك وانت مالكه.',
       'faq.q5': 'هل بتعملوا باقات؟', 'faq.a5': 'آه. عندنا باقات متكاملة بتجمع مونتاج + تصميم + موشن. كمان عندنا باقات شهرية للفريلانسرز والشركات اللي محتاجة محتوى ثابت. ابعت وهنقولك.',
       'faq.q6': 'إيه الفرق بين رحلة وغيرها؟', 'faq.a6': 'إحنا مش بنبيع خدمة — إحنا بنبني علاقة. كل مشروع بيتعامل معاه كأنه بتاعنا إحنا. التواصل مباشر، الشفافية كاملة، والهدف إن شغلك يطلع أحسن من توقعاتك.',
-      'ft.tag1': 'استوديو رحلة — نصنع الجمال البصري',
+      'ft.tag1': 'اأستوديو رحلة — نصنع الجمال البصري',
       'ft.tag2': 'Crafting visual beauty for ambitious brands. Cairo, Egypt.',
       'ft.col1_t': 'خدماتنا · Services',
       'ft.col1_l1': 'مونتاج', 'ft.col1_l2': 'تصميم', 'ft.col1_l3': 'موشن جرافيك', 'ft.col1_l4': 'نوشن',
-      'ft.col2_t': 'الاستوديو · Studio',
+      'ft.col2_t': 'الأستوديو · Studio',
       'ft.col2_l1': 'من نحن', 'ft.col2_l2': 'أعمالنا', 'ft.col2_l3': 'الأسئلة', 'ft.col2_l4': 'تواصل',
       'ft.col3_t': 'سوشيال · Follow',
       'ft.col3_l1': 'إنستجرام', 'ft.col3_l2': 'بيهانس', 'ft.col3_l3': 'يوتيوب', 'ft.col3_l4': 'تيليجرام',
-      'ft.copy': '© ٢٠٢٥ ستوديو رحلة · جميع الحقوق محفوظة',
+      'ft.copy': '© ٢٠٢٥ أستوديو رحلة · جميع الحقوق محفوظة',
       'ft.made': 'صنع بكل شغف ✦',
       'toast_t': 'تم استلام طلبك',
       'toast_d': 'هنرد عليك خلال 24 ساعة',
