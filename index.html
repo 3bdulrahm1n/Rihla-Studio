@@ -887,14 +887,18 @@ html[lang="en"] .nav-cta:hover .arrow { transform: translateX(-4px); }
   backdrop-filter: blur(20px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  gap: 2rem;
-  padding: 5rem 2rem 2rem;
+  gap: 1.35rem;
+  padding: 5.5rem 2rem 2.5rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s var(--ease);
 }
+.mobile-menu::-webkit-scrollbar { display: none; }
 .mobile-menu.active { opacity: 1; pointer-events: all; }
 .mobile-menu a {
   font-family: 'Thmanyah Serif Display';
@@ -1787,14 +1791,16 @@ html[lang="en"] .work-card-info { padding-bottom: 3.5rem; }
   margin: 0 auto;
   perspective: 1800px;
   perspective-origin: 50% 50%;
+  /* Keep small so IntersectionObserver 30% threshold fires on any screen.
+     JS sets the real height (4-row) once it runs. */
   min-height: 600px;
   z-index: 1;
 }
 @media (max-width: 900px) {
-  .services-stage { min-height: 1400px; }
+  .services-stage { min-height: 500px; }
 }
 @media (max-width: 600px) {
-  .services-stage { min-height: 1600px; }
+  .services-stage { min-height: 420px; }
 }
 
 /* Cards live absolutely in the stage — JS positions them */
@@ -1974,7 +1980,7 @@ html[lang="en"] .svc-link:hover .arrow { transform: translateX(4px); }
   aspect-ratio: 4/3;
   border-radius: 24px;
   background: var(--bg);
-  overflow: hidden;
+  overflow: hidden;   /* clip-path removed — it creates compositing layer that breaks background-clip:text in RTL */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1989,13 +1995,31 @@ html[lang="en"] .svc-link:hover .arrow { transform: translateX(4px); }
   font-family: 'Thmanyah Sans';
   font-style: italic;
   font-weight: bold;
-  font-size: 620px;
-  color: var(--orange);
+  font-size: clamp(6rem, 22vw, 16rem);
+  /* Static gradient — no animation.
+     Animating background-position on background-clip:text elements
+     forces GPU compositing on the element AND its overflow:hidden parent,
+     which breaks the text-fill rendering in RTL/Arabic mode. */
+  background: linear-gradient(125deg, var(--orange) 0%, var(--coral) 55%, var(--orange-bright) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   opacity: 1;
   position: relative;
   z-index: 1;
-  line-height: 1;
+  line-height: 1.1;           /* slight extra line-height so ascenders don't clip */
   letter-spacing: -0.04em;
+  padding: 0 0.12em;          /* breathing room for italic glyph side-bearings in both LTR and RTL */
+}
+/* Tablet + mobile: 1-col → visual is full-width → scale up vw value to fill box */
+@media (max-width: 900px) {
+  .proc-visual .num-display { font-size: clamp(5rem, 36vw, 13rem); }
+}
+@media (max-width: 600px) {
+  .proc-visual .num-display { font-size: clamp(4rem, 34vw, 10rem); }
+}
+@media (max-width: 400px) {
+  .proc-visual .num-display { font-size: clamp(3.5rem, 30vw, 8rem); }
 }
 .proc-visual .corner-deco {
   position: absolute;
@@ -4276,6 +4300,9 @@ html[lang="en"] .toast { right: 2rem; }
   .hero-ctas { flex-direction: column; }
   .hero-ctas .btn { width: 100%; justify-content: center; }
 }
+
+
+
 </style>
 </head>
 <body>
@@ -4462,13 +4489,13 @@ html[lang="en"] .toast { right: 2rem; }
   <a href="https://www.instagram.com/rihla.studiio/" target="_blank" rel="noopener" data-label="Instagram" aria-label="Instagram">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
   </a>
-  <a href="https://www.behance.net/rihlastudio" target="_blank" rel="noopener" data-label="Behance" aria-label="Behance">
+  <a href="https://behance.net/rihlastudio" target="_blank" rel="noopener" data-label="Behance" aria-label="Behance">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.63 5.466-5.63 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/></svg>
   </a>
   <a href="https://www.youtube.com/channel/UCkw0c5GPdUH59lci1i7kAtg" target="_blank" rel="noopener" data-label="YouTube" aria-label="YouTube">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
   </a>
-  <a href="https://x.com/@rihla_official" target="_blank" rel="noopener" data-label="X / Twitter" aria-label="X / Twitter">
+  <a href="https://x.com/rihlastudio" target="_blank" rel="noopener" data-label="X / Twitter" aria-label="X / Twitter">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
   </a>
   <a href="tg://resolve?domain=Abd_ulrahman0_0" target="_blank" rel="noopener" data-label="Telegram" aria-label="Telegram">
@@ -4545,11 +4572,11 @@ html[lang="en"] .toast { right: 2rem; }
   <a href="#founder" data-i18n="nav.about">من نحن</a>
   <a href="#faq" data-i18n="nav.faq">الأسئلة</a>
   <a href="#contact" style="color: var(--orange);" data-i18n="nav.cta">إبدأ مشروعك</a>
-  <button class="lang-toggle lang-toggle-mobile" id="langToggleMobile" aria-label="تبديل اللغة">
+  <!-- <button class="lang-toggle lang-toggle-mobile" id="langToggleMobile" aria-label="تبديل اللغة">
     <span class="lang-dot"></span>
     <span id="langLabelMobile">EN</span>
     <span class="lang-arrow">⇄</span>
-  </button>
+  </button> -->
   <button class="lang-toggle lang-toggle-mobile" id="themeToggleMobile" aria-label="تبديل الوضع">
     <span class="theme-toggle-mobile-label">الوضع</span>
     <span class="theme-arrow">◑</span>
@@ -6057,7 +6084,7 @@ html[lang="en"] .toast { right: 2rem; }
         <h4 data-i18n="ft.col3_t">سوشيال · Follow</h4>
         <ul>
           <li><a href="https://instagram.com/rihlastudio" target="_blank" rel="noopener"><span data-i18n="ft.col3_l1">إنستجرام</span> <span class="ext">↗</span></a></li>
-          <li><a href="https://www.behance.net/rihlastudio" target="_blank" rel="noopener"><span data-i18n="ft.col3_l2">بيهانس</span> <span class="ext">↗</span></a></li>
+          <li><a href="https://behance.net/rihlastudio" target="_blank" rel="noopener"><span data-i18n="ft.col3_l2">بيهانس</span> <span class="ext">↗</span></a></li>
           <li><a href="https://youtube.com/@rihlastudio" target="_blank" rel="noopener"><span data-i18n="ft.col3_l3">يوتيوب</span> <span class="ext">↗</span></a></li>
           <li><a href="https://t.me/@Abd_ulrahman0_0" target="_blank" rel="noopener"><span data-i18n="ft.col3_l4">تيليجرام</span> <span class="ext">↗</span></a></li>
         </ul>
@@ -7278,88 +7305,71 @@ if (form) {
     const cards = Array.from(stage.querySelectorAll('.svc-card'));
     if (cards.length !== 4) return;
 
-    const GAP = 24; // 1.5rem in px (must match the original gap)
-    const stageRect = stage.getBoundingClientRect();
-    const stageWidth = stageRect.width;
-    const cardWidth = (stageWidth - GAP) / 2;
-
-    // Measure card height by laying out temporarily
-    const measureStage = document.createElement('div');
-    measureStage.style.cssText = `
-      position: absolute;
-      visibility: hidden;
-      pointer-events: none;
-      width: ${stageWidth}px;
-      display: grid;
-      grid-template-columns: ${cardWidth}px ${cardWidth}px;
-      gap: ${GAP}px;
-    `;
-    const measureCards = cards.map(c => c.cloneNode(true));
-    measureCards.forEach(c => measureStage.appendChild(c));
-    stage.appendChild(measureStage);
-    const cardHeights = measureCards.map(c => c.getBoundingClientRect().height);
-    const cardHeight = Math.max(...cardHeights);
-    stage.removeChild(measureStage);
-
-    // Define final (dealt) positions in a 2x2 grid
-    const dealtPositions = [
-      { x: 0,                y: 0                }, // top-left
-      { x: cardWidth + GAP,  y: 0                }, // top-right
-      { x: 0,                y: cardHeight + GAP }, // bottom-left
-      { x: cardWidth + GAP,  y: cardHeight + GAP }, // bottom-right
-    ];
-
-    // Reserve grid space on the stage
-    stage.style.minHeight = (cardHeight * 2 + GAP + 40) + 'px';
-
-    // === ANIMATION TIMING ===
-    // Total: ~1.6s
-    // 0.00s : Cards already stacked at center (initial state)
-    // 0.05s : Movement 1 phase A — bottom card (idx 3) slides out
-    // 0.30s : Movement 1 phase B — card 3 rises to top
-    // 0.55s : Movement 2 phase A — new bottom card (idx 2) slides out
-    // 0.80s : Movement 2 phase B — card 2 rises to top
-    // 1.05s : Deal begins — cards fly out ONE-BY-ONE to 2x2 grid
-    //         card 0 first, then 1, 2, 3 — 50ms stagger between each
-    // 1.60s : Animation complete — .dealt class added, hover restored
-    const MOVE_DUR = 500;       // one full rise movement (phase A + phase B)
-    const DEAL_DUR = 400;       // per-card deal duration
-    const DEAL_STAGGER = 50;    // delay between each card in the deal
+    const GAP = 24; // 1.5rem in px
+    const MOVE_DUR = 500;
+    const DEAL_DUR = 400;
+    const DEAL_STAGGER = 50;
     const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
     const PHASE_DUR = MOVE_DUR / 2;
     const PHASE_TRANSFORM = `transform ${PHASE_DUR}ms ${EASE}`;
-    const ALL_PROPS = `transform ${DEAL_DUR}ms ${EASE}, ` +
-                      `left ${DEAL_DUR}ms ${EASE}, ` +
-                      `top ${DEAL_DUR}ms ${EASE}`;
+    const ALL_PROPS = `transform ${DEAL_DUR}ms ${EASE}, left ${DEAL_DUR}ms ${EASE}, top ${DEAL_DUR}ms ${EASE}`;
+    const STACK_ROTATIONS = [-7, -2.5, 2.5, 7];
+    const STACK_LIFT = -14;
 
-    // === STACKED INITIAL STATE ===
-    // All cards sit on the same point in the center of the stage.
-    // Each one has a slightly different rotation, so the deck-of-cards
-    // look is visible at the corners/edges.
-    const stackCenterX = stageWidth / 2;
-    const stackCenterY = (cardHeight * 2 + GAP) / 2;
-    const STACK_ROTATIONS = [-7, -2.5, 2.5, 7]; // top -> bottom
-    const STACK_LIFT = -14;   // px the card floats up by at its final top position
-    // Slide-out distance is based on the card height so the card is
-    // FULLY out from under the stack (not just peeking out).
-    // We add a small gap so the card visibly clears the stack edge.
-    const SLIDE_OUT_Y = cardHeight + 30; // push fully below the stack
-    const SLIDE_OUT_X = -18;              // small side offset for a natural arc
+    // ── Lazy layout vars — computed inside runSequence() ──────────────────
+    // We CANNOT measure at IIFE init time because on mobile the stage
+    // getBoundingClientRect().width = 0 (layout not yet complete).
+    // All position math runs fresh when the IntersectionObserver fires.
+    let stageWidth, cardWidth, cardHeight, dealtPositions,
+        stackCenterX, stackCenterY, SLIDE_OUT_Y;
+    const SLIDE_OUT_X = -18;
+
+    function measure() {
+      stageWidth = stage.getBoundingClientRect().width;
+      cardWidth  = stageWidth; // single-column: full width
+
+      // Clone cards into a hidden measure container at real width
+      const ms = document.createElement('div');
+      ms.style.cssText = `position:absolute;visibility:hidden;pointer-events:none;
+        width:${stageWidth}px;display:flex;flex-direction:column;gap:${GAP}px;`;
+      const clones = cards.map(c => {
+        const cl = c.cloneNode(true);
+        cl.style.cssText = `position:relative;opacity:1;width:${stageWidth}px;height:auto;transform:none;`;
+        ms.appendChild(cl);
+        return cl;
+      });
+      stage.appendChild(ms);
+      cardHeight = Math.max(...clones.map(c => c.getBoundingClientRect().height));
+      stage.removeChild(ms);
+
+      // Guard: if measurement fails, use a sensible fallback
+      if (!cardHeight || cardHeight < 50) cardHeight = 480;
+
+      dealtPositions = [
+        { x: 0, y: 0 },
+        { x: 0, y: (cardHeight + GAP) },
+        { x: 0, y: (cardHeight + GAP) * 2 },
+        { x: 0, y: (cardHeight + GAP) * 3 },
+      ];
+      stackCenterX = stageWidth / 2;
+      stackCenterY = (cardHeight * 4 + GAP * 3) / 2;
+      SLIDE_OUT_Y  = cardHeight + 30;
+
+      stage.style.minHeight = (cardHeight * 4 + GAP * 3 + 40) + 'px';
+    }
 
     function setStackedState() {
-      // Z-order so card 0 is on top of the stack visually
       cards.forEach((card, i) => {
-        card.style.width = cardWidth + 'px';
-        card.style.height = cardHeight + 'px';
+        card.style.width     = cardWidth + 'px';
+        card.style.height    = cardHeight + 'px';
         card.style.transition = PHASE_TRANSFORM;
-        card.style.left = (stackCenterX - cardWidth / 2) + 'px';
-        card.style.top  = (stackCenterY - cardHeight / 2) + 'px';
+        card.style.left      = (stackCenterX - cardWidth / 2) + 'px';
+        card.style.top       = (stackCenterY - cardHeight / 2) + 'px';
         card.style.transform = `rotate(${STACK_ROTATIONS[i]}deg)`;
-        card.style.zIndex = String(cards.length - i); // 4,3,2,1
-        card.style.opacity = '1';
+        card.style.zIndex    = String(cards.length - i);
+        card.style.opacity   = '1';
       });
     }
-    setStackedState();
 
     // === MOVEMENT 1 (two phases) ===
     // Bottom card (idx 3) pulls out from under the stack, then
@@ -7427,6 +7437,7 @@ if (form) {
 
     // === RUN THE SEQUENCE ===
     function runSequence() {
+      measure();         // measure stage & cards at real runtime dimensions
       setStackedState(); // ensure clean start
       // Movement 1: card 3 pulls out, then rises to top
       // 50ms  : start slide-out (phase A)
@@ -7455,7 +7466,7 @@ if (form) {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.1 });
 
     observer.observe(stage);
 
@@ -7465,22 +7476,26 @@ if (form) {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
         if (!stage.classList.contains('dealt')) return;
-        const newRect = stage.getBoundingClientRect();
-        const newStageWidth = newRect.width;
-        const newCardWidth = (newStageWidth - GAP) / 2;
+        const newRect      = stage.getBoundingClientRect();
+        const newStageW    = newRect.width;
+        const newCardW     = newStageW; // single-column: always full width
+
+        // Re-measure card height at new width (content reflows on resize)
+        const newCardH = cards[0] ? cards[0].getBoundingClientRect().height : cardHeight;
+
+        // Update stage min-height for 4 rows
+        stage.style.minHeight = (newCardH * 4 + GAP * 3 + 40) + 'px';
+
         cards.forEach((card, i) => {
-          card.style.width = newCardWidth + 'px';
-          const newPos = {
-            x: i % 2 === 0 ? 0 : newCardWidth + GAP,
-            y: i < 2 ? 0 : cardHeight + GAP
-          };
-          card.style.left = newPos.x + 'px';
-          card.style.top  = newPos.y + 'px';
+          card.style.width = newCardW + 'px';
+          card.style.left  = '0px';
+          card.style.top   = (i * (newCardH + GAP)) + 'px';
         });
-        dealtPositions[0] = { x: 0,                    y: 0 };
-        dealtPositions[1] = { x: newCardWidth + GAP,   y: 0 };
-        dealtPositions[2] = { x: 0,                    y: cardHeight + GAP };
-        dealtPositions[3] = { x: newCardWidth + GAP,   y: cardHeight + GAP };
+
+        // Keep dealtPositions in sync for any future use
+        for (let i = 0; i < cards.length; i++) {
+          dealtPositions[i] = { x: 0, y: i * (newCardH + GAP) };
+        }
       }, 200);
     });
   })();
@@ -7658,4 +7673,395 @@ if (form) {
   })();
 
 })();
-</script>
+</script><style>
+/* ═══════════════════════════════════════════════════════════════════════
+   RESPONSIVE PATCH — Rihla Studio  (injected)
+   Covers: containers, cards, typography, RTL/LTR, touch targets
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── 1. Container padding  ── */
+.container, .container-wide {
+  padding-left: clamp(1rem, 4vw, 2rem);
+  padding-right: clamp(1rem, 4vw, 2rem);
+}
+
+/* ── 2. Prevent inline-size:max-content overflow ── */
+.display-h2 {
+  inline-size: auto !important;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.hero h1 .accent-line,
+.hero h1 .accent-line .italic-accent {
+  inline-size: auto !important;
+  max-width: 100%;
+}
+
+/* ── 3. RTL/LTR positioned-element fixes (reset opposing side) ── */
+/* work-card-num: base is no left/right set */
+html[dir="rtl"] .work-card-num  { left: 1.5rem;  right: auto; }
+html[lang="en"] .work-card-num  { right: 1.5rem; left: auto;  }
+html[dir="rtl"] .work-card-arrow { right: 1.5rem; left: auto;  }
+html[lang="en"] .work-card-arrow { left: 1.5rem;  right: auto; }
+html[dir="rtl"] .work-card-year  { left: 2rem;    right: auto; }
+html[lang="en"] .work-card-year  { right: 2rem;   left: auto;  }
+html[dir="rtl"] .proc-visual .label { left: auto; right: 1.5rem; }
+html[lang="en"] .proc-visual .label { right: auto; left: 1.5rem; }
+html[dir="rtl"] .article-cat  { right: 0.75rem; left: auto; }
+html[lang="en"] .article-cat  { left: 0.75rem;  right: auto; }
+/* Eyebrow line direction */
+html[lang="en"] .eyebrow::before { margin-left: 0; margin-right: 0; }
+/* Workflow arrow in EN */
+html[lang="en"] .workflow-arrow {
+  background: linear-gradient(90deg, var(--orange,#F5A623), transparent);
+}
+html[lang="en"] .workflow-arrow::after {
+  left: auto; right: 0;
+  transform: translateY(-50%) rotate(45deg);
+}
+/* hero floating tags — RTL vs LTR swap */
+html[dir="rtl"] .hero-floating-tag-1 { right: 4%; left: auto; }
+html[dir="rtl"] .hero-floating-tag-2 { left: 4%;  right: auto; }
+html[dir="rtl"] .hero-floating-tag-3 { right: 0%;  left: auto; }
+html[dir="rtl"] .hero-floating-tag-4 { left: 0%;   right: auto; }
+html[lang="en"] .hero-floating-tag-1 { left: 4%;  right: auto; }
+html[lang="en"] .hero-floating-tag-2 { right: 4%; left: auto; }
+html[lang="en"] .hero-floating-tag-3 { left: 0%;  right: auto; }
+html[lang="en"] .hero-floating-tag-4 { right: 0%; left: auto; }
+
+/* ── 4. Touch targets — min-height only, never override display
+   (nav-cta / nav-links visibility is controlled by existing breakpoint rules) ── */
+.mobile-menu a,
+.btn,
+.lang-toggle,
+.work-card-arrow,
+.bq-ctrl,
+.filter-btn, .shop-filter-btn, .blog-filter-btn, .works-filter-btn {
+  min-height: 44px;
+}
+.nav-hamburger { min-width: 44px; min-height: 44px; }
+@media (max-width: 900px) {
+  .nav-links a { display: block; padding: 0.85rem 0; }
+}
+
+/* ── 5. Cards — shared mobile refinements ── */
+.work-card, .svc-card, .metric, .score,
+.faq-item, .proc-visual, .works-item,
+.article-card, .product-card, .work-card-full,
+.value-prop, .bq-card {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── 6. Tablet (≤ 900px) ── */
+@media (max-width: 900px) {
+  section { padding: 5rem 0; }
+
+  /* Hero floating tags — pull slightly inward */
+  .hero-floating-tag-1, .hero-floating-tag-3 { right: 1%; }
+  .hero-floating-tag-2, .hero-floating-tag-4 { left: 1%; }
+  html[lang="en"] .hero-floating-tag-1,
+  html[lang="en"] .hero-floating-tag-3 { left: 1%; right: auto; }
+  html[lang="en"] .hero-floating-tag-2,
+  html[lang="en"] .hero-floating-tag-4 { right: 1%; left: auto; }
+
+  /* Service card stage */
+
+  /* Sec-head */
+  .sec-head { margin-bottom: 2.5rem; }
+
+  /* Results workflow — allow wrapping neatly */
+  .results-workflow { gap: 0.5rem; }
+  .workflow-step .label { font-size: 0.72rem; }
+
+  /* Footer */
+  .footer-grid { gap: 2rem; }
+  .footer { padding: 3.5rem 0 2rem; }
+
+  /* Contact wrap  */
+  .contact-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+/* ── 7. Mobile (≤ 768px) ── */
+@media (max-width: 768px) {
+  section { padding: 4rem 0; }
+
+  /* Floating tags — hide 3 & 4, keep 1 & 2 */
+  .hero-floating-tag-3,
+  .hero-floating-tag-4 { display: none; }
+  .hero-floating-tag { font-size: 0.78rem; padding: 0.65rem 0.85rem; gap: 0.5rem; }
+  .hero-floating-tag .icon { width: 28px; height: 28px; }
+
+  /* Work cards */
+  .work-card-info { padding: 1.25rem 1.25rem 1.5rem; }
+  html[dir="rtl"]  .work-card-info { padding-bottom: 3rem; }
+  html[lang="en"]  .work-card-info { padding-bottom: 3rem; }
+  .work-card-title { font-size: 1.2rem; }
+  .work-card-tag   { font-size: 0.68rem; padding: 0.25rem 0.55rem; }
+
+  /* Results */
+  .results-metrics  { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .results-features { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .results-scores   { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .metric  { padding: 1.5rem 1rem; }
+  .score   { padding: 1.25rem 0.85rem; }
+
+  /* Results workflow — stack */
+  .results-workflow { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .workflow-arrow   { width: 1px; height: 30px; min-width: unset;
+                      background: linear-gradient(180deg, var(--orange,#F5A623), transparent); }
+  .workflow-arrow::after { display: none; }
+
+  /* Metric number */
+  .metric-num  { font-size: clamp(2rem, 6vw, 3rem); }
+  .score-num   { font-size: 2.25rem; }
+
+  /* Blog filter scroll */
+  .blog-filter-wrap, .blog-filters {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    white-space: nowrap;
+    padding-bottom: 0.5rem;
+  }
+  .blog-filter-wrap::-webkit-scrollbar,
+  .blog-filters::-webkit-scrollbar { display: none; }
+  .blog-filters { flex-wrap: nowrap; }
+
+  /* Shop filter */
+  .shop-filter-bar {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    white-space: nowrap;
+  }
+  .shop-filter-bar::-webkit-scrollbar { display: none; }
+
+  /* Works filter */
+  .works-filter-bar {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    white-space: nowrap;
+  }
+  .works-filter-bar::-webkit-scrollbar { display: none; }
+
+  /* Work cards full (work.html) */
+  .work-card-full { border-radius: 16px; }
+  .work-title      { font-size: 1.15rem; }
+  .work-view       { font-size: 0.8rem; }
+
+  /* Shop product cards */
+  .product-card { border-radius: 16px; }
+  .product-title { font-size: 1rem; }
+
+  /* Article cards */
+  .article-card    { border-radius: 16px; }
+  .article-title   { font-size: 1rem; }
+  .article-body    { padding: 1rem 1.1rem 1.25rem; }
+
+  /* Process section */
+  .process-list { gap: 3rem; }
+  .proc-step    { gap: 1.5rem; }
+  .proc-content h3 { font-size: 1.4rem; }
+
+  /* FAQ */
+  .faq-item   { padding: 1.15rem 1.25rem; border-radius: 14px; }
+  .faq-q      { font-size: 1rem; gap: 0.75rem; }
+
+  /* Contact form */
+  .form-group input,
+  .form-group select,
+  .form-group textarea { font-size: 1rem; }  /* prevents iOS zoom */
+
+  /* Founder section */
+  .founder-wrap { grid-template-columns: 1fr; gap: 2rem; }
+
+  /* Agreement grid */
+  .agreement-grid { grid-template-columns: 1fr; }
+
+  /* Featured banner */
+  .featured-banner { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
+
+  /* Boutique 3D */
+  .boutique-drum-wrap { height: 360px; }
+  .bq-item { width: 170px; }
+
+  /* Sec-head */
+  .sec-head { margin-bottom: 2rem; gap: 1rem; }
+
+  /* Value props */
+  .value-props { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .value-prop  { padding: 1.25rem; border-radius: 14px; }
+
+  /* Footer */
+  .footer { padding: 3rem 0 1.5rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+}
+
+/* ── 8. Small phone (≤ 480px) ── */
+@media (max-width: 480px) {
+  section { padding: 3.5rem 0; }
+
+  /* hero floating tags — hide all on tiny screens */
+  .hero-floating-tag { display: none !important; }
+
+  /* Results — back to 2-col is ok, just smaller gap */
+  .results-metrics  { gap: 0.75rem; }
+  .results-scores   { gap: 0.75rem; }
+  .results-features { grid-template-columns: 1fr; }
+
+  /* Work card grid: already 1-col */
+  .work-card  { border-radius: 16px; }
+  .work-card-info { padding: 1rem; }
+
+  /* svc-card on deal layout */
+  .svc-card  { padding: 1.75rem 1.5rem 1.5rem; border-radius: 18px; }
+  .svc-title { font-size: 1.5rem; }
+
+  /* Process */
+  .proc-visual { border-radius: 18px; }
+  .proc-bullets { grid-template-columns: 1fr; }
+
+  /* Boutique */
+  .boutique-drum-wrap { height: 320px; }
+  .bq-item { width: 155px; }
+
+  /* Blog filter — individually wrap each pill */
+  .blog-filters { display: flex; flex-wrap: nowrap; }
+
+  /* Article cards grid */
+  .articles-grid { gap: 1rem; }
+  .article-card-visual { min-height: 160px; }
+
+  /* Shop grid */
+  .shop-grid { gap: 1rem; }
+  .product-thumb { height: 140px; }
+
+  /* Works grid */
+  .works-category-grid { gap: 1rem; }
+
+  /* Value props 1-col */
+  .value-props { grid-template-columns: 1fr; }
+
+  /* Scores num */
+  .score-num { font-size: 2rem; }
+  .metric-num { font-size: 2.25rem; }
+
+  /* FAQ */
+  .faq-list { gap: 0.6rem; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .footer { padding: 2.5rem 0 1.25rem; }
+}
+
+/* ── 9. Tiny phone (≤ 380px) ── */
+@media (max-width: 380px) {
+  section { padding: 3rem 0; }
+
+  /* Display headings */
+  .display-h2 { font-size: clamp(1.5rem, 7vw, 2.25rem); }
+  .display-h1 { font-size: clamp(2rem, 10vw, 3rem); }
+  .display-h3 { font-size: clamp(1.2rem, 5vw, 1.75rem); }
+
+  /* Results 1-col on very small */
+  .results-metrics { grid-template-columns: 1fr; }
+  .results-scores  { grid-template-columns: 1fr; }
+
+  /* Work card */
+  .work-card-title { font-size: 1.05rem; }
+  .work-card-info  { padding: 0.875rem; }
+
+  /* hero stats */
+  .hero-stats { flex-wrap: wrap; gap: 0.75rem; }
+  .hero-stat-divider { display: none; }
+  .hero-stat .num { font-size: 1.35rem; }
+
+  /* hero CTAs — stack */
+  .hero-ctas { flex-direction: column; align-items: stretch; }
+  .hero-ctas .btn { justify-content: center; }
+
+  /* Service stage */
+
+  /* Boutique */
+  .boutique-drum-wrap { height: 280px; }
+  .bq-item { width: 135px; }
+  .boutique-info { padding: 0 0.5rem; }
+  .bi-title  { font-size: 1rem; }
+  .bi-desc   { font-size: 0.85rem; }
+  .bi-price  { font-size: 1.1rem; }
+
+  /* Metric cards */
+  .metric  { padding: 1.25rem 0.75rem; }
+  .metric-num  { font-size: 2rem; }
+  .score-num   { font-size: 1.75rem; }
+  .score  { padding: 1rem 0.75rem; }
+
+  /* FAQ  */
+  .faq-q { font-size: 0.92rem; }
+  .faq-item { padding: 1rem; }
+
+  /* Form */
+  .form-row { grid-template-columns: 1fr !important; }
+
+  /* Footer */
+  .footer-col h4 { margin-bottom: 0.75rem; }
+  .footer-grid   { gap: 1rem; }
+}
+
+/* ── 10.  Very tiny / SE (≤ 320px) ── */
+@media (max-width: 320px) {
+  .container, .container-wide { padding-left: 0.75rem; padding-right: 0.75rem; }
+  section { padding: 2.5rem 0; }
+  .display-h2 { font-size: clamp(1.3rem, 8vw, 2rem); }
+  .display-h1 { font-size: clamp(1.75rem, 11vw, 2.5rem); }
+  .metric-num { font-size: 1.75rem; }
+  .score-num  { font-size: 1.5rem; }
+}
+
+/* ── 11. Overflow containment & grid-item min-width fix ── */
+/* Prevent reveal animations and over-wide grid items from causing
+   horizontal scroll. overflow-x:clip is like hidden but doesn't
+   create a scroll container, so position:sticky still works.     */
+html { overflow-x: clip; }
+
+/* Grid items must opt out of CSS grid's default auto min-size */
+.contact-wrap > *,
+.results-metrics > *,
+.results-scores  > *,
+.results-features > *,
+.footer-grid > *,
+.work-grid > *,
+.articles-grid > *,
+.shop-grid > *,
+.works-category-grid > *,
+.value-props > *,
+.agreement-grid > *,
+.proc-step,
+.founder-wrap > * {
+  min-width: 0;
+}
+
+/* contact-form: ensure padding doesn't push outside container */
+@media (max-width: 900px) {
+  .contact-form  { padding: 2rem 1.5rem; }
+}
+@media (max-width: 480px) {
+  .contact-form  { padding: 1.5rem 1.25rem; }
+  .contact-form .form-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 380px) {
+  .contact-form  { padding: 1.25rem 1rem; }
+}
+
+/* ── hero scroll-hint: hide below 768px — overlaps hero stats ── */
+@media (max-width: 768px) {
+  .hero-scroll-hint { display: none !important; }
+}
+
+/* END RESPONSIVE PATCH */
+</style>
+</body>
+</html>
